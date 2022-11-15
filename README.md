@@ -1,10 +1,8 @@
 # HB3
 
-# Class_HB2
+## 2022-11-14 Full-Stack Python/JavaScript Evening Class
 
-## 2022-06-22 Full-Stack Python/JavaScript Evening Class
-
-Repo for the PDX Code Guild Python Full Stack evening course starting 06/27/2022
+Repo for the PDX Code Guild Python Full Stack evening course starting 11/14/2022
 
 Class is held from **November 14th 2022 to March 27th, 2023**
 M-F 6:00 pm – 9:36 pm PT
