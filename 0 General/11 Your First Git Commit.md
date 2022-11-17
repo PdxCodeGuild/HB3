@@ -1,4 +1,4 @@
-# Your Fist Git Commit
+# Your First Git Commit
 
 ## Step 1: Clone The Repo
 
