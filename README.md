@@ -11,8 +11,10 @@ M-F 6:00 pm – 9:36 pm PT
 
 - November 24th 2022 (Thanksgiving)
 - November 25th 2022 (Day After Thanksgiving)
-- December 25th 2022 (Christmas Day)
-- January 1st 2023 (New Year's Day)
+- ~~December 25th 2022 (Christmas Day)~~
+- Christmas will be observed December 26th 2022
+- ~~January 1st 2023 (New Year's Day)~~
+- New Years will be observed January 2nd 2022
 
 ### Misc. Days Off
 
