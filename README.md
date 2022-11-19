@@ -33,7 +33,8 @@ M-F 6:00 pm – 9:36 pm PT
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class |
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
-| 01  | [Unit Converter](1%20Python/labs/12%20Unit%20Converter.md)         | 17 Nov       |          1 Dec       |
+| 00  | [ Python Practice](1%20Python/practice)         |       NA      |          NA           |
+| 01  | [Unit Converter](1%20Python/labs/12%20Unit%20Converter.md)         | 17 Nov        |          1 Dec        |
 
 
 ## Getting Unstuck 
