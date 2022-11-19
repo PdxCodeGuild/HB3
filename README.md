@@ -35,7 +35,7 @@ M-F 6:00 pm – 9:36 pm PT
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
 | 00  | [ Python Practice](1%20Python/practice)         |       NA      |          NA           |
 | 01  | [Unit Converter](1%20Python/labs/12%20Unit%20Converter.md)         | 17 Nov        |          1 Dec        |
-| 02  | [Number To Phrase]([1%20Python/labs/12%20Unit%20Converter.md](https://github.com/PdxCodeGuild/20171003-FullStack-Day/blob/master/1%20-%20Python/labs/lab17-number_to_phrase.md))         | 18 Nov        |          2 Dec        |
+| 02  | [Number To Phrase](https://github.com/PdxCodeGuild/20171003-FullStack-Day/blob/master/1%20-%20Python/labs/lab17-number_to_phrase.md)        | 18 Nov        |          2 Dec        |
 
 
 ## Getting Unstuck 
