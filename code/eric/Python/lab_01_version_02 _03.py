@@ -1,4 +1,5 @@
-# v.2 & 3
+# write a program that allows the user to convert a number between units
+# v.2 & 3 
 user_input_distance = float(input('What is the distance?: '))
 user_input_units = input('What are the units(ft, m, mi, km, yd, in)?: ')
 
