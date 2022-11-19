@@ -1,3 +1,5 @@
+###### Version 4 ######
+
 units = {
     "feet": .3048
 }
@@ -35,6 +37,15 @@ units['inches'] = 0.0254
 
 print(f'\n{units}')
 
+units2 = {
+    "feet": 1/.3048,
+    "miles": 1/1609.34,
+    "meters": 1,
+    "kilometers": 1/1000,
+    "yards": 1/.9144,
+    "inches": 1/.0254
+}
+
 #measurement = input('\nWhat is the distance?: ')
 
 #measurement = int(measurement)
@@ -53,12 +64,16 @@ distance = input('\nWhat is the distance: ')
 
 distance = int(distance)
 
-input_unit = input('\nWhat are the input units (feet, miles, meters, kilometers): ')
+input_unit = input('\nWhat are the input units (feet, miles, meters, kilometers, yards, inches): ')
 
-output_unit = input('\nWhat are the output units (feet, miles, meters, kilometers): ')
+output_unit = input('\nWhat are the output units (feet, miles, meters, kilometers, yards, inches): ')
 
-unit_switch = units[input_unit]
+input_switch = units[input_unit]
 
-conversion = distance * unit_switch
+output_switch = units2[output_unit]
 
-print(conversion)
+input_conversion = distance * input_switch
+
+final_conversion = input_conversion * output_switch
+
+print(f'\n{distance} {input_unit} is approximately {round(final_conversion, 4)} {output_unit}\n')
