@@ -39,8 +39,10 @@ def convert(num):
         tens = dict_tens.get(num // 10) # if the number is less than 100 get the tens place from the tens dictionary and the ones place from the ones dictionary using the computed values as keys
         ones = dict_ones.get(num % 10)
         return f'{tens} - {ones}'
-    elif num > 100:
+    elif num >= 100:
         hundreds = dict_ones.get(num//100)
+        if num%100 == 0:
+            return f'{hundreds} hundred'
         tens = num%100
         if tens < 20:
             ten_digit = dict_ones.get(tens)
