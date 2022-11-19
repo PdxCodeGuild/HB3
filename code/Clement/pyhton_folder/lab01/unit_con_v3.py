@@ -11,7 +11,7 @@ print(f'Please choose from the following units:')
 
 # running for loop to get all the units from the list.
 for unit in units:
-    print(unit)
+    print(unit, end='  ')
   
 choice = str(input('Please enter your unit?\n'))
 
