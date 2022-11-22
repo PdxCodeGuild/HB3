@@ -3,7 +3,7 @@
       Project: HB3 - Lab 02 version 1
       Author: Scott Lefgren
       Email: scojlefg@gmail.com
-      Date: November 18, 2022
+      Date: November 21, 2022
                     ___-___  o==o======   .   .   .   .   .
             =========== ||//
                     \ \ |//__
@@ -86,14 +86,33 @@ elif tens_digit == 1 & ones_digit == 0:
 # if the ten digit is 1 and ones digits is 1-9 use the english_teens_digit
 elif tens_digit == 1:
     print(english_teens_digit[ones_digit])  # conditions for 11-19
-# if the ten digit is 2-9 and the ones digit is zero
-elif tens_digit > 1 & ones_digit == 0:
-    print(english_tens_digit[tens_digit])
-# if the ten digit is 2-9 and the ones digit is > than 1 then use english_tens_digit + english ones digit
-elif tens_digit > 1 & ones_digit != 0:
-    print(english_tens_digit[tens_digit] +'-'+ english_ones_digit[ones_digit]) # conditions for 20-99
-
+# if the ten digit is 2-9 then check the ones_digit
+elif tens_digit > 1:
+    # if the ones digit is 0 then use english_tens_digit 
+    if ones_digit == 0:
+       print(english_tens_digit[tens_digit]) 
+    # Else if the ones digit is > than zero 
+    else: 
+       print(english_tens_digit[tens_digit] +'-'+ english_ones_digit[ones_digit]) # conditions for 20-99
+    # end if     
 #end if
 
+# The End
 
+#                 o
+#            o       /
+#             \     /
+#              \   /
+#               \ /
+# +--------------v-------------+
+# |  __________________      @ |
+# | /          ,  ooo  \       |
+# | |  ---=====|#O#### |  (\)  |
+# | |          `  \ )  |       |
+# | |   ,;`,      | |  |  (-)  |
+# | |  // o ',    | |  |       |
+# | \  ' o \ /,   | |  / :|||: |
+# |  -ooo--------------  :|||: |
+# +----------------------------+
+#    []                    []
 
