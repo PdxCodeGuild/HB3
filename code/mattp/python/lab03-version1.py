@@ -37,16 +37,22 @@ number_input = input('\n\tSelect a number (00-99): ')
 
 number_input = int(number_input)
 
+tens_digit = number_input//10
+ones_digit = number_input%10
+
 
 #print(f'\n\t{number_input} spelled out is: {small_number}')
 
 
 if (number_input >= 1) and (number_input <= 19):
-    small_number = ones[number_input]
-    print(f'\n\t{number_input} spelled out is: {small_number}')
+    small_word = ones[number_input]
+    print(f'\n\t{number_input} spelled out is: {small_word}')
     
 elif number_input >= 20:
-    print('\n\tbummer')
+    tens_word = tens[tens_digit]
+    ones_word = ones[ones_digit]
     
+    print(f'\n\t{number_input} spelled out is: {tens_word} {ones_word}')
+
     
     
