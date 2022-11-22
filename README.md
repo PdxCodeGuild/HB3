@@ -34,7 +34,7 @@ M-F 6:00 pm – 9:36 pm PT
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class |
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
 | 01  | [Unit Converter](1%20Python/labs/12%20Unit%20Converter.md)         | 17 Nov        |          1 Dec        |
-| 02  | [Number To Phrase](https://github.com/PdxCodeGuild/20171003-FullStack-Day/blob/master/1%20-%20Python/labs/lab17-number_to_phrase.md)        | 18 Nov        |          2 Dec        |
+| 02  | [Number To Phrase](https://github.com/PdxCodeGuild/HB3/blob/d911eabcf870a53cb8adbc6e6cf3ebf3ab054dc2/1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          2 Dec        |
 | 03  | [CC Validation](https://github.com/PdxCodeGuild/20171003-FullStack-Day/blob/master/1%20-%20Python/labs/lab20-credit_card_validation.md)         |  21 Nov            |           5  Dec            |
 | 04  | [Blackjack Advice](1%20Python/labs/09%20Blackjack%20Advice.md)         |              |                       |
 
