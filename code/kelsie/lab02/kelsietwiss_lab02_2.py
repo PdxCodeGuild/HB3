@@ -67,6 +67,6 @@ elif tens_digit == 1 and ones_digit == 5 :
 elif tens_digit == 1 and ones_digit == 8 :
     print(f"{hundreds_dict[hundreds_digit]} eighteen")
 elif tens_digit == 1 :
-    print(f"{hundreds_dict[hundreds_digit]} {ones_dict[ones_digit]} {tens_dict[tens_digit]}")
+    print(f"{hundreds_dict[hundreds_digit]} {ones_dict[ones_digit]}{tens_dict[tens_digit]}")
 else :
-    print(f"{hundreds_dict[hundreds_digit]} {tens_dict[tens_digit]} {ones_dict[ones_digit]}")
+    print(f"{hundreds_dict[hundreds_digit]} {tens_dict[tens_digit]}-{ones_dict[ones_digit]}")
