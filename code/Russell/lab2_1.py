@@ -1,6 +1,6 @@
 numeral = input("Enter number to be converted to text ")
 
-
+# isolate digits
 ones_digits = int(numeral) % 10
 tens_digits = int(numeral) // 10
 
@@ -8,10 +8,13 @@ tens_digits = int(numeral) // 10
 print(ones_digits)
 print(tens_digits)
 '''
-
+# define textual representation
 alpha_tens = ['', 'teen', 'twenty-', 'thirty-', 'forty-', 'fifty-', 'sixty-', 'seventy-', 'eighty-', 'ninety-']
 
 alpha_ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+
+
+# put it all together
 
 if ones_digits == 0 and tens_digits == 1:
     alpha_num = 'ten'
