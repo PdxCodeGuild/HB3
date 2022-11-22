@@ -71,11 +71,11 @@ user_input_num = int(user_input_num)  # convert input to integer
 
 # Find the value in the tens value
 tens_digit = user_input_num//10
-print(f'Ten digit', {tens_digit})  # DEBUG PRINT
+# print(f'Ten digit', {tens_digit})  # DEBUG PRINT
 
 # Find the value in the ones value
 ones_digit = user_input_num%10
-print(f'One digit', {ones_digit})   # DEBUG PRINT
+# print(f'One digit', {ones_digit})   # DEBUG PRINT
 
 # If the one digit is 0-9 and the ten digit is 0 then use english_ones_digit
 if tens_digit == 0:
