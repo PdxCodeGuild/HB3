@@ -12,14 +12,14 @@ ones_digit = num%10
 tens_list = [
     "", 
     "teen", 
-    "twenty-", 
-    "thirty-", 
-    "forty-", 
-    "fifty-", 
-    "sixty-", 
-    "seventy-", 
-    "eighty-", 
-    "ninety-"
+    "twenty", 
+    "thirty", 
+    "forty", 
+    "fifty", 
+    "sixty", 
+    "seventy", 
+    "eighty", 
+    "ninety"
     ]
 
 ones_list = [
@@ -52,5 +52,7 @@ elif tens_digit == 1 and ones_digit == 8 :
     print("eighteen")
 elif tens_digit == 1 :
     print(f"{(ones_list[ones_digit])}{(tens_list[tens_digit])}")
+elif ones_digit == 0 :
+    print(tens_list[tens_digit])
 else :
-    print(f"{(tens_list[tens_digit])}{(ones_list[ones_digit])}")
+    print(f"{(tens_list[tens_digit])}-{(ones_list[ones_digit])}")
