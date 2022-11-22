@@ -1,5 +1,11 @@
-# file
-
+'''
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+      Project: HB3 - Lab 03 Credit Card Validation
+      Author: Scott Lefgren
+      Email: scojlefg@gmail.com
+      Date: November 22, 2022
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+'''
 
 
 
