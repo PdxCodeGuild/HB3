@@ -35,6 +35,7 @@ num_phrase = {
     100:"Hundred", 
 
 }
+
 while True:
     num_enter = int(input('Please enter a number from(1-100):\n'))
 
@@ -55,7 +56,6 @@ while True:
             result = tens_digit_num + "-" + ones_digit_num
 
             print(f"Your number {num_enter} and in word is ({result})\n")
-
 
     else:
         print(f"Your number {num_enter} is invalid number please enter a number from (0-100)\n")
