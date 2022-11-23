@@ -58,7 +58,11 @@ print(f'Reverse the digits {int_list_reverse}')  # DEBUG
 
 # STEP 4: 
 #     Double every other element in the reversed list.
-print(int_list_reverse[:len(int_list_reverse)-1:2]) # doesn't work
+
+
+
+# <ENTER CODE>  Somehow do this step in the code I don't know how need to work on it more
+
 
 # int_list = [temp.append(int(list_numbers)) for temp in list_numbers]
 # print(type(num))
