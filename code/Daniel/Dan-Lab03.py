@@ -42,6 +42,6 @@ def is_valid(num):
         return False
 
 
+# Pass a credit card number to the is_valid function then display the output Boolean.
 num = str(4556737586899855)
-valid = is_valid(num)
-print(valid)
+print(is_valid(num))
