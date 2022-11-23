@@ -68,6 +68,8 @@ elif tens_digit == 1 and ones_digit == 8 :
     print(f"{hundreds_dict[hundreds_digit]} eighteen")
 elif tens_digit == 1 :
     print(f"{hundreds_dict[hundreds_digit]} {ones_dict[ones_digit]}{tens_dict[tens_digit]}")
+elif tens_digit == 0 :
+    print(f"{hundreds_dict[hundreds_digit]} {ones_dict[ones_digit]}")
 elif ones_digit == 0 :
     print (f"{hundreds_dict[hundreds_digit]} {tens_dict[tens_digit]}")
 else :
