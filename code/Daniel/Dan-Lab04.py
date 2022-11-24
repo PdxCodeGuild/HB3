@@ -6,9 +6,9 @@
 #---------------------------------
 
 def blackjack(hand):
-    # A program that gives basic blackjack playing advice during a game depending on the user's hand of 3 cards.
+    # This function gives basic blackjack playing advice during a game based on the user's 3-card hand.
 
-    # Point values of each card.
+    # Point values of every card (consider Aces as 1 point ea).
     card_value = {
         'A':1,
         '2':2,
@@ -24,36 +24,34 @@ def blackjack(hand):
         'K':10,
         }
 
-    # Sum the total value of the hand (consider Aces 1 point ea).
+    # Total value of the hand (consider Aces as 1 point ea).
     hand_value = card_value[hand[0]] + card_value[hand[1]] + card_value[hand[2]]
 
     # Explicitly handle Aces:
     if 'A' in hand and hand_value <= 11:
         hand_value += 10
 
-    # Print out the total hand value and the advice.
+    # Print out the hand value and the advice.
     # Less than 17, advise to "Hit"
     if hand_value < 17:
-        print(f'{hand_value} Hit')
-        return
+        return f'{hand_value} Hit'
     # Greater than or equal to 17, but less than 21, advise to "Stay"
     elif 17 <= hand_value < 21:
-        print(f'{hand_value} Stay')
-        return
+        return f'{hand_value} Stay'
     # Exactly 21, advise "Blackjack!"
     elif hand_value == 21:
-        print(f'{hand_value} Blackjack!')
-        return
+        return f'{hand_value} Blackjack!'
     # Over 21, advise "Already Busted"
     else:
-        print(f'{hand_value} Already Busted')
-        return
+        return f'{hand_value} Already Busted'
 
 
-# Ask the user for three playing cards, and pass the cards to the blackjack function.
-print('Card choices: 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K, A')
+# Ask the user for three playing cards, then
+# pass the cards to the blackjack function, then
+# return & pass the result to the terminal.
 hand = ['','','']
+print('\nCard Choices: A, 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K')
 hand[0] = input('What\'s your first card? ').upper()
 hand[1] = input('What\'s your second card? ').upper()
 hand[2] = input('What\'s your third card? ').upper()
-blackjack(hand)
+print(blackjack(hand))
