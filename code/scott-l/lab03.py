@@ -32,116 +32,127 @@
 #     5
 #     Valid!
 
-# BEGIN
-# STEP 1:
-#     Convert the input string into a list of ints
+
+def credit_card_validation(credit_card_input):
+
+    # STEP 1:---------------
+    #     Convert the input string into a list of ints
+    print(f'Credit card string input {credit_card_input}')
+    # split a string into a list, this will split on whitespace
+    list_numbers = credit_card_input.split()
+    # print(f'Split string into a list {list_numbers}')  # DEBUG CODE
+    # convert the list numbers list of strings into integer types using short hand for loop
+    int_list = [int(num) for num in list_numbers]
+    # print(f'Convert the list strings to integers {int_list}')  # DEBUG CODE
+
+    # STEP 2: ---------------
+    #     Slice off the last digit. That is the check digit.
+    int_list_slice = int_list[0:(len(int_list)-1):]
+    # print(f'Slice off the last digit {int_list_slice}')  # DEBUG
+
+    # STEP 3: --------------------
+    #     Reverse the digits.
+    int_list_slice.reverse()
+    int_list_reverse = int_list_slice
+    # print(f'Reverse the digits {int_list_reverse}')  # DEBUG
+
+    # STEP 4: --------------------
+    #     Double every other element in the reversed list.
+    double_odd_list = []
+    for n in range(len(int_list_reverse)):
+        # compare the index value of the list and if the index is odd 
+        # then append the value into a list and double the number
+        if n%2 == 0:
+            double_odd_list.append(int_list_reverse[n]*2)
+            # print(double_odd_list)  # DEBUG
+        # if the index is odd just append the value and continue
+        else:
+            double_odd_list.append(int_list_reverse[n])
+            # print('Continue')  # DEBUG
+            continue # skip the rest fo this iteration and begin the next loop
+        # end if
+    # end for
+    # print(f'Double odd index of each unit {double_odd_list}')  # DEBUG 
+
+    # STEP 5: -------------------------
+    #     Subtract nine from numbers over nine.
+
+    nine_less_list = []
+    for n in double_odd_list:
+        # list value is > 9 then subtract 9 
+        # then append the value into a list and double the number
+        if n > 9:
+            nine_less_list.append(n-9)
+            # print(nine_less_list)  # DEBUG
+        # else if the value is less than 9 append and then continue
+        else:
+            nine_less_list.append(n)
+            # print('Continue')  # DEBUG
+            continue # skip the rest fo this iteration and begin the next loop
+        # end if
+    # end for 
+    # print(f'Values over nine subtract nine {nine_less_list}')  # DEBUG
+
+    # STEP 6:--------------------------------
+    #     Sum all values.
+    sum_value = 0
+    for n in nine_less_list:
+        sum_value = sum_value + n
+    # end for
+    # print(f'Sum all values {sum_value}')  # DEBUG
+
+    # STEP 7: --------------------------------
+    #     Take the second digit of that sum.
+    # convert the number into a string
+    string_val = str(sum_value)
+    # take the second digit of the sum
+    string_val = str(string_val[1])  
+    # convert back into int
+    string_val_int = int(string_val)
+    # print(f'Take the second digit of the sum {string_val_int}')  # DEBUG
+
+    # STEP 8:------------------------------
+    #     If that matches the check digit, the whole card number is valid.
+
+    # if the digit is equal to the whole card number at the end
+    if string_val_int == int_list[-1]:
+        # print("Valid Card Number") # DEBUG
+        # print(int_list[-1])   # DEBUG
+        valid_flag = True
+    else:
+        # print("Invalid Card Number")
+        # print(int_list[-1]) # DEBUG
+        valid_flag = False
+    # end if
+
+    return valid_flag
+# end function credit_card_validation
+
+#-------------------------------------------------------
+ # BEGIN PROGRAM
+ # Credit Card Example Test String
 credit_card_input = '4 5 5 6 7 3 7 5 8 6 8 9 9 8 5 5'
-
-print(f'Credit card string input {credit_card_input}')
-# split a string into a list, this will split on whitespace
-list_numbers = credit_card_input.split()
-print(f'Split string into a list {list_numbers}')  # DEBUG CODE
-# convert the list numbers list of strings into integer types using short hand for loop
-int_list = [int(num) for num in list_numbers]
-print(f'Convert the list strings to integers {int_list}')  # DEBUG CODE
-
-# STEP 2: 
-#     Slice off the last digit. That is the check digit.
-int_list_slice = int_list[0:(len(int_list)-1):]
-print(f'Slice off the last digit {int_list_slice}')  # DEBUG
-
-# STEP 3: 
-#     Reverse the digits.
-int_list_slice.reverse()
-int_list_reverse = int_list_slice
-print(f'Reverse the digits {int_list_reverse}')  # DEBUG
-
-# STEP 4: 
-#     Double every other element in the reversed list.
-double_odd_list = []
-for n in range(len(int_list_reverse)):
-    # compare the index value of the list and if the index is odd 
-    # then append the value into a list and double the number
-    if n%2 == 0:
-        double_odd_list.append(int_list_reverse[n]*2)
-        # print(double_odd_list)  # DEBUG
-    # if the index is odd just append the value and continue
-    else:
-        double_odd_list.append(int_list_reverse[n])
-        # print('Continue')  # DEBUG
-        continue # skip the rest fo this iteration and begin the next loop
-    # end if
-# end for
-
-print(f'Double odd index of each unit {double_odd_list}')  # DEBUG 
-
-# STEP 5: 
-#     Subtract nine from numbers over nine.
-
-nine_less_list = []
-for n in double_odd_list:
-    # list value is > 9 then subtract 9 
-    # then append the value into a list and double the number
-    if n > 9:
-        nine_less_list.append(n-9)
-        print(nine_less_list)  # DEBUG
-    # else if the value is less than 9 append and then continue
-    else:
-        nine_less_list.append(n)
-        print('Continue')  # DEBUG
-        continue # skip the rest fo this iteration and begin the next loop
-    # end if
-# end for 
-
-print(nine_less_list)
+# rund credit_card_validation function with test string
+valid = credit_card_validation(credit_card_input)
+# If valid is True then Valid Number
+if valid:
+    print("Valid Number")
+# else if valid is false then Invalid Number
+else:
+    print("Invalid Number!")
+# end if
 
 
-# STEP 6:
-#     Sum all values.
+# END PROGRAM
 
-# STEP 7: 
-#     Take the second digit of that sum.
-
-
-# STEP 8:
-#     If that matches the check digit, the whole card number is valid.
-
-
-
-
-
-
-
-
-
-
-# <ENTER CODE>  Somehow do this step in the code I don't know how need to work on it more
-
-
-# int_list = [temp.append(int(list_numbers)) for temp in list_numbers]
-# print(type(num))
-
-# remove any blank spaces from string and convert the string into a int
-# num = []
-# for n in list_numbers:
-#     if n != ' ':
-#         num.append(int(n))
-#         # print(n)  # DEBUG
-#     # end if
-# end for
-# print(num)
-# print(type(num))
-
-# nums_list = list_numbers.remove(' ')
-# print(nums_list)
-
-# for n in credit_card_input:
-#     num = int(n)
-#     print(num)
-# # end for
-
-# Take the length of the string and convert each item as 
-
-# list_convert = list(credit_card_input)
-# list.remove(' ')
-# print(list)
+#           (                 ,&&&.
+#             )                .,.&&
+#            (  (              \=__/
+#                )             ,'-'.
+#          (    (  ,,      _.__|/ /|
+#           ) /\ -((------((_|___/ |
+#         (  // | (`'      ((  `'--|
+#       _ -.;_/ \\--._      \\ \-._/.
+#      (_;-// | \ \-'.\    <_,\_\`--'|
+#      ( `.__ _  ___,')      <_,-'__,'
+#       `'(_ )_)(_)_)'
