@@ -64,7 +64,7 @@ for n in range(len(int_list_reverse)):
     # then append the value into a list and double the number
     if n%2 == 0:
         double_odd_list.append(int_list_reverse[n]*2)
-        # print(test)  # DEBUG
+        # print(double_odd_list)  # DEBUG
     # if the index is odd just append the value and continue
     else:
         double_odd_list.append(int_list_reverse[n])
@@ -73,11 +73,27 @@ for n in range(len(int_list_reverse)):
     # end if
 # end for
 
-print(f'Double odd index of each unit {double_odd_list}' )
-
+print(f'Double odd index of each unit {double_odd_list}')  # DEBUG 
 
 # STEP 5: 
 #     Subtract nine from numbers over nine.
+
+nine_less_list = []
+for n in double_odd_list:
+    # list value is > 9 then subtract 9 
+    # then append the value into a list and double the number
+    if n > 9:
+        nine_less_list.append(n-9)
+        print(nine_less_list)  # DEBUG
+    # else if the value is less than 9 append and then continue
+    else:
+        nine_less_list.append(n)
+        print('Continue')  # DEBUG
+        continue # skip the rest fo this iteration and begin the next loop
+    # end if
+# end for 
+
+print(nine_less_list)
 
 
 # STEP 6:
