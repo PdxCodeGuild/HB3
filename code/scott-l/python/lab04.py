@@ -61,9 +61,9 @@ playing_cards = {  # playing card name: points
 # Ask the player for cards
 print(f'''
 Welcome to the game of Blackjack
-Enter the values of the following playing cards:
-(A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, or K)'''
-)
+Choose the following playing cards as listed:
+(A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, or K)
+''')
 
 first_card = input("What's your first card? ")
 second_card = input("What's your second card? ")
@@ -73,23 +73,39 @@ third_card = input("What's your third card? ")
 first_card_val = playing_cards[first_card]
 second_card_val = playing_cards[second_card]
 third_card_val = playing_cards[third_card]
-print(f'Cards Chosen {first_card_val}, {second_card_val}, {third_card_val}')
+print(f'Cards Chosen {first_card}, {second_card}, {third_card}')
 
 card_sum = first_card_val + second_card_val + third_card_val
-print(f'Total Card Sum {card_sum}')
+# print(f'Total Card Sum {card_sum}')  # DEBUG
 
 #     Less than 17, advise to "Hit"
 #     Greater than or equal to 17, but less than 21, advise to "Stay"
 #     Exactly 21, advise "Blackjack!"
 #     Over 21, advise "Already Busted"
 if card_sum < 17:
-    print(f'{card_sum} Hit')
+    print(f'Advise: {card_sum} Hit')
 elif card_sum > 17 and card_sum < 21:
-    print(f'{card_sum} Stay')
+    print(f'Advise: {card_sum} Stay')
 elif card_sum == 21:
-    print(f'{card_sum} BlackJack!')
+    print(f'Advise: {card_sum} BlackJack!')
 elif card_sum > 21:
-    print(f'{card_sum} Already Busted')
+    print(f'Advise: {card_sum} Already Busted')
 # end if
+
+
+# END
+
+#  ___            ___
+# /   \          /   \
+# \_   \        /  __/
+#  _\   \      /  /__
+#  \___  \____/   __/
+#      \_       _/
+#        | @ @  \_
+#        |
+#      _/     /\
+#     /o)  (o/\ \_
+#     \_____/ /
+#       \____/
 
 
