@@ -58,6 +58,44 @@ print(f'Reverse the digits {int_list_reverse}')  # DEBUG
 
 # STEP 4: 
 #     Double every other element in the reversed list.
+double_odd_list = []
+for n in range(len(int_list_reverse)):
+    # compare the index value of the list and if the index is odd 
+    # then append the value into a list and double the number
+    if n%2 == 0:
+        double_odd_list.append(int_list_reverse[n]*2)
+        # print(test)  # DEBUG
+    # if the index is odd just append the value and continue
+    else:
+        double_odd_list.append(int_list_reverse[n])
+        # print('Continue')  # DEBUG
+        continue # skip the rest fo this iteration and begin the next loop
+    # end if
+# end for
+
+print(f'Double odd index of each unit {double_odd_list}' )
+
+
+# STEP 5: 
+#     Subtract nine from numbers over nine.
+
+
+# STEP 6:
+#     Sum all values.
+
+# STEP 7: 
+#     Take the second digit of that sum.
+
+
+# STEP 8:
+#     If that matches the check digit, the whole card number is valid.
+
+
+
+
+
+
+
 
 
 
