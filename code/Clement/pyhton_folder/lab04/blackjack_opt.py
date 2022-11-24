@@ -11,7 +11,7 @@ card_3 = input("Please enter your third card?\n").upper()
 
 # create a dictionary that holds all keys and values of the playing cards
 p_cards = {
-    "A": 1,
+    "A": 11,
     "J": 10,
     "Q": 10,
     "K": 10,
@@ -33,12 +33,29 @@ total.append(p_cards[card_1])
 total.append(p_cards[card_2])
 total.append(p_cards[card_3])
 
-# total = p_cards[card_1] + p_cards[card_1] + p_cards[card_1] or
+# total = p_cards[card_1] + p_cards[card_1] + p_cards[card_1]
 totals = sum(total)
+
+# conditional statements to address an aces either it is (1 or 11)
+if totals > 21:
+    total2 =[]
+    for num in total:
+        if num == 11:
+            if sum(total2)>=10:
+                num = 1
+                total2.append(num)
+            else:
+                total2.append(num)
+        else:
+            total2.append(num)  
+totals = sum(total2)
+
 
 # Greater than or equal to 17, but less than 21, advise to "Stay"
 if totals >= 17 and totals < 21:
     print(f"Your cards value is {totals}, and l advice you 'Stay'")
+
+
 
 # Less than 17, advise to "Hit"
 elif totals < 17:
