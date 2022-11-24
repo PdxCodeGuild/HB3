@@ -48,10 +48,12 @@ def blackjack(hand):
 
 # Ask the user for three playing cards, then
 # pass the cards to the blackjack function, then
-# return & pass the result to the terminal.
+# return the result & pass it to the terminal.
 hand = ['','','']
 print('\nCard Choices: A, 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K')
 hand[0] = input('What\'s your first card? ').upper()
 hand[1] = input('What\'s your second card? ').upper()
 hand[2] = input('What\'s your third card? ').upper()
 print(blackjack(hand))
+
+# Note: should probably handle everything inside the function. Is it odd the function calls for a specific list of 3 values?
