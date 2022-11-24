@@ -33,10 +33,10 @@ M-F 6:00 pm – 9:36 pm PT
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class |
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
-| 01  | [Unit Converter](1%20Python/labs/01%20Unit%20Converter.md)         | 17 Nov        |          1 Dec        |
-| 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          2 Dec        |
-| 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           5  Dec            |
-| 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |              |                       |
+| 01  | [Unit Converter](1%20Python/labs/01%20Unit%20Converter.md)         | 17 Nov        |          28 Nov (adjusted for holiday)       |
+| 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          28 Nov (adjusted for holiday)      |
+| 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           28 Nov            |
+| 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     30 Nov            |
 
 
 ## Getting Unstuck 
