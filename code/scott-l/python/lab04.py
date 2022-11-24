@@ -92,7 +92,6 @@ elif card_sum > 21:
     print(f'Advise: {card_sum} Already Busted')
 # end if
 
-
 # END
 
 #  ___            ___
