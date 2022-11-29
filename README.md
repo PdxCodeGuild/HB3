@@ -37,6 +37,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          28 Nov (adjusted for holiday)      |
 | 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           28 Nov            |
 | 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     30 Nov            |
+| 05  | [Pick6](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/08%20Pick6.md)         |      28 Nov        |     5 Dec            |
 
 
 ## Getting Unstuck 
