@@ -36,6 +36,6 @@ def cc_checker(card_number):
     print(new_list)
 
     if new_list % 10 == check_digit:
-        return "Valid!"
+        return True
     
 print(cc_checker('4556737586899855'))
