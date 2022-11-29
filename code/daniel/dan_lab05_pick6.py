@@ -5,69 +5,57 @@
 # Date: 2022.11.28
 #---------------------------------
 
-# Have the computer play pick6 many times and determine net balance.
+# Program will pick 6 random numbers as the 'golden ticket',
+# then try 100,000 times to match the golden ticket,
+# then print the balance, earnings, expenses, and ROI.
 
-# Initially the program will pick 6 random numbers as the 'winner'.
-# Then try playing pick6 100,000 times, w/ the ticket cost and payoff below.
-
-# A ticket contains 6 numbers, 1 to 99, and the number of matches
-# between the ticket and the winning numbers determines the payoff.
-# Order matters, if the winning numbers are [5, 10] and your ticket numbers
-# are [10, 5] you have 0 matches. If the winning numbers are [5, 10, 2]
-# and your ticket numbers are [10, 5, 2], you have 1 match.
-# Calculate your net winnings (the sum of all expenses and earnings).
-
-
-# Write the following functions and use them in the code:
-
-# pick6(): Generate a list of 6 random numbers, which can then be used for both the winning numbers and tickets.
-# Return the list num_matches(winning, ticket):
-# Return the number of matches between the winning numbers and the ticket.
-
-# Steps
-# Generate a list of 6 random numbers representing the winning tickets
 from random import randint
-golden_ticket = [randint(1, 9) for x in range(6)]
-print(golden_ticket)
+def rand_ticket(): 
+    return [randint(1, 99) for _ in range(6)] ### Are duplicate numbers permitted?
 
-######## Do they need to be 6 DIFFERENT random numbers or are duplicates allowed?
+# Generate a list of 6 random numbers representing the winning ticket.
+golden_ticket = rand_ticket()
 
-# Start your balance at 0
-balance = 0
+# Start your balance at 0.
+earnings = 0
+expenses = 0
 
-# Loop 100,000 times, for each loop:
+# Loop 100,000 times.
+for _ in range(100000):
 
-# Generate a list of 6 random numbers representing the ticket
-player_ticket = [randint(1, 9) for x in range(6)]
-print(player_ticket)
+    # Generate a list of 6 random numbers representing the ticket.
+    ticket = rand_ticket()
 
-# Subtract 2 from your balance (you bought a ticket)
-balance -= 2
+    # Add 2 to your expenses (the cost of 1 ticket).
+    expenses += 2
 
-# Find how many numbers match
-matches = [y for x, y in enumerate(player_ticket) if player_ticket[x] == golden_ticket[x]]
-print(matches)
+    # Find how many matches between the winning numbers and the ticket.
+    matches = [
+        value for pos, value in enumerate(ticket)
+        if ticket[pos] == golden_ticket[pos]
+        ]
 
-# Add to your balance the winnings from your matches
-# if 1 number matches, you win $4
-# if 2 numbers match, you win $7
-# if 3 numbers match, you win $100
-# if 4 numbers match, you win $50,000
-# if 5 numbers match, you win $1,000,000
-# if 6 numbers match, you win $25,000,000
-winnings_ref = {
-    0 : 0,
-    1 : 4,
-    2 : 7,
-    3 : 100,
-    4 : 50000,
-    5 : 1000000,
-    6 : 25000000
-}
-balance += winnings_ref[len(matches)]
-print(balance)
+    # if 1 number matches, you win $4
+    # if 2 numbers match, you win $7
+    # if 3 numbers match, you win $100
+    # if 4 numbers match, you win $50,000
+    # if 5 numbers match, you win $1,000,000
+    # if 6 numbers match, you win $25,000,000
+    winnings_ref = {
+        0 : 0,
+        1 : 4,
+        2 : 7,
+        3 : 100,
+        4 : 50000,
+        5 : 1000000,
+        6 : 25000000
+    }
+    # Add winnings to your earnings.
+    earnings += winnings_ref[len(matches)]
 
-# After the loop, print the final balance
-# Version 2
-# The ROI (return on investment) is defined as (earnings - expenses)/expenses.
-# Calculate your ROI, print it out along with your earnings and expenses.
+# Print the final balance, earnings, expenses, and ROI.
+print(f'\nGolden Ticket: {golden_ticket}')
+print(f'Final Balance: ${earnings - expenses}')
+print(f'Earnings: {earnings}')
+print(f'Expenses: {expenses}')
+print(f'ROI: {(earnings - expenses) / expenses}\n')
