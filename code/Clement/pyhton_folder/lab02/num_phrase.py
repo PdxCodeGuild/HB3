@@ -40,7 +40,9 @@ while True:
     num_enter = int(input('Please enter a number from(1-100):\n'))
 
     # Trying to address the numbers that in & not in the dictionary
-    if num_enter <= 100:
+    if num_enter < 100:
+        print(num_phrase[(num_enter // 10 * 10)])
+        
         if num_enter in num_phrase:
             value = num_phrase.get(num_enter)
             print(f"Your number {num_enter} and in word is ({value})\n")
