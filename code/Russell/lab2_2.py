@@ -6,9 +6,10 @@ tens_digit = (int(numeral) // 10) % 10
 hundreds_digit = (int(numeral) // 100) % 10
 
 
-print(ones_digit)
-print(tens_digit)
-print(hundreds_digit)
+# print(ones_digit)
+# print(tens_digit)
+# print(hundreds_digit)
+
 
 alpha_hundreds = ['', 'one hundred ', 'two hundred ', 'three hundred ', 'four hundred ', 
 'five hundred ', 'six hundred ', 'seven hundred ', 'eight hundred ', 'nine hundred ']
@@ -17,28 +18,56 @@ alpha_tens = ['', 'teen', 'twenty-', 'thirty-', 'forty-', 'fifty-', 'sixty-', 's
 
 alpha_ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 
+if int(numeral) > 99:
+    new_num = int(numeral) - hundreds_digit * 100
+    # print(hundreds_digit)
+    # print(new_num)
 
-if ones_digit == 0 and tens_digit == 1:
-    alpha_num = 'ten'
+    if int(new_num) == 10:
+        alpha_num = alpha_hundreds[hundreds_digit] + 'ten'
 
-elif tens_digit == 1 and ones_digit == 1:
-    alpha_num = 'eleven'
+    elif int(new_num) == 11:
+        alpha_num = alpha_hundreds[hundreds_digit] + 'eleven'
 
-elif tens_digit == 1 and ones_digit == 2:
-    alpha_num = 'twelve'
+    elif int(new_num) == 12:
+        alpha_num = alpha_hundreds[hundreds_digit] + 'twelve'
 
-elif tens_digit == 1 and ones_digit == 3:
-    alpha_num = 'thirteen'
+    elif int(new_num) == 13:
+        alpha_num = alpha_hundreds[hundreds_digit] + 'thirteen'
 
-elif tens_digit == 1 and ones_digit == 5:
-    alpha_num = 'fifteen'    
+    elif int(new_num) == 15:
+        alpha_num = alpha_hundreds[hundreds_digit] + 'fifteen'    
 
-elif tens_digit == 1 and ones_digit != 0 and ones_digit != 1 and ones_digit != 2 and ones_digit != 3:
-    alpha_num = alpha_ones[ones_digit] + alpha_tens[tens_digit]
+    else:
+        if ones_digit == 0:
+            alpha_num = alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit] 
+        else: 
+            alpha_num = alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit] + alpha_ones[ones_digit]
+
+
+
+    print(alpha_num)
 
 else:
-    alpha_num = alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit] + alpha_ones[ones_digit]
+
+    if int(numeral) == 10:
+        alpha_num = 'ten'
+
+    elif int(numeral) == 11:
+        alpha_num = 'eleven'
+
+    elif int(numeral) == 12:
+        alpha_num = 'twelve'
+
+    elif int(numeral) == 13:
+        alpha_num = 'thirteen'
+
+    elif int(numeral) == 15:
+        alpha_num = 'fifteen'    
+
+    else:
+        alpha_num = alpha_tens[tens_digit] + alpha_ones[ones_digit]
 
 
 
-print(alpha_num)
+    print(alpha_num)
