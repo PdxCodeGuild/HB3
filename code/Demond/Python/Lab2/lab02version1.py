@@ -6,7 +6,8 @@ first_twenty = {1:"One", 2:"Two", 3:"Three", 4:"Four", 5:"Five",
 9:"Nine", 10:"Ten", 11:"Eleven",
 12:"Twelve", 13:"Thirteen", 14:"Fourteen",
 15:"Fifteen", 16:"Sixteen", 17:"Seventeen",
-18:"Eighteen", 19:"Nineteen" , 20:"twenty"}#these will cover the teens
+18:"Eighteen", 19:"Nineteen" , 20:"twenty", 30:'thirty', 40:'forty', 50:'fifty', 60:'sixty',70:'seventy',80:'eighty',
+90:'nintey', 100:'one hundred'}#these will cover the teens and the ten increments 20 -100
 if int(number) in first_twenty: #I have created an if statement that will check if the input is in the teens
     print(f"Your number is: {first_twenty[int(number)]}")#if so the print statment will print out the value for the appropriate key
 else:#if it is not then the print statement will be the input number in word form
