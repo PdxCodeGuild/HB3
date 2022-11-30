@@ -16,12 +16,12 @@ def num_matches(winning, ticket):
             return matches
 
 
-def main():
+def main(winning):
     balance = 0
+    print(f"The winning ticket is {winning}")
     for i in range(100000):
         
         ticket = pick6()
-        winning = pick6()
         balance -= 2
         if num_matches(winning, ticket) == 1:
             balance += 4
@@ -35,12 +35,12 @@ def main():
             balance += 1000000
         elif num_matches(winning, ticket) == 6:
             balance += 25000000
-        
-    print(balance)
+        print(balance)
+    print(f"Total balance is {balance}")
         
         # print(f"Your ticket - {ticket}")
         # print(f"Winning ticket - {winning}")
 
         # print(f"Total number of matches - {num_matches(winning, ticket)}")
 
-main()
+main(pick6())
