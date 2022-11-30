@@ -37,23 +37,24 @@ def main():
                 if int(digits[1]) !=0:
                     if int(digits[1]) !=1:
                         if int(digits[2]) !=0:
-                            word = first_and_third_digit_words.get(int(digits[0]))+" hundred "+second_digit_words.get(int(digits[1]))+first_and_third_digit_words.get(int(digits[2]))
+                            word = first_and_third_digit_words.get(int(digits[0]))+" hundred "+second_digit_words.get(int(digits[1]))+" "+first_and_third_digit_words.get(int(digits[2]))
                             print(word)
                             return
-                        else:
-                            word = first_and_third_digit_words.get(int(digits[0]))+" hundred "+second_digit_words.get(int(digits[1]))
-                            print(word)
-                        return
                     else: 
-                        word = first_and_third_digit_words.get(int(digits[0]))+" hundred "+unique_words.get(int(digits[2]))
+                        word = first_and_third_digit_words.get(int(digits[0]))+" hundred and "+unique_words.get(int(digits[2]))
                         print(word)
                         return
                 else:
-                        word = first_and_third_digit_words.get(int(digits[0]))+" hundred and "+first_and_third_digit_words.get(int(digits[2]))
-                        print(word)
-                        return
+                    word = first_and_third_digit_words.get(int(digits[0]))+" hundred and "+first_and_third_digit_words.get(int(digits[2]))
+                    print(word)
+                    return
         else: 
-            word = first_and_third_digit_words.get(int(digits[0]))+" hundred"
-            print(word)
-            return
+            if int(digits[1]) !=0:
+                word = first_and_third_digit_words.get(int(digits[0]))+" hundred and "+second_digit_words.get(int(digits[1]))
+                print(word)
+                return
+            else:
+                word = first_and_third_digit_words.get(int(digits[0]))+" hundred"
+                print(word)
+                return
 main()
