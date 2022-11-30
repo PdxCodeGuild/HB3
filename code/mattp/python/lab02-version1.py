@@ -1,7 +1,7 @@
 print('\n\tNumber to Phrase Lab: Version 1')
 
 ones = {
-    0: ' ',
+    0: 'zero',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -45,7 +45,7 @@ ones_digit = number_input%10
 #print(f'\n\t{number_input} spelled out is: {small_number}')
 
 
-if (number_input >= 1) and (number_input <= 19):
+'''if (number_input >= 1) and (number_input <= 19):
     small_word = ones[number_input]
     print(f'\n\t{number_input} spelled out is: {small_word}')
     
@@ -53,7 +53,19 @@ elif number_input >= 20:
     tens_word = tens[tens_digit]
     ones_word = ones[ones_digit]
     
-    print(f'\n\t{number_input} spelled out is: {tens_word} {ones_word}')
+    print(f'\n\t{number_input} spelled out is: {tens_word} {ones_word}')'''
+    
+if number_input >= 0 and number_input <= 19:
+    small_word = ones[number_input]
+    print(f'\n\t{number_input} spelled out is: {small_word}')
+    
+elif number_input >= 20 and number_input <= 99:
+    tens_word = tens[tens_digit]
+    ones_word = ones[ones_digit]
+    if ones_digit == 0:
+        print(f'\n\t{number_input} spelled out is: {tens_word}')
+    else:
+        print(f'\n\t{number_input} spelled out is: {tens_word}-{ones_word}')
 
     
     
