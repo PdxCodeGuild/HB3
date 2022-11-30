@@ -60,5 +60,3 @@ print(f'Final Balance: ${earnings - expenses}')
 print(f'Earnings: ${earnings}')
 print(f'Expenses: ${expenses}')
 print(f'ROI: {(earnings - expenses) / expenses:.1%}\n')
-
-# f"{1/3.0:.1%}"
