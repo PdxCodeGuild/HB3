@@ -17,26 +17,32 @@ def num_matches(winning, ticket):
 
 
 def main(winning):
-    balance = 0
+    earnings = 0
+    expenses = 0
     print(f"The winning ticket is {winning}")
     for i in range(100000):
         
         ticket = pick6()
-        balance -= 2
+        expenses += 2
         if num_matches(winning, ticket) == 1:
-            balance += 4
+            earnings += 4
         elif num_matches(winning, ticket) == 2:
-            balance += 7
+            earnings += 7
         elif num_matches(winning, ticket) == 3:
-            balance += 100
+            earnings += 100
         elif num_matches(winning, ticket) == 4:
-            balance += 50000
+            earnings += 50000
         elif num_matches(winning, ticket) == 5:
-            balance += 1000000
+            earnings += 1000000
         elif num_matches(winning, ticket) == 6:
-            balance += 25000000
-        
-    print(f"Total balance is {balance}")
+            earnings += 25000000
+
+    net = earnings - expenses
+    return_on_investment =   (earnings - expenses)/expenses  
+    print(f"Total earnings: {earnings}")
+    print(f"Total expenses: {expenses}")
+    print(f"Net: {net}")
+    print(f"ROI: {return_on_investment}")
         
         # print(f"Your ticket - {ticket}")
         # print(f"Winning ticket - {winning}")
