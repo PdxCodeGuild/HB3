@@ -57,6 +57,8 @@ for _ in range(100000):
 # Print the final balance, earnings, expenses, and ROI.
 print(f'\nGolden Ticket: {golden_ticket}')
 print(f'Final Balance: ${earnings - expenses}')
-print(f'Earnings: {earnings}')
-print(f'Expenses: {expenses}')
-print(f'ROI: {(earnings - expenses) / expenses}\n')
+print(f'Earnings: ${earnings}')
+print(f'Expenses: ${expenses}')
+print(f'ROI: {(earnings - expenses) / expenses:.1%}\n')
+
+# f"{1/3.0:.1%}"
