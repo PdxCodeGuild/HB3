@@ -11,7 +11,7 @@ def pick6() :
 
 
 def num_matches(winning , ticket ) :
-    total_matches = 0                   # create an empty list to hold matches
+    total_matches = 0                   # create a placeholder for the matches
     ticket = pick6()
     winning = pick6()
      
@@ -32,16 +32,18 @@ def num_matches(winning , ticket ) :
 
     
     
+
 winning_ticket = pick6() # setting the winning ticket
 print(f"The winning ticket is {winning_ticket}")
 
 final_matches = 0 # setting the variable to total the number of matches
+
 balance = 0 # setting the starting balance
 
 for x in range(100001) :   # for loop that will loop 100,000 times
 
     balance -= 2 # each loop will subtract 2 from the balance
-
+    
     matches = num_matches(winning_ticket , pick6()) # variable "matches" is assigned to the list of matches created by the num_matches function
     
     final_matches += matches       # adding the number of matches to the overall number of matches
@@ -63,6 +65,10 @@ for x in range(100001) :   # for loop that will loop 100,000 times
 print(f"The number of matches is {final_matches}")
 print(f"The final balance is {balance}")
 
-    
-
+expenses = 100000 * -2
+print(f"Expenses are {expenses}")
+earnings = (balance - expenses) # earnings are equal to the difference between balance and expenses
+print(f"Earnings are {earnings}")
+roi = ((earnings - expenses)/expenses)
+print(f"Return on investment is {roi}")
 
