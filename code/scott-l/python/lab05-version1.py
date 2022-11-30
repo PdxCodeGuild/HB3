@@ -72,27 +72,56 @@ def random_six():
      return num_list_random
 # end function random_six
 
-# temporary number to start with
-temp_num = random_six()
-print(temp_num)  # DEBUG print
-print(type(temp_num))
-# count = 0
+# winning number to start with
+winning_num = random_six()
+# print(f'Winning Number {winning_num}')  # DEBUG print
+
+
+# attempted sort code but order matters so this will 
+# temp_num.sort()
+# print(f'sort 1 {temp_num}')
+# temp_num1.sort()
+# print(f'sort 2 {temp_num1}')
+# 
+# attempted to use set in order to find the answer but discovered sets order doesn't matter
+# and therefore will not work
+# # print(set(temp_num))
+# temp_num = [10,20,30,40,50,60]
+# temp_num1 = [10,10,70,70,70,70]
+# print(temp_num)
+# print(temp_num1)
+
+# ex_set = set(temp_num)
+# print(ex_set.isdisjoint(set(temp_num1)))
+
+# Attempted to use match but the random numbers are established in a list
+# and not a string making it difficult to match because the list needs to convert to a string
+# re.match(pattern, string, flags=0)
+# match_obj = re.match(r'/d temp_num[0]', temp_num[1])
+# print(match_obj.group())
+
+amount_wins = 0
 for num in range(100000):
+     # Choose a ticket number
+     ticket_num=random_six()
+     # print(f'Ticket Number {ticket_num}')  # DEBUG CODE
+     count = 0  # initialize count
+     # Compare the ticket number to the winning number
+     for check_num in range(len(ticket_num)):
+          if ticket_num[check_num] == winning_num[check_num]:
+               count = count + 1
+          else:
+               continue
+          # end if
+     # end for
 
-     test_num=random_six()
+     if count == 1:
 
-     if re.match(r'[1-99]',temp_num,test_num):
-          count = count + 1
-     else:
-          continue
-     # end if
+     elif count == 2:
 
+     elif count == 3:
+     amount_wins = count + amount_wins
 # end for
 
-# print(count)
+print(f'Number of wins: {amount_wins}')
 
-
-
-
-
-print(random_six())
