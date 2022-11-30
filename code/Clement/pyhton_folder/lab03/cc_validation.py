@@ -36,9 +36,9 @@ def is_valid():
     sum_all_values = sum(doubled_digit)
     total_num = sum_all_values % 10
     if total_num == int(check_d):
-        print("valid")
+        return True
 
     else:
-        print("invalid")
+        return False
 
-is_valid()
+print(is_valid())
