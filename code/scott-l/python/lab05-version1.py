@@ -38,28 +38,27 @@ expenses and earnings).
 
 Write the following functions and use them in the code:
 
-    pick6(): Generate a list of 6 random numbers, which can then be used 
+   x pick6(): Generate a list of 6 random numbers, which can then be used 
     for both the winning numbers and tickets. Return the list
-    num_matches(winning, ticket): Return the number of matches between the 
+   x num_matches(winning, ticket): Return the number of matches between the 
     winning numbers and the ticket.
 
 Steps
 
-    Generate a list of 6 random numbers representing the winning tickets
-    Start your balance at 0
-    Loop 100,000 times, for each loop:
-    Generate a list of 6 random numbers representing the ticket
-    Subtract 2 from your balance (you bought a ticket)
-    Find how many numbers match
-    Add to your balance the winnings from your matches
-    After the loop, print the final balance
+   x STEP 1: Generate a list of 6 random numbers representing the winning tickets
+   x STEP 2: Start your balance at 0
+   x STEP 3: Loop 100,000 times, for each loop:
+   x STEP 4: Generate a list of 6 random numbers representing the ticket
+   x STEP 5: Subtract 2 from your balance (you bought a ticket)
+   x STEP 6: Find how many numbers match
+   x STEP 7: Add to your balance the winnings from your matches
+   x STEP 8: After the loop, print the final balance
 
  """
 
 import random
 import re
 
-# Generate a list of 6 random numbers representing the winning tickets
 # pick6(): Generate a list of 6 random numbers, which can then be used 
 # for both the winning numbers and tickets. Return the list
 def pick6():
@@ -114,58 +113,63 @@ winning_stats = {
      6: 0
 }
 
-# winning number to start with
+# STEP 1
+# Generate a list of 6 random numbers representing the winning tickets
 winning_num = pick6()
 # print(f'Winning Number {winning_num}')  # DEBUG print
 
 # initialize for loop counters
 amount_wins = 0
 winnings = 0
-net_winnings = 0
+
+# STEP 2   -Start your balance at 0
+net_winnings_balance = 0
 num_attempts = 100000
 
+# STEP3 - Loop 100,000 times, for each loop:
 for num in range(num_attempts):
-     # Subtract 2 from your balance (you bought a ticket)
-     net_winnings -= 2
-     # Generate a list of 6 random numbers representing the ticket
+# STEP 4 Generate a list of 6 random numbers representing the ticket
      ticket_num=pick6()
+# STEP 5 Subtract 2 from your balance (you bought a ticket)
+     net_winnings_balance -= 2
      # print(f'Ticket Number {ticket_num}')  # DEBUG CODE
      match_count = 0  # re-initialize match count
+     
+# STEP 6 Find how many numbers match
      # Compare all six digits of the ticket number to the winning number
-     # Find how many numbers match
      match_count = num_matches(winning_num, ticket_num)
      
-     # Add to your balance the winnings from your matches
+# STEP 7 Add to your balance the winnings from your matches
      if match_count == 0:
           winning_stats[match_count] += 1  
      # if 1 number matches, you win $4
      if match_count == 1:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # if 2 numbers match, you win $7
      elif match_count == 2:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # if 3 numbers match, you win $100
      elif match_count == 3:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # if 4 numbers match, you win $50,000
      elif match_count == 4:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # if 5 numbers match, you win $1,000,000
      elif match_count == 5:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # if 6 numbers match, you win $25,000,000
      elif match_count == 6:
-          net_winnings += winning_amounts[match_count]
+          net_winnings_balance += winning_amounts[match_count]
           winnings = winnings + winning_amounts[match_count]
           winning_stats[match_count] += 1 
      # end if
@@ -173,12 +177,12 @@ for num in range(num_attempts):
      amount_wins = match_count + amount_wins
 # end for
 
-# After the loop, print the final balance
+# STEP 8 After the loop, print the final balance
 
 print(f'Number of Attempts {num_attempts}')
 print(f'Number of Wins: {amount_wins}')
 print(f'Winning amount ${winnings}')
-print(f'Net Winning Amount ${net_winnings}\n')
+print(f'Net Winning Amount ${net_winnings_balance}\n')
 
 print(f'''Winning Stats: 
 0 numbers match = {winning_stats[0]}, ${winning_stats[0]*(-2)}
@@ -191,25 +195,17 @@ print(f'''Winning Stats:
 
 
 
-# attempted sort code but order matters so this will 
-# temp_num.sort()
-# print(f'sort 1 {temp_num}')
-# temp_num1.sort()
-# print(f'sort 2 {temp_num1}')
-# 
-# attempted to use set in order to find the answer but discovered sets order doesn't matter
-# and therefore will not work
-# # print(set(temp_num))
-# temp_num = [10,20,30,40,50,60]
-# temp_num1 = [10,10,70,70,70,70]
-# print(temp_num)
-# print(temp_num1)
+# END
 
-# ex_set = set(temp_num)
-# print(ex_set.isdisjoint(set(temp_num1)))
+# o
+#  \_/\o
+# ( Oo)                    \|/
+# (_=-)  .===O-  ~~Z~A~P~~ -O-
+# /   \_/U'                /|\
+# ||  |_/
+# \\  |
+# {K ||
+#  | PP
+#  | ||
+#  (__\\
 
-# Attempted to use match but the random numbers are established in a list
-# and not a string making it difficult to match because the list needs to convert to a string
-# re.match(pattern, string, flags=0)
-# match_obj = re.match(r'/d temp_num[0]', temp_num[1])
-# print(match_obj.group())
