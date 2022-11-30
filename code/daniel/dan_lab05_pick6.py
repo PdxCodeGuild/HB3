@@ -10,13 +10,13 @@
 # then print the balance, earnings, expenses, and ROI.
 
 from random import randint
-def rand_ticket(): 
-    return [randint(1, 99) for _ in range(6)] ### Are duplicate numbers permitted?
+def randticket(): 
+    return [randint(1, 99) for _ in range(6)] ### Are duplicate numbers permitted? This code assumes so.
 
 # Generate a list of 6 random numbers representing the winning ticket.
-golden_ticket = rand_ticket()
+golden_ticket = randticket()
 
-# Start your balance at 0.
+# Start the balance at 0.
 earnings = 0
 expenses = 0
 
@@ -24,12 +24,12 @@ expenses = 0
 for _ in range(100000):
 
     # Generate a list of 6 random numbers representing the ticket.
-    ticket = rand_ticket()
+    ticket = randticket()
 
-    # Add 2 to your expenses (the cost of 1 ticket).
+    # Add 2 to expenses (cost of a ticket).
     expenses += 2
 
-    # Find how many matches between the winning numbers and the ticket.
+    # Find the matches between the winning numbers and the ticket.
     matches = [
         value for pos, value in enumerate(ticket)
         if ticket[pos] == golden_ticket[pos]
@@ -49,8 +49,9 @@ for _ in range(100000):
         4 : 50000,
         5 : 1000000,
         6 : 25000000
-    }
-    # Add winnings to your earnings.
+        }
+
+    # Add winnings to earnings.
     earnings += winnings_ref[len(matches)]
 
 # Print the final balance, earnings, expenses, and ROI.
