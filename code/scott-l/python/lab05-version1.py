@@ -72,6 +72,25 @@ def random_six():
      return num_list_random
 # end function random_six
 
+winning_amounts = {
+     1: 4,   # if 1 number matches, you win $4
+     2: 7,   # if 2 numbers match, you win $7
+     3: 100,  # if 3 numbers match, you win $100
+     4: 50000,  # if 4 numbers match, you win $50,000
+     5: 1000000, # if 5 numbers match, you win $1,000,000
+     6: 25000000 # if 6 numbers match, you win $25,000,000
+}
+
+winning_stats = {
+     0: 0,
+     1: 0,
+     2: 0,
+     3: 0,
+     4: 0,
+     5: 0,
+     6: 0
+}
+
 # winning number to start with
 winning_num = random_six()
 # print(f'Winning Number {winning_num}')  # DEBUG print
@@ -101,7 +120,12 @@ winning_num = random_six()
 # print(match_obj.group())
 
 amount_wins = 0
-for num in range(100000):
+winnings = 0
+net_winnings = 0
+num_attempts = 100000
+for num in range(num_attempts):
+     # Subtract 2 from your balance (you bought a ticket)
+     net_winnings -= 2
      # Choose a ticket number
      ticket_num=random_six()
      # print(f'Ticket Number {ticket_num}')  # DEBUG CODE
@@ -115,13 +139,54 @@ for num in range(100000):
           # end if
      # end for
 
+     if count == 0:
+          winning_stats[count] += 1  
+     # if 1 number matches, you win $4
      if count == 1:
-
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # if 2 numbers match, you win $7
      elif count == 2:
-
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # if 3 numbers match, you win $100
      elif count == 3:
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # if 4 numbers match, you win $50,000
+     elif count == 4:
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # if 5 numbers match, you win $1,000,000
+     elif count == 5:
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # if 6 numbers match, you win $25,000,000
+     elif count == 6:
+          net_winnings += winning_amounts[count]
+          winnings = winnings + winning_amounts[count]
+          winning_stats[count] += 1 
+     # end if
+
      amount_wins = count + amount_wins
 # end for
 
+print(f'Number of Attempts {num_attempts}')
 print(f'Number of wins: {amount_wins}')
+print(f'Winning amount ${winnings}')
+print(f'Net Winning Amount ${net_winnings}')
+
+print(f'''Winning Stats: 
+0 numbers match = {winning_stats[0]} 
+1 number match = {winning_stats[1]} 
+2 number match = {winning_stats[2]} 
+3 number match = {winning_stats[3]} 
+4 number match = {winning_stats[4]} 
+5 number match = {winning_stats[5]} 
+6 number match = {winning_stats[6]}''')
 
