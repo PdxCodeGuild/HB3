@@ -4,7 +4,7 @@ print('\nWelcome To Number To Phrase Version 2')
 print('Lets converts some numbers!!!!!!!\n')
 
 ones_digit = [
-    "",
+    "Zero",
     "One",
     "Two",
     "Three",
@@ -69,17 +69,24 @@ while True:
         results = ""
         if value[2]!= 0:
             if value[1]== 0:
-                results += ones_digit[value[2]] + " Hundred " + ones_digit[value[0]]
+                if value[0] ==0:
+                    results += ones_digit[value[2]] + " " + "Hundred " 
+                elif value[0] != 0:
+                    results += ones_digit[value[2]] + " " + "Hundred " + ones_digit[value[0]]
+
 
             else:
-                results += ones_digit[value[2]] + " " + "Hundred "
+                results += ones_digit[value[2]] + " Hundred "
 
         if value[1] !=0:
             if value[1]== 1:
                 results += tens_digit[value[0]]
 
             else:
-                results += phrase_prefix[value[1]] + "-" + ones_digit[value[0]]
+                if value[0]==0:
+                    results += phrase_prefix[value[1]]
+                else:
+                    results += phrase_prefix[value[1]] + "-" + ones_digit[value[0]]
 
     print(results)
        
