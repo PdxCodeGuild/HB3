@@ -11,12 +11,14 @@ M-F 6:00 pm – 9:36 pm PT
 
 - November 24th 2022 (Thanksgiving)
 - November 25th 2022 (Day After Thanksgiving)
-- December 25th 2022 (Christmas Day)
-- January 1st 2023 (New Year's Day)
+- ~~December 25th 2022 (Christmas Day)~~
+- Christmas will be observed December 26th 2022
+- ~~January 1st 2023 (New Year's Day)~~
+- New Years will be observed January 2nd 2022
 
 ### Misc. Days Off
 
--
+- December 28th 2022
 
 ### Staff
 
@@ -31,6 +33,11 @@ M-F 6:00 pm – 9:36 pm PT
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class |
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
+| 01  | [Unit Converter](1%20Python/labs/01%20Unit%20Converter.md)         | 17 Nov        |          5 Dec (adjusted for holiday)       |
+| 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          6 Dec (adjusted for holiday)      |
+| 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           7 Dec            |
+| 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     8 Dec            |
+| 05  | [Pick6](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/08%20Pick6.md)         |      28 Nov        |     12 Dec            |
 
 
 ## Getting Unstuck 
