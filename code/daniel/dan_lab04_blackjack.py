@@ -10,24 +10,24 @@ def blackjack(hand):
 
     # Point values of every card (consider Aces as 1 point ea).
     card_value = {
-        'A':1,
-        '2':2,
-        '3':3,
-        '4':4,
-        '5':5,
-        '6':6,
-        '7':7,
-        '8':8,
-        '9':9,
-        'J':10,
-        'Q':10,
-        'K':10,
+        'A': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
+        '6': 6,
+        '7': 7,
+        '8': 8,
+        '9': 9,
+        'J': 10,
+        'Q': 10,
+        'K': 10,
         }
 
     # Total value of the hand (consider Aces as 1 point ea).
     hand_value = card_value[hand[0]] + card_value[hand[1]] + card_value[hand[2]]
 
-    # Explicitly handle Aces:
+    # Explicitly handle cases of Aces:
     if 'A' in hand and hand_value <= 11:
         hand_value += 10
 
@@ -46,14 +46,20 @@ def blackjack(hand):
         return f'{hand_value} Already Busted'
 
 
-# Ask the user for three playing cards, then
+# Ask the user for three playing cards w/ error handling, then
 # pass the cards to the blackjack function, then
-# return the result & pass it to the terminal.
+# return the results and pass them to the terminal.
+the_cards = ['A','2','3','4','5','6','7','8','9','J','Q','K']
 hand = ['','','']
-print('\nCard Choices: A, 2, 3, 4, 5, 6, 7, 8, 9, J, Q, K')
-hand[0] = input('What\'s your first card? ').upper()
-hand[1] = input('What\'s your second card? ').upper()
-hand[2] = input('What\'s your third card? ').upper()
+print(f'\nCard choices:  {", ".join(the_cards)}')
+
+while hand[0] not in the_cards:
+    hand[0] = input('What\'s your first card? ').upper()
+while hand[1] not in the_cards:
+    hand[1] = input('What\'s your second card? ').upper()
+while hand[2] not in the_cards:
+    hand[2] = input('What\'s your third card? ').upper()
+
 print(blackjack(hand))
 
 # Note: should probably handle everything inside the function. Is it odd the function calls for a specific list of 3 values?
