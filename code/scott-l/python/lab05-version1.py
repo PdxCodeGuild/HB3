@@ -57,7 +57,6 @@ Steps
  """
 
 import random
-import re
 
 # pick6(): Generate a list of 6 random numbers, which can then be used 
 # for both the winning numbers and tickets. Return the list
