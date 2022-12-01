@@ -26,9 +26,10 @@ def num_matches(ticket, winning):
     
 balance = 0
 
+winning = pick6()
+
 for i in range(100000):
     ticket = pick6()
-    winning = pick6()
     balance -= 2
     winnings = num_matches(ticket, winning)
     balance += winnings
