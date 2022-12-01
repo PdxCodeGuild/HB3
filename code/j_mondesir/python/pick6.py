@@ -1,11 +1,14 @@
+# import random module to generate random numbers
 import random
 
+# generate 6 numbers ticket that user bought and print to screen
 ticket = []
 for i in range(0,6):
-    user = int(input('Enter your selected numbers to Win some Cash!!!: '))
+    user = random.randint(1,99) 
     ticket.append(user)
 print(ticket)
 
+# Define function to generate the winning numbers that user playing against and print to screen
 def pick():
     lotteryNumbers = []
     for i in range(0,6):
@@ -15,27 +18,18 @@ def pick():
 winning = pick()
 print(pick())
 
+# Define function to compare user ticket with winning numbers
 def num_matches(winning,ticket):
     counter = 0
     for x in ticket:
         if x in winning:
-            counter +=1
-    if counter == 0:
-        return 'Bad luck'
-    elif counter == 1:
-        return 'You win $4'
-    elif counter == 2:
-        return 'You win $7'
-    elif counter == 3:
-        return 'You win $100'
-    elif counter == 4:
-        return 'You win $50,000'
-    elif counter == 5:
-        return 'You win $1,000,000'
-    elif counter == 6:
-        return 'You win $25,000,000'
+           counter +=1
+        return counter
+match_result = num_matches(winning,ticket) 
+   
 
-print(num_matches(winning,ticket))
+
+
         
     
     
