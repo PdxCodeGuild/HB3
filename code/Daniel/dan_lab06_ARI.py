@@ -5,21 +5,21 @@
 # Date: 2022.11.30
 #---------------------------------
 
-# Compute the ARI for a given book.
 # The automated readability index (ARI) is a formula for
 # computing the U.S. grade level for a given block of text.
+# Compute the ARI for a given book.
 
-from math import ceil
 from requests import get
+from math import ceil
 
 # Import a book.
 # response = get('https://www.gutenberg.org/files/16/16-0.txt') #, params = {})
-# response = get('https://www.gutenberg.org/files/236/236-0.txt')
+response = get('https://www.gutenberg.org/files/236/236-0.txt')
 # response = get('https://www.gutenberg.org/files/76/76-0.txt')
 # response = get('https://www.gutenberg.org/cache/epub/17208/pg17208.txt')
 # response = get('https://www.gutenberg.org/cache/epub/120/pg120.txt')
 # response = get('https://www.gutenberg.org/cache/epub/4980/pg4980.txt')
-response = get('https://www.gutenberg.org/files/2781/2781-0.txt')
+# response = get('https://www.gutenberg.org/files/2781/2781-0.txt')
 response.encoding = 'utf-8'
 contents = response.text
 
@@ -36,12 +36,12 @@ author = a[0].strip()
 # Strip unwanted header/footer data. 
 # ...
 
-# Find the number of chars, words, & sentences.
+# Find the number of chars, words, and sentences.
 char_qty = len(contents)
 word_qty = len(contents.split(' '))
 sentence_qty = len(contents.split('.'))
 
-#test
+#testing
 print(f'\n{book_title}')
 print(f'{char_qty} characters')
 print(f'{word_qty} words')
@@ -53,11 +53,10 @@ print(f'{sentence_qty} sentences')
 # adding the number of words divided by the number of sentences multiplied by 0.5,
 # and subtracting 21.43. If the result is a decimal, always round up,
 # and if the result is higher than 14, it should be set to 14.
-ari_score = ((char_qty / word_qty) * 4.71) + ((word_qty / sentence_qty) * 0.5) - 21.43
-ari_score = ceil(ari_score)
+ari_score = ceil((char_qty / word_qty * 4.71) + (word_qty / sentence_qty * 0.5) - 21.43)
 
-#test
-print(f'RARI: {ari_score}')
+#testing
+print(f'RARI = {ari_score}')
 
 if ari_score > 14:
     ari_score = 14
@@ -81,7 +80,7 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-# Output:
+# Format & display output.
 grade = ari_scale[ari_score]['grade_level']
 age = ari_scale[ari_score]['ages']
 print('\n--------------------------------------------------------')
