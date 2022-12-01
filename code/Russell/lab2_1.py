@@ -1,5 +1,6 @@
 numeral = int(input("Enter number to be converted to text "))
 
+# hey this is new
 
 ones_digit = int(numeral) % 10
 tens_digit = int(numeral) // 10
