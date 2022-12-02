@@ -58,7 +58,7 @@ while i != 100001:
         earnings = earnings + 25000000
     i = i + 1
 
-roi = (earnings - expenses)/expenses  
+roi = (earnings - abs(expenses))/abs(expenses)  
 # print the balance 
 print('Your balance is:', balance)
 print('Your earnings are:', earnings)
