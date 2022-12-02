@@ -13,36 +13,37 @@ from requests import get
 from math import ceil
 
 # Import a book.
-# response = get('https://www.gutenberg.org/files/16/16-0.txt') #, params = {})
 response = get('https://www.gutenberg.org/files/236/236-0.txt')
+# response = get('https://www.gutenberg.org/files/16/16-0.txt')
 # response = get('https://www.gutenberg.org/files/76/76-0.txt')
 # response = get('https://www.gutenberg.org/cache/epub/17208/pg17208.txt')
 # response = get('https://www.gutenberg.org/cache/epub/120/pg120.txt')
 # response = get('https://www.gutenberg.org/cache/epub/4980/pg4980.txt')
 # response = get('https://www.gutenberg.org/files/2781/2781-0.txt')
+# response = get('https://www.gutenberg.org/files/215/215-h/215-h.htm')
 response.encoding = 'utf-8'
 contents = response.text
 
 # Find the title.
-t = contents.split('Title: ', 1)
+t = contents.split('Title:', 1)
 t = t[1].split('\n', 1)
-book_title = t[0].strip()
+title = t[0].strip()
 
 # Find the author.
-a = contents.split('Author: ', 1)
+a = contents.split('Author:', 1)
 a = a[1].split('\n', 1)
 author = a[0].strip()
 
-# Strip unwanted header/footer data. 
+# Remove unwanted header/footer data. 
 # ...
 
 # Find the number of chars, words, and sentences.
 char_qty = len(contents)
-word_qty = len(contents.split(' '))
+word_qty = len(contents.split())
 sentence_qty = len(contents.split('.'))
 
 #testing
-print(f'\n{book_title}')
+print(f'\n{title}')
 print(f'{char_qty} characters')
 print(f'{word_qty} words')
 print(f'{sentence_qty} sentences')
@@ -80,11 +81,11 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-# Format & display output.
+# Format & display the output data.
 grade = ari_scale[ari_score]['grade_level']
 age = ari_scale[ari_score]['ages']
 print('\n--------------------------------------------------------')
-print(f'The ARI for {book_title} by {author} is {ari_score}.')
+print(f'The ARI for {title} by {author} is {ari_score}.')
 print(f'This corresponds to a {grade} level of difficulty.')
 print(f'This is suitable for an average person {age} years old.')
 print('--------------------------------------------------------\n')
