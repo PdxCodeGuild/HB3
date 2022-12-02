@@ -41,13 +41,13 @@ def num_matches(winning, ticket):
 
 account_balance = 0
 
-winning = pick6()
+winning = pick6() #this has to be outside the loop because i was told that the winning ticket is static
 
 for num in range(100000):
     
     ticket = pick6()
     
-    account_balance -= 2
+    account_balance = account_balance - 2
 
     winnings = num_matches(winning, ticket)   #####this was giving me an error because i didnt put brackeus at the top
     
@@ -55,3 +55,14 @@ for num in range(100000):
 
 print(f'\n\tCongrats! you have won: {account_balance} dollars')
     
+####### Version 2 #######
+
+# I was very confused why my number kept coming out so consistently terrible, but I think thats just gambling
+
+print(f'\n\tROI is (earnings - expenses)/expenses')
+
+ROI = (account_balance - 200000)/ 200000
+
+print(f'\n\tYour earnings were: ${account_balance} \n\tand your expenses were: $200000')
+
+print(f'\n\tYour ROI is: {ROI} dollars...bad or good job i guess')
