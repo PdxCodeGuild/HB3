@@ -2,12 +2,10 @@ import random
 print("\nWelcome To Pick6 Winning Tickets Game\n")
 print("Are you ready let's play now!!\n")
 
-
 def pick_6():
     tickets = []
-
     for n in range(6):
-        nums_picks = random.randint(1, 100)
+        nums_picks = random.randint(1, 99)
         tickets.append(nums_picks)
     return tickets
     
@@ -25,13 +23,12 @@ Use each index to print it value from both list
 And then compare the values at each index and count and see how many tickets matches
 """
 
-for game in range(nums_of_loops):
-    nums_match = pick_6()
+def num_matches(winning, ticket):
     count_lottery = 0
+    win_ticket = 0
     for x in range(6):
-        if winning_nums[x] == nums_match[x]:
-            count_lottery += 1
-      
+        if winning[x] == ticket[x]:
+            count_lottery += 1      
 
     if count_lottery == 1:
         win_ticket  += 4
@@ -45,12 +42,14 @@ for game in range(nums_of_loops):
         win_ticket  += 1000000
     elif count_lottery == 6:
         win_ticket  += 25000000
-    
+    return win_ticket
+winnings = 0
+for game in range(nums_of_loops):
+    ticket = pick_6()
+    winnings += num_matches(winning_nums, ticket)
+
+
  # Version 2 is checking for total amt spent and how much gain
 expenses = cost_per_ticket * nums_of_loops
-earnings = investments(win_ticket, expenses)
-
-print(winning_nums)
-print(nums_match,'\n')
-
-print(f"The amount spent on investment is ${expenses}, and your total returns is ${earnings}")
+earnings = investments(winnings, expenses)
+print(f"The amount spent on is ${expenses}, and your total returns is ${winnings} ROI is {earnings}%")
