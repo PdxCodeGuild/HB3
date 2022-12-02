@@ -1,3 +1,5 @@
+import math
+
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -19,10 +21,16 @@ with open('C:/Users/xxlov/Desktop/hb3/HB3/code/Russell/cotw.txt', mode = 'r', en
     text = file.read()
     word_count = len(text.split())
     char_count = len(text)
-    line_count = len(file.readlines())
+    line_count = len(text.split('\n'))
 
-    # ari = 4.71 * (char_count / word_count) + 0.5 * (word_count / line_count) - 21.43
-    print(f'word count is {word_count}')
-    print(f'character count is {char_count}')
-    print(f'line count is {line_count}')
+    ari = math.ceil(4.71 * (char_count / word_count) + 0.5 * (word_count / line_count) - 21.43)
+    if ari > 14:
+        ari = 14
+    # print(f'word count is {word_count}')
+    # print(f'character count is {char_count}')
+    # print(f'line count is {line_count}')
     # print(f'ari is {ari}')
+
+    print(f'The ARI score for cotw.txt is {ari}.')
+    print('This corresponds to a/an' + ' ' + ari_scale[ari]['grade_level'] + ' ' + 'level of difficulty')
+    print('This is suitable for an average person aged' + ' ' + ari_scale[ari]['ages'] + ' ' + 'years old')
