@@ -29,7 +29,12 @@ print("What's your third card? ", card_3)
 sum = cards[card_1] + cards[card_2] + cards[card_3]
 
 if sum < 21 and (card_1 or card_2 or card_3) == 'A':
-    sum = sum +10
+    first_two = (cards[card_1] + cards[card_2])
+    second_two = (cards[card_2] + cards[card_3])
+    if first_two <= 10 and card_3 == 'A':
+        sum = first_two + 11
+    if card_1 == 'A' and second_two <= 10:
+        sum = second_two + 11
 
 if sum < 17:
     print(sum, 'Hit')
