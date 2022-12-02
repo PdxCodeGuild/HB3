@@ -52,4 +52,4 @@ for game in range(nums_of_loops):
  # Version 2 is checking for total amt spent and how much gain
 expenses = cost_per_ticket * nums_of_loops
 earnings = investments(winnings, expenses)
-print(f"The amount spent on is ${expenses}, and your total returns is ${winnings} ROI is {earnings}%")
+print(f"The amount spent is ${expenses}, total returns is ${winnings}, and your ROI is {earnings}%")
