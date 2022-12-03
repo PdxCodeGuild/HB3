@@ -1,5 +1,10 @@
+character = 0
+
 with open('file.txt', 'r') as f:
-    pass
+    contents = f.read()
+    for char in contents:
+        character +=1
+
+print(character)
 
 
-print(f.name)
