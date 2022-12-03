@@ -18,7 +18,7 @@ M-F 6:00 pm – 9:36 pm PT
 
 ### Misc. Days Off
 
--
+- December 28th 2022
 
 ### Staff
 
@@ -33,10 +33,14 @@ M-F 6:00 pm – 9:36 pm PT
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class |
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- |
-| 01  | [Unit Converter](1%20Python/labs/01%20Unit%20Converter.md)         | 17 Nov        |          1 Dec        |
-| 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          2 Dec        |
-| 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           5  Dec            |
-| 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |              |                       |
+| 01  | [Unit Converter](1%20Python/labs/01%20Unit%20Converter.md)         | 17 Nov        |          5 Dec (adjusted for holiday)       |
+| 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          6 Dec (adjusted for holiday)      |
+| 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           7 Dec            |
+| 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     8 Dec            |
+| 05  | [Pick6](1%20Python/labs/05%20Pick6.md)         |      28 Nov        |     12 Dec            |
+| 06  | [ARI](1%20Python/labs/06%20ARI.md)         |      1 Dec        |     15 Dec            |
+| 07  | [Dad Joke API](1%20Python/labs/07%20Dad%20Joke%20API.md)        |      2 Dec        |     16 Dec            |
+| 08  | [ATM](1%20Python/labs/08%20ATM.md)        |      2 Dec        |     16 Dec            |
 
 
 ## Getting Unstuck 

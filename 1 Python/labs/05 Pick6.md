@@ -1,4 +1,4 @@
-# Pick6
+# Lab 05: Pick6
 
 Have the computer play pick6 many times and determine net balance.
 
