@@ -20,19 +20,17 @@ from requests import get
 response = get('https://icanhazdadjoke.com/', headers={'accept': 'application/json'})
 data = response.json()
 print('\n')
-print(data['joke'])
+print(data.get('joke'))
 print('\n')
 
 # Part 2
 # Add the ability to "search" for jokes using another endpoint.
 # Create a REPL that allows one to enter a search term and go through
 # jokes one at a time. You can also add support for multiple pages.
-
 while True:
     
-    searchterm = input('Enter a search term: ')
-    request = 'https://icanhazdadjoke.com/search?term=' + searchterm
-    response = get(request, headers={'accept':'application/json'})
+    searchterm = input('Enter a joke search term: ')
+    response = get(f'https://icanhazdadjoke.com/search?term={searchterm}', headers={'accept':'application/json'})
     data = response.json()
     results = data['results']
 
@@ -48,5 +46,5 @@ while True:
         print('\n')
         userinput = input('Press Enter...')
 
-    print(f'\n*** You\'ve reached the end of jokes containing the term "{searchterm}". I hope you had fun. Goodbye! ***\n') 
+    print(f'\nWe ain\'t got no mo jokes containing no "{searchterm}"... Goodbye!\n') 
     break
