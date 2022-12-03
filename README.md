@@ -37,10 +37,10 @@ M-F 6:00 pm – 9:36 pm PT
 | 02  | [Number To Phrase](1%20Python/labs/02%20Number%20to%20Phrase.md)        | 18 Nov        |          6 Dec (adjusted for holiday)      |
 | 03  | [CC Validation](1%20Python/labs/03%20Credit%20Card%20Validation.md)         |  21 Nov            |           7 Dec            |
 | 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     8 Dec            |
-| 05  | [Pick6](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/08%20Pick6.md)         |      28 Nov        |     12 Dec            |
-| 06  | [ARI](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/14%20ARI.md)         |      1 Dec        |     15 Dec            |
-| 07  | [Dad Joke API](1%20Python/labs/10%20Dad%20Joke%20API.md)        |      2 Dec        |     16 Dec            |
-| 08  | [ATM](1%20Python/labs/ATM.md)        |      2 Dec        |     16 Dec            |
+| 05  | [Pick6](1%20Python/labs/05%20Pick6.md)         |      28 Nov        |     12 Dec            |
+| 06  | [ARI](1%20Python/labs/06%20ARI.md)         |      1 Dec        |     15 Dec            |
+| 07  | [Dad Joke API](1%20Python/labs/07%20Dad%20Joke%20API.md)        |      2 Dec        |     16 Dec            |
+| 08  | [ATM](1%20Python/labs/08%20ATM.md)        |      2 Dec        |     16 Dec            |
 
 
 ## Getting Unstuck 
