@@ -32,30 +32,55 @@ import json
 # # request headers to specify an API key 
 response = requests.get('https://icanhazdadjoke.com/', headers={'accept':'application/json'})
 
-# # # request headers to specify an API key 
-# response = requests.get('https://icanhazdadjoke.com/')
+# print(response.headers)  #DEBUG
 
-# print(response.headers)
-
-# Send a GET request
-# response = requests.get('https://icanhazdadjoke.com/', params={'format': 'json'})
-
-# print(response.text)  # raw json response
-# print(response.url)
-# print(response.status_code)
-# response.encoding = 'utf-8'  # set encoding to utf-8
-# print(response.encoding)
-# print(response.headers)
+# print(response.text)  # raw json response  # DEBUG
+# print(response.url)    # DEBUG
+# print(response.status_code) # DEBUG
+# response.encoding = 'utf-8'  # set encoding to utf-8  #DEBUG
+# print(response.encoding)  # DEBUG
+# print(response.headers)     # DEBUG
 
 # use the .json() method on the response to get a dictionary
-data = response.json()   # turn json into a python dictionary
-print(data)
-# print(data.get('status'))
+data = response.json()   
 
+# print(data)  # DEBUG
+# print(data.get('id'))  # DEBUG API
+# print(data.get('status'))  # DEBUG API
 
-# # Get the joke out of the dictionary and show it to the user
+# Get the joke out of the dictionary and show it to the user
 print(data.get('joke'))
 
+# END
 
-# data1 = json.loads(response.text)
-# print(data1)
+
+#        !
+#        !
+#        ^
+#       / \
+#      /___\
+#     |=   =|
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#     |     |
+#    /|##!##|\
+#   / |##!##| \
+#  /  |##!##|  \
+# |  / ^ | ^ \  |
+# | /  ( | )  \ |
+# |/   ( | )   \|
+#     ((   ))
+#    ((  :  ))
+#    ((  :  ))
+#     ((   ))
+#      (( ))
+#       ( )
+#        .
+#        .
+#        .
