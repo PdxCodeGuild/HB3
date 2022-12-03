@@ -1,11 +1,11 @@
-# compute the ARI for a given book. 
+# Lab 6 -> Compute the ARI for a given book. 
 
 import requests
 
 site_url = "https://www.gutenberg.org/"
 
 # enter the book ID number from project gutenberg 
-book_id = input("Enter Gutenberg book ID number:")
+book_id = input("Enter Gutenberg book ID number: ")
 url = site_url + 'cache/epub/' + book_id + '/pg' + book_id + '.txt'
 response = requests.get(url)
 data = response.text
@@ -20,10 +20,12 @@ word_count = len(words)
 # count the number of sentences
 sentences = data.splitlines()
 sentence_count = len(sentences)
-print(sentence_count)
 
 # compute the ARI for the text
 ARI = (4.71 * (char/word_count)) + (.5 * (word_count/char)) - 21.43
+ARI = round(ARI,)
+if ARI >= 14:
+    ARI = 14
 
 ari_scale = {
     1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -42,6 +44,8 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-print('______________________________________________________')
-print('The ARI for ', url, 'is', ARI)
-print('This corresponds to a ', 'Grade level of difficulty')
+print('---------------------------------------------------------------------------------')
+print('The ARI for', url, 'is', ARI)
+print('This corresponds to a', ari_scale[ARI]['grade_level'],'level of difficulty')
+print('that is suitable for an average person', ari_scale[ARI]['ages'], 'years old.')
+print('---------------------------------------------------------------------------------')
