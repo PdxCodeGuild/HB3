@@ -61,8 +61,10 @@ print(f'\n\tCongrats! you have won: {account_balance} dollars')
 
 print(f'\n\tROI is (earnings - expenses)/expenses')
 
-ROI = (account_balance - 200000)/ 200000
+earnings = 200000 + account_balance #added this to account for the diffenence between the amounts
 
-print(f'\n\tYour earnings were: ${account_balance} \n\tand your expenses were: $200000')
+ROI = (earnings - 200000)/ 200000
+
+print(f'\n\tYour earnings were: ${earnings} \n\tand your expenses were: $200000')
 
 print(f'\n\tYour ROI is: {ROI} dollars...bad or good job i guess')
