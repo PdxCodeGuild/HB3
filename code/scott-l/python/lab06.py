@@ -79,6 +79,7 @@ that is suitable for an average person 16-17 years old.
 # BEGIN
 
 import requests
+import json
 
 # ARI dictionary
 ari_scale = {
@@ -98,26 +99,49 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
+# Book URL dictionary lookup
+book_lib = {
+    1: 'https://www.gutenberg.org/cache/epub/69452/pg69452.txt',  # Shells and pebbles, by Anonymous
+    2: 'https://www.gutenberg.org/files/74/74-0.txt',   # Tom Sawyer, by Mark Twain
+    3: 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, by H.G. Wells
+}
 
-
-
+book1_url = 'https://www.gutenberg.org/cache/epub/69452/pg69452.txt'  # Shells and pebbles, by Anonymous
+book2_url = 'https://www.gutenberg.org/files/74/74-0.txt'   # Tom Sawyer, by Mark Twain
+book3_url = 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, by H.G. Wells
 
 # Send a GET request
-response = requests.get('https://www.gutenberg.org/')
+response = requests.get(book_lib[1])
 
-# Append the following data in a file
-with open('text_book_001.txt', 'a') as text_book_file:
-    text_book_file.write(response.url)
-   # text_book_file.write(response.text)
-  #  text_book_file.write(response.status_code)
-    text_book_file.write(response.encoding)
-   #text_book_file.write(response.headers)
+# # Append the following data in a file
+# with open('text_book_001.txt', 'a') as text_book_file:
+#     text_book_file.write(response.url)
+#    # text_book_file.write(response.text)
+#   #  text_book_file.write(response.status_code)
+#     text_book_file.write(response.encoding)
+#    #text_book_file.write(response.headers)
   
-
-
 # print(response.url)
 # print(response.text) 
 # print(response.status_code) 
 # print(response.encoding) 
 # print(response.headers) 
+
+# Algorithm outline
+
+# calculate the number of characters in the book this will require ignoring white space
+# print(len(response.text))
+
+# calculate the number of words in the book this will require finding each word and counting
+
+# calculate the number of sentences this will require finding the period of each sentence
+
+# After finding all this information perform formula calculation 
+
+# round up the result
+
+# find the result from the dictionary look up table and print result
+
+
+
 
