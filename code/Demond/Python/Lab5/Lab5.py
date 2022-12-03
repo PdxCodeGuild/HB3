@@ -6,7 +6,6 @@ def pick6():
     for x in range(6):
         results.append(random.randint(1,99))
     return results
-# [random.randint(1, 99) for x in range(6)]
 
 Winning_Numbers = [1,2,3,4,5,6,]
 Ticket = [1,2,3,4,6,6]
@@ -26,24 +25,27 @@ def num_matches(Winning_Numbers, Ticket):
     if Winning_Numbers[5] == Ticket[5]:
         matches += 1
     return matches
-print(num_matches(Winning_Numbers, Ticket))
-# print(num_matches(Winning_Numbers, Ticket))
 
-# balance = -2
+balance = 0
+roi = 0
 for x in range(100000):
-    x = Winning_Numbers
-    y=Ticket
-    balance = -2
+    x = pick6()
+    y = pick6()
+    balance = balance - 2
     if num_matches(x, y) == 1:
-        balance + 4
+        balance += 4
     if num_matches(x, y) == 2:
-        balance + 7 
+        balance += 7 
     if num_matches(x, y) == 3:
-        balance + 100
+        balance += 100
     if num_matches(x, y) == 4:
-        balance + 50,000
+        balance += 50,000
     if num_matches(x, y) == 5:
-        balance + 10000000
+        balance += 10000000
     if num_matches(x, y) == 6:
-        balance + 25000000
+        balance += 25000000
+    a = balance
+    b = 200000
+    roi = (a - b) / b
 print(balance)
+print(roi)
