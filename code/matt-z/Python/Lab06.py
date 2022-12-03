@@ -1,5 +1,7 @@
 import requests
-response = requests.get('https://www.gutenberg.org/files/1342/1342-0.txt')
+import re
+
+response = requests.get('https://www.gutenberg.org/cache/epub/2641/pg2641.txt')
 response.encoding = 'utf-8'
 
 text = response.text
@@ -15,7 +17,7 @@ def count_chars(text):
     return len(chars)
 
 def count_sentences(text):
-    sentences = text.split('.')
+    sentences = re.split('. | ! | ?', text)
     return len(sentences)
 
 def ari(word, char, sentence):
