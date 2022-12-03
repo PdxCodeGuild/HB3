@@ -39,6 +39,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 04  | [Blackjack Advice](1%20Python/labs/04%20Blackjack%20Advice.md)         |      23 Nov        |     8 Dec            |
 | 05  | [Pick6](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/08%20Pick6.md)         |      28 Nov        |     12 Dec            |
 | 06  | [ARI](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/14%20ARI.md)         |      1 Dec        |     15 Dec            |
+| 07  | [Dad Joke API](10%20Dad%20Joke%20API.md)         |      2 Dec        |     16 Dec            |
 
 
 ## Getting Unstuck 
