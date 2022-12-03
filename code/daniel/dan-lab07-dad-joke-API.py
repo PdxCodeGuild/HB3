@@ -18,9 +18,9 @@ from time import sleep
 from requests import get
 
 response = get('https://icanhazdadjoke.com/', headers={'accept': 'application/json'})
-data = response.json()
+data = response.json() # data = json.loads(response.text) # Alt method (requires import json)
 print('\n')
-print(data.get('joke'))
+print(data.get('joke')) # print(data['joke']) # Alt method
 print('\n')
 
 # Part 2
