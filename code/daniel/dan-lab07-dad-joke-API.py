@@ -32,10 +32,9 @@ while True:
     searchterm = input('Enter a joke search term: ')
     response = get(f'https://icanhazdadjoke.com/search?term={searchterm}', headers={'accept':'application/json'})
     data = response.json()
-    results = data['results']
 
-    for i in range(len(results)):
-        joke = results[i]['joke']
+    for result in data['results']:
+        joke = result['joke']
         print('.')
         sleep(0.5)
         print('..')
@@ -46,5 +45,5 @@ while True:
         print('\n')
         userinput = input('Press Enter...')
 
-    print(f'\nWe ain\'t got no mo jokes containing no "{searchterm}"... Goodbye!\n') 
+    print(f'\nWe ain\'t got no mo jokes containing no "{searchterm}" ... Goodbye!\n') 
     break
