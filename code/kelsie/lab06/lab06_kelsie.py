@@ -5,9 +5,12 @@ import math
 def find_ari(f) :   
     f = open(f)
     text = f.read()
-
+    new_text = text.replace(" " , "")
+    
     # count how many characters there are
-    characters = len(text)
+    characters = len(new_text)
+    print(characters)
+    
     
 
     # find words by calculating how many whitespaces are in the text
