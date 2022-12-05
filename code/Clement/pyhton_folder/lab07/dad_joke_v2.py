@@ -28,11 +28,12 @@ data = response.json()
 results = data['results']
 for x in results:
     print(x['joke'],"\n")
+    break
 
 
 
-# else:
-#     print(f"Sorry there is no jokes for {choice} please try another animal")
+else:
+    print(f"Sorry there is no jokes for {choice} please try another animal")
 
 
 
