@@ -162,51 +162,46 @@ response = requests.get(book_lib[1])
 # convert the data text into a string type
 data_text = response.text
 
-print(f'length of string {len(data_text)}')  # DEBUG
-
-
+# print(f'Length of string {len(data_text)}')  # DEBUG
 
 # STEP 1: 
 # Remove the header and ending disclaimer at each end of the book text
 
 # Beginning '*** START OF THE PROJECT GUTENBERG
 data_begin_index = data_text.find('*** START OF THE PROJECT GUTENBERG')
-print(f'Beginning string index is: {data_begin_index}')
+# print(f'Beginning string index is: {data_begin_index}')  # DEBUG
 # Ending '*** END OF THE PROJECT GUTENBERG'
 data_end_index = data_text.find('*** END OF THE PROJECT GUTENBERG')
-print(f'Ending string index is: {data_end_index}')
+# print(f'Ending string index is: {data_end_index}')  # DEBUG 
 # remove the Beginning and ending disclaimer statements
 data_text_slice = data_text[data_begin_index:data_end_index+32]
-print(f'Data String slice characters: {len(data_text_slice)}')
+# print(f'Data String slice characters: {len(data_text_slice)}')  # DEBUG
 
 # STEP 2:
 # Count the number of characters in the book
 ARI_score_elements['char_num']=char_count(data_text_slice)
-print(ARI_score_elements['char_num'])
-# print(f'Total Character counts: {ARI_score_elements['char_num']}')  # DEBUG
+# print(ARI_score_elements['char_num'])  # DEBUG
+print(f"Total character count: {ARI_score_elements['char_num']}")  
 
 # STEP 3: 
 # Count the number of words in the book 
 ARI_score_elements['word_num'] = word_count(data_text_slice)
-#print(f'Total word counts: {ARI_score_elements['word_num']}')  # DEBUG
+print(f"Total word count: {ARI_score_elements['word_num']}")  
 
 # STEP 4:
 # Count the number of sentences in the book
 ARI_score_elements['sentence_num'] = sentence_count(data_text_slice)
-# print(f'Total sentence counts: {ARI_score_elements['sentence_num']}')
+print(f"Total sentence count: {ARI_score_elements['sentence_num']}")
 
 # STEP 5: 
-# After finding all this information perform formula calculation 
+# Perform ARI formula calculation 
 # formula 4.71*(characters/words)+0.5*(words/sentences)-21.43
 ARI_score_elements['score'] = math.ceil(4.71*(ARI_score_elements['char_num']/ARI_score_elements['word_num'])+0.5*(ARI_score_elements['word_num']/ARI_score_elements['sentence_num'])-21.43)
-# print(f'ARI score result is {ARI_score_elements['score']}')  # DEBUG
+print(f"ARI score result is {ARI_score_elements['score']}")  
 
 # STEP 6: 
-# find the result from the dictionary look up table and print result
-print(ari_scale[ARI_score_elements['score']].get('ages'))
-
-# STEP 7: 
 # Print the result to the screen
+
 print(f'''--------------------------------------------------------
 The ARI for book text is {ARI_score_elements['score']}
 This corresponds to a {ari_scale[ARI_score_elements['score']].get('grade_level')} of difficulty
