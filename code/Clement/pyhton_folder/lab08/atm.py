@@ -1,5 +1,3 @@
-
-
 # create an instance of our class
 class ATM:   
    
@@ -11,17 +9,15 @@ class ATM:
         self.interest     = interest
         self.transactions = []
 
-
 # check_balance() returns the account balance
     def check_balance(self):
-        self.balance
         return self.balance
 
+# get_receipt() return both transactions and the acct balance
     def get_receipt(self):
         self.check_balance()
         self.print_transactions()
         return self.transactions
-
 
 # deposit(amount) deposits the given amount in the account
     def deposit(self, amount):
@@ -83,23 +79,19 @@ while True:
         balance = atm.check_balance() 
         print(f'Your balance is ${balance}')
 
-    # printing out receipt
+    # printing out receipt by calling check_balance() &
+    # print_transactions() functions to get all transactions
     elif command == 'Receipt':
         balance = atm.check_balance()
         atm.transactions = atm.print_transactions()
         for transaction in atm.transactions:
             if int(transaction) > 0:
                 print(f"Deposited amt ${transaction}")
-                print(f'Your account balance is ${balance}')
-                
-            elif int(transaction) > 0 and int(success) ==0:
-                print(f"Deposited amt ${transaction}")
+            elif int(transaction) < 0:
                 print(f"Withdrawn amt -${-transaction}")
-                print(f'Your account balance is ${balance}')
+        print(f"Your remaining balance is ${balance}")
+
         
-
-
-
 # ================call the deposit(amount) method=============
     elif command == 'Deposit':
         amount = float(input('How much would you like to deposit?\n>>>$'))
