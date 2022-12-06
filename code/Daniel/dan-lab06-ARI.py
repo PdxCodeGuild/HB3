@@ -38,7 +38,7 @@ author = a[0].strip()
 # ...
 
 # Find the number of chars, words, and sentences.
-char_qty = len(contents)
+char_qty = len("".join(contents.split()))
 word_qty = len(contents.split())
 contents = contents.replace('. ', '! ').replace('? ', '! ') # Make all sentences end w/ same char as the .split() method can only handle 1 seperator. Alternatively, importing re.split() is a way to handle > 1 seperator.
 sentence_qty = len(contents.split('! '))
