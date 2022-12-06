@@ -2,7 +2,7 @@
 
 
 
-# Dad Joke API
+# Lab 07: Dad Joke API
 
 Use the [Dad Joke API](https://icanhazdadjoke.com/api) to get a dad joke and display it to the user. You may want to also use [time.sleep](https://www.geeksforgeeks.org/sleep-in-python/) to add suspense.
 
