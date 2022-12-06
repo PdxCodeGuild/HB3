@@ -46,8 +46,7 @@ class ContactList:
         ...
     
     def count(self):
-        # return the length of self.contacts
-        ...
+        return len(self.contacts) # return the length of self.contacts
     
     def save(self):
         # 1) open 'contacts.json' with open 'w' for write
@@ -59,18 +58,24 @@ class ContactList:
     def print(self):
         # loop over self.contacts
         # print the information for each contact on a separate line
-        ...
+        print(*self.contacts, sep = '\n')
+        ##### May display in dictionary format...
 
     def add(self, name, phone_number, email):
-        # create a new dictionary using the 3 parameters
-        # add the new dictionary to self.contacts
-        ...
+        contact = { # create a new dictionary using the 3 parameters
+            'name': name,
+            'phone_number': phone_number,
+            'email': email
+            }
+        self.contacts.add(contact) # add the new dictionary to self.contacts
     
     def remove(self, name):
-        # find the contact in self-contacts with the given name
+        # find the contact in self.contacts with the given name
+        if name in self.contacts:
+        # self.contacts.find(name)
         # remove the element at that index
-        ...
-    
+        
+        
     def update(self, old_name, new_name, new_phone_number, new_email):
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
