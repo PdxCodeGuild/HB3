@@ -1,10 +1,12 @@
 import requests
 import re
+import string
 
 response = requests.get('https://www.gutenberg.org/cache/epub/2641/pg2641.txt')
 response.encoding = 'utf-8'
 
 text = response.text
+letters = string.ascii_letters
 
 def count_words(text):
     words = text.split(" ")
@@ -13,7 +15,8 @@ def count_words(text):
 def count_chars(text):
     chars = []
     for char in text:
-        chars.append(char)
+        if char in letters:
+            chars.append(char)
     return len(chars)
 
 def count_sentences(text):
