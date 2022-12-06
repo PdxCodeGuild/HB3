@@ -1,21 +1,39 @@
 import requests
 
-#response = requests.get('https://icanhazdadjoke.com/', headers={'accept': 'application/json'})
+response = requests.get('https://icanhazdadjoke.com/', headers={'accept': 'application/json'})
 
 search_term = input('Search Term or "done": ')
-for search_term in search_term :
-    if search_term == "done" :
-        print("Thank You!")
-    
-
-    elif search_term != "done" :
+for word in search_term:
+    if search_term == 'done' :
+        print("Thanks for playing!")
+    else :
         search = (f'https://icanhazdadjoke.com/search?term={search_term}')
-        search_response = requests.get(search, headers={'accept': 'application/json'})
+        response = requests.get(search , headers={'accept': 'application/json'})
+data = response.json()
+print(list(data))
 
-    data_dict = {}     
-    data_dict.update(search_response.json())
-    for data in data_dict :
-        print(data_dict.get('joke'))
+
+
+
+
+
+
+
+
+
+
+
+   
+#data_list.append(search_response.json())
+#print(data_list)
+#jokes = []
+#for data in data_list :
+#    [ x['joke'] for x in data_list]
+    
+    
+#print(jokes)
+    #for data in data_list :
+     #   print(data_list.get('joke'))
     
                 # figure out how to print just one joke
     
