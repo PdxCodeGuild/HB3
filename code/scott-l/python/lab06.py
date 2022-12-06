@@ -112,6 +112,35 @@ book3_url = 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, b
 
 # Send a GET request
 response = requests.get(book_lib[1])
+# convert the data text into a string type
+data_text = response.text
+
+print(f'length of string {len(data_text)}')  # DEBUG
+
+# will need to remove the header and ending disclaimer at each end of the book text
+
+# Beginning '*** START OF THE PROJECT GUTENBERG
+data_begin_index = data_text.find('*** START OF THE PROJECT GUTENBERG')
+print(f'Beginning string index is: {data_begin_index}')
+
+# Ending '*** END OF THE PROJECT GUTENBERG'
+data_end_index = data_text.find('*** END OF THE PROJECT GUTENBERG')
+print(f'Ending string index is: {data_end_index}')
+# remove the Beginning and ending disclaimer statements
+data_text_slice = data_text[data_begin_index:data_end_index]
+
+# calculate the number of characters in the book this will require ignoring white space
+data_text_characters = data_text_slice.replace(' ','')
+data_text_characters = data_text_slice.replace('\n','')
+print(data_text_characters)
+
+
+
+# split a string into a list, this will split on whitespace
+data_text_list = data_text_slice.split()
+
+print(f'List words without whitespace: {len(data_text_list)}')  # DEBUG
+
 
 # # Append the following data in a file
 # with open('text_book_001.txt', 'a') as text_book_file:
@@ -131,6 +160,8 @@ response = requests.get(book_lib[1])
 
 # calculate the number of characters in the book this will require ignoring white space
 # print(len(response.text))
+
+
 
 # calculate the number of words in the book this will require finding each word and counting
 
