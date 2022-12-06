@@ -16,7 +16,7 @@ def creditcard():
     #Slices off the last digit, assigned as check digit variable.
     check_digit = cc[-1]
     #Reverses the digits
-    validation_digits = cc[-2:-13:-1]
+    validation_digits = cc[-2::-1]
     #Doubles every other digit with double function
     validation_digits [0::2] = map(double,validation_digits[0::2])
     #Subtracts 9 from every number over 9 with the subtrat_9_if_over_9 function
@@ -24,11 +24,9 @@ def creditcard():
     #Sums all values
     validation_digits = sum(validation_digits)
     #Checks the second digit of the sum against the check digit for invalid and valid credit card numbers
-    if str(check_digit) not in str(validation_digits)[-1]:
-        print("Invalid credit card number")
-        return
+    if str(check_digit) != str(validation_digits)[-1]:
+        return "Invalid Card #"
     else:
-        print("Valid credit card number")
-    return
+        return "Card # Validated"
 
-creditcard()
+print(creditcard())
