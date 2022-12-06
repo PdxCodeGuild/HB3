@@ -39,20 +39,7 @@ for i in range(100):
     match_result = num_matches(winning,ticket)
     balance += match_result
 print(f'You have a balance of ${float(balance)}')
-    
-    
 
-
-    
-   
- 
-
-            
-   
-
-
-
-        
-    
-    
-        
+earnings =  abs(-200 - balance)
+ROI = (earnings - 200)/200
+print(f'You earned ${earnings} and your ROI is {ROI}')
