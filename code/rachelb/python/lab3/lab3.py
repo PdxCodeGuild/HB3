@@ -1,13 +1,17 @@
+def cardvalidation():
 #make list
 card_num = [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
 
 # slice_card = (card_num[0:15])    #step 2: slicing
 card_num.pop(-1)
-# slice_card.reverse()             #step 3: reverse
+#step 3: reverse
 card_num.reverse() 
-new_card = card_num
+
 
 # Double every other element in the reversed list.
+for x in range(len(card_num)):
+    if x % 2 == 0:
+        
 # Subtract nine from numbers over nine.
 # Sum all values.
 # Take the second digit of that sum.
