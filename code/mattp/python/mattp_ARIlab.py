@@ -3,12 +3,7 @@ print('\n\tARI Lab 06')
 import requests
 import math
 import re
-
-response = requests.get('https://www.gutenberg.org/cache/epub/67098/pg67098.txt')
-response.encoding = 'utf-8' #picking Winnie the Pooh, because how couldnt you
-book = response.text
-book = open(book)
-
+import string
 
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -25,18 +20,55 @@ ari_scale = {
     12: {'ages': '16-17', 'grade_level':   '11th Grade'},
     13: {'ages': '17-18', 'grade_level':   '12th Grade'},
     14: {'ages': '18-22', 'grade_level':      'College'}
-}     #I want to include the library early to call on it later
+}  
+
+response = requests.get('https://www.gutenberg.org/files/62897/62897-0.txt')
+book = response.text
 
 
-def counter():
-    word_count = 0
-    char_count = 0
-    
-    for line in book:
-        words = line.split('\n')
-        word_count = word_count + len(words)
-        char_count = char_count + len(line)
-    characters = char_count - line.count(' ')
-    print (char_count)
-   
+def character_count(book):
+    characters = 0
+    for letter in book:
+        if letter == ' ':
+            pass
+        else:
+            characters += 1
+    return characters
+print(f'\n\tCharacters in book: {character_count(book)}')
+
+def word_count(book):
+    words = 0
+    for letter in book:
+        if letter == ' ':
+            words += 1
+    return words
+print(f'\n\tWords in book: {word_count(book)}')
+
+def sentence_count(book):    
+    sentence = 0
+    for letter in book:
+        if letter == '.' or letter == '!' or letter == '?':
+            sentence += 1
+    return sentence
+print(f'\n\tSentences in book: {sentence_count(book)}')
+
+####### ARI Problem #######
+
+ari_solution = int((4.71 * (character_count(book)/word_count(book))) + (.5 * (word_count(book)/sentence_count(book))) - 21.43)
+for ari_solution in range(ari_solution):
+    if ari_solution > 14:
+        ari_solution = 14
+    elif ari_solution < 14:
+        ari_solution = ari_solution
+    else:
+        print('bummer')
+       
+print(ari_solution)
+
+print(f'''\n\tThe ARI for Peter Pan is {ari_solution}
+\n\tThis corresponds to a {ari_scale[ari_solution]['grade_level']} Grade level of difficulty,
+\n\tthat is suitable for an average person {ari_scale[ari_solution]['ages']} years old.''')   
+
+
+ 
     
