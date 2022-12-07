@@ -52,13 +52,13 @@ class ContactList:
 
     def add(self, name, phone_number, email):
         # create a new dictionary using the 3 parameters
-        c = {
+        i = {
             'name': name,
             'phone_number': phone_number,
             'email': email
             }
         # add the new dictionary to self.contacts
-        self.contacts.append(c) 
+        self.contacts.append(i) 
         
     def remove(self, name):
         # find the contact in self.contacts with the given name
