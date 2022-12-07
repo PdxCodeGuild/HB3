@@ -52,37 +52,31 @@ class ContactList:
 
     def add(self, name, phone_number, email):
         # create a new dictionary using the 3 parameters
-        contact = {
+        c = {
             'name': name,
             'phone_number': phone_number,
             'email': email
             }
         # add the new dictionary to self.contacts
-        self.contacts.append(contact) 
+        self.contacts.append(c) 
         
     def remove(self, name):
-        ##### find the contact in self.contacts with the given name
-        i = 0
-        for contact in self.contacts:
+        # find the contact in self.contacts with the given name
+        for i in self.contacts:
             # remove the element at that index
-            if self.contacts[i]['name'] == name:
-                # print(contact) #testing
-                self.contacts.pop(i)
-            i += 1
+            if i['name'] == name:
+                self.contacts.remove(i)
         
     def update(self, old_name, new_name, new_phone_number, new_email):
-        ##### find the contact in self.contacts with the given old_name
-        i = 0
-        for contact in self.contacts:
-            # remove the element at that index
-            if self.contacts[i]['name'] == old_name:
+        # find the contact in self.contacts with the given old_name
+        for i in self.contacts:
+            if i['name'] == old_name:
                 # set that contacts' name, phone number, etc to the given values
                 self.contacts[i] = {
                     'name': new_name,
                     'phone_number': new_phone_number,
                     'email': new_email
-                    }
-            i += 1
+                }
     
 contact_list = ContactList() # create an instance of our class
 contact_list.load()
