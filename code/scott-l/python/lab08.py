@@ -19,7 +19,7 @@ ___________________          _-_
 Let's represent an ATM with a class containing two attributes: 
 a balance and an interest rate. A newly created account will 
 default to a balance of 0 and an interest rate of 0.1%. 
-mplement the initializer, as well as the following functions:
+implement the initializer, as well as the following functions:
 
     -check_balance() returns the account balance
     -deposit(amount) deposits the given amount in the account
@@ -30,61 +30,70 @@ mplement the initializer, as well as the following functions:
 
 
 '''
+import math
 
 class ATM:
-    def __init__(self, balance, interest_rate):  # this is the initializer
-        self.balance = balance
-        self.interest_rate = interest_rate
-    #end function __init__
+    def __init__(self):  # this is the initializer
+        self.balance = 0
+        self.interest_rate = 0.1
+    # end function __init__
 
     # returns the account balance
-    def check_balance():  
-        #INSERT CODE HERE
-       print("Check Balance") # Test code
+    def check_balance(self):  
+       
+       print("CLASS -Check Balance") # Test code
+       return self.balance
 
-    #end function check_balance
+    # end function check_balance
     
     # deposits the given amount in the account
-    def deposit(amount):  
-        print("Deposit")  # test code
-    
-    #end function deposit
+    def deposit(self,amount):  
+        print("CLASS-Deposit")  # test code
+
+        previous_balance = self.balance
+        self.balance = self.balance + amount
+        print(f'Previous Balance: ${previous_balance}')
+        print(f'New balance: ${self.balance}')
+
+    # end function deposit
 
     #  returns true if the withdrawn amount won't 
     # put the account in the negative
-    def check_withdrawal(amount): 
+    def check_withdrawal(self,amount): 
 
-        print("check withdrawal")  # test code
+        print("CLASS-check withdrawal")  # test code
+        if self.balance - amount > 0:
+            return True
+        elif self.balance - amount < 0:
+            print("Unable to withdraw this amount check balance and try again")
+            return False
 
-    #end function check_withdrawal
+    # end function check_withdrawal
 
     # withdraws the amount from the account and returns it
-    def withdraw(amount):  
+    def withdraw(self,amount):  
         
-       print("withdraw") # test code
+       print("CLASS-withdraw") # test code
+
+       if self.balance - amount > 0:
+            previous_balance = self.balance
+            self.balance = self.balance - amount
+            print(f'Previous Balance: ${previous_balance}')
+            print(f'New balance: ${self.balance}')
+            return True
+
+       elif self.balance - amount < 0:
+            print("Unable to withdraw this amount check balance and try again")
+            return False
     
     #end function withdraw
 
     # returns the amount of interest calculated on the account
-    def calc_interest(): 
+    def calc_interest(self): 
 
-        print("calc_interest") # test code
+        print("CLASS-calc_interest") # test code
     
     # end function 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
