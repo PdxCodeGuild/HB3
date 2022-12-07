@@ -8,7 +8,7 @@
 # withdraw(amount) withdraws the amount from the account and returns it
 # calc_interest() returns the amount of interest calculated on the account
 
-class atm:
+class ATM:
     def __init__(self, amount = 0, balance = 0, interest = .001):
         self.interest = interest 
         self.balance = balance
@@ -20,17 +20,18 @@ class atm:
     def deposit(self, amount):
         self.balance += amount 
 
-    def check_withdaw(self, amount):
-        if self.balance <= amount:
+    def check_withdrawal(self, amount):
+        self.amount = amount
+        if self.balance - amount > 0:
             return 'True'
-        
+
     def withdraw(self, amount):
         self.balance -= amount
 
     def calc_interest(self):
         return self.balance * self.interest
 
-tm = atm()  # create an instance of our class
+atm = ATM()  # create an instance of our class
 print('Welcome to the ATM')
 while True:
     command = input('Enter a command: ')
@@ -43,7 +44,7 @@ while True:
         print(f'Deposited ${amount}')
     elif command == 'withdraw':
         amount = float(input('How much would you like '))
-        # call the check_withdrawal(amount) method
+    # call the check_withdrawal(amount) method
         if atm.check_withdrawal(amount):
             atm.withdraw(amount)  # call the withdraw(amount) method
             print(f'Withdrew ${amount}')
