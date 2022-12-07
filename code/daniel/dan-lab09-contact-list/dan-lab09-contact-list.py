@@ -12,26 +12,6 @@
 # To open the file, look at the File IO doc,
 # to parse the JSON into a Python dictionary, look at json module.
 
-contacts.json
-
-{
-    "contacts": [{
-        "name": "Dora M. Smith",
-        "phone_number": "919-781-7129",
-        "email": "doramsmith@hotmail.com"
-    },{
-        "name": "Annette D. Berube",
-        "phone_number": "662-319-6954",
-        "email": "annette@gmail.com"
-    },{
-        "name": "Austin M. Pigott",
-        "phone_number": "478-777-8878",
-        "email": "austin@aol.com"
-    }]
-}
-
-# lab17_contact_list.py
-
 class ContactList:
     
     def __init__(self):
@@ -39,47 +19,62 @@ class ContactList:
 
     def load(self):
         # 1) open 'contacts.json' with option 'r' for read
-        # 2) get the text from the file
-        # 3) convert the text into a python dictionary (json.loads)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
-        ...
+        with open('contacts.json', 'r') as contacts_file:
+            # 2) get the text from the file
+            contacts_str = contacts_file.read()
+            # 3) convert the text into a python dictionary (json.loads)
+            from json import loads
+            contacts_dict = loads(contacts_str)
+            # 4) get the list of contacts out of the dictionary
+            contacts = contacts_dict['contacts']
+            # 5) assign the list of dictionaries to self.contacts
+            self.contacts = contacts
     
     def count(self):
-        return len(self.contacts) # return the length of self.contacts
+        # return the length of self.contacts
+        return len(self.contacts)
     
     def save(self):
         # 1) open 'contacts.json' with open 'w' for write
-        # 2) put self.contacts in a dictionary with the key 'contacts'
-        # 3) convert the dictionary to a json string (json.dumps)
-        # 4) write the json string to the file
-        ...
+        with open('contacts.json', 'w') as contacts_file:
+            # 2) put self.contacts in a dictionary with the key 'contacts'
+            contacts_dict = {'contacts': self.contacts}
+            # 3) convert the dictionary to a json string (json.dumps)
+            from json import dumps
+            contacts_str = dumps(contacts_dict)
+            # 4) write the json string to the file
+            contacts_file.write(contacts_str)
 
     def print(self):
-        # loop over self.contacts
-        # print the information for each contact on a separate line
+        # loop over self.contacts and print the information for each contact on a separate line
         print(*self.contacts, sep = '\n')
-        ##### May display in dictionary format...
+        ##### Displays in dictionary format...
 
     def add(self, name, phone_number, email):
-        contact = { # create a new dictionary using the 3 parameters
+        # create a new dictionary using the 3 parameters
+        contact = {
             'name': name,
             'phone_number': phone_number,
             'email': email
             }
-        self.contacts.add(contact) # add the new dictionary to self.contacts
+        # add the new dictionary to self.contacts
+        self.contacts.add(contact)
     
     def remove(self, name):
-        # find the contact in self.contacts with the given name
-        if name in self.contacts:
-        # self.contacts.find(name)
+        ##### find the contact in self.contacts with the given name
+        i = self.contacts.get(name)
         # remove the element at that index
-        
+        self.contacts.pop[i]
         
     def update(self, old_name, new_name, new_phone_number, new_email):
         # find the contact in self.contacts with the given old_name
+        i = self.contacts.get(old_name)
         # set that contacts' name, phone number, etc to the given values
-        ...
+        self.contacts[i] = {
+            'name': new_name,
+            'phone_number': new_phone_number,
+            'email': new_email
+            }
     
 contact_list = ContactList() # create an instance of our class
 contact_list.load()
