@@ -1,26 +1,37 @@
 class ATM :
-    def __init__(self, balance=0 , interest=(1/1000)) :
+    def __init__(self, balance=0, interest=(1/1000)) :
+        self.transactions = []
         self.balance = balance
         self.interest = interest
+        
     
+    def print_transactions(self) :
+        return self.transactions
+
     def check_balance(self) :
         return self.balance
 
     def deposit(self, amount) :
         self.balance = self.balance =+ amount
+        self.transactions.append(f'User deposited {amount}')
         return amount
         
-    def check_withdrawal(self, amount) :
+
+    def check_withdrawal(self , amount) :
         if amount < self.balance :
             return self.balance
+       
 
     def withdraw(self, amount) :
         self.balance -= amount
+        self.transactions.append(f'User withdrew {amount}')
         return amount
    
     def calc_interest(self) :
         amount = self.balance * self.interest
         return amount
+
+   
 
 
 
@@ -42,7 +53,7 @@ while True:
         atm.deposit(amount) # call the deposit(amount) method
         print(f'Deposited ${amount}')
     elif command == 'withdraw':
-        amount = float(input('How much would you like? '))
+        amount = float(input('How much would you like '))
         if atm.check_withdrawal(amount): # call the check_withdrawal(amount) method
             atm.withdraw(amount) # call the withdraw(amount) method
             print(f'Withdrew ${amount}')
@@ -52,12 +63,16 @@ while True:
         amount = atm.calc_interest() # call the calc_interest() method
         atm.deposit(amount)
         print(f'Accumulated ${amount} in interest')
+    elif command == 'transactions' :
+        transactions = (atm.print_transactions())
+        print(transactions)
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
+        print('transactions - receive list of transactions')
         print('exit     - exit the program')
     elif command == 'exit':
         break
