@@ -40,15 +40,13 @@ class ATM:
 
     # returns the account balance
     def check_balance(self):  
-       
-       print("CLASS -Check Balance") # Test code
+
        return self.balance
 
     # end function check_balance
     
     # deposits the given amount in the account
     def deposit(self,amount):  
-        print("CLASS-Deposit")  # test code
 
         previous_balance = self.balance
         self.balance = self.balance + amount
@@ -61,7 +59,6 @@ class ATM:
     # put the account in the negative
     def check_withdrawal(self,amount): 
 
-        print("CLASS-check withdrawal")  # test code
         if self.balance - amount > 0:
             return True
         elif self.balance - amount < 0:
@@ -72,8 +69,6 @@ class ATM:
 
     # withdraws the amount from the account and returns it
     def withdraw(self,amount):  
-        
-       print("CLASS-withdraw") # test code
 
        if self.balance - amount > 0:
             previous_balance = self.balance
@@ -92,10 +87,15 @@ class ATM:
     def calc_interest(self): 
 
         print("CLASS-calc_interest") # test code
+        # This is a very simplistic method to calculate interest
+        # but technically is not the correct method.  In order
+        # calculate simple interest the user inputs 
+        # require: principle, time, and rate in order to perform this features correctly
+        earned_interest = self.balance*self.interest_rate
+        
+        return earned_interest
     
     # end function 
-
-
 
 # BEGIN CODE Provided
 
@@ -132,7 +132,6 @@ while True:
         break
     else:
         print('Command not recognized')
-
 
 
 # END
