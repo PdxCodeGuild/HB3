@@ -48,6 +48,8 @@ class ContactList:
     def print(self):
         # loop over self.contacts and print the information for each contact on a separate line
         print(*self.contacts, sep = '\n')
+        # for i in self.contacts:
+        #     print(i)
         ##### Displays in dictionary format...
 
     def add(self, name, phone_number, email):
