@@ -58,23 +58,31 @@ class ContactList:
             'email': email
             }
         # add the new dictionary to self.contacts
-        self.contacts.add(contact)
-    
+        self.contacts.append(contact) 
+        
     def remove(self, name):
         ##### find the contact in self.contacts with the given name
-        i = self.contacts.get(name)
-        # remove the element at that index
-        self.contacts.pop[i]
+        i = 0
+        for contact in self.contacts:
+            # remove the element at that index
+            if self.contacts[i]['name'] == name:
+                # print(contact) #testing
+                self.contacts.pop(i)
+            i += 1
         
     def update(self, old_name, new_name, new_phone_number, new_email):
-        # find the contact in self.contacts with the given old_name
-        i = self.contacts.get(old_name)
-        # set that contacts' name, phone number, etc to the given values
-        self.contacts[i] = {
-            'name': new_name,
-            'phone_number': new_phone_number,
-            'email': new_email
-            }
+        ##### find the contact in self.contacts with the given old_name
+        i = 0
+        for contact in self.contacts:
+            # remove the element at that index
+            if self.contacts[i]['name'] == old_name:
+                # set that contacts' name, phone number, etc to the given values
+                self.contacts[i] = {
+                    'name': new_name,
+                    'phone_number': new_phone_number,
+                    'email': new_email
+                    }
+            i += 1
     
 contact_list = ContactList() # create an instance of our class
 contact_list.load()
@@ -83,7 +91,7 @@ while True:
     command = input('Enter a command: ')
     if command == 'load':
         contact_list.load()
-        print(f'Loaded ${contact_list.count()} contacts.')
+        print(f'Loaded {contact_list.count()} contacts.')
     elif command == 'save':
         contact_list.save()
         print(f'Saved ${contact_list.count()} contacts.')
