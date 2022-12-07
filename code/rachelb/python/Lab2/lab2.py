@@ -59,6 +59,8 @@ def num_to_word(num):
             return hundreds[firstnumber] + ' ' + num_list[specialnum] 
         elif (num % 100) == 0:
             return hundreds[num // 100 * 100]
+        elif (num % 100) // 10 * 10 == 0 and (num % 100) % 10 != 0:
+            return hundreds[(num // 100) * 100] + ' ' + num_list[(num % 100) % 10]
         elif (num % 100) % 10 == 0:
             firstnumber = (num // 100) * 100
             secondnumber = (num % 100) // 10 * 10
@@ -70,7 +72,7 @@ def num_to_word(num):
         return hundreds[firstnumber] + num_list[secondnumber] + ' ' +  num_list[thirdnumber]
    
 
-print(num_to_word(120))
+print(num_to_word(406))
 
 # for num in user:
 #     if int(num) in list:
