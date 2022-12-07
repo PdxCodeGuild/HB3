@@ -95,7 +95,7 @@ def word_count(string_input):
     # split the string into a list, this will split on whitespace
     data_text_word_only = string_input.split()
     
-# DEBUG ONLY
+    # DEBUG ONLY
     # # Append the following data in a file
     str1 = " "
     with open('text_book_001.txt', 'w') as text_book_file:
@@ -158,7 +158,8 @@ book2_url = 'https://www.gutenberg.org/files/74/74-0.txt'   # Tom Sawyer, by Mar
 book3_url = 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, by H.G. Wells
 
 # Send a GET request
-response = requests.get(book_lib[1])
+response = requests.get(book_lib[3])
+response.encoding = 'utf-8' # set encoding to utf-8
 # convert the data text into a string type
 data_text = response.text
 
