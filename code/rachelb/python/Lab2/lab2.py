@@ -1,6 +1,6 @@
 #Modulus is the %
 num_list = { 
-    0:'',
+    0:'zero',
     1:'one', 
     2:'two', 
     3:'three', 
@@ -53,6 +53,16 @@ def num_to_word(num):
             return num_list[(num // 10) * 10]
         return num_list[(num // 10) * 10] + ' ' + num_list[num % 10]
     elif num > 99:
+        if (num % 100) >= 11 and (num % 100) <= 19:
+            firstnumber = (num // 100) * 100
+            specialnum = (num % 100)
+            return hundreds[firstnumber] + ' ' + num_list[specialnum] 
+        elif (num % 100) == 0:
+            return hundreds[num // 100 * 100]
+        elif (num % 100) % 10 == 0:
+            firstnumber = (num // 100) * 100
+            secondnumber = (num % 100) // 10 * 10
+            return hundreds[firstnumber] + ' ' + num_list[secondnumber]
         firstnumber = (num // 100) * 100
         secondnumber = (num % 100) // 10 * 10
         thirdnumber = (num % 100) % 10
@@ -60,7 +70,7 @@ def num_to_word(num):
         return hundreds[firstnumber] + num_list[secondnumber] + ' ' +  num_list[thirdnumber]
    
 
-print(num_to_word(575))
+print(num_to_word(120))
 
 # for num in user:
 #     if int(num) in list:
