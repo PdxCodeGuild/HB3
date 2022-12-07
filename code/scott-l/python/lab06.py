@@ -3,7 +3,7 @@
       Project: Lab 6 - Automated Readability Index
       Author: Scott Lefgren
       Email: scojlefg@gmail.com
-      Date: December 1, 2022
+      Date: December 6, 2022
 ___________________          _-_
 \==============_=_/ ____.---'---`---.____
             \_ \    \----._________.----/
@@ -97,9 +97,9 @@ def word_count(string_input):
     
     # DEBUG ONLY
     # # Append the following data in a file
-    str1 = " "
-    with open('text_book_001.txt', 'w') as text_book_file:
-        text_book_file.write(str1.join(data_text_word_only))
+    # str1 = " "
+    # with open('text_book_001.txt', 'w') as text_book_file:
+    #     text_book_file.write(str1.join(data_text_word_only))
 
 
     return len(data_text_word_only)
@@ -153,11 +153,7 @@ book_lib = {
     3: 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, by H.G. Wells
 }
 
-book1_url = 'https://www.gutenberg.org/cache/epub/69452/pg69452.txt'  # Shells and pebbles, by Anonymous
-book2_url = 'https://www.gutenberg.org/files/74/74-0.txt'   # Tom Sawyer, by Mark Twain
-book3_url = 'https://www.gutenberg.org/files/35/35-0.txt'  # The Time Machine, by H.G. Wells
-
-# Send a GET request
+# SET a GET request select the book from the URL dictionary lookup
 response = requests.get(book_lib[3])
 response.encoding = 'utf-8' # set encoding to utf-8
 # convert the data text into a string type
@@ -210,50 +206,16 @@ that is suitable for an average person {ari_scale[ARI_score_elements['score']].g
 --------------------------------------------------------''')
 
 
-# data_text_characters = data_text_slice.replace(' ','')
-# # split a string into a list, this will split on whitespace
-# data_text_list = data_text_slice.split()
-# # convert back to a string from the list
-# str1 = ""  # initialize empty string
-# data_text_chars_only = str1.join(data_text_list)
+# END
 
-# # Append the following data in a file
-# with open('text_book_001.txt', 'w') as text_book_file:
-#      text_book_file.write(data_text_chars_only)
-
-
-
-# Algorithm outline
-
-# calculate the number of characters in the book this will require ignoring white space
-# print(len(response.text))
+#   __
+#  (`/\
+#  `=\/\ __...--~~~~~-._   _.-~~~~~--...__
+#   `=\/\               \ /               \\
+#    `=\/                V                 \\
+#    //_\___--~~~~~~-._  |  _.-~~~~~~--...__\\
+#   //  ) (..----~~~~._\ | /_.~~~~----.....__\\
+#  ===( INK )==========\\|//====================
+# _____\___/___________'---`_____________________
 
 
-
-# calculate the number of words in the book this will require finding each word and counting
-
-# calculate the number of sentences this will require finding the period of each sentence
-
-# After finding all this information perform formula calculation 
-
-# round up the result
-
-# find the result from the dictionary look up table and print result
-
-
-
-
-
-# # Append the following data in a file
-# with open('text_book_001.txt', 'a') as text_book_file:
-#     text_book_file.write(response.url)
-#    # text_book_file.write(response.text)
-#   #  text_book_file.write(response.status_code)
-#     text_book_file.write(response.encoding)
-#    #text_book_file.write(response.headers)
-  
-# print(response.url)
-# print(response.text) 
-# print(response.status_code) 
-# print(response.encoding) 
-# print(response.headers) 
