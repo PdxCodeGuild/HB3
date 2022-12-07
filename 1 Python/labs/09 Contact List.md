@@ -2,7 +2,7 @@
 
 # Lab 09: Contact List
 
-Let's write class for managing a contact list. Copy the code below into a file and fill in the functions. Save the following files below to your personal code folder. To open the file, look at the [File IO doc](../docs/File%20IO.md), to parse the JSON into a Python dictionary, look at [json module]([(HB3/blob/7ae980002b2237e8e11bf4f0b3f39794f5615613/0%20General/07%20JSON%20+%20CSV%20+%20XML.md)]).
+Let's write class for managing a contact list. Copy the code below into a file and fill in the functions. Save the following files below to your personal code folder. To open the file, look at the [File IO doc](../docs/File%20IO.md), to parse the JSON into a Python dictionary, look at [json module]([https://github.com/PdxCodeGuild/HB3/blob/7ae980002b2237e8e11bf4f0b3f39794f5615613/0%20General/07%20JSON%20+%20CSV%20+%20XML.md]).
 
 
 **contacts.json**
