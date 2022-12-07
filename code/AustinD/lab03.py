@@ -25,8 +25,8 @@ def creditcard():
     validation_digits = sum(validation_digits)
     #Checks the second digit of the sum against the check digit for invalid and valid credit card numbers
     if str(check_digit) != str(validation_digits)[-1]:
-        return "Invalid Card #"
+        return False
     else:
-        return "Card # Validated"
+        return True
 
 print(creditcard())
