@@ -20,7 +20,7 @@ print('test-pushed')
 
 # . san fglwe akrg q awrjsgbqwrjg ajsndfjnfareg oawdnfan
 
-#jasnfpvjnapljreirhiueiu gslejrglkjn wrgwerg askfj
+#jasnfpvjnapljreirhiugslejrglkjn wrgwerg askfj
 
 #fffh srdgfwrg kwjrbgkjb
 
