@@ -2,7 +2,9 @@ import requests
 import re
 import string
 
-response = requests.get('https://www.gutenberg.org/cache/epub/2641/pg2641.txt')
+url = 'https://www.gutenberg.org/cache/epub/2641/pg2641.txt'
+
+response = requests.get(url)
 response.encoding = 'utf-8'
 
 text = response.text
@@ -20,7 +22,7 @@ def count_chars(text):
     return len(chars)
 
 def count_sentences(text):
-    sentences = re.split('. | ! | ?', text)
+    sentences = re.split('\.| ! | \? | \.\.\.', text)
     return len(sentences)
 
 def ari(word, char, sentence):
