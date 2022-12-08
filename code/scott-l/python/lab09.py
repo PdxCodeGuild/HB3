@@ -46,6 +46,8 @@ class ContactList:
         #print(file_contents_json.values())  # DEBUG
         # 5) assign the list of dictionaries to self.contacts
         self.contacts = file_contents
+        print('METHOD-load')
+        print(type(self.contacts))
         ...
     
     def count(self):
@@ -59,7 +61,7 @@ class ContactList:
         # 1) open 'contacts.json' with open 'w' for write
         with open('contacts.json', 'w') as contact_file:   
         # 2) put self.contacts in a dictionary with the key 'contacts'
-          file_contents = self.contacts["contacts"]
+          file_contents = self.contacts
         # 3) convert the dictionary to a json string (json.dumps)
           contact_file_jason = json.dumps(file_contents)
         # 4) write the json string to the file
@@ -69,13 +71,21 @@ class ContactList:
 
     def print(self):
         # loop over self.contacts
+        file_contents = self.contacts
         # print the information for each contact on a separate line
         print('METHOD-print')  #DEBUG
+        for name in file_contents['contacts']:
+          print(name)
         ...
 
     def add(self, name, phone_number, email):
         # create a new dictionary using the 3 parameters
+        new_dict = dict(name = name,phone_number = phone_number, email = email)
+        print(type(new_dict))
         # add the new dictionary to self.contacts
+        file_contents = self.contacts
+        file_contents['contacts'].update(new_dict)
+        print(file_contents)
         print('METHOD-add')  #DEBUG
         ... 
     
