@@ -12,7 +12,8 @@ def cardvalidation():
     for number in user_input:
         num.append(int(number))
     card_num = num[0:15] 
-    slice_card = card_num[14:15]
+    slice_card = num[15:16]
+    slice_card = slice_card[0]
     card_num.reverse() 
     for x in range(len(card_num)):
         if x % 2 == 0:
