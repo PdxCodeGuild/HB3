@@ -5,11 +5,6 @@
 # Date: 2022.12.7
 #---------------------------------
 
-# Quotes API
-# For this lab we'll be using the Favqs Quotes API to first get a random quote,
-# and then allow the user to find quotes by keyword.
-# To accomplish this we'll be using the requests library.
-
 # Version 1: Get a Random Quote
 # The URL to get a random quote is https://favqs.com/api/qotd.
 # Send a request,
@@ -39,8 +34,8 @@ while keyword != 'done':
     page = 1 # initialize a results page counter
     user_input = '' # initialize user_input here so we can use it as a conditional for the while loop.
     while user_input != 'done':
-        response2 = requests.get(f'https://favqs.com/api/quotes?page={page}&filter={keyword}', headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'})
-        r2dict = response2.json()
+        r2 = requests.get(f'https://favqs.com/api/quotes?page={page}&filter={keyword}', headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'})
+        r2dict = r2.json()
         quotes_qty = len(r2dict['quotes'])
         print(f'{quotes_qty} quotes associated with {keyword} - page {page}\n')
         for quote in r2dict['quotes']:
