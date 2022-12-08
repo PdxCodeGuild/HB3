@@ -20,7 +20,7 @@ ari_scale = {
 
 user_text = input('Enter the name of the file you are checking: ')
 
-def check_grade_level(text):
+def ari_score(text):
     open_file = open(user_text, 'r')
     read_file = open_file.read()
     num_words = len(read_file.split())
@@ -31,11 +31,44 @@ def check_grade_level(text):
     for char in read_file:
         characters += 1
         print(characters)
-    ari = round((4.71*(characters/num_words)) + (0.5*(num_words/num_sentences))-21.43)
+        ari = round(4.71*(characters/num_words) + 0.5*(num_words/num_sentences)-21.43)
     return ari
-ARI = check_grade_level(user_text)
+ARI = ari_score(user_text)
 
+def check_grade_level(score):
+    if score == 1:
+        print('This correspond to a',ari_scale[1]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[1]['ages'], 'years old')
+    elif score == 2:
+        print('This correspond to a',ari_scale[2]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[2]['ages'], 'years old')
+    elif score == 3:
+        print('This correspond to a',ari_scale[3]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[3]['ages'], 'years old')
+    elif score == 4:
+        print('This correspond to a',ari_scale[4]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[4]['ages'], 'years old')
+    elif score == 5:
+        print('This correspond to a',ari_scale[5]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[5]['ages'], 'years old')
+    elif score == 6:
+        print('This correspond to a',ari_scale[6]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[6]['ages'], 'years old')
+    elif score == 7:
+        print('This correspond to a',ari_scale[7]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[7]['ages'], 'years old')
+    elif score == 8:
+        print('This correspond to a',ari_scale[8]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[8]['ages'], 'years old')
+    elif score ==9:
+        print('This correspond to a',ari_scale[9]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[9]['ages'], 'years old')
+    elif score == 10:
+        print('This correspond to a',ari_scale[10]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[10]['ages'], 'years old')
+    elif score == 11:
+        print('This correspond to a',ari_scale[11]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[11]['ages'], 'years old')
+    elif score == 12:
+        print('This correspond to a',ari_scale[12]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[12]['ages'], 'years old')
+    elif score == 13:
+        print('This correspond to a',ari_scale[13]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[13]['ages'], 'years old')            
+    elif score >= 14:
+        print('This correspond to a',ari_scale[14]['grade_level'], 'Grade level of difficulty' '\nthat is suitable for an average person', ari_scale[14]['ages'], 'years old')
+        
+           
 print(f'The ARI for {user_text} is {ARI}')
+result = check_grade_level(ARI)
+print(result)
 
         
     
