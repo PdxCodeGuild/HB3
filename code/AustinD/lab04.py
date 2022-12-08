@@ -36,13 +36,13 @@ def advice(x):
 
     #Assessing net drawn value for advice and returning advice
     if n > 21:
-        return "{n} Already Busted"
+        return f"{n} Already Busted"
     if n == 21:
-        return "{n} Blackjack!"
+        return f"{n} Blackjack!"
     if n > 17 or n == 17:
-        return "{n} Stay"
+        return f"{n} Stay"
     if n < 17:
-        return "{n} Hit"
+        return f"{n} Hit"
 
 #Functions called for advice
 print(advice(draw_cards()))
