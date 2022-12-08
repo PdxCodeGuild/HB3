@@ -46,6 +46,8 @@ class ContactList:
         ...
 
     def add(self, name, phone_number, email):
+        self_dict = {{name} : '' , {phone_number} : '' ,
+        {email} : ''}
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
         ...
