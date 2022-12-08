@@ -10,27 +10,31 @@ def cardvalidation():
     num = []
     user_input = input('Enter card number: ')
     for number in user_input:
-        num.append(number)
-    card_num = (num[0:15])    #--------splice Q & A
+        num.append(int(number))
+    card_num = num[0:15] 
+    slice_card = card_num[14:15]
     card_num.reverse() 
     for x in range(len(card_num)):
         if x % 2 == 0:
             card_num[x]*2
-    print(card_num)
  # Subtract nine from numbers over nine.
     for x in range(len(card_num)):
             if int(card_num[x]) > 9:
                 int(card_num[x]) - 9 
     # return card_num
-    total = sum(int(card_num))
+    total = 0 
+    for num in card_num:
+        total += num
     print(total)
-    remainder = total % 10 
-    if total == remainder():
+    remainder = total % 10
+    print(remainder)
+    
+    if slice_card == remainder:
         return True
     else:
         return False
 
-cardvalidation()            
+print(cardvalidation())            
 # total = sum(card_num)
 # print(total)
 

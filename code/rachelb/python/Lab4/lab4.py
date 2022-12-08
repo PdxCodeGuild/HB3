@@ -27,7 +27,7 @@ if total >= 17 and total < 21:
 elif total < 17:
     print( str(total) + ' ' + 'HIT')
 elif total == 21:
-    print( str(total)) + ' ' + 'Blackjack!!'
+    print( str(total) + ' ' + 'Blackjack!!')
 else: 
     total > 21
     print( str(total) + ' ' + 'Already busted')
