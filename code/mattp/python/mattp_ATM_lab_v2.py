@@ -63,10 +63,9 @@ while True:
     #######version 2 addition    
     elif command == 'transaction':
         receipt = atm.print_transaction()
-        '''for i in range(len(receipt)):
-            for x in receipt:             ##### trying to make my transaction list print vertically
-                print(x[1], end=' ')'''
-        print(receipt)
+        for i in range(len(receipt)):
+            print(receipt[i])            ##### trying to make my transaction list print vertically
+        
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
