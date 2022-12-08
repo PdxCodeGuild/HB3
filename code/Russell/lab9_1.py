@@ -10,9 +10,10 @@ class ContactList:
 
         with open('contacts.json', 'r') as f: # 1) open 'contacts.json' with option 'r' for read
             contents = f.read() # 2) get the text from the file
-        self.contacts = json.loads(contents) # 3) convert the text into a python dictionary (json.loads)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
+            data = json.loads(contents) # 3) convert the text into a python dictionary (json.loads)
+        for contact in data['contacts']: # 4) get the list of contacts out of the dictionary
+            self.contacts.append(contact) # 5) assign the list of dictionaries to self.contacts
+        
        
     
     def count(self):
@@ -20,36 +21,33 @@ class ContactList:
         
     
     def save(self):
-        # 1) open 'contacts.json' with open 'w' for write
-        # 2) put self.contacts in a dictionary with the key 'contacts'
-        # 3) convert the dictionary to a json string (json.dumps)
-        # 4) write the json string to the file
-        ...
+        with open('contacts.json', 'w') as f: # 1) open 'contacts.json' with open 'w' for write
+            contact_dict = {'contacts':self.contacts} # 2) put self.contacts in a dictionary with the key 'contacts'
+            json_string = json.dumps(contact_dict) # 3) convert the dictionary to a json string (json.dumps)
+            f.write(json_string) # 4) write the json string to the file
 
     def print(self):
-        for contact in self.contacts['contacts']:
-            print(*contact, sep = '\n')
-        # loop over self.contacts
-        # print the information for each contact on a separate line
-        ...
+        for contact in self.contacts: # loop over self.contacts
+            print(contact) # print the information for each contact on a separate line
 
     def add(self, name, phone_number, email):
-        # create a new dictionary using the 3 parameters
-        # add the new dictionary to self.contacts
-        ...
+        self.new_contact = {'name': name, 'phone_number':phone_number, 'email':email} # create a new dictionary using the 3 parameters
+        self.contacts.append(self.new_contact)# add the new dictionary to self.contacts
     
     def remove(self, name):
-        # find the contact in self-contacts with the given name
-        # remove the element at that index
-        ...
+        for contact in self.contacts: # find the contact in self-contacts with the given name
+            if contact['name'] == name:
+                self.contacts.remove(contact) # remove the element at that index
     
     def update(self, old_name, new_name, new_phone_number, new_email):
-        # find the contact in self.contacts with the given old_name
+        for contact in self.contacts: # find the contact in self.contacts with the given old_name
+            if contact['name'] == old_name:
+                ContactList.add(self, new_name, new_phone_number, new_email)
         # set that contacts' name, phone number, etc to the given values
         ...
     
 contact_list = ContactList() # create an instance of our class
-contact_list.load()
+# contact_list.load()
 print('Welcome to the Contact List App (CLA)')
 while True:
     command = input('Enter a command: ')
