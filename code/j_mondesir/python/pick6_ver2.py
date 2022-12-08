@@ -14,7 +14,7 @@ winning = pick()
 def num_matches(x,y):
     counter = 0
     for nums in range(6):
-        if x[nums] == y[nums]:
+        if x[0] == y[0]:
            counter +=1
     if counter == 0:
         return 0
