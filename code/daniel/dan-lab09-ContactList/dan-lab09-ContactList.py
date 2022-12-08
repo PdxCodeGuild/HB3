@@ -73,12 +73,12 @@ class ContactList:
         # find the contact in self.contacts with the given old_name
         for i in self.contacts:
             if i['name'] == old_name:
-                # set that contacts' name, phone number, etc to the given values
-                self.contacts[i] = {
-                    'name': new_name,
-                    'phone_number': new_phone_number,
-                    'email': new_email
-                }
+                # Replace old data with new data
+                name = new_name
+                phone_number = new_phone_number
+                email = new_email
+                self.contacts.remove(i)
+                ContactList.add(self, name, phone_number, email)
     
 contact_list = ContactList() # create an instance of our class
 contact_list.load()
