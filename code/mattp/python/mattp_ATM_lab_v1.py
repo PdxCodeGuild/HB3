@@ -27,7 +27,7 @@ class ATM:
         return amount
 
     def calc_interest(self):
-        amount = (self.balance * self.interest_rate) + self.balance
+        amount = (self.balance * self.interest_rate)
         return amount
 
 atm = ATM() # create an instance of our class
