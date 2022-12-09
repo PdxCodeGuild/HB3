@@ -10,4 +10,4 @@ print('test-pushed')
 
 # getting warm
 
-# stagnant
+# stagnan
