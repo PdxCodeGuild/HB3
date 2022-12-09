@@ -39,15 +39,12 @@ class ContactList:
         with open('contacts.json', 'r') as contact_file:
             file_contents = contact_file.read()
         # 3) convert the text into a python dictionary (json.loads)
-        print(type(file_contents))  # DEBUG
-        file_contents = json.loads(file_contents)  # loads the file from the JSON string format into a list format
-        print(type(file_contents))  # DEBUG
-        print(file_contents)  # DEBUG
-        # 4) get the list of contacts out of the dictionary
-        for contact_list in file_contents:
-          contact_list = file_contents
-        #print(file_contents_json.keys())  # DEBUG
-        #print(file_contents_json.values())  # DEBUG
+        # print(type(file_contents))  # DEBUG
+        file_contents1 = json.loads(file_contents)  # loads the file from the JSON string format into a list format
+        print(type(file_contents1))  # DEBUG
+        # print(file_contents)  # DEBUG
+        # 4) get the list of contacts out of the dictionary  << START HERE need to understand how to extract the lists from the dictionary key "contacts"
+       # contact_list = list(filter(lambda file_contents1: key in list(file_contents.keys("contact"),filecontents1))
         # 5) assign the list of dictionaries to self.contacts
         self.contacts = contact_list
        
@@ -64,15 +61,18 @@ class ContactList:
         ...
     
     def save(self):
+        print('METHOD-save')  #DEBUG
         # 1) open 'contacts.json' with open 'w' for write
         with open('contacts.json', 'w') as contact_file:   
         # 2) put self.contacts in a dictionary with the key 'contacts'
-          file_contents = self.contacts
+          file_contents = {"contacts": self.contact}
+          print(type(file_contents))
         # 3) convert the dictionary to a json string (json.dumps)
           contact_file_json = json.dumps(file_contents)
         # 4) write the json string to the file
+          print(type(contact_file_json))
           contact_file.write(contact_file_json)
-        print('METHOD-save')  #DEBUG
+        
         ...
 
     def print(self):
