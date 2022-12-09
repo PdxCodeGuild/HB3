@@ -22,6 +22,8 @@ class ContactList:
         self.contacts = []
 
     def load(self):
+        
+        
         # 1) open 'contacts.json' with option 'r' for read
         # 2) get the text from the file
         # 3) convert the text into a python dictionary (json.loads)
@@ -30,10 +32,14 @@ class ContactList:
         ...
     
     def count(self):
-        # return the length of self.contacts
+        return len(self.contacts)
+    
+        # return the length of self.contacts #################################
         ...
     
     def save(self):
+        
+        
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
         # 3) convert the dictionary to a json string (json.dumps)
@@ -41,21 +47,29 @@ class ContactList:
         ...
 
     def print(self):
+        
+        
         # loop over self.contacts
         # print the information for each contact on a separate line
         ...
 
     def add(self, name, phone_number, email):
+        
+        
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
         ...
     
     def remove(self, name):
+        
+        
         # find the contact in self-contacts with the given name
         # remove the element at that index
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
+        
+        
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
         ...
