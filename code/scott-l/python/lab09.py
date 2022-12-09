@@ -84,7 +84,7 @@ class ContactList:
         print(type(new_dict))
         # add the new dictionary to self.contacts
         file_contents = self.contacts
-        file_contents['contacts'].update(new_dict)
+        file_contents['contacts'].update(new_dict)  ## QUESTION : WHy does this become a list when I add the contacts pointer?  prevents from updating the list
         print(file_contents)
         print('METHOD-add')  #DEBUG
         ... 
