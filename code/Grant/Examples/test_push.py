@@ -18,4 +18,4 @@ print('test-pushed')
 
 # .
 
-# . san fglwe akrg q rjsg
+# . san fglwe akrg q rj
