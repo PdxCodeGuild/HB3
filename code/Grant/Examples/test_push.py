@@ -11,5 +11,3 @@ print('test-pushed')
 # getting warm
 
 # stagnant
-
-##aowrhdfbasdsashgcvdshhfktdjb dfcjfhrfkutdadfjbjkhdfkiyrxcadc
