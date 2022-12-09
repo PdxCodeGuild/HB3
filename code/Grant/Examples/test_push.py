@@ -14,4 +14,4 @@ print('test-pushed')
 
 ###############
 
-# succes
+# succe
