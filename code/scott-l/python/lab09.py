@@ -33,28 +33,34 @@ class ContactList:
         self.contacts = []
 
     def load(self):
+        print('METHOD-load')  # DEBUG
         # 1) open 'contacts.json' with option 'r' for read
          # 2) get the text from the file
         with open('contacts.json', 'r') as contact_file:
             file_contents = contact_file.read()
-       
-        print(file_contents)  # DEBUG
         # 3) convert the text into a python dictionary (json.loads)
-        file_contents = json.loads(file_contents)
+        print(type(file_contents))  # DEBUG
+        file_contents = json.loads(file_contents)  # loads the file from the JSON string format into a list format
+        print(type(file_contents))  # DEBUG
+        print(file_contents)  # DEBUG
         # 4) get the list of contacts out of the dictionary
+        for contact_list in file_contents:
+          contact_list = file_contents
         #print(file_contents_json.keys())  # DEBUG
         #print(file_contents_json.values())  # DEBUG
         # 5) assign the list of dictionaries to self.contacts
-        self.contacts = file_contents
-        print('METHOD-load')
-        print(type(self.contacts))
+        self.contacts = contact_list
+       
+        print(type(self.contacts))  # DEBUG
+        print(self.contacts)
+        print(self.contacts[0]["name"])  # DEBUG
         ...
     
     def count(self):
         # return the length of self.contacts
         contact_file = self.contacts
         print('METHOD-count')  #DEBUG
-        return len(contact_file['contacts'])
+        return len(contact_file)
         ...
     
     def save(self):
@@ -63,9 +69,9 @@ class ContactList:
         # 2) put self.contacts in a dictionary with the key 'contacts'
           file_contents = self.contacts
         # 3) convert the dictionary to a json string (json.dumps)
-          contact_file_jason = json.dumps(file_contents)
+          contact_file_json = json.dumps(file_contents)
         # 4) write the json string to the file
-          contact_file.write(contact_file_jason)
+          contact_file.write(contact_file_json)
         print('METHOD-save')  #DEBUG
         ...
 
