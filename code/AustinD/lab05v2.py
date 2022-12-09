@@ -12,8 +12,8 @@ def num_matches(winning, ticket):
             if ticket[i] == winning[i]:
                 match_count += 1
             else:
-                pass
-            return match_count
+                break
+        return match_count
 
 def pick_6():
     #Generate a list of 6 random numbers representing the ticket
@@ -26,9 +26,9 @@ for x in range(100000):
     #Add to your balance the winnings from your matches
     x = num_matches(winning, pick_6())
     balance += winnings[x]
-    print(balance)
+    #print(balance)
 #The ROI (return on investment) is defined as (earnings - expenses)/expenses. Calculate your ROI, print it out along with your earnings and expenses.
 expenses = 200000
-roi = (balance - expenses)/expenses
+roi = (balance/expenses)*100
 earnings = balance + expenses
-print(f'Your net winnings are ${balance}.\nEarnings: ${earnings}\nExpenses: $200,000\nROI: {roi}%')
+#print(f'Your net winnings are ${balance}.\nEarnings: ${earnings}\nExpenses: $200,000\nROI: {roi}%')

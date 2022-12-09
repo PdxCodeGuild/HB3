@@ -7,12 +7,13 @@ winnings = {0:0, 1:4, 2:7, 3:100, 4:50000, 5:1000000, 6:25000000}
 winning = random.sample(range(1, 99), 6)
 #Find how many numbers match
 def num_matches(winning, ticket):
-        match_count = 0
-        for i in range(0, len(ticket)-1):
+        for i in range(len(winning)):
+            print(i)
             if ticket[i] == winning[i]:
                 match_count += 1
             else:
                 pass
+            #print(match_count)
             return match_count
 
 def pick_6():
