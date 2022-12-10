@@ -13,5 +13,5 @@ data = response.json()
 
 result = data['quote']
 print("\n=============================================================\n")
-print(result['body'],"\n",result['author'])
+print(result['body'],"\n","\x1B"+ result['author']+"\x1B")
 print("\n=============================================================\n")
