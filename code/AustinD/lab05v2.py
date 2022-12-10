@@ -1,6 +1,6 @@
 import random 
 #Start your balance at 0
-balance = 0
+earnings = 0
 #Winnings parameters
 winnings = {0:0, 1:4, 2:7, 3:100, 4:50000, 5:1000000, 6:25000000}
 #Generate a list of 6 random numbers representing the winning tickets
@@ -21,10 +21,10 @@ def pick_6():
 for x in range(100000):
     #Add to your balance the winnings from your matches
     x = num_matches(winning, pick_6())
-    balance += winnings[x]
+    earnings += winnings[x]
 
 #The ROI (return on investment) is defined as (earnings - expenses)/expenses. Calculate your ROI, print it out along with your earnings and expenses.
 expenses = 200000
-roi = ((balance - expenses)/expenses)*100
-earnings = balance + expenses
+roi = ((earnings - expenses)/expenses)*100
+balance = earnings - expenses
 print(f'Your net winnings are ${balance}.\nEarnings: ${earnings}\nExpenses: $200,000\nROI: {roi}%')
