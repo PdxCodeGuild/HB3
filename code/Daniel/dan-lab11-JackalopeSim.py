@@ -94,15 +94,20 @@ while len(jackalopes) < 1000: # Loop until the population reaches 1000.
         # Jackalopes can only mate with partners immediately around them.
         if jackalopes[lope]['sex'] == 'female' and 4 <= jackalopes[lope]['age'] <= 8: # Do for all reproductive females:   ## and jackalopes[lope]['pergnant'] == False:
 
-            
             # try:
             #     jackalopes[lope-1] or jackalopes[lope+1]
-            #  if lope > 1:
-            if (jackalopes[lope-1]['sex'] == 'male' and 4 <= jackalopes[lope-1]['age'] <= 8): # Check for an adjacent reproductive male to the left:
-                makebebes() # call the makebebes() method
-            # elif lope < len(jackalopes):
-            elif (jackalopes[lope+1]['sex'] == 'male' and 4 <= jackalopes[lope+1]['age'] <= 8): # Check for an adjacent reproductive male to the right:
-                makebebes() # call the makebebes() method
+
+            if jackalopes[lope] == 0:
+                if (jackalopes[lope+1]['sex'] == 'male' and 4 <= jackalopes[lope+1]['age'] <= 8): # Check for an adjacent reproductive male to the right:
+                    makebebes() # call the makebebes() method
+            elif jackalopes[lope] == len(jackalopes):
+                if (jackalopes[lope-1]['sex'] == 'male' and 4 <= jackalopes[lope-1]['age'] <= 8): # Check for an adjacent reproductive male to the left:
+                    makebebes() # call the makebebes() method
+            else:
+                if (jackalopes[lope-1]['sex'] == 'male' and 4 <= jackalopes[lope-1]['age'] <= 8): # Check for an adjacent reproductive male to the left:
+                    makebebes() # call the makebebes() method
+                elif (jackalopes[lope+1]['sex'] == 'male' and 4 <= jackalopes[lope+1]['age'] <= 8): # Check for an adjacent reproductive male to the right:
+                    makebebes() # call the makebebes() method
 
             # except:
             #     print(f'######### ERROR ##########')
