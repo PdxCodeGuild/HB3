@@ -25,6 +25,6 @@ for x in range(100000):
 
 #The ROI (return on investment) is defined as (earnings - expenses)/expenses. Calculate your ROI, print it out along with your earnings and expenses.
 expenses = 200000
-roi = (balance - expenses)/expenses 
+roi = ((balance - expenses)/expenses)*100
 earnings = balance + expenses
 print(f'Your net winnings are ${balance}.\nEarnings: ${earnings}\nExpenses: $200,000\nROI: {roi}%')
