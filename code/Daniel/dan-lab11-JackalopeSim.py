@@ -81,11 +81,11 @@ jackalopes = [{
 while len(jackalopes) < 1000: # Loop until the population reaches 1000.
     random.shuffle(jackalopes) # Every year the lopes are randomly shuffled.
     jackalopes = [lope for lope in jackalopes if lope['age'] != 10] # Remove all lopes of age 10.
-    print(f'year: {year}\n') #testing
+    # print(f'year: {year}\n') #testing
         
     for lope in range(len(jackalopes)): # Do for all lopes:
         jackalopes[lope]['age'] += 1 # Increment the age counter of all lopes by 1.
-        print(lope, jackalopes[lope]['age'], jackalopes[lope]['sex']) #testing
+        # print(lope, jackalopes[lope]['age'], jackalopes[lope]['sex']) #testing
         
         # Jackalopes can only mate with partners immediately around them.
         if jackalopes[lope]['sex'] == 'female' and 4 <= jackalopes[lope]['age'] <= 8: # For all reproductive females:   ### and jackalopes[lope]['pergnant'] == False:
@@ -107,4 +107,4 @@ while len(jackalopes) < 1000: # Loop until the population reaches 1000.
 
     year += 1 # Increment the year counter by 1.
     
-print(f'Version 2: It will take {year} years for two jackalopes to create a population of 1000.') # Display the goal result.
+print(f'Version 2: It will take {year} years for two jackalopes to create a population of 1000.\n') # Display the goal result.
