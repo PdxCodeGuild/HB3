@@ -1,6 +1,6 @@
 import json
 import requests
-# import pprint
+import pprint
 
 
 url = "https://favqs.com/api/qotd"
@@ -15,11 +15,33 @@ search_key_page = f"https://favqs.com/api/quotes?page={page}&filter={keyword}"
 response = requests.get(search_key_page, headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'})
 
 page_count = 0
+p = pprint.PrettyPrinter(width=80)
 data = response.json()
-print(data)
+# p.pprint(type(data))
+results = data['quotes']
+for x in results:
+    p.pprint(x['body'])
 
-for key in data:
-    pass
+
+
+
+
+
+
+
+
+
+
+#     print(x[data],"\n")
+#     break
+
+
+
+# else:
+    # print(f"Sorry there is no jokes for {search_key_page} please try another animal")
+
+
+
     # print(data[key])
     # print(key[last_page])
     # print(key[quotes])
@@ -29,7 +51,6 @@ for key in data:
     # results =(data[page])
     # print(results)
 
-# p = pprint.PrettyPrinter(width=1)
 # print(response.text)
 # results = data['page']
 
