@@ -1,6 +1,5 @@
 import random
 import requests
-import googlemaps
 
 requests.get('Google API')
 
