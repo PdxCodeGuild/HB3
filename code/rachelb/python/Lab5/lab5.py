@@ -15,7 +15,7 @@ def pick6():
 def num_matches(winning_ticket, ticket):
     matches = 0 
     for i in range(6):
-        if winning_ticket[1] == ticket[1]:
+        if winning_ticket[i] == ticket[i]:
             matches += 1
     return matches
 
@@ -25,7 +25,7 @@ wins = 0
 games = 0
 expenses = 0 
 
-while games < 1000000:
+while games < 100000:
     games += 1
     expenses -=2
     num_match = num_matches(winning_ticket,pick6())
