@@ -1,5 +1,8 @@
 print('\n\tLab 09: Contact List Lab')
 
+import json
+
+'''
 {
     "contacts": [{
         "name": "Dora M. Smith",
@@ -15,6 +18,7 @@ print('\n\tLab 09: Contact List Lab')
         "email": "austin@aol.com"
     }]
 }
+'''
 
 class ContactList:
     
@@ -22,7 +26,11 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        
+        contact_list = open('contacts.json', 'r')
+        contact_list = contact_list.read()
+        contact_list = json.loads(contact_list)
+        self.contacts = contact_list["contacts"]
+        return self.contacts
         
         # 1) open 'contacts.json' with option 'r' for read
         # 2) get the text from the file
@@ -38,7 +46,10 @@ class ContactList:
         ...
     
     def save(self):
-        
+        with open('contacts.json', 'w') as saver:
+            contact_dict = self.contacts['contacts']
+            contact_dict = json.dump(contact_dict)
+            saver.write(contact_dict)
         
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
@@ -47,7 +58,8 @@ class ContactList:
         ...
 
     def print(self):
-        
+        for contact in self.contacts:
+            print(contact)
         
         # loop over self.contacts
         # print the information for each contact on a separate line
