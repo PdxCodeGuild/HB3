@@ -12,10 +12,10 @@ def pick6():
 # Sum_of_expenses 
 # Earings ------------Save both for later
  
-def num_matches(winning, ticket):
+def num_matches(winning_ticket, ticket):
     matches = 0 
     for i in range(6):
-        if winning[1] == ticket[1]:
+        if winning_ticket[1] == ticket[1]:
             matches += 1
     return matches
 
