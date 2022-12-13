@@ -80,10 +80,13 @@ def char_count(string_input):
     data_text_characters = " "  # initialize blank string variable
     str1 = ""  # initialize empty string
     # This function calculates the number of characters in a given text book 
-    # remove all white space
+    # remove all white space and other characters
     data_text_characters = string_input.replace(' ','')
+    data_text_characters1 = data_text_characters.replace('?','')
+    data_text_characters2 = data_text_characters1.replace('!','')
+
     # split the string into a list, this will split on whitespace
-    data_text_list = data_text_characters.split()
+    data_text_list = data_text_characters2.split()
     # convert back to a string from the list
     data_text_chars_only = str1.join(data_text_list)
     return len(data_text_chars_only)
