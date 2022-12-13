@@ -1,9 +1,14 @@
+import random
 import requests
+import googlemaps
 
 requests.get('Google API')
 
-def do_something():
+def main():
 
-def store_something():
+def get_current_location():
+    return (location)
 
-def output_something():
+
+def get_nearby_restaurants(location):
+  return restaurants
