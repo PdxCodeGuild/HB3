@@ -1,16 +1,15 @@
-from requests import get
+import requests
 
-def thing():
-    return #something
-
+#Acquires book through url, establishes grading and age appropriate scale, runs through other functions.
 def main():
-    print(f#'variable')
+    url = input('Provide a url:')
+    content = pull_content(url)
+    ari = calculate_ari(content)
+    #Constrains ari score to dict index
+    if ari > 14:
+        ari = 14
 
-response = get(#book)
-
-formula = (4.71 * (#chars / #words)) + (0.5 * (#words / #sentences)) - 21.43
-
-scale = {
+    scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
      3: {'ages':   '7-8', 'grade_level':    '2nd Grade'},
@@ -25,4 +24,32 @@ scale = {
     12: {'ages': '16-17', 'grade_level':   '11th Grade'},
     13: {'ages': '17-18', 'grade_level':   '12th Grade'},
     14: {'ages': '18-22', 'grade_level':      'College'}
-}
+    }
+
+    (ages, grade_level) = get_reading_level(ari, scale)
+    #Returns final prompt 
+    return f"The ARI score of the text is: {ari}\nThe appropriate age range of this text is: {ages}\n The grade elevel of this text is: {grade_level}"
+
+#Grabs written content and returns it
+def pull_content(url):
+    response = requests.get(url)
+    return response.text
+
+#Collects variables for input then spits out ari score
+def calculate_ari(content):
+    num_chars = len(content)
+    num_words = len(content.split())
+    num_sentences = (content.count(".") + content.count("!") + content.count("?"))
+
+    ari = (4.71 * (num_chars / num_words)) + (0.5 * (num_words / num_sentences)) - 21.43
+    ari = round(ari)
+    return ari
+
+#Grabs ari from scale dict
+def get_reading_level(ari, scale):
+    ages = scale[ari]['ages']
+    grade_level = scale[ari]['grade_level']
+
+    return ages, grade_level
+
+print(main())
