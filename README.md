@@ -44,7 +44,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 09  | [Contact List](1%20Python/labs/09%20Contact%20List.md)        |      5 Dec        |     19 Dec            |
 | 10  | [Quotes](1%20Python/labs/10%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
 | 11  | [Jackalope](1%20Python/labs/11%20Jackalope.md)        |      8 Dec        |     22 Dec            |
-|   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      7 Dec        |          23 Dec       |
+|   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      9 Dec        |          23 Dec       |
 
 
 
