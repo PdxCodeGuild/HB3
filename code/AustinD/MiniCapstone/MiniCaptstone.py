@@ -13,7 +13,7 @@ def get_location():
   return x, y
 
 def get_restaurants(x, y):
-  # Use the latitude and longitude to get a list of nearby restaurants
+  #Use the latitude and longitude to get a list of nearby restaurants
   #nearby_restaurants = googlemaps.
   #location=(x, y)
   #radius=500
