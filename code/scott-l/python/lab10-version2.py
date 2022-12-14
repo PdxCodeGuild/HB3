@@ -41,14 +41,16 @@ the Favqs API here under "Authorization".
 import requests
 import json
 
+page = str(1) # initialize page variable
 
 while True:
     # Obtain the keyword from the user
-    keyword_input = input('enter a keyword to search for quotes: ')
-    page = str(1)
+    if page == str(1):
+        keyword_input = input('enter a keyword to search for quotes: ')
+    # end if
     URL_lookup = 'https://favqs.com/api/quotes?page='+ page +'&filter=' + keyword_input
-    print(f'URL Lookup string is')  # DEBUG
-    print(URL_lookup)  # DEBUG
+    # print(f'URL Lookup string is')  # DEBUG
+    # print(URL_lookup)  # DEBUG
 
     # SET a GET request select the random quote from the URL dictionary lookup table
     response = requests.get(URL_lookup,headers={'Authorization': 'Token token=b66f8dffde403c426aac8259a7476206'})
@@ -59,15 +61,15 @@ while True:
     # convert the text into a python dictionary (json.loads)
     # print(f'The data contents read is {type(data_text)}')  # DEBUG
     data_text_contents = json.loads(data_text)  # loads the file from the JSON string format into a dict format
-    print(f'The data contents after JSON load is {type(data_text_contents)}') #DEBUG
+    # print(f'The data contents after JSON load is {type(data_text_contents)}') #DEBUG
 
     # Get the list of quotes out of the dictionary  
     quote_list = data_text_contents['quotes']
-
+    print(f'----------------------PAGE {page}---------------------------------')
     # NUMBER quotes associated with nature - page X
     print(f'{len(data_text_contents["quotes"])} quotes associated with {keyword_input} - page {page}')
     # <list of quotes>
-    print(f'Quotes BEGIN----page {page}')
+    print(f'Quotes BEGIN--')
     # print(quote_list)  # DEBUG
 
     for quote_index in range(len(quote_list)):
@@ -76,7 +78,35 @@ while True:
 
     input_command = input("Enter 'next page' or 'done': ")
     if input_command == 'next page':
-    # repeat process above
-    elif input_command == 'done'
-    # finish code
+        # repeat process above
+        page = str(int(page)+1)
+    elif input_command == 'done':
+        break
+    else:
+        print("Not a valid input - Start over")
+    # end if
+# end while
+
+# END
+
+#                    /                      
+#                   <=                     
+#                   |\
+#           \|/     |
+#            |______|
+#            /       \
+#           / /_\ /_\ \
+#           |   : :   |
+#          /|   : :   |\               _   ...
+#         : |  /___\  | :            _| |  ...~~~~~
+#         : |  [   ]  | ;           ( |U|  ...~~~~~
+#          \|  [   ]  |/             A|S|  ~~~~~~~~
+#       +-------|-|-------+          H|A|  ~~~~~~~~
+#      /|       |-|       |\         H|_|  |
+#     /\|       |-|       |/\        HIp   |
+#    /  +-------|-|-------+  \       wII   |
+#   /          /|-|\          \       II   |
+#  /            |-|            \      II   |
+# `-'           |-|           `-'    cxI   |
+#              `---'
 
