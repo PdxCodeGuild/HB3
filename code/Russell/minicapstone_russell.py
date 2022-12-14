@@ -14,7 +14,7 @@ where_to = [] # we need to define our grid size...COULD GRID SIZE BE PART OF DIF
 player_HP = 10
 base_defenses = 5
 day_counter = 0
-
+locations = ['A1, A2, A3, A4, B1, B2, B3, B4, C1, C2, C3, C4, D1, D2, D3, D4']
 
 
 print('''The world has ended...
