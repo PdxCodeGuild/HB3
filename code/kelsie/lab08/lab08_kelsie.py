@@ -7,7 +7,7 @@ class ATM :
         return self.balance
 
     def deposit(self, amount) :
-        self.balance = self.balance =+ amount
+        self.balance = self.balance + amount
         return amount
         
     def check_withdrawal(self, amount) :

@@ -12,7 +12,7 @@ class ATM :
         return self.balance
 
     def deposit(self, amount) :
-        self.balance = self.balance =+ amount
+        self.balance = self.balance + amount
         self.transactions.append(f'User deposited {amount}')
         return amount
         
