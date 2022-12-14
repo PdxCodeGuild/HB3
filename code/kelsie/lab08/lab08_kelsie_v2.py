@@ -35,7 +35,6 @@ class ATM :
 
 
 
-
 atm = ATM() # create an instance of our class
 
 print('Welcome to the ATM')
@@ -76,6 +75,3 @@ while True:
     else:
         print('Command not recognized')
         
-    
-
-    
