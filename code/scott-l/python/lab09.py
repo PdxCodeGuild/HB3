@@ -24,9 +24,7 @@ into a Python dictionary, look at json module.
 
 '''
 
-import requests
 import json
-from operator import itemgetter
 
 class ContactList:
     
@@ -34,49 +32,50 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        print('METHOD-load')  # DEBUG
+        # print('METHOD-load')  # DEBUG
         # 1) open 'contacts.json' with option 'r' for read
          # 2) get the text from the file
         with open('contacts.json', 'r') as contact_file:
             file_contents = contact_file.read()
         # 3) convert the text into a python dictionary (json.loads)
-        print(f'The file contents read is {type(file_contents)}')  # DEBUG
+        # print(f'The file contents read is {type(file_contents)}')  # DEBUG
         file_contents1 = json.loads(file_contents)  # loads the file from the JSON string format into a list format
-        print(f'The file contents after Json Load {type(file_contents1)}')  # DEBUG
+        # print(f'The file contents after Json Load {type(file_contents1)}')  # DEBUG
         # print(file_contents)  # DEBUG
         # 4) get the list of contacts out of the dictionary  << START HERE need to understand how to extract the lists from the dictionary key "contacts"
         # dictionary_keys = file_contents1.keys()  # DEBUG
         # print(f'The dictionary keys are {dictionary_keys}')  # DEBUG
         contact_list = file_contents1['contacts']
-        print(f'The file contents after list key {type(contact_list)}')
+        # print(f'The file contents after list key {type(contact_list)}') # DEBUG
         # 5) assign the list of dictionaries to self.contacts
         self.contacts = contact_list
        
         # print(type(self.contacts))  # DEBUG
-        print(self.contacts)
+        # print(self.contacts)  # DEBUG
         # print(self.contacts[0]["name"])  # DEBUG
+        print('File load complete')
         ...
     
     def count(self):
         # return the length of self.contacts
         contact_file = self.contacts
-        print('METHOD-count')  #DEBUG
+        # print('METHOD-count')  #DEBUG
         return len(contact_file)
         ...
     
     def save(self):
-        print('METHOD-save')  #DEBUG
+        # print('METHOD-save')  #DEBUG
         file_contents_dict = {} # create an empty dictionary
         # 1) open 'contacts.json' with open 'w' for write
         with open('contacts.json', 'w') as contact_file:   
         # 2) put self.contacts in a dictionary with the key 'contacts'
-            print(f'This is the contacts list {self.contacts}')  # DEBUG
+            # print(f'This is the contacts list {self.contacts}')  # DEBUG
             file_contents_dict["contacts"] = self.contacts  
-            print(f'This is the dictionary self contacts with key {file_contents_dict}') # DEBUG
+            # print(f'This is the dictionary self contacts with key {file_contents_dict}') # DEBUG
         # 3) convert the dictionary to a json string (json.dumps)
             contact_file_json = json.dumps(file_contents_dict)
         # 4) write the json string to the file
-            print(type(contact_file_json))  # DEBUG
+            # print(type(contact_file_json))  # DEBUG
             contact_file.write(contact_file_json)
         
         ...
@@ -89,8 +88,9 @@ class ContactList:
         # print('METHOD-print')  #DEBUG
         
         # iterate over the list and print to screen
+        print("---------PRINT LIST /BEGIN/--------") # first line make a space
         for print_list in file_contents:
-            # now j is a dict, now we see the keys
+            # now print_list is a dict, now we see the keys
             # of the dict
             for key in print_list.keys():
                 # print every key of each dictionary
@@ -98,6 +98,7 @@ class ContactList:
             # end for
             print("--------------------------------")
         # end for
+        print("---------PRINT LIST /END/--------") # End line pf print
         ...
 
     def add(self, name, phone_number, email):
@@ -108,32 +109,23 @@ class ContactList:
         file_contents = self.contacts
         file_contents.append(new_dict)  # Add the new dictionary information to the list of dictionaries
         print(file_contents)  # DEBUG
-        print('METHOD-add')  #DEBUG
+        # print('METHOD-add')  #DEBUG
         ... 
     
     def remove(self, name):
         # find the contact in self-contacts with the given name
         # remove the element at that index
-        print('METHOD-remove')  #DEBUG
-
-        # search the list of dictionaries for the element where the 'name' key 
-        # is equal to the input name of function using the fiter function with a 
-        # lamda function.  Use the filter() function to search for the values that 
-        # mathc the lambda function and then finally use the list() function to convert
-        # the results into a list
-        # print(list(filter(lambda person: person['name'] == name,self.contacts)))
-        # find the items index in a list of Dictionaries, using the next and enumerate function to search
-        # and find the items index
-        # print(next((i for i, x in enumerate(self.contacts) if x["name"] == name), None))
-
+        # print('METHOD-remove')  #DEBUG
     
         for index in range(len(self.contacts)):
             # if the contacts list starts with the input name string then 
+            # print(f'index tracker is {index}')  # DEBUG
             if self.contacts[index]["name"].startswith(name):
-                # print(True) # EEBUG
+                # print(True) # DEBUG
                 # confirm with user if they want to delete the name
-                remove_request = input(f'''Do you want to Remove this name from the list? (y,n)
-                 {self.contacts[index]} ''')
+                remove_request = input(f'''Do you want to Remove this name from the list?
+                 {self.contacts[index]} 
+                 Answer? (y,n): ''')
                 if remove_request == 'y':
                     # print(f'the index is {index}') # DEBUG
                     del self.contacts[index]
@@ -143,54 +135,58 @@ class ContactList:
                     print(f'exit - no changes made')
                     break
                 # end if
-            else:
+            elif index == range(len(self.contacts)):
                 # print(False)  # Debug
                 print('Name record not found - please type the name again')
-                break
             # end if
-        
         # end for
-
-
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to a temporary given dictionary
         new_dict = dict(name = new_name,phone_number = new_phone_number, email = new_email)
-        print('METHOD-update')  #DEBUG
+        # print('METHOD-update')  #DEBUG
 
+        # search for the name in the list see if it is valid
         for index in range(len(self.contacts)):
-            # if the contacts list starts with the input name string then 
             if self.contacts[index]["name"].startswith(old_name):
-                # print(True) # DEBUG
-                # confirm with user if they want to change the name
-                update_request = input(f'''Do you want to update this record from the list...
-                 {self.contacts[index]} 
-                 with this new record?:
-                 {new_dict} 
-                 Answer (y,n): ''')
-                if update_request == 'y':
-                    # print(f'the index is {index}') # DEBUG
-                    # update the dictionary using the 3 parameters provided by the user
-                    self.contacts[index]["name"] = new_name
-                    self.contacts[index]["phone_number"] = new_phone_number
-                    self.contacts[index]["email"] = new_email
-                    print(f'Name Record updated in the List')
-                    break
-                elif update_request == 'n':
-                    print(f'exit - no changes made')
-                    break
-                # end if
-            else:
-                # print(False)  # Debug
-                print('Name record not found - please type the name again')
-                break
+                search_results = True
+            else: 
+                search_results = False
             # end if
-        
         # end for
+        # if Search results are True then update the record
+        if search_results == True:
+            for index in range(len(self.contacts)):
+                # if the contacts list starts with the input name string then 
+                if self.contacts[index]["name"].startswith(old_name):
+                    # print(True) # DEBUG
+                    # confirm with user if they want to change the name
+                    update_request = input(f'''Do you want to update this record from the list...
+                    {self.contacts[index]} 
+                    with this new record?:
+                    {new_dict} 
+                    Answer (y,n): ''')
+                    if update_request == 'y':
+                        # print(f'the index is {index}') # DEBUG
+                        # update the dictionary using the 3 parameters provided by the user
+                        self.contacts[index]["name"] = new_name
+                        self.contacts[index]["phone_number"] = new_phone_number
+                        self.contacts[index]["email"] = new_email
+                        print(f'Name Record updated in the List')
+                        break
+                    elif update_request == 'n':
+                        print(f'exit - no changes made')
+                        break
+                    # end if  
+                # end if 
+            # end for
 
-
+        # else if name in the index doesn't match then check if search is complete with index   
+        elif search_results == False:
+            print('Name record not found - please type the name again')
+        # end if
         ...
     
 contact_list = ContactList() # create an instance of our class
