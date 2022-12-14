@@ -31,11 +31,6 @@ class ATM :
         amount = self.balance * self.interest
         return amount
 
-   
-
-
-
-
 
 
 
@@ -78,3 +73,4 @@ while True:
         break
     else:
         print('Command not recognized')
+        
