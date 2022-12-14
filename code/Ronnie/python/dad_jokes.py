@@ -4,4 +4,4 @@ response = requests.get('https://icanhazdadjoke.com/', headers={'accept': 'appli
 
 data = response.json()
 
-print(data.get('joke')) 
+print(data.get('joke'))
