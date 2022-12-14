@@ -8,6 +8,7 @@ class ContactList:
 
     def load(self):
 
+        self.contacts = []
         with open('contacts.json', 'r') as f: # 1) open 'contacts.json' with option 'r' for read
             contents = f.read() # 2) get the text from the file
             data = json.loads(contents) # 3) convert the text into a python dictionary (json.loads)
@@ -35,14 +36,16 @@ class ContactList:
         self.contacts.append(self.new_contact)# add the new dictionary to self.contacts
     
     def remove(self, name):
-        for contact in self.contacts: # find the contact in self-contacts with the given name
+        for contact in self.contacts: # find the contact in self.contacts with the given name
             if contact['name'] == name:
                 self.contacts.remove(contact) # remove the element at that index
     
     def update(self, old_name, new_name, new_phone_number, new_email):
         for contact in self.contacts: # find the contact in self.contacts with the given old_name
             if contact['name'] == old_name:
-                ContactList.add(self, new_name, new_phone_number, new_email)
+                self.contacts.remove(contact)
+                self.contacts.append({'name': new_name, 'phone_number': new_phone_number, 'email': new_email})
+                
         # set that contacts' name, phone number, etc to the given values
         ...
     
