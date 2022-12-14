@@ -8,13 +8,15 @@ class ContactList:
         # 1) open 'contacts.json' with option 'r' for read
         with open('contacts.json' , 'r') as c :
             info = c.read()
-            print(info)
+            #print(info)
         # 2) get the text from the file
+            info = json.loads(info)
         # 3) convert the text into a python dictionary (json.loads)
-        info = json.loads(info)
-        self.contacts = info
+        
         # 4) get the list of contacts out of the dictionary
+            info = info['contacts']
         # 5) assign the list of dictionaries to self.contacts
+            self.contacts.append(info)
         ...
     
     def count(self):
@@ -40,26 +42,37 @@ class ContactList:
 
     def print(self): #NOT DONE HERE YET its a dict with a list of dicts
         # loop over self.contacts
-        for x in self.contacts :
-            print(self.contacts(x))
+        for x in range(len(self.contacts)) :
+            print(self.contacts)
+            print(self.contacts[x][x]['name'])
+            print(self.contacts[x][x]['phone_number'])
+            print(self.contacts[x][x]['email'])
         # print the information for each contact on a separate line
         ...
 
     def add(self, name, phone_number, email):
-        self_dict = {{name} : '' , {phone_number} : '' ,
-        {email} : ''}
+        new_contact = {'name' : name , 'phone_number' : phone_number ,
+        'email' : email}
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
+        self.contacts.append(new_contact)
         ...
     
     def remove(self, name):
         # find the contact in self-contacts with the given name
         # remove the element at that index
+        name.self.contacts.remove(self)
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
+        for contact in self.contacts :
+            if 'name' == old_name :
+                'name' == new_name
+                'phone_number' == new_phone_number
+                'email' == new_email
+
         ...
     
 contact_list = ContactList() # create an instance of our class
