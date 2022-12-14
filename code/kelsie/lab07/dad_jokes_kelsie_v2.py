@@ -1,5 +1,6 @@
 import requests
 
+
 response = requests.get('https://icanhazdadjoke.com/', headers={'accept': 'application/json'})
 
 search_term = input('Search Term or "done": ')
@@ -60,9 +61,3 @@ if index >= 19:
     
 
 
-
-
-
-
-
-    
