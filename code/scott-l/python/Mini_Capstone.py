@@ -37,7 +37,41 @@ user and display the Power Spectral Density samples collected at the specified
 chosen frequency channel using the Matplotlib python 2D plotting library 
 '''
 
+# <NOTE-TO-SELF --INSERT INSTRUCTIONS HERE FOR MINI CAPSTONE FOR DOCUMENTATION PURPOSE LEVERAGE 
+# OLD FUNCTION HEADER FORMAT from matlab code>
+
+ # required install
+ # pip install matplotlib
+ # pip install pyrtlsdr
 
 # BEGIN
 
 from rtlsdr import RtlSdr
+from pylab import *
+from rtlsdr import *
+
+# simple way to read and print some samples from the RTL-SDR
+
+# This code is directly lifted from the examples -need to customize the code and format into 
+# given function and structure format
+
+sdr = RtlSdr()
+
+# configure device
+sdr.sample_rate = 2.048e6   # Hertz (Hz)
+sdr.center_freq = 97.3e6      # Hertz (Hz)
+sdr.freq_correction = 60    # Parts per Million (PPM)
+sdr.gain =35
+
+samples = sdr.read_samples(256*1024)
+sdr.close()
+
+# use matplotlib to estimate and plot the PSD
+
+psd(samples, NFFT=1024, Fs=sdr.sample_rate/1e6, Fc=sdr.center_freq/1e6)
+xlabel('Frequency (MHz)')
+ylabel('Relative Power (dB)')
+
+show()
+
+
