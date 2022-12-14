@@ -152,17 +152,45 @@ class ContactList:
         # end for
 
 
-        # if name in self.contacts:
-        #     print(str(name) +  ' is inside the list')
-        # else:
-        #     print(str(name)  + ' is not present in the list')
-
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
         # find the contact in self.contacts with the given old_name
-        # set that contacts' name, phone number, etc to the given values
+        # set that contacts' name, phone number, etc to a temporary given dictionary
+        new_dict = dict(name = new_name,phone_number = new_phone_number, email = new_email)
         print('METHOD-update')  #DEBUG
+
+        for index in range(len(self.contacts)):
+            # if the contacts list starts with the input name string then 
+            if self.contacts[index]["name"].startswith(old_name):
+                # print(True) # DEBUG
+                # confirm with user if they want to change the name
+                update_request = input(f'''Do you want to update this record from the list...
+                 {self.contacts[index]} 
+                 with this new record?:
+                 {new_dict} 
+                 Answer (y,n): ''')
+                if update_request == 'y':
+                    # print(f'the index is {index}') # DEBUG
+                    # update the dictionary using the 3 parameters provided by the user
+                    self.contacts[index]["name"] = new_name
+                    self.contacts[index]["phone_number"] = new_phone_number
+                    self.contacts[index]["email"] = new_email
+                    print(f'Name Record updated in the List')
+                    break
+                elif update_request == 'n':
+                    print(f'exit - no changes made')
+                    break
+                # end if
+            else:
+                # print(False)  # Debug
+                print('Name record not found - please type the name again')
+                break
+            # end if
+        
+        # end for
+
+
         ...
     
 contact_list = ContactList() # create an instance of our class
