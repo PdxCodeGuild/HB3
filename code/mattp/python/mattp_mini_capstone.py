@@ -23,6 +23,8 @@ import requests
 
 variable_location = input('Input your zipcode or a zipcode you would like to know the fish of: ')
 
+###input the fishmap.org api if you can, if not make due with fishwatch location option
+
 variable_fish = input('Input a fish from your location list to learn about its sustainability: ')
 
 response = requests.get(f'https://www.fishwatch.gov/api/species/{variable_fish}', headers = {'accept': 'application/json'})

@@ -26,8 +26,8 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        contact_list = open('contacts.json', 'r')
-        contact_list = contact_list.read()
+        contact = open('contacts.json', 'r')
+        contact_list = contact.read()
         contact_list = json.loads(contact_list)
         self.contacts = contact_list["contacts"]
         return self.contacts
@@ -46,10 +46,13 @@ class ContactList:
         ...
     
     def save(self):
-        with open('contacts.json', 'w') as saver:
-            contact_dict = self.contacts['contacts']
-            contact_dict = json.dump(contact_dict)
-            saver.write(contact_dict)
+        with open('contacts.json', 'w') as f: 
+            contact_dict = {'contacts': self.contacts}
+            
+            contact_dict2 = json.dumps(contact_dict)
+           
+            f.write(contact_dict2)
+            
         
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
@@ -58,29 +61,44 @@ class ContactList:
         ...
 
     def print(self):
-        for contact in self.contacts:
-            print(contact)
+        for contact_list in self.contacts:
+            print(contact_list)
         
         # loop over self.contacts
         # print the information for each contact on a separate line
         ...
 
     def add(self, name, phone_number, email):
-        
-        
+        self.contact_format = {
+            'name': name,
+            'phone_number': phone_number,
+            'email': email}
+        self.contacts.append(self.contact_format)
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
         ...
     
     def remove(self, name):
-        
+        for contact_list in self.contacts:
+            if contact_list['name'] == name:
+                return self.contacts.remove(contact_list)
         
         # find the contact in self-contacts with the given name
         # remove the element at that index
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
-        
+        for contact_list in self.contacts:
+            if contact_list['name'] == old_name:
+                self.contacts.remove(contact_list)
+                
+                new_contact_list = {
+                    'name': new_name,
+                    'phone_number': new_phone_number,
+                    'email': new_email}
+                self.contacts.append(new_contact_list)
+            else:
+                print('Invalid Name')
         
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
