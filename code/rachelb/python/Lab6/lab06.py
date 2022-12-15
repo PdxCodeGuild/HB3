@@ -26,12 +26,13 @@ for char in contents:
 # print(sentences)
 
 Score = 4.71*(character/words) + 0.5*(words/sentences) - 21.43
-ari = (math.ceil(Score))                                                              # Fun Tip: ceil = Ceiling and will round up, Floor division will round down 
-for ari in range(ari):
+ari_math = (math.ceil(Score))                                                              # Fun Tip: ceil = Ceiling and will round up, Floor division will round down 
+
+for ari in range(ari_math):
     if ari > 14 : 
         ari = 14
     else:
-        ari = ari 
+        ari = ari_math 
 print(f'The ARI for gettysburg-address.txt is {ari}')
 
 ari_scale = {
@@ -51,6 +52,5 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-for scale in ari_scale:
-    if ari == ari_scale:
-         print[ari_scale.get[1]]
+print(f'''This corresponds to a {ari_scale[ari_math]['grade_level']} Grade level of difficulty,
+that is suitable for an average person {ari_scale[ari_math]['ages']} years old.''')
