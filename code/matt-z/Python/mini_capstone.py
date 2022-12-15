@@ -17,6 +17,7 @@ page = random.randint(1,10)
 
 api.search(search_term, page=page, results_per_page=1)
 
+# Loop through photos since get_entries() returns a list even though its only one
 photos = api.get_entries()
 for photo in photos:
   print('Photographer: ', photo.photographer)
