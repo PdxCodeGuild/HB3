@@ -1,40 +1,50 @@
-import raylib 
 import random
-import requests 
+import requests
+import raylib
+
+def main():
+  #Set your Foursquare API credentials
+  client_id = 'Insert'
+  client_secret = 'Insert'
+
+  #Set the parameters for the API requests
+  parameters = {
+      'client_id': client_id,
+      'client_secret': client_secret,
+      'v': '20221215',  
+  }
+
+  #Sets the Foursquare API endpoint for getting a user's location
+  location_endpoint = 'https://api.foursquare.com/v2/users/self/locations'
+
+  #Sets the Foursquare API endpoint for getting nearby venues
+  venue_endpoint = 'https://api.foursquare.com/v2/venues/explore'
 
 def get_location():
-  
-  return x, y
+  with requests.get(location_endpoint, params=parameters) as response:
+    location = response.json().get('response', {}).get('locations', [{}])[0]
+    lat, lng  = location.get('lat'), location.get('lng')
+    return lat, lng
 
-def get_restaurants(x, y):
-  #
+def get_nearby_restaurants(lat, lng):
+  #Sets the parameters for the API request
+  parameters = parameters
+  parameters['ll'] = f"{lat},{lng}"
+  parameters['section'] = 'food'  #Sets a filter for the type/category it's searching for 
 
-  # Return the dictionary of restaurants
+  # Make the API request to get nearby venues
+  with requests.get(venue_endpoint, params=parameters) as response:
+    #Searches request response to get the names of the nearby restaurants
+    restaurants = [venue['name'] for venue in response.json()['response']['groups'][0]['items']]
+
+    return restaurants
+
+  lat, lng = get_location()
+
+  # Get the names of nearby restaurants
+  restaurants = get_nearby_restaurants(lat, lng)
+
+  # Return the names of the nearby restaurants
   return restaurants
 
-#GUI function
-def GUI(x, y, restaurants):
-  #Initialize the window
-  raylib.InitWindow(x, y, "Click GUI")
-
-  #Set the background color
-  raylib.SetBackgroundColor(raylib.WHITE)
-
-  #Run the GUI until the user closes it
-  while not raylib.WindowShouldClose():
-    #Check if the user clicks the mouse button
-    if raylib.IsMouseButtonPressed(raylib.MOUSE_LEFT_BUTTON):
-      # Choose a random restaurant from the dictionary
-      random_restaurant = random.choice(list(restaurants.keys()))
-
-      #Print the name of the restaurant
-      print(random_restaurant)
-
-    #Update the screen
-    raylib.UpdateScreen()
-
-  #Close the window
-  raylib.CloseWindow()
-
-# Call the createClickGui function
-GUI(500, 500, get_nearby_restaurants((get_current_location())))
+print(main())
