@@ -1,6 +1,6 @@
 import pygame
 
-from pygame.locals import (
+from pygame.locals import (    # these are the arrow key commands, the escape key, 
     K_UP,
     K_DOWN,
     K_LEFT,
@@ -10,35 +10,39 @@ from pygame.locals import (
     QUIT,
 )
 
-class Player() :                            # creating the player square and how it functions
-    def __init__(self) :                    # the player square is slightly smaller than each stepping square
-        self.rect = pygame.Rect(32, 32, 16, 16)
-        screen.blit(self.rect(screen, rect_color, ))
-        pygame.display.flip()
 
-    def move(self, dx, dy) :                # this shows how the players square moves
-        if dx != 0 :
-            self.move_one_space(dx, 0)
-        if dy != 0 :
-            self.move_one_space(0, dy)
-
-    def move_one_space(self, dx, dy) :      # this defines the movements
-        self.rect.x += dx
-        self.rect.y += dy
-
-
-
-
-pygame.init()
-
-
-screen = pygame.display.set_mode((800, 600)) # set the screen size
+""" variables"""
+world_x = 960
+world_y = 720
+fps = 40            # frames per second
+ani = 4             # animation cycles
+running = True
 color = (85, 107, 47)
+
+"""Objects"""
+
+class Player() :                            # creating the player square and how it functions
+    def __init__(self) :                    
+        self.rect = pygame.Rect(0, 0, 24, 24)
+        
+
+
+
+
+
+
+"""setup"""
+screen = pygame.display.set_mode((world_x, world_y)) # set the screen size and color
 screen.fill(color)
 pygame.display.flip()
 
-walls = [] # List to hold the walls
+clock = pygame.time.Clock # set a timer
+pygame.init()
 player1 = Player() # Create the player
+player1.rect.x = 0
+player1.rect.y = 0
+#player_list = pygame.sprite.Group()
+#player_list.add(player1)
 
 level = [
     "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
@@ -59,14 +63,16 @@ level = [
 ]
 
 
-running = True
-while running == True :                     
-    for event in pygame.event.get() :
-        if event.type == pygame.QUIT :
-            running = False                # ending the game when the user chooses quit
+"""Main loop"""
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:   # setting game exit options
+                running = False
 
-
-rect_color = (255, 0, 0)
-player_rect = pygame.draw.rect(screen, rect_color, pygame.Rect(30, 30, 60, 60))
-screen.blit(player_rect(0, 0))
-pygame.display.flip()
+        if event.type == pygame.KEYDOWN:
+            if event.key == ord('q'):
+                running = False
+        screen.blit(screen, )
+        #player_list.draw(screen)
+        pygame.display.flip()
+        #clock.tick(fps)#
