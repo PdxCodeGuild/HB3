@@ -46,7 +46,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 11  | [Jackalope](1%20Python/labs/11%20Jackalope.md)        |      8 Dec        |     22 Dec            |
 |   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      9 Dec        |          23 Dec       |
 
-## Flask - HTML - CSS:
+## HTML - CSS Labs Assigned:
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
