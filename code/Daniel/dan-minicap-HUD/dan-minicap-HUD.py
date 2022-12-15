@@ -32,6 +32,10 @@ window.setCentralWidget(button)
 
 # Run the application
 window.show()
-# window.showFullScreen() # setWindowOpacity doesn't seem to work on fullscreen...
+# window.showFullScreen() # setWindowOpacity() doesn't seem to work on fullscreen...
 sys.exit(app.exec())
 # app.exec()
+
+### Issues:
+### Elements within window are transparent same as window... Possibly use a custom window transparent paint event?
+### setWindowOpacity() doesn't seem to work w/ showFullScreen()... Possibly use a custom window transparent paint event?
