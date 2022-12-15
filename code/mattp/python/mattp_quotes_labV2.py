@@ -1,0 +1,1 @@
+print('Lab 10: Quotes Lab Version 2')
