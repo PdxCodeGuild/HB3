@@ -6,8 +6,8 @@
 #---------------------------------
 
 # HUD Overlay Project
-# Idea is to start with a transparent window,
-# then build visible elements inside of it,
+# Idea is to begin with a transparent window,
+# then build visible/opaque elements inside of it,
 # and connect those elements to sensor data on the backend.
 
 from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton
@@ -17,22 +17,22 @@ import sys
 app = QApplication(sys.argv)
 
 # Create main window
-window =  QMainWindow()
+window1 =  QMainWindow()
 
-window.setWindowOpacity(0.3)
-window.setWindowTitle("Our first MainWindow App!")
+window1.setWindowOpacity(0.3)
+window1.setWindowTitle("First HUD MainWindow")
 
 # Create button
-button = QPushButton()
-button.setText("Press Me")
-button.clicked.connect(app.quit) # When clicked, close app.
+button1 = QPushButton()
+button1.setText("Press Me to Close Window")
+button1.clicked.connect(app.quit) # When clicked, close app.
 
 # Center the button
-window.setCentralWidget(button)
+window1.setCentralWidget(button1)
 
 # Run the application
-window.show()
-# window.showFullScreen() # setWindowOpacity() doesn't seem to work on fullscreen...
+window1.show()
+# window1.showFullScreen() # setWindowOpacity() doesn't seem to work on fullscreen...
 sys.exit(app.exec())
 # app.exec()
 
