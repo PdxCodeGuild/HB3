@@ -1,24 +1,28 @@
+import math
+
 class ATM:
-    def __init__(self, balance,interest_rate):
-        self.balance = balance 
-        self.interest_rate = interest_rate 
-    def check_balance():
-        balance == balance
-        return balance
-    def deposit(amount):
-        amount == balance 
+    def __init__(self):
+        self.balance = 0 
+        self.interest_rate = 0.1
+        self.loop = []
+    def check_balance(self):
+        self.balance == self.balance
+        return self.balance 
+    def deposit(self, amount):
+        self.balance =+ amount
         return amount
-    def check_withdrawl(amount):
-        amount > balance 
-        return True 
-    def withdraw(amount):
-        amount >= balance 
-        return amount 
-    def calc_intrest():
-        interest = interest * 0.1
+    def check_withdrawl(self, amount):
+        if self.balance - amount < self.balance:
+            return True
+    def withdraw(self, amount):
+        self.balance =- amount 
+        self.loop.append(f'user withdrawls {amount}')       # need users input....loop?
+        return amount
+    def calc_intrest(self,interest):
+        self.interest  = interest * 0.1
         return amount 
 
-atm = ATM('balance','interest_rate') # create an instance of our class
+atm = ATM() # create an instance of our class
 print('Welcome to the ATM')
 while True:
     command = input('Enter a command: ')
@@ -31,11 +35,11 @@ while True:
         print(f'Deposited ${amount}')
     elif command == 'withdraw':
         amount = float(input('How much would you like '))
-        if atm.check_withdrawal(amount): # call the check_withdrawal(amount) method
+        if atm.check_withdrawl(amount): # call the check_withdrawal(amount) method
+            print('Insufficient funds')
+        else:
             atm.withdraw(amount) # call the withdraw(amount) method
             print(f'Withdrew ${amount}')
-        else:
-            print('Insufficient funds')
     elif command == 'interest':
         amount = atm.calc_interest() # call the calc_interest() method
         atm.deposit(amount)
