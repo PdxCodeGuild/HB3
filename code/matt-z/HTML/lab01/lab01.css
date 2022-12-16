@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+    font: Arial;
+    background-image: url(tesla-coil-g3f6a0f5a2_1920.jpg);
+    color: white;
+}
+
+p {
+    margin: 20px;
+    padding: 5px;
+}
