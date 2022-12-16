@@ -50,7 +50,7 @@ M-F 6:00 pm – 9:36 pm PT
 
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
-| 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |               |                       | 
+| 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |    12/15/22   |          12/29/22     | 
 
 ## Getting Unstuck 
 
