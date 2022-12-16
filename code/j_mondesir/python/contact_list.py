@@ -1,9 +1,18 @@
+import os
+import json
+list_contact = input('Upload your contact list: ')
 class ContactList:
     
     def __init__(self):
         self.contacts = []
 
     def load(self):
+        open_file = open(list_contact, 'r')
+        read_file = open_file.read()
+        convert_file = json.loads(read_file)
+        self.contacts = convert_file['contacts']
+        print('Upload successful! ')
+        #return self.contacts
         # 1) open 'contacts.json' with option 'r' for read
         # 2) get the text from the file
         # 3) convert the text into a python dictionary (json.loads)
@@ -12,6 +21,7 @@ class ContactList:
         ...
     
     def count(self):
+        return len(self.contacts)
         # return the length of self.contacts
         ...
     
