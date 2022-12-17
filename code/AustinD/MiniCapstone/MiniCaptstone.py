@@ -3,7 +3,7 @@ import random
 import requests 
 import googlemaps 
 
-api_key = 'AIzaSyD7NVh0Xb-3w8bS5bpH9ZLk-ZPsaulArhE'
+api_key = input('Insert API key')
 
 def get_location():
   #Gets the user's current location coordinates, converting json to python dict
