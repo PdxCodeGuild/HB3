@@ -4,21 +4,21 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        with open('contact_list.json','r') as f: # 1) open 'contacts.json' with option 'r' for read
-            f_content = f.read()# 2) get the text from the file
-        # 3) convert the text into a python dictionary (json.loads)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
+        with open('contact_list.json','r') as f: # --------------1) open 'contacts.json' with option 'r' for read
+            f_content = f.read()# -------------------------------2) get the text from the file
+        contact_list = json.loads(contact_list)#--------------------- 3) convert the text into a python dictionary (json.loads)
+        contact_list = JSON.parse(contact_list)# 4) get the list of contacts out of the dictionary
+        self.contacts = contact_list('contact') # 5) assign the list of dictionaries to self.contacts
         ...
     
     def count(self):
-        # return the length of self.contacts
+        return len(self.contacts)# return the length of self.contacts
         ...
     
     def save(self):
-        # 1) open 'contacts.json' with open 'w' for write
-        # 2) put self.contacts in a dictionary with the key 'contacts'
-        # 3) convert the dictionary to a json string (json.dumps)
+        with open('contact_list.json', 'w') # 1) open 'contacts.json' with open 'w' for write
+        self.contacts = {'contacts'}# 2) put self.contacts in a dictionary with the key 'contacts'
+        self.contacts = json.dumps(self.contacts)# 3) convert the dictionary to a json string (json.dumps)
         # 4) write the json string to the file
         ...
 
