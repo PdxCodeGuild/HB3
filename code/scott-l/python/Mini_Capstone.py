@@ -53,6 +53,7 @@ import requests
 import json
 
 
+
 # URL dictionary lookup
 URL_lookup = {
     1: 'https://www.fcc.gov/media/radio/fm-query',
@@ -77,31 +78,33 @@ URL_lookup = {
     20: 'https://worldradiomap.com/us-oh/dayton',
     21: 'http://data.fcc.gov/lpfmapi/rest/v1/lat/36/long/-119?format=json&secondchannel=true',
     22:  'http://de1.api.radio-browser.info/json/states/OH/',
-    23:  'https://api.radioreference.com/js/?key=15fe2ee4-7cfc-11ed-a2aa-0ecf9dd4aeef&scid=16924'
+    23:  'https://api.radioreference.com/js/?key={key}&scid={scid}',
+    24:  'http://de1.api.radio-browser.info/json/stations/bystate/Dayton,OHIO'
 
 }
 
 # Defined Dictionary list
 # order is [FM, Frequency, City, State, Callsign, ERP]
 
-radio_station_info = {
-    1: ['FM',88.1,"Dayton","OH","WDPR","0.78 Kw"],
-    2: ['FM',89.5,"MHz","Dayton","OH","WQRP","6 Kw"]
-}
+# radio_station_info = {
+#     0: ['FM',88.1,"Dayton","OH","WDPR","0.78 Kw"],
+#     1: ['FM',89.5,"MHz","Dayton","OH","WQRP","6 Kw"]
+# }
 
 
-# Radio Reference application key:   15fe2ee4-7cfc-11ed-a2aa-0ecf9dd4aeef
+
+# Radio Reference application key:   
 # Radio Reference Template:  https://api.radioreference.com/js/?key=DOMAIN_KEY&scid=SUBCAT_ID
 
 # SET a GET request select the random quote from the URL dictionary lookup table
 # SYNTAX requests.get(url, params={key: value}, args) 
-# response = requests.get(URL_lookup[23])
+response = requests.get(URL_lookup[24])
 # # response = requests.get(URL_lookup[23],params={'format': 'json'})
-# response.encoding = 'utf-8' # set encoding to utf-8
+response.encoding = 'utf-8' # set encoding to utf-8
 # # # convert the data text into a string type
 # data_text = response.text
-# print(response)
-# print(response.text)
+print(response)
+print(response.text)
 # # print(response.json())
 # # print(response.links)
 # # print(response.apparent_encoding)
@@ -123,25 +126,32 @@ radio_station_info = {
 # This code is directly lifted from the examples -need to customize the code and format into 
 # given function and structure format
 
-sdr = RtlSdr()
+# sdr = RtlSdr()
 
-# configure device  Default Setup
-sdr.sample_rate = 2.048e6   # Hertz (Hz)
-sdr.center_freq = 97.3e6      # Hertz (Hz)
-sdr.freq_correction = 60    # Parts per Million (PPM)
-sdr.gain =35
+# # configure device  Default Setup
+# sdr.sample_rate = 2.048e6   # Hertz (Hz)
+# sdr.center_freq = 97.3e6      # Hertz (Hz)
+# sdr.freq_correction = 60    # Parts per Million (PPM)
+# sdr.gain =35
 
+# for index in range(len(radio_station_info)):
+#     # print(f'{index}')
+#     # print(type(index))
+#     print(f'{index} {radio_station_info[index][0]},{radio_station_info[index][1]}, {radio_station_info[index][2]}, {radio_station_info[index][3]}, {radio_station_info[index][4]}, {radio_station_info[index][5]}')
+# #end for
 
+# tuner_select = int(input("Choose which frequency to tune the radio (select number from list): "))
 
+# print(radio_station_info[tuner_select][1]*1e6)
+# print(97.3e6)
 
-for index in range(len(radio_station_info)):
-    # print(f'{index}')
-    # print(type(index))
-    print(f'{index} {radio_station_info[index][0]},{radio_station_info[index][1]}, {radio_station_info[index][2]}, {radio_station_info[index][3]}, {radio_station_info[index][4]}, {radio_station_info[index][5]}')
-#end for
+# # configure device  
+# sdr.sample_rate = 2.048e6   # Hertz (Hz)
+# sdr.center_freq = radio_station_info[tuner_select][1]*1e6    # Hertz (Hz)
+# sdr.freq_correction = 60    # Parts per Million (PPM)
+# sdr.gain = 40
 
-
-tuner_select = input("Choose which frequency to tune the radio (select number from list): ")
+# print(f'Radio Frequency Tuned to: {radio_station_info[tuner_select][1]/1e6} MHz ')
 
 # samples = sdr.read_samples(256*1024)
 # sdr.close()
