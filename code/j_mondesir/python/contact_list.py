@@ -12,22 +12,16 @@ class ContactList:
         convert_file = json.loads(read_file)
         self.contacts = convert_file['contacts']
         print('Upload successful! ')
-        #return self.contacts
-        # 1) open 'contacts.json' with option 'r' for read
-        # 2) get the text from the file
-        # 3) convert the text into a python dictionary (json.loads)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
         ...
-    
     def count(self):
         return len(self.contacts)
-        # return the length of self.contacts
         ...
-    
     def save(self):
+        my_dictionary = {}
         open_file = open(list_contact, 'w')
-        #convert_file['contacts'] = self.contacts
+        my_dictionary['contacts']= self.contacts
+        json_file = json.dumps(self.contacts)
+        open_file.write(json_file)
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
         # 3) convert the dictionary to a json string (json.dumps)
@@ -35,11 +29,15 @@ class ContactList:
         ...
 
     def print(self):
+        for i in self.contacts:
+            print(i)
         # loop over self.contacts
         # print the information for each contact on a separate line
         ...
 
     def add(self, name, phone_number, email):
+        new_contact_dics ={'name':{''} , 'phone_number':{''}, 'email': {''}}
+        self.contacts = new_contact_dics
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
         ...
