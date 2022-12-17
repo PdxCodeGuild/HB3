@@ -73,24 +73,40 @@ URL_lookup = {
     16: 'http://data.fcc.gov/lpfmapi/rest/v1/lat/36/long/-119?format=json&secondchannel=true',
     17:  'https://enterpriseefiling.fcc.gov/dataentry/login.html',
     18: ' https://radio-locator.com/cgi-bin/locate?select=city&city=45432&x=0&y=0',
-    19: 'https://streamfinder.com/internet-radio-api/'
+    19: 'https://streamfinder.com/internet-radio-api/',
+    20: 'https://worldradiomap.com/us-oh/dayton',
+    21: 'http://data.fcc.gov/lpfmapi/rest/v1/lat/36/long/-119?format=json&secondchannel=true',
+    22:  'http://de1.api.radio-browser.info/json/states/OH/',
+    23:  'https://api.radioreference.com/js/?key=15fe2ee4-7cfc-11ed-a2aa-0ecf9dd4aeef&scid=16924'
 
 }
 
+# Defined Dictionary list
+# order is [FM, Frequency, City, State, Callsign, ERP]
+
+radio_station_info = {
+    1: ['FM',88.1,"Dayton","OH","WDPR","0.78 Kw"],
+    2: ['FM',89.5,"MHz","Dayton","OH","WQRP","6 Kw"]
+}
+
+
+# Radio Reference application key:   15fe2ee4-7cfc-11ed-a2aa-0ecf9dd4aeef
+# Radio Reference Template:  https://api.radioreference.com/js/?key=DOMAIN_KEY&scid=SUBCAT_ID
+
 # SET a GET request select the random quote from the URL dictionary lookup table
 # SYNTAX requests.get(url, params={key: value}, args) 
-# response = requests.get(URL_lookup[18])
-response = requests.get(URL_lookup[18],params={'format': 'json'})
-response.encoding = 'utf-8' # set encoding to utf-8
-# convert the data text into a string type
+# response = requests.get(URL_lookup[23])
+# # response = requests.get(URL_lookup[23],params={'format': 'json'})
+# response.encoding = 'utf-8' # set encoding to utf-8
+# # # convert the data text into a string type
 # data_text = response.text
-print(response)
+# print(response)
 # print(response.text)
-# print(response.json())
-# print(response.links)
-# print(response.apparent_encoding)
-# print(response.encoding)
-# print(response.headers)
+# # print(response.json())
+# # print(response.links)
+# # print(response.apparent_encoding)
+# # print(response.encoding)
+# # print(response.headers)
 
 # # convert the text into a python dictionary (json.loads)
 # print(f'The data contents read is {type(data_text)}')  # DEBUG
@@ -100,7 +116,7 @@ print(response)
 # # data_text_contents = json.loads(data_text)  # loads the file from the JSON string format into a dict format
 # # print(f'The data contents after JSON load is {type(data_text_contents)}') #DEBUG
 
-'''
+
 
 # simple way to read and print some samples from the RTL-SDR
 
@@ -109,22 +125,33 @@ print(response)
 
 sdr = RtlSdr()
 
-# configure device
+# configure device  Default Setup
 sdr.sample_rate = 2.048e6   # Hertz (Hz)
 sdr.center_freq = 97.3e6      # Hertz (Hz)
 sdr.freq_correction = 60    # Parts per Million (PPM)
 sdr.gain =35
 
-samples = sdr.read_samples(256*1024)
-sdr.close()
-
-# use matplotlib to estimate and plot the PSD
-
-psd(samples, NFFT=1024, Fs=sdr.sample_rate/1e6, Fc=sdr.center_freq/1e6)
-xlabel('Frequency (MHz)')
-ylabel('Relative Power (dB)')
-
-show()
 
 
-'''
+
+for index in range(len(radio_station_info)):
+    # print(f'{index}')
+    # print(type(index))
+    print(f'{index} {radio_station_info[index][0]},{radio_station_info[index][1]}, {radio_station_info[index][2]}, {radio_station_info[index][3]}, {radio_station_info[index][4]}, {radio_station_info[index][5]}')
+#end for
+
+
+tuner_select = input("Choose which frequency to tune the radio (select number from list): ")
+
+# samples = sdr.read_samples(256*1024)
+# sdr.close()
+
+# # use matplotlib to estimate and plot the PSD
+
+# psd(samples, NFFT=1024, Fs=sdr.sample_rate/1e6, Fc=sdr.center_freq/1e6)
+# xlabel('Frequency (MHz)')
+# ylabel('Relative Power (dB)')
+
+# show()
+
+
