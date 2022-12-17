@@ -79,7 +79,7 @@ URL_lookup = {
     21: 'http://data.fcc.gov/lpfmapi/rest/v1/lat/36/long/-119?format=json&secondchannel=true',
     22:  'http://de1.api.radio-browser.info/json/states/OH/',
     23:  'https://api.radioreference.com/js/?key={key}&scid={scid}',
-    24:  'http://de1.api.radio-browser.info/json/stations/bystate/Dayton,OHIO'
+    24:  'http://de1.api.radio-browser.info/json/stations/bystate/OH'
 
 }
 
@@ -91,25 +91,68 @@ URL_lookup = {
 #     1: ['FM',89.5,"MHz","Dayton","OH","WQRP","6 Kw"]
 # }
 
+class RadioList:
+
+    def __init__(self):
+        self.radio_struct = {}
+        self.URL_lookup = ''
+
+    #end def __init__
+
+    def load_api(self,URL_lookup):
+        # SET a GET request select the random quote from the URL dictionary lookup table
+        # SYNTAX requests.get(url, params={key: value}, args) 
+        response = requests.get(URL_lookup)
+        # # response = requests.get(URL_lookup[23],params={'format': 'json'})
+        response.encoding = 'utf-8' # set encoding to utf-8
+
+        # data_text = response.text
+        # print(response)
+        # print(response.text)
+        # print(response.json())
+        # print(response.links)
+        # print(response.apparent_encoding)
+        # print(response.encoding)
+        # print(response.headers)
+
+        # load the response into data structure
+        self.radio_struct = response.json
+        
+    #end def load_api
+        
+    def write_file(self):
+        # 1) write api.radio.browser.info into 'radio_station_list.json' set option 'w' for write
+        with open('radio_station_list.json', 'w') as radio_station_file:    
+            radio_station_file.write(self.radio_struct)
+
+
+        # 2) get the text from the file
+        # 3) convert the text into a python dictionary (json.loads)
+        # 4) get the list of contacts out of the dictionary
+        # 5) assign the list of dictionaries to self.contacts
+        ...
+
+
+#end class RadioList
+
+
+
+
+
+
 
 
 # Radio Reference application key:   
 # Radio Reference Template:  https://api.radioreference.com/js/?key=DOMAIN_KEY&scid=SUBCAT_ID
 
-# SET a GET request select the random quote from the URL dictionary lookup table
-# SYNTAX requests.get(url, params={key: value}, args) 
-response = requests.get(URL_lookup[24])
-# # response = requests.get(URL_lookup[23],params={'format': 'json'})
-response.encoding = 'utf-8' # set encoding to utf-8
-# # # convert the data text into a string type
-# data_text = response.text
-print(response)
-print(response.text)
-# # print(response.json())
-# # print(response.links)
-# # print(response.apparent_encoding)
-# # print(response.encoding)
-# # print(response.headers)
+
+Radio_Obj = RadioList()
+
+Radio_Obj.load_api(URL_lookup[24])
+Radio_Obj.write_file()
+
+
+
 
 # # convert the text into a python dictionary (json.loads)
 # print(f'The data contents read is {type(data_text)}')  # DEBUG
