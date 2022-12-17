@@ -61,12 +61,10 @@ class ContactList:
     def remove(self, name):
         # find the contact in self-contacts with the given name
         # remove the element at that index
-        search = list(filter(lambda person: person['name'] == name, self.contacts))    
-        for index in self.contacts:
-                if search == name:
-                    del self.contacts[index]
-                    
-                #delete that index dictionary
+        for object in self.contacts :
+            if object['name'] == name :
+                del self.contacts[object]
+        
 
     
     def update(self, old_name, new_name, new_phone_number, new_email):
@@ -76,11 +74,13 @@ class ContactList:
         search = list(filter(lambda person: person['name'] == old_name, self.contacts))
         with open('contacts.json', 'a') as self.contacts:    
             if old_name in search :
-                {'name' : new_name , 
+               updated_name = {'name' : new_name , 
                 'phone_number' : new_phone_number ,
                 'email' : new_email}
             
-        
+            updated_contact = json.dumps(updated_name)
+            with open('contacts.json', 'a') as self.contacts:
+                return self.contacts.write(updated_contact)
 
 
 
