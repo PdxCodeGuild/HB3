@@ -18,4 +18,3 @@ lastbonegf
 i liedjgv
 
 
-gfx
