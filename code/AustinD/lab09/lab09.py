@@ -6,22 +6,19 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        file = open('contacts.json', 'r')
+        file = open('./contacts.json', 'r')
         self.contacts = json.load(file)['contacts']
 
     def count(self):
         return len(self.contacts)
     
     def save(self):
-        with open('contacts.json', 'w') as file:
-            json.dump({'contacts': self.contacts}, file)
+        file = open('./contacts.json', 'w') 
+        json.dump({'contacts': self.contacts}, file)
 
     def print(self):
         for contact in self.contacts:
-            print(f"Name: {contact['name']}")
-            print(f"Phone number: {contact['phone_number']}")
-            print(f"Email: {contact['email']}")
-            print()
+            print(f"Name: {contact['name']}\n, Phone number: {contact['phone_number']}\nEmail: {contact['email']}")
 
     def add(self, name, phone_number, email):
         self.contacts.append({'name': name, 'phone_number': phone_number, 'email': email})
