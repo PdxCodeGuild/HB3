@@ -45,8 +45,3 @@ with open('json_file.json', 'w') as file:
 
 
 
-# print(response.__dict__)
-# print(response.content)
-# print(response._content)
-# print(response.text)
-# print(response.raw)
