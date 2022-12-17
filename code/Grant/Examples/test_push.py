@@ -14,5 +14,3 @@ vsdf
 dfsdjytdtwedfdxfd
 
 lastbonegf
-
-i 
