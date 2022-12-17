@@ -1,50 +1,32 @@
+#MiniCapstone
 import random
-import requests
-import raylib
+import requests 
+import googlemaps 
 
-def main():
-  #Set your Foursquare API credentials
-  client_id = 'Insert'
-  client_secret = 'Insert'
-
-  #Set the parameters for the API requests
-  parameters = {
-      'client_id': client_id,
-      'client_secret': client_secret,
-      'v': '20221215',  
-  }
-
-  #Sets the Foursquare API endpoint for getting a user's location
-  location_endpoint = 'https://api.foursquare.com/v2/users/self/locations'
-
-  #Sets the Foursquare API endpoint for getting nearby venues
-  venue_endpoint = 'https://api.foursquare.com/v2/venues/explore'
+api_key = 'AIzaSyD7NVh0Xb-3w8bS5bpH9ZLk-ZPsaulArhE'
 
 def get_location():
-  with requests.get(location_endpoint, params=parameters) as response:
-    location = response.json().get('response', {}).get('locations', [{}])[0]
-    lat, lng  = location.get('lat'), location.get('lng')
-    return lat, lng
+  #Gets the user's current location coordinates, converting json to python dict
+  current_location = requests.post(f'https://www.googleapis.com/geolocation/v1/geolocate?key={api_key}')
+  current_location = current_location.json()
+  x = current_location.get('location').get('lat')
+  y = current_location.get('location').get('lng')
+  return x, y
 
-def get_nearby_restaurants(lat, lng):
-  #Sets the parameters for the API request
-  parameters = parameters
-  parameters['ll'] = f"{lat},{lng}"
-  parameters['section'] = 'food'  #Sets a filter for the type/category it's searching for 
+def get_restaurants(x, y):
+  #Gets nearby restaurants, converting json to python dict
+  nearby_restaurants = requests.post(f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={x},{y}&radius=1000&keyword=restaurant&opennow&delivery&key={api_key}")
+  nearby_restaurants = nearby_restaurants.json()
+  return nearby_restaurants
 
-  # Make the API request to get nearby venues
-  with requests.get(venue_endpoint, params=parameters) as response:
-    #Searches request response to get the names of the nearby restaurants
-    restaurants = [venue['name'] for venue in response.json()['response']['groups'][0]['items']]
+def random_restaurant(available_restaurants):
+  restaurants = available_restaurants['results']
+  random_restaurant = random.choice(restaurants)
+  name = random_restaurant['name']
+  return name
 
-    return restaurants
-
-  lat, lng = get_location()
-
-  # Get the names of nearby restaurants
-  restaurants = get_nearby_restaurants(lat, lng)
-
-  # Return the names of the nearby restaurants
-  return restaurants
+def main():
+  result = random_restaurant(get_restaurants(*get_location()))
+  return result 
 
 print(main())
