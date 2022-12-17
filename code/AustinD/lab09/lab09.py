@@ -18,7 +18,7 @@ class ContactList:
 
     def print(self):
         for contact in self.contacts:
-            print(f"Name: {contact['name']}\n, Phone number: {contact['phone_number']}\nEmail: {contact['email']}")
+            print(f"Name: {contact['name']}\n Phone number: {contact['phone_number']}\nEmail: {contact['email']}")
 
     def add(self, name, phone_number, email):
         self.contacts.append({'name': name, 'phone_number': phone_number, 'email': email})
