@@ -26,6 +26,8 @@ class ContactList:
         ...
     
     def save(self):
+        open_file = open(list_contact, 'w')
+        #convert_file['contacts'] = self.contacts
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
         # 3) convert the dictionary to a json string (json.dumps)
