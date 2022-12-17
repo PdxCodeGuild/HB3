@@ -1,3 +1,16 @@
-#Quotes API lab
+import requests
 
-https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/10%20Quotes%20API.md
+def getter():
+    quotes_request = requests.get('https://favqs.com/api/qotd', headers={'accept': 'application/json'})
+    quotes = quotes_request.json()
+    return quotes
+
+def parse(quotes):
+    author = quotes['quote']['author']
+    body = quotes['quote']['body']
+    return author, body 
+
+def main(author, body):
+    print(f"{body}\n{author}")
+
+main(*parse(getter()))
