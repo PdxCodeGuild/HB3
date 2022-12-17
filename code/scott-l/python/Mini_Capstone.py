@@ -102,8 +102,8 @@ class RadioList:
     def load_api(self,URL_lookup):
         # SET a GET request select the random quote from the URL dictionary lookup table
         # SYNTAX requests.get(url, params={key: value}, args) 
-        response = requests.get(URL_lookup)
-        # # response = requests.get(URL_lookup[23],params={'format': 'json'})
+        # response = requests.get(URL_lookup)
+        response = requests.get(URL_lookup,params={'format': 'json'})
         response.encoding = 'utf-8' # set encoding to utf-8
 
         # data_text = response.text
@@ -117,19 +117,25 @@ class RadioList:
 
         # load the response into data structure
         self.radio_struct = response.json
+        # self.radio_struct = response.text
         
+
     #end def load_api
         
     def write_file(self):
+
+        file_contents_dict = {} # create an empty dictionary
         # 1) write api.radio.browser.info into 'radio_station_list.json' set option 'w' for write
         with open('radio_station_list.json', 'w') as radio_station_file:    
-            radio_station_file.write(self.radio_struct)
+        # 2) put self.radio_struct in a dictionary with the key 'radio_list'
+            file_contents_dict= {"radio_List" : self.radio_struct}
+            # print(self.radio_struct)  # DEBUG
+        # 3) convert the dictionary to a json string (json.dumps)
+            radio_station_file_json = json.dumps(file_contents_dict)
+        # 4) write the json string to the file
+            radio_station_file.write(radio_station_file_json)
 
 
-        # 2) get the text from the file
-        # 3) convert the text into a python dictionary (json.loads)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
         ...
 
 
