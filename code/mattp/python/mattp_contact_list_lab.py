@@ -48,9 +48,9 @@ class ContactList:
     
     def save(self):
         with open('contacts.json', 'w') as saver:
-            contact_dict = self.contacts['contacts']
-            contact_dict = json.dump(contact_dict)
-            saver.write(contact_dict)
+            contact_dict = {'contacts': self.contacts}
+            contact_dict2 = json.dumps(contact_dict)
+            saver.write(contact_dict2)
         
         # 1) open 'contacts.json' with open 'w' for write
         # 2) put self.contacts in a dictionary with the key 'contacts'
@@ -67,21 +67,32 @@ class ContactList:
         ...
 
     def add(self, name, phone_number, email):
-        
+        contact_format = {
+            'name': name, 
+            'phone_number': phone_number, 
+            'email': email}
+        self.contacts.append(contact_format)
         
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
         ...
     
     def remove(self, name):
-        
+        for person in self.contacts:
+            if person['name'] == name:
+                self.contacts.remove(person)
         
         # find the contact in self-contacts with the given name
         # remove the element at that index
         ...
     
     def update(self, old_name, new_name, new_phone_number, new_email):
-        
+        for contact in self.contacts:
+            if contact['name'] == old_name:
+                self.contacts.remove(contact)
+                self.contacts.append({'name': new_name, 
+                                      'phone_number': new_phone_number, 
+                                      'email': new_email})
         
         # find the contact in self.contacts with the given old_name
         # set that contacts' name, phone number, etc to the given values
