@@ -27,7 +27,7 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        contact_list = open('contacts.json', 'r')
+        contact_list = open('contacts1.json', 'r')
         contact_list = contact_list.read()
         contact_list = json.loads(contact_list)
         self.contacts = contact_list["contacts"]
@@ -47,7 +47,7 @@ class ContactList:
         ...
     
     def save(self):
-        with open('contacts.json', 'w') as saver:
+        with open('contacts1.json', 'w') as saver:
             contact_dict = {'contacts': self.contacts}
             contact_dict2 = json.dumps(contact_dict)
             saver.write(contact_dict2)
