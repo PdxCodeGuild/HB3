@@ -6,42 +6,32 @@ class ContactList:
         
 
     def load(self):
-        # 1) open 'contacts.json' with option 'r' for read
-        # 2) get the text from the file
-        with open('contacts.json', 'r') as f :
-            contents = f.read()    
-        # 3) convert the text into a python dictionary (json.loads)
-            data = json.loads(contents)
-        # 4) get the list of contacts out of the dictionary
-        # 5) assign the list of dictionaries to self.contacts
-            self.contacts = data['contacts']
+        file = open('contacts.json', 'r')
+        data = json.loads(file.read())
+        dictionaries = data['contacts']
+        self.contacts = dictionaries
             
-            
-       
-    
+   
     def count(self):
-        # return the length of self.contacts
-        return len(self.contacts)
+            return len(self.contacts)
 
-    
+  
     def save(self): 
-        # 1) open 'contacts.json' with open 'w' for write
-        # 2) put self.contacts in a dictionary with the key 'contacts'
         self_dict = {}
         self_dict.update({'contacts' : self.contacts})
-        # 3) convert the dictionary to a json string (json.dumps)
-        saved = json.dumps(self_dict)
-        # 4) write the json string to the file
-        with open('contacts.json' , 'w') as self.contacts :
-            self.contacts.write(saved)
-
-
-    def print(self): # loop over self.contacts
-        with open('contacts.json', 'r') as self.contacts:
-            for line in self.contacts:
-                print(line)
+        with open('contacts.json' , 'w') as file :
+            saved = json.dumps(self_dict)
+            file.write(saved)
+            file.close()
         
-
+        
+    def print(self): 
+        for x in range(len(self.contacts)) :
+            print(self.contacts[x]['name'])
+            print(self.contacts[x]['phone_number'])
+            print(self.contacts[x]['email'])
+            print(" ")
+        
 
     def add(self, name, phone_number, email):
         new_contact = {
@@ -49,43 +39,28 @@ class ContactList:
                 'phone_number' : phone_number ,
                 'email' : email
                 }
-        new_contact = json.dumps(new_contact)
-        with open('contacts.json', 'a') as self.contacts:
-            return self.contacts.write(new_contact)
+        self.contacts.append(new_contact)
+        print(self.contacts)
 
-        # create a new dictionary using the 3 parameters
-        # add the new dictionary to self.contacts
         
-
-    
     def remove(self, name):
-        # find the contact in self-contacts with the given name
-        # remove the element at that index
-        for object in self.contacts :
-            if object['name'] == name :
-                del self.contacts[object]
+        for x in range(len(self.contacts)) :
+            if self.contacts[x]['name'] == name :
+                del self.contacts[x]
+                break
         
-
-    
+  
     def update(self, old_name, new_name, new_phone_number, new_email):
-        # find the contact in self.contacts with the given old_name
-        # set that contacts' name, phone number, etc to the given values
-        
-        search = list(filter(lambda person: person['name'] == old_name, self.contacts))
-        with open('contacts.json', 'a') as self.contacts:    
-            if old_name in search :
-               updated_name = {'name' : new_name , 
-                'phone_number' : new_phone_number ,
-                'email' : new_email}
-            
-            updated_contact = json.dumps(updated_name)
-            with open('contacts.json', 'a') as self.contacts:
-                return self.contacts.write(updated_contact)
+        for x in range(len(self.contacts)) :
+            if self.contacts[x]['name'] == old_name :
+               self.contacts[x]['name'] = new_name
+               self.contacts[x]['phone_number'] = new_phone_number
+               self.contacts[x]['email'] = new_email
 
 
 
 
-contact_list = ContactList() # create an instance of our class
+contact_list = ContactList() 
 contact_list.load()
 print('Welcome to the Contact List App (CLA)')
 while True:
