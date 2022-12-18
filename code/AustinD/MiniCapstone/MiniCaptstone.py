@@ -18,8 +18,9 @@ def get_restaurants(x, y):
   nearby_restaurants = requests.post(f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={x},{y}&radius=16000&keyword=restaurant&opennow&delivery&key={api_key}")
   available_restaurants = nearby_restaurants.json()
   return available_restaurants 
-  #Gets random restaurant, gets name and place_id, uses place_id from Nearby Search API to call Place Details API for contact information after converting json to python
+  
 def random_restaurant(available_restaurants):
+  #Gets random restaurant, gets name and place_id, uses place_id from Nearby Search API to call Place Details API for contact information after converting json to python
   restaurants = available_restaurants['results']
   random_restaurant = random.choice(restaurants)
   name = random_restaurant['name']
