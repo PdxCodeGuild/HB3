@@ -61,14 +61,18 @@ for fish in data:
     fishlocation = fishlocation.replace('<li>', '')
     fishlocation = fishlocation.replace('<ul>', '')
     fishlocation = fishlocation.replace('</ul>', '')
+    fishlocation = fishlocation.replace('&nbsp;', '')
     fishhabitat = fishhabitat.replace('</li>', '')
     fishhabitat = fishhabitat.replace('<li>', '')
     fishhabitat = fishhabitat.replace('<ul>', '')
     fishhabitat = fishhabitat.replace('</ul>', '')
+    fishhabitat = fishhabitat.replace('&nbsp;', '')
     fishtaste = fishtaste.replace('</p>', '')
     fishtaste = fishtaste.replace('<p>', '')
+    fishtaste = fishtaste.replace('&nbsp;', '')
     fishtexture = fishtexture.replace('<p>', '')
     fishtexture = fishtexture.replace('</p>', '')
+    fishtexture = fishtexture.replace('&nbsp;', '')
     
     print(f"""\nThe {fishname} is located: 
         {fishlocation}\n""")
