@@ -10,6 +10,10 @@ from pygame.locals import (    # these are the arrow key commands, the escape ke
     K_LEFT,
     K_RIGHT,
     K_ESCAPE,
+    K_a,
+    K_w,
+    K_d,
+    K_s,
     KEYDOWN,
     QUIT,
 )
@@ -18,22 +22,22 @@ pygame.init()
 
 
 
-class Player (object) :                 # creating a class for the player movements
+class Player (object) :                 # creating a class for the player and the player movements
         def __init__(self) :
-                self.rect = pygame.Rect(32, 32, 16, 16)
+                self.rect = pygame.Rect(32, 32, 16, 16) # this creates the player rectangle
 
         def move(self, dx, dy) :
                 if dx != 0 :
-                        self.move_single_axis(dx, 0)
+                        self.move_single_axis(dx, 0)    # move() tells the player exactly how to move
                 if dy != 0 :
                         self.move_single_axis(0, dy)
 
-        def move_single_axis(self, dx, dy) :
+        def move_single_axis(self, dx, dy) :    # move_single_axis does the math for the specified movement
                 self.rect.x += dx
                 self.rect.y += dy
                 
                 for wall in walls :                             # stopping the player when there is a collision with the wall
-                        if self.rect.colliderect(wall.rect) :
+                        if self.rect.colliderect(wall.rect) :   
                                 if dx > 0 :
                                         self.rect.right = wall.rect.left
                                 if dx < 0 :
@@ -42,6 +46,8 @@ class Player (object) :                 # creating a class for the player moveme
                                         self.rect.bottom = wall.rect.top
                                 if dy < 0 :
                                         self.rect.top = wall.rect.bottom
+
+
 
 class Wall(object) :
         def __init__(self, pos) :
@@ -99,16 +105,17 @@ while running:
                         running = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 running = False
+        if event.type == pygame.KEYDOWN and event.key == ord('q') :
+                running = False
 
-
-        key = pygame.key.get_pressed() # this tells the player to move 2 pixels when the arrow keys are pressed
-        if key[pygame.K_LEFT]:
+        key = pygame.key.get_pressed() # this tells the player to move 2 pixels when the arrow keys or wasd are pressed
+        if key[pygame.K_LEFT] or key[pygame.K_a] :
                 player.move(-2, 0)
-        if key[pygame.K_RIGHT]:
+        if key[pygame.K_RIGHT] or key[pygame.K_d] :
                 player.move(2, 0)
-        if key[pygame.K_UP]:
+        if key[pygame.K_UP] or key[pygame.K_w] :
                 player.move(0, -2)
-        if key[pygame.K_DOWN]:
+        if key[pygame.K_DOWN] or key[pygame.K_s] :
                 player.move(0, 2)
 
 
