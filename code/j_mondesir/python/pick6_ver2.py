@@ -36,26 +36,20 @@ def num_matches(winning, ticket):
        counter += 1
     return counter
          
-for i in range(10000):
+for i in range(100000):
     tickets = pick6()
     balance -= 2
     match_result = num_matches(winning,tickets) 
     balance += winning_prize[match_result]
 print(f'You have a balance of ${float(balance)}')
-    
-    
 
+# for i in range(100):
+#     ticket = pick()
+#     balance -= 2
+#     match_result = num_matches(winning,ticket)
+#     balance += match_result
+# print(f'You have a balance of ${float(balance)}')
 
-    
-   
- 
-
-            
-   
-
-
-
-        
-    
-    
-        
+earnings =  abs(-200000 - balance)
+ROI = (earnings - 200000)/200000
+print(f'You earned ${earnings} and your ROI is {ROI}')

@@ -42,9 +42,16 @@ M-F 6:00 pm – 9:36 pm PT
 | 07  | [Dad Joke API](1%20Python/labs/07%20Dad%20Joke%20API.md)        |      2 Dec        |     16 Dec            |
 | 08  | [ATM](1%20Python/labs/08%20ATM.md)        |      2 Dec        |     16 Dec            |
 | 09  | [Contact List](1%20Python/labs/09%20Contact%20List.md)        |      5 Dec        |     19 Dec            |
-| 10  | [Quotes](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/18%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
+| 10  | [Quotes](1%20Python/labs/10%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
+| 11  | [Jackalope](1%20Python/labs/11%20Jackalope.md)        |      8 Dec        |     22 Dec            |
+|   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      9 Dec        |          23 Dec       |
 
+## HTML - CSS Labs Assigned:
 
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |    15 Dec     |          29 Dec       | 
+| 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          02 Jan       | 
 
 ## Getting Unstuck 
 

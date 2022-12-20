@@ -18,7 +18,7 @@ class ATM:
     # deposit(amount) deposits the amount in the account.
     def deposit(self, amount):
         self.balance += amount
-        self.ledger.append(f'Deposited {amount}') # Add str to ledger.
+        self.ledger.append(f'Deposited {amount}') # Add str record to the ledger.
     # check_withdrawal(amount) returns true if the withdrawn amount won't put the account in the negative.
     def check_withdrawal(self, amount):
         if amount <= self.balance:
@@ -28,13 +28,13 @@ class ATM:
     # withdraw(amount) withdraws the amount from the account.
     def withdraw(self, amount):
         self.balance -= amount
-        self.ledger.append(f'Withdrew {amount}') # Add str to ledger.
+        self.ledger.append(f'Withdrew {amount}') # Add str record to the ledger.
     # calc_interest() returns the amount of interest calculated on the account.
     def calc_interest(self):
         return self.balance * self.interest_rate
     # print_transactions() prints out the list of transactions aka ledger.
     def print_transactions(self):
-        print(*self.ledger, sep = '\n') # Display ledger list as items seperated by new lines.
+        print(*self.ledger, sep = '\n') # Display ledger list formatted as indexes seperated by new lines.
 
 atm = ATM() # Creates an instance of the class.
 print('Welcome to the ATM')
