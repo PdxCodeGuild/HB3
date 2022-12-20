@@ -102,9 +102,9 @@ class RadioList:
     def load_api(self,URL_lookup):
         # SET a GET request select the random quote from the URL dictionary lookup table
         # SYNTAX requests.get(url, params={key: value}, args) 
-        # response = requests.get(URL_lookup)
+        response = requests.get(URL_lookup)
         response = requests.get(URL_lookup,params={'format': 'json'})
-        response.encoding = 'utf-8' # set encoding to utf-8
+        # response.encoding = 'utf-8' # set encoding to utf-8
 
         # data_text = response.text
         # print(response)
@@ -116,8 +116,9 @@ class RadioList:
         # print(response.headers)
 
         # load the response into data structure
-        self.radio_struct = response.json
-        # self.radio_struct = response.text
+        # self.radio_struct = response.json
+        self.radio_struct = response.text
+        # print(self.radio_struct)  # DEBUG
         
 
     #end def load_api
@@ -131,7 +132,8 @@ class RadioList:
             file_contents_dict= {"radio_List" : self.radio_struct}
             # print(self.radio_struct)  # DEBUG
         # 3) convert the dictionary to a json string (json.dumps)
-            radio_station_file_json = json.dumps(file_contents_dict)
+            # radio_station_file_json = json.dumps(file_contents_dict)
+            # print(radio_station_file_json)  # DEBUG
         # 4) write the json string to the file
             radio_station_file.write(radio_station_file_json)
 
@@ -140,12 +142,6 @@ class RadioList:
 
 
 #end class RadioList
-
-
-
-
-
-
 
 
 # Radio Reference application key:   
