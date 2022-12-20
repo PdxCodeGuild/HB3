@@ -1,16 +1,14 @@
-print('test-pushed')
 
-#beep boop
 
-# . --_ = ..  fax machine noises
 
-# 3rd time or bust
-srfg 
-# bust
-vsdf
-# getting warm
 
-# stagnanardfcawdcwaef
-dfsdjytdtwedfdxfd
+student_list = [(1, 'violette'), (3, 'jean')]
+def func():
+    for x in student_list:
 
-lastboneg
+        return f"{x[0]}: {x[1]}"
+
+
+print(func())
+
+# list = [(s.commit, s.name) for s in student_list if len(student_list) > 0]
