@@ -39,11 +39,38 @@ print(f" {count} quotes associated with {keyword} - page {page} ")
 print(y.print_quote())
 #-------------------------------------------------------------------
 
-response = input("enter 'next page' or 'done': ")
+#From here my attempt is to begin a while loop dependent on the users response, also, I will be adding an integer to change the page within the while loop
+while response == input("enter 'next page' or 'done': "):
+    if response == ("done"):
+        print("done")
+        break
 
-if response == "done":
-    print("done")
-elif response == "next page":
-    page + 1
-    print(f" {count} quotes associated with {keyword} - page {page} ")
-    print(y.print_quote())
+    if response == "next page":
+
+        response = requests.get('https://favqs.com/api/qotd', headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'}) # params={'format': 'json'})
+
+        jresponse = json.loads(response.text)
+
+        keyword = input("enter a keyword to search for quotes: ")
+    
+        test = requests.get(f'https://favqs.com/api/quotes?page={page}&filter={keyword}', headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'})
+    
+        
+        
+    class quotes:
+        page + 1
+        def __init__(self):
+            x = 1
+
+    def print_quote(self):
+        for x in diction_quotes:
+            print(x['author' ] +" - " + x['body'])  
+    y = quotes()
+for x in diction_quotes:
+    count +=1
+
+    
+#-------------------------------------------------------------------
+print(f" {count} quotes associated with {keyword} - page {page} ")
+print(y.print_quote())
+#-------------------------------------------------------------------
