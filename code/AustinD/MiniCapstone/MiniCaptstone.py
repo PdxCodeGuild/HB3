@@ -1,9 +1,7 @@
-#MiniCapstone
+import PySimpleGUI as sg
 import random
 import requests 
 import googlemaps 
-
-api_key = input('Insert API key')
 
 def get_location():
   #Gets the user's current location coordinates by calling geolocate API and converting json to python dict
@@ -34,5 +32,23 @@ def main():
   result = random_restaurant(get_restaurants(*get_location()))
   return result
 
-print(main())
-exit()
+#GUI elements as list
+layout = [
+    [sg.Text('Enter API key:'), sg.InputText()],
+    [sg.Button('Get random restaurant')]
+]
+
+#Instance GUI
+window = sg.Window('MiniCapstone', layout)
+
+#Program loop/main call
+while True:
+    event, values = window.read()
+    if event in (None, 'Cancel'):
+        break
+    if event == 'Get random restaurant':
+        api_key = values[0]
+        result = main()
+        sg.popup(result)
+
+window.close()
