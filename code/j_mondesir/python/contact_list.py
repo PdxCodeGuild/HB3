@@ -10,8 +10,7 @@ class ContactList:
         with open("contacts.json", 'r') as open_file:
             read_file = open_file.read()
             convert_file = json.loads(read_file)
-        for contact in convert_file['contacts']:
-            self.contacts.append(contact)
+            self.contacts = convert_file['contacts']
         print('Upload successful! ')
         # 1) open 'contacts.json' with option 'r' for read
         # 2) get the text from the file
@@ -57,7 +56,7 @@ class ContactList:
     
     def update(self, old_name, new_name, new_phone_number, new_email):
         for contact in self.contacts:
-            if contact['name'] == old_name():
+            if contact['name'] == old_name:
                 self.contacts.remove(contact)
                 new_contact_dics = {'name': new_name, 'phone_number': new_phone_number, 'email': new_email}
                 self.contacts.append(new_contact_dics)        
