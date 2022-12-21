@@ -1,5 +1,4 @@
-import math
-import random
+import cmd, textwrap, sys, math, random, pyreadline
 
 # Create Constant Variables #
 A1 = 'A1'
@@ -27,6 +26,8 @@ items = 'items'
 is_weapon = 'is_weapon'
 is_food = 'is_food'
 is_drink = 'is_drink'
+is_ally = 'is_ally'
+can_take = 'can_take'
 screen_width = 80
 
 # Define Locations, POIs, Items, etc 
@@ -106,27 +107,23 @@ world_locations = {
 world_items = {
     'Gun': {
         desc: 'It is a gun',
-        is_weapon: True,
-        is_food: False,
-        is_drink: False},
+        can_take: True,
+        is_weapon: True,},
 
     'Taco': {
         desc: 'It is a taco',
-        is_weapon: False,
-        is_food: True,
-        is_drink: False},
+        can_take: True,
+        is_food: True},
 
     'Soda': {
         desc: 'It is a soda',
-        is_weapon: False,
-        is_food: False,
+        can_take: True,
         is_drink: True},
 
     'Survivor': {
         desc: 'It is a survivor',
-        is_weapon: False,
-        is_food: True,
-        is_drink: False}
+        can_take: True,
+        is_ally: True}
 }
 
 
@@ -162,15 +159,28 @@ location_pois = {
         items: []},
 }
 
+location = A1
+inventory = []
+
 # Define Functions
+
+def explore(quadrant, level):
+
+    for i in range(level):
+        discovered = random.choice(list(location_pois.items()))
+        world_locations[quadrant][POIs] += discovered  # HOW DO I LIMIT "POIs" TO 3??
+        world_locations[quadrant][explored] += 1       # MAYBE WHEN CALLING THE FUNCTION??
+        if world_locations[quadrant][explored] > 3:
+            world_locations[quadrant][explored] = 3
 
 def scavenge(location, level): # should randomly select item and incrememt 'looted' level
     
-    while location_pois[location][looted] < 3:
-        for i in range(level):
-            key = random.choice(list(world_items.items())) # there should be more to this...
-            location_pois[location][items] += key          # maybe skewing the 'randomness' a bit...
-            location_pois[location][looted] +=1            # not every search should return an item
+    for i in range(level):
+        found = random.choice(list(world_items.items())) # there should be more to this...
+        location_pois[location][items] += found        # maybe skewing the 'randomness' a bit...
+        location_pois[location][looted] +=1            # not every search should return an item
+        if location_pois[location][looted] > 3:
+            location_pois[location][looted] = 3
 
     # if 0 < location_pois[location][looted] < 3:
     #     print(f"You have looted this POI {looted} times")
@@ -182,31 +192,36 @@ def scavenge(location, level): # should randomly select item and incrememt 'loot
     # if location_pois[location][looted] < 3:
     #     location_pois[location][looted] += 1
         
-    
-
-
-
-scavenge('Hospital', 2)
-print(location_pois['Hospital'])
-
-# print(location_pois['Hospital'][looted])
-# print(location_pois['Hospital'][items])
-# print(random.choice(world_items))
-
-
-
-
 def travel(current_location, destination): # Quick Maffs for finding distance between current and next location
 
-    x1, y1 = world_locations[current_location]['coord']
-    x2, y2 = world_locations[destination]['coord']
-   
-    distance = math.dist([x1, y1], [x2, y2])
+    if current_location in world_locations and destination in world_locations:
+        x1, y1 = world_locations[current_location]['coord']
+        x2, y2 = world_locations[destination]['coord']
     
-    distance_rounded = (round(distance, 2))     ## SHOULD THIS ALSO ACCOUNT FOR TIME OR IS THAT A SEPARATE FUNCTION??
+        distance = math.dist([x1, y1], [x2, y2])        
+        distance_rounded = (round(distance, 2))     ## SHOULD THIS ALSO ACCOUNT FOR TIME OR IS THAT A SEPARATE FUNCTION??
+        travel_time = distance_rounded / 2
 
-    current_location = destination
-    return distance_rounded, current_location
+        print(f'You travel {distance} miles to {destination}, which takes {travel_time} hours')
 
-distance, current_location = travel('A1', 'A2')
-print(distance, current_location)
+        current_location = destination
+        return distance_rounded, current_location
+
+while True:
+
+    place = input("Pick a quadrant to explore ")
+    level = int(input("How thoroughly would you like to explore? "))
+    explore(world_locations[place], level)
+    print(world_locations[place])
+    x = input("Quit? ")
+    if x == "Y":
+        break
+
+# explore(A1, 2)
+# print(world_locations[A1][POIs])
+# print(world_locations[A1][explored])
+# scavenge('Hospital', 3)
+# print(location_pois['Hospital'][looted])
+# print(location_pois['Hospital'][items])
+# distance, current_location = travel('A1', 'A2')
+# print(distance, current_location)
