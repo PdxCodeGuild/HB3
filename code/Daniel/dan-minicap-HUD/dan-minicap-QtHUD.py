@@ -22,7 +22,7 @@ window1 = QMainWindow()
 widget1 = QWidget()
 
 window1.setWindowTitle("HUD MainWindow1")
-window1.setWindowOpacity(0.4)
+# window1.setWindowOpacity(0.4)
 # window1.setStyleSheet("background-color: transparent")
 
 widget1.setWindowTitle("HUD Widget1")
@@ -33,6 +33,7 @@ widget1.setWindowOpacity(0.7)
 button1 = QPushButton()
 button1.setText("Push to Exit")
 button1.setStyleSheet("background-color: green")
+button1.setWindowOpacity(0.3)
 button1.clicked.connect(app.quit) # When pushed/clicked, exit app.
 
 button2 = QPushButton(widget1)

@@ -4,16 +4,17 @@ from tkinter import *
 
 WIDTH = 500
 HEIGHT = 500
-LINEWIDTH = 4
-TRANSCOLOUR = 'black'
+LINEWIDTH = 3
+TRANSCOLOUR = "" # used to be "grey" # leaving fill as "" is supposed to make it transparent?
 global old
 old = ()
 
 tk = Tk()
 tk.title('Virtual whiteboard')
-tk.wm_attributes('-alpha',0.5) # Sets window opacity value
-# tk.wm_attributes('-transparent')
-tk.wm_attributes("-topmost", True)
+tk.wm_attributes('-alpha',0.5) # Sets main window opacity value
+tk.wm_attributes('-transparent', True) # code 'runs' but doesnt work/make it transparent
+# tk.wm_attributes('-fullscreen', True)
+# tk.wm_attributes("-topmost", True)
 canvas = Canvas(tk, width=WIDTH, height=HEIGHT)
 canvas.pack()
 canvas.config(cursor='tcross')
@@ -35,4 +36,7 @@ canvas.bind('<B1-Motion>', buttonclick)
 while True:
     tk.update()
     # time.sleep(0.01)
+
+
+#### Fullscreen mode is no longer transparent...
 
