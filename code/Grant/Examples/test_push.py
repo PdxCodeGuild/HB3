@@ -10,5 +10,5 @@ def func():
 
 
 print(func())
-counting onward to oblivion ugh this sucks for real yep
+counting onward to oblivion ugh this sucks for real yep almost done
 # list = [(s.commit, s.name) for s in student_list if len(student_list) > 0]
