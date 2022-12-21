@@ -17,6 +17,7 @@ D1 = 'D1'
 D2 = 'D2'
 D3 = 'D3'
 D4 = 'D4'
+name = 'name'
 coord = 'coord'
 POIs = 'POIs'
 explored = 'explored'
@@ -106,21 +107,25 @@ world_locations = {
 
 world_items = {
     'Gun': {
+        name: 'a gun',
         desc: 'It is a gun',
         can_take: True,
         is_weapon: True,},
 
     'Taco': {
+        name: 'a taco',
         desc: 'It is a taco',
         can_take: True,
         is_food: True},
 
     'Soda': {
+        name: 'a soda',
         desc: 'It is a soda',
         can_take: True,
         is_drink: True},
 
     'Survivor': {
+        name: 'a survivor',
         desc: 'It is a survivor',
         can_take: True,
         is_ally: True}
@@ -159,40 +164,16 @@ location_pois = {
         items: []},
 }
 
+# Set player starting position and set inventory to empty
+
 location = A1
 inventory = []
 
 # Define Functions
 
-def explore(quadrant, level):
-
-    for i in range(level):
-        discovered = random.choice(list(location_pois.items()))
-        world_locations[quadrant][POIs] += discovered  # HOW DO I LIMIT "POIs" TO 3??
-        world_locations[quadrant][explored] += 1       # MAYBE WHEN CALLING THE FUNCTION??
-        if world_locations[quadrant][explored] > 3:
-            world_locations[quadrant][explored] = 3
-
-def scavenge(location, level): # should randomly select item and incrememt 'looted' level
-    
-    for i in range(level):
-        found = random.choice(list(world_items.items())) # there should be more to this...
-        location_pois[location][items] += found        # maybe skewing the 'randomness' a bit...
-        location_pois[location][looted] +=1            # not every search should return an item
-        if location_pois[location][looted] > 3:
-            location_pois[location][looted] = 3
-
-    # if 0 < location_pois[location][looted] < 3:
-    #     print(f"You have looted this POI {looted} times")
-    # elif location_pois[location][looted] == 0:
-    #     print("You have not yet looted this location")            ## SHOULD THIS BE DONE OUTSIDE OF THE FUNCTION??
-    # elif location_pois[location][looted] >= 3:
-    #     print("There's nothing left to scavenge")
-    
-    # if location_pois[location][looted] < 3:
-    #     location_pois[location][looted] += 1
-        
-def travel(current_location, destination): # Quick Maffs for finding distance between current and next location
+# Sets player location to new location
+# Quick Maffs for finding distance between current and next location
+def travel(current_location, destination):
 
     if current_location in world_locations and destination in world_locations:
         x1, y1 = world_locations[current_location]['coord']
@@ -207,15 +188,79 @@ def travel(current_location, destination): # Quick Maffs for finding distance be
         current_location = destination
         return distance_rounded, current_location
 
-while True:
+# Once in a grid space, this function allows player to discover POIs for scavenging
+def explore(quadrant, level): # 
 
-    place = input("Pick a quadrant to explore ")
-    level = int(input("How thoroughly would you like to explore? "))
-    explore(world_locations[place], level)
-    print(world_locations[place])
-    x = input("Quit? ")
-    if x == "Y":
-        break
+    for i in range(level):
+        discovered = random.choice(list(location_pois.items()))
+        world_locations[quadrant][POIs] += discovered  # HOW DO I LIMIT "POIs" TO 3??
+        world_locations[quadrant][explored] += 1       # MAYBE WHEN CALLING THE FUNCTION??
+        if world_locations[quadrant][explored] > 3:
+            world_locations[quadrant][explored] = 3
+
+# Once in a specific POI, allows player to scavenge
+# Scavenging can be done all at once (level 3), or a little at a time (one level 2, two level 1, or similar)
+def scavenge(location, level): 
+
+    item_count = 0
+    items_found = []
+    # should randomly select item and incrememt 'looted' level
+    for i in range(level):
+        item_count += 1
+        found = random.choice(list(world_items.items())) # there should be more to this...
+        items_found += found                            # maybe skewing the 'randomness' a bit...
+        inventory.append(found)
+        location_pois[location][looted] +=1              # not every search should return an item
+        if location_pois[location][looted] > 3:
+            location_pois[location][looted] = 3
+    print(f"You found {item_count} items")
+    print(f"Items found: {items_found}")
+
+    # if 0 < location_pois[location][looted] < 3:
+    #     print(f"You have looted this POI {looted} times")
+    # elif location_pois[location][looted] == 0:
+    #     print("You have not yet looted this location")            ## SHOULD THIS BE DONE OUTSIDE OF THE FUNCTION??
+    # elif location_pois[location][looted] >= 3:
+    #     print("There's nothing left to scavenge")
+    
+    # if location_pois[location][looted] < 3:
+    #     location_pois[location][looted] += 1
+
+def display_location(location):
+    """A helper function for displaying an area's description and exits."""
+    # Print the room name.
+    print(location)
+    print('=' * len(location))
+
+    # Print the POI's description (using textwrap.wrap())
+    print('\n'.join(textwrap.wrap(location_pois[location][desc], screen_width)))
+
+    # Print scavenged level.
+    print(f"Scavenged level: {location_pois[location][looted]}")
+
+
+scavenge('Hospital', 2)
+
+
+
+
+
+
+
+
+
+
+
+
+# while True:
+
+#     place = input("Pick a quadrant to explore ")
+#     level = int(input("How thoroughly would you like to explore? "))
+#     explore(world_locations[place], level)
+#     print(world_locations[place])
+#     x = input("Quit? ")
+#     if x == "Y":
+#         break
 
 # explore(A1, 2)
 # print(world_locations[A1][POIs])
