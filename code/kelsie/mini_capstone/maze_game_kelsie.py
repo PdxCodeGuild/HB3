@@ -102,10 +102,10 @@ level = [
 
 x = 0 
 y = 0
-for row in level:
+for row in level:       # creating the walls
         for col in row:
                 if col == "W":
-                        Wall((x, y)) # calling on the Wall class to create a wall at the specified coordinates
+                        Wall((x, y)) # calling on the Wall class to create a wall at the specified coordinates and append it to the walls list
                 if col == "E":
                         end_rect = pygame.Rect(x, y, 16, 16) # creating the end rectangle at "E"
                 x += 16
