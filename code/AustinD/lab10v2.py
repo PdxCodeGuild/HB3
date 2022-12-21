@@ -24,9 +24,7 @@ def main():
 
     next_page = input("Enter 'next page' or 'done':")
     if next_page.lower() == 'done':
-      keyword = input("Enter a new keyword:")
-      page = 1
-      quotes = get_quotes(page, keyword)
+      break
     else:
       page += 1
       quotes = get_quotes(page, keyword)
