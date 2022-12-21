@@ -5,13 +5,14 @@ class ContactList:
         self.contacts = []
 
     def load(self):
-        f = open('contact_list.json','r')
+        self.contacts = []
+        with open('contact_list.json','r') as f:
         # 1) open 'contacts.json' with option 'r' for read
-        contacts = json.loads(f)
+            contacts = json.load(f)
         # 2) get the text from the file
-        for i in contacts['contacts']:
+            for i in contacts['contacts']:
         # 3) convert the text into a python dictionary (json.loads)
-            self.contacts.append(i)
+                self.contacts.append(i)
         # 4) get the list of contacts out of the dictionary
 
         # 5) assign the list of dictionaries to self.contacts
@@ -40,9 +41,9 @@ class ContactList:
         ...
 
     def add(self, name, phone_number, email):
-        new_dict = {name:'name', 
-        phone_number:'phone_number',
-        email: 'email'
+        new_dict = {'name':name, 
+        'phone_number':phone_number,
+        'email': email
         }
         # create a new dictionary using the 3 parameters
         self.contacts.append(new_dict)
@@ -61,9 +62,9 @@ class ContactList:
         for c in self.contacts:
             if c['name'] == old_name:
                 self.contacts.remove(c)#---pop?
-                new_dict = {new_name: 'new_name',
-                new_phone_number:'new_phone_number',
-                new_email:'new email'}
+                new_dict = {'new_name': new_name,
+                'new_phone_number': new_phone_number,
+                'new_email':new_email}
         # find the contact in self.contacts with the given old_name
                 self.contacts.append(new_dict)
         # set that contacts' name, phone number, etc to the given values
