@@ -51,6 +51,9 @@ from pylab import *
 from rtlsdr import *
 import requests
 import json
+from geopy.geocoders import Nominatim
+from pprint import pprint
+from geopy.distance import geodesic
 
 
 
@@ -79,7 +82,9 @@ URL_lookup = {
     21: 'http://data.fcc.gov/lpfmapi/rest/v1/lat/36/long/-119?format=json&secondchannel=true',
     22:  'http://de1.api.radio-browser.info/json/states/OH/',
     23:  'https://api.radioreference.com/js/?key={key}&scid={scid}',
-    24:  'http://de1.api.radio-browser.info/json/stations/bystate/OH'
+    24:  'http://de1.api.radio-browser.info/json/stations/bystate/OH',
+    25: 'https://radio-locator.com/cgi-bin/locate?select=city&city=45432&x=0&y=0',
+    26: 'http://radio.garden/api/ara/content/places/'
 
 }
 
@@ -96,15 +101,24 @@ class RadioList:
     def __init__(self):
         self.radio_struct = {}
         self.URL_lookup = ''
+        self.location_lat_long = [0,0]
+        self.fm_lat_long = [0,0]
 
     #end def __init__
 
     def load_api(self,URL_lookup):
         # SET a GET request select the random quote from the URL dictionary lookup table
         # SYNTAX requests.get(url, params={key: value}, args) 
-        response = requests.get(URL_lookup)
+        # response = requests.get(URL_lookup)
         response = requests.get(URL_lookup,params={'format': 'json'})
-        # response.encoding = 'utf-8' # set encoding to utf-8
+        # response = requests.get(URL_lookup, headers={'accept': 'application/json'})
+        response.encoding = 'utf-8' # set encoding to utf-8
+        # data = response.json()
+        # print(f'length of data is {len(data)}')
+        # print(f'response is type {type(data)}')
+        # print(data[0]['name'])
+        # print(data[0]['state'])
+
 
         # data_text = response.text
         # print(response)
@@ -116,10 +130,22 @@ class RadioList:
         # print(response.headers)
 
         # load the response into data structure
-        # self.radio_struct = response.json
-        self.radio_struct = response.text
-        # print(self.radio_struct)  # DEBUG
+        self.radio_struct = response.json()
+        print(f'response is type {type(self.radio_struct)}')
+
+
+        # self.radio_struct = response.text
+        # self.radio_struct = json.loads(response)
+
+        # file_contents_dict = {self.radio_struct}
+        # file_contents_dict= {"radio_List" : self.radio_struct}
+        # print(f'response text type {type(file_contents_dict)}')
         
+        # print(self.radio_struct)  # DEBUG
+        # print(f'response text type {type(self.radio_struct)}')
+        
+
+        print(len(self.radio_struct))
 
     #end def load_api
         
@@ -132,13 +158,139 @@ class RadioList:
             file_contents_dict= {"radio_List" : self.radio_struct}
             # print(self.radio_struct)  # DEBUG
         # 3) convert the dictionary to a json string (json.dumps)
-            # radio_station_file_json = json.dumps(file_contents_dict)
+            radio_station_file_json = json.dumps(file_contents_dict)
             # print(radio_station_file_json)  # DEBUG
         # 4) write the json string to the file
             radio_station_file.write(radio_station_file_json)
+            # radio_station_file.write(file_contents_dict)
 
+    #end def write_file ...
 
-        ...
+    def print_record(self):
+
+        radio_list = self.radio_struct
+        for j in range(len(radio_list)):
+            print(f'{j}--Name: {radio_list[j]["name"]}, State: {radio_list[j]["state"]}')
+            
+        # end for
+
+    #end def print_state
+
+    def load_radio_garden_api(self,URL_lookup):
+        # url = "http://radio.garden/api/ara/content/places/"
+        response = requests.get(URL_lookup, headers={'accept': 'application/json'})
+        response.encoding = 'utf-8'
+        data = response.json()
+        # print(data)
+        list_of_fm = []
+        # extract the values of the information from the json file and create a dictionary
+        for i in data['data']['list']:
+            if i['country'] == 'United States':
+                # print(f"id: {i['id']},\ncity/state: {i['title']},\ncountry: {i['country']}\n")
+                list_of_fm.append({
+                    'id':i['id'],
+                    'url':i['url'],
+                    'city/state':i['title'],
+                    'country':i['country'],
+                    'lat':i['geo'][1],
+                    'long':i['geo'][0]            
+                })
+        # print(list_of_fm)
+        # dictionary format
+        self.radio_struct = list_of_fm
+        # print(type(list_of_fm))
+        # print(list_of_fm)
+
+        # json format
+        # json_file = json.dumps(list_of_fm, indent=2)
+        # self.radio_struct = json_file
+        # print(json_file)
+
+        return len(list_of_fm) # return number of records
+        
+    # end load_radio_garden_api
+
+    def radio_garden_search(self,index):
+        list_of_fm=self.radio_struct
+        # print(list_of_fm)
+
+        # DEBUG
+        # print(f"index: {index}")
+        # print(f"id: {list_of_fm[index]['id']}")
+        # print(f"url: http://www.radio.garden{list_of_fm[index]['url']}")
+        # print(f"city/state: {list_of_fm[index]['city/state']}")
+        # print(f"lat: {list_of_fm[index]['lat']}")
+        # print(f"long: {list_of_fm[index]['long']}")
+
+        self.fm_lat_long[0]=list_of_fm[index]['lat']
+        self.fm_lat_long[1]=list_of_fm[index]['long']
+
+    # end def radio_garden_search
+    
+    def search_geocoder(self,city,state):
+
+        city_search = city
+        # print(f'city {type(city_search)}') # DEBUG
+        state_search = state
+        # print(f'state {type(state_search)}') # DEBUG
+        app = Nominatim(user_agent="tutorial") 
+        # get location raw data
+        # location = app.geocode("Dayton, Ohio").raw
+        location = app.geocode(f'{city_search},{state_search}').raw
+        # print raw data
+        # pprint(location) # DEBUG
+        self.location_lat_long[0]=location["lat"]
+        self.location_lat_long[1]=location["lon"]
+        # print(self.location_lat_long)  # DEBUG
+        # print(f'lat: {self.location_lat_long[0]}, long: {self.location_lat_long[1]}')  # DEBUG
+
+        location1 = (self.location_lat_long[0],self.location_lat_long[1])
+        location2 = (self.fm_lat_long[0],self.fm_lat_long[1])
+        # Print the distance calculated in km
+        # print(geodesic(location1,location2).km)
+        return geodesic(location1,location2).km
+
+    # end def search_geocoder
+
+    def distance_geodesic(self,lat1,long1,lat2,long2):
+        location1 = (lat1,long1)
+        location2 = (lat2,long2)
+
+        # Print the distance calculated in km
+        # print(geodesic(location1,location2).km)  # DEBUG
+
+    # end def distance_geodesic
+
+    def get_fm_station(self,index):
+
+        list_of_fm=self.radio_struct
+        # print(list_of_fm)
+    
+        list_fm_index = []
+
+        list_fm_index.append({
+                    'id':list_of_fm[index]['id'],
+                    'url':f"http://www.radio.garden{list_of_fm[index]['url']}",
+                    'city/state':list_of_fm[index]['city/state'],
+                    'country':list_of_fm[index]['country'],
+                    'lat':list_of_fm[index]['lat'],
+                    'long':list_of_fm[index]['long']            
+                })
+
+        # print(list_fm_index)  # DEBUG
+        return list_fm_index[0]
+
+        # print(f"index: {index}")
+        # print(f"id: {list_of_fm[index]['id']}")
+        # print(f"url: http://www.radio.garden{list_of_fm[index]['url']}")
+        # print(f"city/state: {list_of_fm[index]['city/state']}")
+        # print(f"lat: {list_of_fm[index]['lat']}")
+        # print(f"long: {list_of_fm[index]['long']}")
+
+        # self.fm_lat_long.append(list_of_fm[index]['lat'])
+        # self.fm_lat_long.append(list_of_fm[index]['long'])
+
+    # end def get_fm_station
 
 
 #end class RadioList
@@ -150,8 +302,25 @@ class RadioList:
 
 Radio_Obj = RadioList()
 
-Radio_Obj.load_api(URL_lookup[24])
+# num_records = Radio_Obj.load_api(URL_lookup[25])
+num_records = Radio_Obj.load_radio_garden_api(URL_lookup[26])
+print(f'Number of records: {num_records}')
 Radio_Obj.write_file()
+radio_station_list = []
+for index in range(10):
+    Radio_Obj.radio_garden_search(index)   # search the radio file by index and save the lat/long of fm station
+    distance = Radio_Obj.search_geocoder('Dayton','Ohio') # search the city/state and find the distance between the index searh and city/state search input
+    # print(f'distance is - {distance}')  # DEBUG
+    if distance < 100:  # if radio station is less than KM radius from search location then save value
+        radio_station=Radio_Obj.get_fm_station(index)
+        radio_station_list.append(radio_station)
+        # print("save record")  # DEBUG
+        
+print(radio_station_list)
+# Radio_Obj.print_record()
+
+
+
 
 
 
