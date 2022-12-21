@@ -19,15 +19,18 @@ print(len(jackalopes_list))
 
 
 years = 0
-while True:
+running = True
+while running:
 
     for index in range(len(jackalopes_list)) :
+        if len(jackalopes_list) < 1000:
 
-        if (jackalopes_list[index]['age']) >= 4 and (jackalopes_list[index]['age']) <= 8 :
-            if (jackalopes_list[index]['sex']) == 'f' and (jackalopes_list[index]['pregnant']) == 'N':
-                (jackalopes_list[index]['pregnant']) = 'Y'
-                    
-                    
+            if (jackalopes_list[index]['age']) >= 4 and (jackalopes_list[index]['age']) <= 8 :
+                if (jackalopes_list[index]['sex']) == 'f' and (jackalopes_list[index]['pregnant']) == 'N':
+                    if jackalopes_list[index + 1]['sex'] == 'm' :
+                        (jackalopes_list[index]['pregnant']) = 'Y'
+                    if jackalopes_list[index - 1]['sex'] == 'm' :
+                        (jackalopes_list[index]['pregnant']) = 'Y'
                     
             if (jackalopes_list[index]['pregnant']) == 'Y' :    
                     new_jackalope = {
@@ -46,10 +49,12 @@ while True:
     
         (jackalopes_list[index]['age']) += 1
         years +=1
+        random.shuffle(jackalopes_list)
         if len(jackalopes_list) == 1000 :
-            break
+            running = False
 
         
 
-print(years)
-print(jackalopes_list)
+print(f'It took {years} years for the jackalopes population to reach {len(jackalopes_list)}.')
+
+
