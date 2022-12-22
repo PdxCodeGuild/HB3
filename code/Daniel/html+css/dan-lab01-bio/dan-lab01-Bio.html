@@ -40,53 +40,41 @@ Change the bullet points on the list of place -->
   <title>Demo Page</title>
   <!-- import external css -->
   <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <style>
-    h1 {
-      color: rgb(20, 20, 20);
-      font-family: sans-serif
-    }
-
-    body {
-      background-image: url('vermeer-view-of-delft.jpeg');
-      background-size: 1500px 1245px;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-color: lightgrey;
-      color: black;
-      font-family: sans-serif;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: left;
-      align-items: left;
-    }
-
-    p {
-      margin: 0px 50px 10px 1px;
-      padding-top: 10px;
-    }
-
-    img {
-      border-radius: 0px 8px 0px 8px;
-    }
-
-    li {
-      list-style-type: square;
-    }
-    #main {
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      width: 90vw;
-    }
-  </style>
 </head>
-<!-- the body contains the actual document that will be shown to the user -->
+<style>
+  h1 {
+    color: rgb(20, 20, 20);
+    font-family: sans-serif
+  }
+  body {
+    background-image: url('vermeer-view-of-delft.jpeg');
+    background-size: 1500px 1245px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: lightgrey;
+    color: black;
+    font-family: sans-serif;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+  img {
+    border-radius: 0px 9px 0px 9px;
+  }
+  li {
+    list-style-type: square;
+  }
+  div { 
+    max-width: 770px;
+    text-align: center;
+  }
+</style>
+<!-- the body contains the actual document that will be shown to the user -->
 <body>
   <!-- page element -->
   <h1>Jan Vermeer</h1>
-
   <img src="vermeer-self-potrait.jpeg" alt="vermeer self portrait" width="205" height="250" />
   <div id = "main">
     <p>Dutch artist who created paintings that are among the most beloved and revered images in the history of art.
@@ -103,7 +91,6 @@ Change the bullet points on the list of place -->
   <ul>
     <li>Delft, Netherlands</li>
   </ul>
-  </p>
   <p><q><i>Give respect to take respect.</i></q> - Vermeer</p>
   <p><q><i>Don't hate a player.</i></q> - Vermeer</p>
   <br />
