@@ -31,61 +31,85 @@ Change the bullet points on the list of place -->
 <!DOCTYPE html>
 <!-- root element -->
 <html lang="en">
-  <!-- the head contains metadata about the document  -->
-  <head>
-    <!-- meta tags store general metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- page title, the text that appears on a browser -->
-    <title>Demo Page</title>
-    <!-- import external css -->
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <style>
-      h1 {
-        color: rgb(20, 20, 20);
-        font-family: sans-serif
-      }
-      body {
-        background-image: url('vermeer-view-of-delft.jpeg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: auto;
-        background-color: lightgrey;
-        color: black;
-        font-family: sans-serif
-      }
-      p {
-        margin: 1px 1px 10px 1px;
-        padding-top: 10px;
-      }
-      img {
-        border-radius: 0px 8px 0px 8px; 
-      }
-      li {
-        list-style-type: square;
-      }
-      </style>
-  </head>
-  <!-- the body contains the actual document that will be shown to the user -->
-  <body>
-    <!-- page element -->
-    <h1>Jan Vermeer</h1>
-    
-    <img src="vermeer-self-potrait.jpeg"  alt="vermeer self portrait" width="205" height="250"/>
-    <center><p>Dutch artist who created paintings that are among the most beloved and revered images in the history of art.
-        Although only about 36 of his paintings survive, these rare works are among the greatest treasures in the world’s finest museums.
-        Vermeer began his career in the early 1650s by painting large-scale biblical and mythological scenes, but most of his later
-        paintings—the ones for which he is most famous—depict scenes of daily life in interior settings. These works are remarkable for
-        their purity of light and form, qualities that convey a serene, timeless sense of dignity.
-        Vermeer also painted cityscapes and allegorical scenes.</p></center></body>
-        <p><i>Lived his best life in:</i></Lived><ul>
-            <li>Delft, Netherlands</li>
-        </ul></p>
-        <p><q><i>Give respect to take respect.</i></q> - Vermeer</p>
-        <p><q><i>Don't hate a player.</i></q> - Vermeer</p>
-        <br/>
-        <a href="https://en.wikipedia.org/wiki/Johannes_Vermeer">Wikipedia entry<a/>
+<!-- the head contains metadata about the document  -->
+<head>
+  <!-- meta tags store general metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- page title, the text that appears on a browser -->
+  <title>Demo Page</title>
+  <!-- import external css -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <style>
+    h1 {
+      color: rgb(20, 20, 20);
+      font-family: sans-serif
+    }
+
+    body {
+      background-image: url('vermeer-view-of-delft.jpeg');
+      background-size: 1500px 1245px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: lightgrey;
+      color: black;
+      font-family: sans-serif;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: left;
+    }
+
+    p {
+      margin: 0px 50px 10px 1px;
+      padding-top: 10px;
+    }
+
+    img {
+      border-radius: 0px 8px 0px 8px;
+    }
+
+    li {
+      list-style-type: square;
+    }
+    #main {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 90vw;
+    }
+  </style>
+</head>
+<!-- the body contains the actual document that will be shown to the user -->
+
+<body>
+  <!-- page element -->
+  <h1>Jan Vermeer</h1>
+
+  <img src="vermeer-self-potrait.jpeg" alt="vermeer self portrait" width="205" height="250" />
+  <div id = "main">
+    <p>Dutch artist who created paintings that are among the most beloved and revered images in the history of art.
+      Although only about 36 of his paintings survive, these rare works are among the greatest treasures in the world’s
+      finest museums.
+      Vermeer began his career in the early 1650s by painting large-scale biblical and mythological scenes, but most of
+      his later
+      paintings—the ones for which he is most famous—depict scenes of daily life in interior settings. These works are
+      remarkable for
+      their purity of light and form, qualities that convey a serene, timeless sense of dignity.
+      Vermeer also painted cityscapes and allegorical scenes.</p>
+  </div>
+  <p><i>Lived his best life in:</i>
+  <ul>
+    <li>Delft, Netherlands</li>
+  </ul>
+  </p>
+  <p><q><i>Give respect to take respect.</i></q> - Vermeer</p>
+  <p><q><i>Don't hate a player.</i></q> - Vermeer</p>
+  <br />
+  <a href="https://en.wikipedia.org/wiki/Johannes_Vermeer">Wikipedia entry<a />
     <!-- import external javascript  -->
     <script type="text/javascript" src="js/index.js"></script>
-  </body>
+</body>
+
 </html>
