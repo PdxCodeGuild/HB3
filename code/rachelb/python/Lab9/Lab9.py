@@ -62,9 +62,9 @@ class ContactList:
         for c in self.contacts:
             if c['name'] == old_name:
                 self.contacts.remove(c)#---pop?
-                new_dict = {'new_name': new_name,
-                'new_phone_number': new_phone_number,
-                'new_email':new_email}
+                new_dict = {'name': new_name,
+                'phone_number': new_phone_number,
+                'email':new_email}
         # find the contact in self.contacts with the given old_name
                 self.contacts.append(new_dict)
         # set that contacts' name, phone number, etc to the given values
