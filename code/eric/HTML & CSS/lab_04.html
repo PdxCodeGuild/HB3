@@ -1,0 +1,139 @@
+<form action="https://webhook.site/deb04683-230f-4eaa-9d66-2d5e927186d0" method="post">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Burrito Order Form</title>
+</head>
+
+<style>
+body {
+  background-image: url('https://img.freepik.com/free-photo/mexican-elements-wooden-floor_1101-226.jpg?1?w=360');
+  background-size: cover;
+}
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 400px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  background-color: #fafafa;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 90px;
+  text-align: start;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+}
+
+input[type=text] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:20px;
+}
+textarea {
+    width:100%;
+    resize: vertical;
+    padding:15px;
+    border-radius:15px;
+    border:0;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+    height:150px;
+}
+
+</style>
+<form>
+    
+<ul>
+    <li>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" placeholder="First Last" required/>
+    </li>
+
+    <li>
+        <label for="phonenumber">Phone Number:</label>
+        <input type="text" id="phonenumber" name="user_phone" placeholder="000-123-4567" required/>
+    </li>
+
+    <li>
+    <label for="bowlorwrap">Bowl or Wrap?:</label>
+    <select name="bowl_or_wrap" id="bowl_wrap">
+        <option value="wrap">Wrap</option>
+        <option value="bowl">Bowl</option>
+    </select>
+    </li>
+
+    <p><u>Choose your tortilla style:</u></p>
+    <li>
+        <input type="radio" name="tortilla_style" value="None"><label for="none">None</label><br>
+        <input type="radio" name="tortilla_style" value="White Flour" checked><label for="whiteflour">White Flour</label><br>
+        <input type="radio" name="tortilla_style" value="Wheat Flour"><label for="wheatflour">Wheat Flour</label><br>
+        <input type="radio" name="tortilla_style" value="Spinach"><label for="spinach">Spinach</label><br>
+        <input type="radio" name="tortilla_style" value="Corn"><label for="corn">Corn</label><br>
+    </li>
+
+    <p><u>Choose your type of rice:</u></p>
+    <li>
+        <input type="radio" name="rice_style" value="White Rice" checked><label for="whiterice">White Rice</label><br>
+        <input type="radio" name="rice_style" value="Brown Rice"><label for="brownrice">Brown Rice</label><br>
+    </li>
+
+    <p><u>Choose your type of beans:</u></p>
+    <li>
+        <input type="radio" name="bean_style" value="None" checked><label for="none">None</label><br>
+        <input type="radio" name="bean_style" value="Pinto"><label for="pintobeans">Pinto Beans</label><br>
+        <input type="radio" name="bean_style" value="Black"><label for="blackbeans">Black Beans</label><br>
+    </li>
+
+    <p><u>Choose your type of protein:</u></p>
+    <li>
+        <input type="radio" name="protein_style" value="None" checked><label for="none">None</label><br>
+        <input type="radio" name="protein_style" value="Carnitas"><label for="carnitas">Carnitas</label><br>
+        <input type="radio" name="protein_style" value="Chicken"><label for="chicken">Chicken</label><br>
+        <input type="radio" name="protein_style" value="Steak"><label for="steak">Steak</label><br>
+    </li>
+
+    <p><u>Choose your add-ons:</u></p>
+    <li>
+        <input type="checkbox" name="add_on" value="Salsa"><label for="salsa">Salsa</label><br>
+        <input type="checkbox" name="add_on_1" value="Cheese"><label for="cheese">Cheese</label><br>
+        <input type="checkbox" name="add_on_2" value="Lettuce"><label for="lettuce">Lettuce</label><br>
+        <input type="checkbox" name="add_on_3" value="Tomato"><label for="tomato">Tomatoes</label><br>
+    </li>
+
+    <li>
+    <p><textarea input type="text" id="comments" name="user_comments" placeholder="Additional requests..."></textarea></p>
+    </li>
+
+</ul>
+<input type="reset" value="Reset">
+<input type="submit" value="Send Order"/>
+</form>
+</body>
