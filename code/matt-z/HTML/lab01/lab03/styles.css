@@ -1,0 +1,55 @@
+body {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 5vw 3vw 50vw 5vw;
+    grid-gap: 1em;
+  }
+  
+  header,
+  nav,
+  footer {
+    grid-column: 1 / span 2;
+  }
+  
+  body {
+    margin: 0 auto;
+    max-width: 95vw;
+    padding: 1em 0;
+  }
+
+  header,
+  main,
+  footer {
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  aside {
+    background: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #first {
+    text-align: center;
+    padding: 2em;
+  }
+
+  #second {
+    text-align: center;
+    padding: 2em;
+  }
+
+  #third {
+    text-align: center;
+    padding: 2em
+  }
+
+  #fourth {
+    text-align: center;
+    padding: 2em;
+  }
