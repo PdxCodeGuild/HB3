@@ -13,6 +13,9 @@
     h1, h2, p {
         text-align: center;
     }
+    p {
+        overflow: auto;
+    }
     body {
         background-color: rgba(107, 133, 155, 0.449);
     }
@@ -20,7 +23,6 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        overflow: scroll;
     }
     .box {
         border-style: solid;
@@ -28,7 +30,11 @@
         align-items: flex-start;
         flex-direction: row;
         background-color: white;
-        overflow: scroll;
+        overflow-x: scroll;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    .container {
         padding: 20px;
     }
     .topnav a {
@@ -75,7 +81,6 @@
         height: auto;
         background-color: rgba(107, 133, 155, 0.449);
         color: white;
-        text-align: left;
     }
 </style>
 
@@ -97,50 +102,83 @@
 
 <h1>Blog Stories</h1>
     <div class="box">
-        <div>
-    <section><article>
-    <h2>Ipsum 1</h2>
-    <img src="https://via.placeholder.com/150" width="300" height="200">
-    <p>In software, we rarely have meaningful requirements. Even if we do, the only measure of success that matters is whether
-    our solution solves the customer's shifting idea of what their problem is. (Jeff Atwood) But what is it good for?
-    (Engineer at the Advanced Computing Systems Division of IBM, commenting on the microchip, 1968) The most amazing
-    achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by
-    the computer hardware industry. (Henry Petroski) There are two ways to write error-free programs; only the third one
-    works. (Alan J. Perlis) There are two ways of constructing a software design. One way is to make it so simple that there
-    are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.
-    (C.A.R. Hoare).</p>
-    </section></article>
+        <div class="container">
+        <section>
+            <articile>
+            <h2>Ipsum 1</h2>
+            <img src="https://via.placeholder.com/150" ALIGN="center" width="300" height="200">
+            <p>In software, we rarely have meaningful requirements. Even if we do, the only measure of success that matters is whether
+            our solution solves the customer's shifting idea of what their problem is. (Jeff Atwood) But what is it good for?
+            (Engineer at the Advanced Computing Systems Division of IBM, commenting on the microchip, 1968) The most amazing
+            achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by
+            the computer hardware industry. (Henry Petroski) There are two ways to write error-free programs; only the third one
+            works. (Alan J. Perlis) There are two ways of constructing a software design. One way is to make it so simple that there
+            are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.
+            (C.A.R. Hoare).</p>
+            </article>
+        </section>
+        </div>     
+
+        <div class="container">
+        <section>
+            <articile>
+            <h2>Ipsum 2</h2>
+            <img src="https://via.placeholder.com/150" ALIGN="center" width="300" height="200">
+            <p>A programmer is a person who passes as an exacting expert on the basis of being able to turn out, after innumerable
+            punching, an infinite series of incomprehensive answers calculated with micrometric precisions from vague assumptions
+            based on debatable figures taken from inconclusive documents and carried out on instruments of problematical accuracy by
+            persons of dubious reliability and questionable mentality for the avowed purpose of annoying and confounding a
+            hopelessly defenseless department that was unfortunate enough to ask for the information in the first place. (IEEE Grid
+            newsmagazine) Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as
+            cleverly as possible, you are-by definition-not smart enough to debug it. (Brian Kernighan) I don't care if it works on
+            your machine! We are not shipping your machine! (Vidiu Platon) It would appear that we have reached the limits of what
+            it is possible to achieve with computer technology, although one should be careful with such statements, as they tend to
+            sound pretty silly in 5 years. (John Von Neumann, circa 1949)</p>
+        
+            <p>A programmer is a person who passes as an exacting expert on the basis of being able to turn out, after innumerable
+            punching, an infinite series of incomprehensive answers calculated with micrometric precisions from vague assumptions
+            based on debatable figures taken from inconclusive documents and carried out on instruments of problematical accuracy by
+            persons of dubious reliability and questionable mentality for the avowed purpose of annoying and confounding a
+            hopelessly defenseless department that was unfortunate enough to ask for the information in the first place. (IEEE Grid
+            newsmagazine) Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as
+            cleverly as possible, you are-by definition-not smart enough to debug it. (Brian Kernighan) I don't care if it works on
+            your machine! We are not shipping your machine! (Vidiu Platon) It would appear that we have reached the limits of what
+            it is possible to achieve with computer technology, although one should be careful with such statements, as they tend to
+            sound pretty silly in 5 years. (John Von Neumann, circa 1949).</p>
+            </article>
+        </section>
         </div>
 
-        <div>
-    <section><articile>
-    <h2>Ipsum 2</h2>
-    <img src="https://via.placeholder.com/150" width="300" height="200">
-    <p>A programmer is a person who passes as an exacting expert on the basis of being able to turn out, after innumerable
-    punching, an infinite series of incomprehensive answers calculated with micrometric precisions from vague assumptions
-    based on debatable figures taken from inconclusive documents and carried out on instruments of problematical accuracy by
-    persons of dubious reliability and questionable mentality for the avowed purpose of annoying and confounding a
-    hopelessly defenseless department that was unfortunate enough to ask for the information in the first place. (IEEE Grid
-    newsmagazine) Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as
-    cleverly as possible, you are-by definition-not smart enough to debug it. (Brian Kernighan) I don't care if it works on
-    your machine! We are not shipping your machine! (Vidiu Platon) It would appear that we have reached the limits of what
-    it is possible to achieve with computer technology, although one should be careful with such statements, as they tend to
-    sound pretty silly in 5 years. (John Von Neumann, circa 1949)</p>
-    </section></article>
+        <div class="container">
+        <section>
+            <articile>
+            <h2>Ipsum 3</h2>
+            <img src="https://via.placeholder.com/150" ALIGN="center" width="300" height="200">
+            <p>There is no programming language-no matter how structured-that will prevent programmers from making bad programs. (Larry
+            Flon) The cheapest, fastest, and most reliable components are those that aren't there. (Gordon Bell) Saying that Java is
+            nice because it works on all OSes is like saying that anal sex is nice because it works on all genders. (Alanna) If
+            builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy
+            civilization. (Gerald Weinberg) Without requirements or design, programming is the art of adding bugs to an empty text
+            file. @mattcdowning production.</p>
+            </article>
+        </section>
         </div>
 
-        <div>
-    <section><articile>
-    <h2>Ipsum 3</h2>
-    <img src="https://via.placeholder.com/150" width="300" height="200">
-    <p>There is no programming language-no matter how structured-that will prevent programmers from making bad programs. (Larry
-    Flon) The cheapest, fastest, and most reliable components are those that aren't there. (Gordon Bell) Saying that Java is
-    nice because it works on all OSes is like saying that anal sex is nice because it works on all genders. (Alanna) If
-    builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy
-    civilization. (Gerald Weinberg) Without requirements or design, programming is the art of adding bugs to an empty text
-    file. @mattcdowning production.</p>
-    </section></article>
+        <div class="container">
+        <section>
+            <articile>
+                <h2>Ipsum 4</h2>
+                <img src="https://via.placeholder.com/150" ALIGN="center" width="300" height="200">
+                <p>There is no programming language-no matter how structured-that will prevent programmers from making bad
+                        programs. (Larry Flon) The cheapest, fastest, and most reliable components are those that aren't there. (Gordon Bell)
+                        Saying that Java is nice because it works on all OSes is like saying that anal sex is nice because it works on all genders.
+                        (Alanna) If builders built buildings the way programmers wrote programs, then the first woodpecker that came along
+                        would destroy civilization. (Gerald Weinberg) Without requirements or design, programming is the art of adding bugs to
+                        an empty textfile. @mattcdowning production.</p>
+            </article>
+        </section>
         </div>
+    </div>
 
 <div class="footer">
 <footer>
