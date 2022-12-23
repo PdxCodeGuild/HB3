@@ -1,0 +1,70 @@
+body {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 5vw 3vw 50vw 5vw;
+    grid-gap: 1em;
+  }
+  
+  header,
+  nav,
+  footer {
+    grid-column: 1 / span 2;
+  }
+  
+  body {
+    margin: 0 auto;
+    max-width: 95vw;
+    padding: 1em 0;
+  }
+
+  header,
+  main,
+  footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  li {
+    margin: auto 0 auto 20px
+  }
+
+  #first {
+    text-align: center;
+    padding: 2em;
+  }
+
+  .blogposts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #second {
+    text-align: center;
+    padding: 2em;
+  }
+
+  #third {
+    text-align: center;
+    padding: 2em
+  }
+
+  #fourth {
+    text-align: center;
+    padding: 2em;
+  }
