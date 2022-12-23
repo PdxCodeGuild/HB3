@@ -1,5 +1,11 @@
 import cmd, textwrap, sys, math, random, pyreadline
 
+#### TO-DO LIST ####
+# SEPARATE DISTANCE FROM TRAVEL FUNCTION
+# UPDATE PLAYER FUNCTION FROM TRAVEL FUNCTION RETURN VALUE
+# DRAW THE REST OF THE FUCKING OWL
+
+
 # Create Constant Variables #
 A1 = 'A1'
 A2 = 'A2'
@@ -105,33 +111,6 @@ world_locations = {
 }
 
 
-world_items = {
-    'Gun': {
-        name: 'a gun',
-        desc: 'It is a gun',
-        can_take: True,
-        is_weapon: True,},
-
-    'Taco': {
-        name: 'a taco',
-        desc: 'It is a taco',
-        can_take: True,
-        is_food: True},
-
-    'Soda': {
-        name: 'a soda',
-        desc: 'It is a soda',
-        can_take: True,
-        is_drink: True},
-
-    'Survivor': {
-        name: 'a survivor',
-        desc: 'It is a survivor',
-        can_take: True,
-        is_ally: True}
-}
-
-
 location_pois = {
     'Hospital': {
         desc: 'It is a hospital',
@@ -164,10 +143,37 @@ location_pois = {
         items: []},
 }
 
+
+world_items = {
+    'Gun': {
+        name: 'a gun',
+        desc: 'It is a gun',
+        can_take: True,
+        is_weapon: True,},
+
+    'Taco': {
+        name: 'a taco',
+        desc: 'It is a taco',
+        can_take: True,
+        is_food: True},
+
+    'Soda': {
+        name: 'a soda',
+        desc: 'It is a soda',
+        can_take: True,
+        is_drink: True},
+
+    'Survivor': {
+        name: 'a survivor',
+        desc: 'It is a survivor',
+        can_take: True,
+        is_ally: True}
+}
+
 # Set player starting position and set inventory to empty
 
-location = A1
-inventory = []
+# player_location = A1
+# inventory = []
 
 # Define Functions
 
@@ -180,13 +186,16 @@ def travel(current_location, destination):
         x2, y2 = world_locations[destination]['coord']
     
         distance = math.dist([x1, y1], [x2, y2])        
-        distance_rounded = (round(distance, 2))     ## SHOULD THIS ALSO ACCOUNT FOR TIME OR IS THAT A SEPARATE FUNCTION??
-        travel_time = distance_rounded / 2
+        distance= (round(distance, 2))     ## SHOULD THIS ALSO ACCOUNT FOR TIME OR IS THAT A SEPARATE FUNCTION??
+        travel_time = round(distance / 2, 2)
 
         print(f'You travel {distance} miles to {destination}, which takes {travel_time} hours')
 
         current_location = destination
-        return distance_rounded, current_location
+        return distance, current_location
+    
+    else:
+        print("Please enter a valid grid location ")
 
 # Once in a grid space, this function allows player to discover POIs for scavenging
 def explore(quadrant, level): # 
@@ -209,7 +218,7 @@ def scavenge(location, level):
         item_count += 1
         found = random.choice(list(world_items.items())) # there should be more to this...
         items_found += found                            # maybe skewing the 'randomness' a bit...
-        inventory.append(found)
+        # inventory.append(found)
         location_pois[location][looted] +=1              # not every search should return an item
         if location_pois[location][looted] > 3:
             location_pois[location][looted] = 3
@@ -227,24 +236,42 @@ def scavenge(location, level):
     #     location_pois[location][looted] += 1
 
 def display_location(location):
-    """A helper function for displaying an area's description and exits."""
     # Print the room name.
+    statement = 'Your current grid location is '
+    
     print(location)
-    print('=' * len(location))
+    # print(statement + location)
+    # print('#' * len(statement + location))
+
+    # Print the 
+    print(f"POIs discovered - {world_locations[location][POIs]}")
+    print(f"Explored level: {world_locations[location][explored]}")
+
+def display_poi(poi):
+    # Print the room name.
+    print(poi)
+    print('#' * len(poi))
 
     # Print the POI's description (using textwrap.wrap())
-    print('\n'.join(textwrap.wrap(location_pois[location][desc], screen_width)))
+    print(location_pois[poi], screen_width)
 
     # Print scavenged level.
-    print(f"Scavenged level: {location_pois[location][looted]}")
-
-
-scavenge('Hospital', 2)
+    print(f"Scavenged level: {location_pois[poi][looted]}")
 
 
 
-
-
+player_location = A1
+while True:
+    
+    display_location(player_location)
+    response = input("travel where?")
+    if response == 'quit':
+        break
+    if response in [A1, A2, A3, A4, B1, B2, B3, B4, C1, C2, C3, C4, D1, D2, D3, D4]:
+        player_location = travel(player_location, response)
+        print(response)
+    else:
+        print("invalid entry")
 
 
 
