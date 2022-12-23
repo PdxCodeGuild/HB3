@@ -44,8 +44,16 @@ M-F 6:00 pm – 9:36 pm PT
 | 09  | [Contact List](1%20Python/labs/09%20Contact%20List.md)        |      5 Dec        |     19 Dec            |
 | 10  | [Quotes](1%20Python/labs/10%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
 | 11  | [Jackalope](1%20Python/labs/11%20Jackalope.md)        |      8 Dec        |     22 Dec            |
+|   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      9 Dec        |          23 Dec       |
 
+## HTML - CSS Labs Assigned:
 
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |    15 Dec     |          29 Dec       | 
+| 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          02 Jan       |
+| 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          03 Jan       | 
+| 04  | [Burrito Order Form](https://github.com/PdxCodeGuild/HB3/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md)           |    21 Dec     |          04 Jan       | 
 
 ## Getting Unstuck 
 
