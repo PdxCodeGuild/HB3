@@ -1,9 +1,6 @@
 import cmd, math, random
 
-#### TO-DO LIST ####
-# SEPARATE DISTANCE FROM TRAVEL FUNCTION
-# UPDATE PLAYER FUNCTION FROM TRAVEL FUNCTION RETURN VALUE
-# DRAW THE REST OF THE FUCKING OWL
+
 
 opening_statement = '''The world has ended...
 \n...
