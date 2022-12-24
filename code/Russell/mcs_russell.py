@@ -220,12 +220,6 @@ def travel_time(player_location, destination):
         
         return travel_time
 
-    elif destination == player_location:
-        print("You are already at that grid location ")
-
-    else:
-        print("Please enter a valid grid location ")
-
 
 
 class GamePrompt(cmd.Cmd):
@@ -274,7 +268,7 @@ class GamePrompt(cmd.Cmd):
         tt= travel_time(player_location, destination)
         location_hold = player_location
         player_location = travel(player_location, destination) 
-        
+
         if player_location == None:
             player_location = location_hold
 
