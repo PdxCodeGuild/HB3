@@ -1,42 +1,46 @@
+#---------------------------------
+# PDX Code Guild: HB3
+# Mini Capstone: Heads-Up Display (HUD) Overlay
+# Author: Daniel Smith
+# Date: 2022.12.13
+#---------------------------------
+
+# My HUD project turned into a whiteboard for now lol...
 
 from tkinter import *
-# import time
 
 WIDTH = 500
 HEIGHT = 500
-LINEWIDTH = 3
-TRANSCOLOUR = "" # used to be "grey" # leaving fill as "" is supposed to make it transparent?
-global old
+LINEWIDTH = 4
+TCOLOR = "grey" # leaving fill as "" will make the layer transparent.
 old = ()
 
-tk = Tk()
-tk.title('Virtual whiteboard')
-tk.wm_attributes('-alpha',0.5) # Sets main window opacity value
-tk.wm_attributes('-transparent', True) # code 'runs' but doesnt work/make it transparent
-# tk.wm_attributes('-fullscreen', True)
-# tk.wm_attributes("-topmost", True)
-canvas = Canvas(tk, width=WIDTH, height=HEIGHT)
+def buttonmotion(event):
+    old = (event.x, event.y)
+def buttonclick(event):
+    canvas.create_line(event.x-3, event.y-3, event.x, event.y, width=LINEWIDTH)
+    old = (event.x, event.y)
+
+root = Tk()
+root.title('Whiteboard - Click to Draw')
+root.wm_attributes('-alpha',0.2) # Sets the main window opacity value, gets overridden by canvas transparency value.
+root.wm_attributes("-topmost", True)
+# root.wm_attributes('-fullscreen', True) #### Fullscreen mode disables the window transparency.
+
+canvas = Canvas(root, width=WIDTH, height=HEIGHT)
+root.wm_attributes('-alpha',0.6) # overrides root transparency value.
 canvas.pack()
 canvas.config(cursor='tcross')
-canvas.create_rectangle(0, 0, WIDTH, HEIGHT, fill=TRANSCOLOUR, outline=TRANSCOLOUR)
-def buttonmotion(evt):
-    global old
-    if old == ():
-        old = (evt.x, evt.y)
-        return
-    else:
-        canvas.create_line(old[0], old[1], evt.x, evt.y, width=LINEWIDTH)
-        old = (evt.x, evt.y)
-def buttonclick(evt):
-    global old
-    canvas.create_line(evt.x-1, evt.y-1, evt.x, evt.y, width=LINEWIDTH)
-    old = (evt.x, evt.y)
+canvas.create_rectangle(0, 0, WIDTH, HEIGHT, fill=TCOLOR, outline=TCOLOR)
+
 canvas.bind('<Button-1>', buttonmotion)
 canvas.bind('<B1-Motion>', buttonclick)
-while True:
-    tk.update()
-    # time.sleep(0.01)
+
+# Button for closing  
+exitbutton = Button(root, text="Exit", command=root.destroy)
+exitbutton.pack(side = BOTTOM)
+
+root.mainloop()
 
 
-#### Fullscreen mode is no longer transparent...
 
