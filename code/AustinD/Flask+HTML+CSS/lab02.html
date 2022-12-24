@@ -7,7 +7,87 @@
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style>
-        /*Needed*/
+        body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        }
+
+        /* Navigation */
+        nav {
+          background-color: #3f51b5;
+        }
+
+        /* Media banner */
+        .parallax-container {
+          height: 500px;
+        }
+
+        /* Center text */
+        .valign-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Make design responsive */
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .section {
+          padding: 80px 0;
+        }
+
+        @media only screen and (max-width: 992px) {
+        /* Tiles */
+        .card .card-title {
+          font-size: 1.25rem;
+        }
+        
+        .section {
+          padding: 60px 0;
+        }
+        }
+
+        @media only screen and (max-width: 600px) {
+        /* Navigation */
+        nav .brand-logo {
+          font-size: 1.5rem;
+        }
+        
+        /* Tiles */
+        .card .card-title {
+          font-size: 1rem;
+        }
+        
+        /* Footer */
+        .page-footer h5 {
+          font-size: 1rem;
+        }
+        
+        .section {
+          padding: 40px 0;
+        }
+      }
+
+        /* Tiles */
+        .card {
+          height: 100%;
+        }
+
+        .card-image img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .card .card-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
       </style>
     </head>
 
