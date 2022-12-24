@@ -15,36 +15,67 @@ ___________________          _-_
  *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
 ''' --> */
 
-.biography_browser > section{
- 
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-size: 15px;
-    text-align: center;
-    border: 1px solid black;
-    padding: 1%;
-    background-color: blanchedalmond;
-
-}
 h1 {
     text-align: center;
-    font-weight: 300;
+    font-weight: 500;
     font-style: normal;
-    font: size 500px;
+    font: size 1000px;
 }
+
 body{
     background-color: aliceblue;
+    /* background: url('https://www.thisiscolossal.com/wp-content/uploads/2015/12/shackleton-11-1024x755.jpg') 50% no-repeat; */
+}
+
+section {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    /* border: 1px solid black; */
+    /* padding: 1%; */
+    /* background-color: blanchedalmond; */
+
+   
+}
+p {
+    text-align: center;
+}
+
+div {
+    /* border: 1px solid black; */
+    /* padding: 1%; */
+}
+
+.biography_header {
+  /* background: url('https://www.thisiscolossal.com/wp-content/uploads/2015/12/shackleton-11-1024x755.jpg') 50% no-repeat; */
+  background-color:cadetblue;
+  /* background-size: cover; */
+  /* background-size: contain; */
+  /* background-size: auto; */
+  height: auto;
+  /* height: 60vh; */
+  text-align: center;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+.biography-section-text {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.biography_images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 
-aside {
-    width: 30%;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: right;
-    font-style: italic;
-    background-color: lightgray;
-}
+
 
 /* <div style="color:blue;background-color:DarkOliveGreen">This is some ugly text</div> */
 
