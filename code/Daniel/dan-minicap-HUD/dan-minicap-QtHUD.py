@@ -5,8 +5,10 @@
 # Date: 2022.12.13
 #---------------------------------
 
+# USE TkHUD VERSION INSTEAD
+
 # HUD Overlay Project
-# Idea is to begin with a transparent window,
+# Idea is to begin with a transparent window background,
 # then build visible/opaque elements inside of it,
 # and format and connect those elements to sensor data on the backend.
 

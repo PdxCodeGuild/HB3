@@ -7,6 +7,11 @@
 
 # My HUD project turned into a whiteboard for now lol...
 
+# HUD Overlay Project
+# Idea is to begin with a transparent window background,
+# then build visible/opaque elements inside of it,
+# and format and connect those elements to sensor data on the backend.
+
 from tkinter import *
 
 WIDTH = 500
@@ -41,6 +46,3 @@ exitbutton = Button(root, text="Exit", command=root.destroy)
 exitbutton.pack(side = BOTTOM)
 
 root.mainloop()
-
-
-
