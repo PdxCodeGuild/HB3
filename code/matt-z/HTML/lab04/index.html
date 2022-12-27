@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Burrito Order Form</title>
+</head>
+<body>
+    <header>
+        <h1>Burrito Order Form</h1>
+    </header>
+    <div class="container">
+        <div class="leftcolumn">
+            <div class="image">
+                <img src="burrito.jpg" alt="burrito" style="width:200px;height:200px;">
+            </div>
+            <div class="login">
+                Username:<br>
+                <input type="text"><br>
+                Password:<br>
+                <input type="password">
+            </div>
+        </div>
+        <div class="main">
+            <div class="upper">
+                <h1>Customize Your Burrito</h1>
+            </div>
+            <div class="lower">
+                <form action="https://webhook.site/0184e6b0-78d0-4bda-8319-24fe795e0858" method="post">
+                    Tortilla:
+                    <input type="radio" name="Tortilla" value="White Flour">White Flour <input type="radio" name="Tortilla" value="Wheat Flour">Wheat Flour <input type="radio" name="Tortilla" value="Spinach">Spinach <input type="radio" name="Tortilla" value="Corn">Corn<br>
+                    Rice:
+                    <input type="radio" name="Rice" value="White">White <input type="radio" name="Rice" value="Brown">Brown<br>
+                    Beans:
+                    <input type="radio" name="Beans" value="Black Beans">Black Beans <input type="radio" name="Beans" value="Pinto Beans">Pinto Beans<br>
+                    Protein:
+                    <input type="radio" name="Protein" value="Carnitas">Carnitas <input type="radio" name="Protein" value="Chicken">Chicken <input type="radio" name="Protein" value="Sofritas">Sofritas<input type="radio" name="Protein" value="None">None<br>
+                    Additional Ingredients:
+                    <input type="checkbox">Cheese <input type="checkbox">Sour Cream<br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="ordertotal">
+
+            </div>
+            <div class="delivery">
+                <h4>Delivery Instructions</h4>
+                <div class="instructions">
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
