@@ -40,8 +40,8 @@ body{
 }
 
 header{
-    font-size: 150px;
-    color: #ffff00;
+    font-size: 40px;
+    color: #7fff00;
     font-family: 'Hanken Grotesk', sans-serif;
 }
 
@@ -55,13 +55,13 @@ header{
 .inputBox input{
     width: 100%;
     padding: 10px;
-    border: 5px solid rgba(255, 255, 255, 0.25);
-    background: #b2beb5;
+    border: 5px solid #7fff00;
+    background: darkslategrey;
     outline: none;
     border-radius: 8px;
-    color: #ffffff;
-    font-size: 1em; 
-    transition: 0.6s;
+    color: white;
+    font-size: 1.5em; 
+    transition: 0.8s;
 
 }
 
@@ -71,7 +71,6 @@ header{
     padding: 20px;
     pointer-events: none;
     font-size: 1em;
-    color: rgba(255, 255, 255, 0.25);
     text-transform: uppercase;
     transition: .6s;
 
@@ -80,20 +79,20 @@ header{
 
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span{
-    color: aqua;
+    color: #7fff00;
     transform: translateX(10px) translateY(-7px);
-    font-size: 0.99em;
+    font-size: 1em;
     padding: 0 35px;
-    background: #b2beb5;
-    border-left: 1px solid aqua;
-    border-right: 1px solid aqua;
+    background: darkslategrey;
+    border-left: 1px solid #7fff00;
+    border-right: 1px solid #7fff00;
     letter-spacing: 0.2em;
     font-family: 'Hanken Grotesk', sans-serif;
 }
 
 .inputBox input:valid,
 .inputBox input:focus{
-    border: 5px solid aqua;
+    border: 5px solid #7fff00;
 
 }
 
@@ -172,8 +171,8 @@ header{
 
 .login input:valid,.submit input:valid,
 .submit input:focus,.login input:focus{
-    border: 5px solid aqua;
-    background: #b2beb5;
+    border: 5px solid #7fff00;
+    background: darkslategrey;
     font-size: 30px bold;
     font-family: 'Hanken Grotesk', sans-serif;
 
@@ -181,7 +180,7 @@ header{
 
 
 .outline-1{
-    border: 5px solid aqua;
+    border: 5px solid #7fff00;
     outline: none;
     border-radius: 10px;
 
@@ -200,4 +199,14 @@ header{
     display: flex;
     margin-top: 15px;
     justify-content: space-around;
+
+}
+
+@media  (min-width: 780px) {
+    header{
+        font-size: 150px;
+        color: #7fff00;
+        font-family: 'Hanken Grotesk', sans-serif;
+    }
+    
 }
