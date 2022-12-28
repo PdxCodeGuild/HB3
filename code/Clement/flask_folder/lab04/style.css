@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300&display=swap'); 
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background: darkslategrey;
+    
+}
+
+.main-inputbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 4px 10px 4px 10px;
+    background: darkslategrey;
+    min-height: 50vh;
+    border-radius: 10px;
+    border: 5px solid #ffff00;
+}
+
+
+.image{
+    width: 100%;
+    height: 50vh;
+    
+    border-radius: 10px;
+    border: 5px solid #ffff00;
+}
+
+header{
+    font-size: 150px;
+    color: #ffff00;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+ .inputBox{
+    position: relative;
+    width: 70%;
+    margin: 5px;
+}
+
+
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 5px solid rgba(255, 255, 255, 0.25);
+    background: #b2beb5;
+    outline: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1em; 
+    transition: 0.6s;
+
+}
+
+ .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: .6s;
+
+}
+
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: aqua;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.99em;
+    padding: 0 35px;
+    background: #b2beb5;
+    border-left: 1px solid aqua;
+    border-right: 1px solid aqua;
+    letter-spacing: 0.2em;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.inputBox input:valid,
+.inputBox input:focus{
+    border: 5px solid aqua;
+
+}
+
+
+.tortilla{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+
+.beans {
+    display: flex;
+    padding-right: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+
+.rice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.protein{
+    border: 5px solid yellow;
+    margin-top: 6px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+
+}
+
+
+.option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.delivery{
+    margin-top: 5px;
+    border: 5px solid yellow;
+    border-radius: 6px;
+    justify-content: space-around;
+
+}
+
+
+.outline{
+    border: 5px solid yellow;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    border-radius: 6px;
+}
+
+
+.complete{
+    border-radius: 5px;
+    width: 20%;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
+
+.login{
+    width: 70%;
+    outline: none;
+}
+
+
+.login input:valid,.submit input:valid,
+.submit input:focus,.login input:focus{
+    border: 5px solid aqua;
+    background: #b2beb5;
+    font-size: 30px bold;
+    font-family: 'Hanken Grotesk', sans-serif;
+
+}
+
+
+.outline-1{
+    border: 5px solid aqua;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+
+.item-selector{
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding-left: 10px;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+
+.submit{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+}

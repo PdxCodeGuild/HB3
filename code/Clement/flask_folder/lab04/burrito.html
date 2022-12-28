@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burrito Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>Burrito Order Form</header>
+    <div class="container">
+        <form action="" method="POST">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="image/burrito.jpg" class="image" alt="">
+                </div>
+                <div class="col main-inputbox text-light">
+                    <legend>Personal Information</legend>
+                    <h2>Sign in</h2>
+                    <div class="inputBox">
+                        <input type="username" required="required">
+                        <span>Username</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Password</span>
+                    </div>
+                    <div class="login text-light">
+                        <input type="submit" value="Login" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-light">
+                <fieldset class="outline">
+                    <h2>Tortilla:</h2>
+                    <div class="tortilla text-light">
+                        <div class="item-selector">
+                            <input class="form-check-input" id="wf" type="radio" name="Beans">
+                            <label for="wf">White Flour</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="sf" type="radio" name="Beans">
+                            <label for="sf">Spinach Flour</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="cf" type="radio" name="Beans">
+                            <label for="cf">Corn Flour</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="wt" type="radio" name="Beans">
+                            <label for="wt">Wheat Flour</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row outline-1 mt-4 mb-4 text-light">
+                <div class="col-12 col-lg-4">
+                    <fieldset class="Rice outline">
+                        <h2>Rice:</h2>
+                        <div class="rice form-check">
+                            <div class="item-selector">
+                                <label for="wr">White Rice</label>
+                                <input class="form-check-input" id="wr" type="radio" name="Beans">
+                            </div>
+                            <div class="item-selector">
+                                <label for="br">Brown Rice</label>
+                                <input class="form-check-input" id="br" type="radio" name="Beans">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <fieldset class="Beans outline mb-6">
+                        <h2>Beans:</h2>
+                        <div class="beans form-check">
+                            <div class="item-selector">
+                                <label for="pb">Pinto Beans</label>
+                                <input class="form-check-input" id="pb" type="radio" name="Beans">
+                            </div>
+                            <div class="item-selector">
+                                <label for="bb">Black Beans</label>
+                                <input class="form-check-input" id="bb" type="radio" name="Beans">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-12 col-lg-4 outline">
+                    <h2 class="h2 ">Additional Ingredients</h2>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Cheese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Sour Cream
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-light">
+                <fieldset class="protein">
+                    <h2>Protein:</h2>
+                    <div class="option">
+                        <div class="item-selector">
+                            <input class="form-check-input" id="cs" type="radio" name="Beans">
+                            <label for="cs">Carnitas</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="ck" type="radio" name="Beans">
+                            <label for="ck">Chicken</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="ss" type="radio" name="Beans">
+                            <label for="ss">Sofritas</label>
+                        </div>
+                        <div class="item-selector">
+                            <input class="form-check-input" id="no" type="radio" name="Beans">
+                            <label for="no">None</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-12 text-light">
+                <fieldset class="delivery mb-3 p-3">
+                    <h2>Delivery Instructions</h2>
+                    <div class="item-selector">
+                        <input class="form-check-input" id="pk" type="radio" name="Beans">
+                        <label for="pk">Pick-up</label>
+                    </div>
+                    <div class="item-selector">
+                        <input class="form-check-input" id="dv" type="radio" name="Beans">
+                        <label for="dv">Delivery</label>
+                    </div>
+                    <textarea class="form-control outline-1" style="background: #b2beb5;"
+                        id="exampleFormControlTextarea1" rows="3" placeholder="Enter your information here">
+                    </textarea>
+                    <div class="submit">
+                        <input type="submit" value="Back" class="complete">
+                        <input type="submit" value="Next" class="complete">
+                        <input type="submit" value="Cancel Order" class="complete">
+                        <input type="submit" value="Place Order" class="complete">
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
