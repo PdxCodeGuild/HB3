@@ -57,9 +57,12 @@ nav a:hover {
     }
   
   
+
+
+
 .leftcolumn {
     float: left;
-    width: 60%;
+    width: 25%;
 }
   
   
@@ -82,28 +85,41 @@ nav a:hover {
     clear: both;
 }
   
+section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+article {
+    background-image: url(easy_pass.jpg);
+    padding: 20px;
+    margin-top: 20px;
+}
 
 footer {
     background-color: rgb(76, 76, 76);
     height: 80px;
     display: flex;
     align-items: center;
-    text-align: center;
     margin: 20px;
     padding: 20px;
-    color: black
 }
   
-footer {
-    text-align: center;
-    padding: 5px;
-    background-color:rgb(76, 76, 76);
-    color: black
-}
-
 footer a {
+    color: black;
+    padding: 8px 8px 8px 32px;
+    display: block;
 
 }
+
+footer a:hover {
+    color: #f1f1f1;
+    }
+
+
 
 @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {

@@ -29,31 +29,34 @@
         <a href="articles">Articles</a>
         <a href="contact">Contact Us</a>
     </div>
-
-
-    <div class="row">
-        <div class="leftcolumn">
-            <div class="card">
-                <h2>Best Long-Distance Dog-Friendly Hikes</h2>
+    <section>
+        <article>
+            <div class="row">
+                <div class="leftcolumn">
+                    <h2>Best Long-distance Hikes</h2>
+                        <p>this is some made up stuff</p>
+                </div>
             </div>
-            <div class="card">
-                <h2>Essential Hiking Gear for the PNW</h2>
-            </div>
+        </article>
+        <img>
+    </section>
+    <section>
+        <article>
+            <div class="row">
+                <div class="rightcolumn">
+                    <h2>Best Long-distance Hikes</h2>
+                        <p>this is some made up stuff</p>
+                </div>
         </div>
-        <div class="rightcolumn">
-            <div class="card">
-                <h2>Title Heading</h2>
-            </div>
-            <div class="card">
-                <h2>Title Heading</h2>
-            </div>
-        </div>
+        </article>
+        <img>
+    </section>
+    
+   
     <footer>
-        <ul>
-            <li><a href="facebook">Facebook</a></li>
-            <li><a href="instagram">Instagram</a></li>
-            <li><a href="contact">Contact Us</a></li>
-        </ul>
+        <a href="facebook">Facebook</a>
+        <a href="instagram">Instagram</a>
+        <a href="contact">Contact Us</a>
     </footer>
 
 
