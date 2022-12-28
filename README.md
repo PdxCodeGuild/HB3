@@ -54,7 +54,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          02 Jan       |
 | 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          03 Jan       | 
 | 04  | [Burrito Order Form](https://github.com/PdxCodeGuild/HB3/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md)           |    21 Dec     |          04 Jan       | 
-| 05  | [Flask Redo](/05%20Flask%20Redo.md)                                |    27 Dec     |          10 Jan       |
+| 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          10 Jan       |
 
 ## Getting Unstuck 
 
