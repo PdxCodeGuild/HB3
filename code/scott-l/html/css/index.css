@@ -70,8 +70,13 @@ div {
 
 .biography_images {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row ;
+    justify: 50%;
+    height: 250px;
+
+}
+.wrapper {
+    display: grid;
 }
 
 
