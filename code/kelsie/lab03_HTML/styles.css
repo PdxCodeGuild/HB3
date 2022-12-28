@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+  
+
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+
+nav {
+    background-color: rgb(76, 76, 76);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+nav a {
+    color: black;
+    padding: 20px
+}
+
+nav a:hover {
+    color: #f1f1f1;
+    }
+
+.sidenav {
+    background-color: rgb(76, 76, 76);
+    height: 100%;
+    width: 10%;
+    position: fixed;
+    right: 0;
+    margin: 20px;
+    
+}
+
+.sidenav a {
+    color: black;
+    padding: 8px 8px 8px 32px;
+    display: block;
+
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    }
+  
+  
+.leftcolumn {
+    float: left;
+    width: 60%;
+}
+  
+  
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+
+footer {
+    background-color: rgb(76, 76, 76);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    color: black
+}
+  
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color:rgb(76, 76, 76);
+    color: black
+}
+
+footer a {
+
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
