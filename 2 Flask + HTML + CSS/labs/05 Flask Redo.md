@@ -9,7 +9,7 @@ Implement one of the following Python labs in a Flask app:
 - [Unit Converter](../../1%20Python/labs/01%20Unit%20Converter.md)
   - Simple version: the user enters the distance and units and the app shows them the converted distance in meters
   - Complex version: the user also enters output units
-- [Random Password Generator](../../1%20Python/labs/06%20Random%20Password%20Generator.md)
+- [Random Password Generator](../../1%20Python/labs/Random%20Password%20Generator.md)
   - Simple version: the user just enters in the number of characters in the password
   - Complex version: the user enters the number of uppercase letters, lowercase letters, numbers, and special characters
 
