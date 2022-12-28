@@ -13,17 +13,12 @@
         padding: 0;
         background-color: #f5f5f5;
         }
+        
 
         /* Navigation */
         nav {
           background-color: #3f51b5;
         }
-
-        /* Media banner */
-        .parallax-container {
-          height: 500px;
-        }
-
         /* Center text */
         .valign-wrapper {
           display: flex;
@@ -31,8 +26,22 @@
           justify-content: center;
         }
 
+        .transparent {
+          background-color: transparent !important;
+        }
+        video {
+          position: fixed;
+          top: 0;
+          left: 0;
+          min-width: 100%;
+          min-height: 100%;
+          z-index: -1;
+        }
+
         /* Make design responsive */
         .container {
+          display: flex;
+          align-content: center;
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -92,18 +101,30 @@
     </head>
 
     <body>
-      <div class="parallax-container">
-        <div class="parallax"><img src="banner.jpg"></div>
-      </div>      
-      <div class="section">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor metus at lacus pretium, a porttitor urna tempus. In hac habitasse platea dictumst. Vivamus dictum, purus eu fringilla volutpat, diam est pellentesque tellus, id efficitur libero orci eget diam. Fusce quis nisi congue, convallis nunc eu, ornare tortor. Donec eleifend, ipsum eu dictum dictum, dui dui tincidunt massa, non ullamcorper tortor sem eget diam. Duis vel metus a quam feugiat sodales.</p>
-      </div>      
-      <div class="container">
+      <nav class="transparent">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <video src="https://pdxcodeguild.com/_nuxt/videos/intro.7990ce4.mp4" autoplay loop muted></video>
+
+      <div class="container"
+        <div class="section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor metus at lacus pretium, a porttitor urna tempus. In hac habitasse platea dictumst. Vivamus dictum, purus eu fringilla volutpat, diam est pellentesque tellus, id efficitur libero orci eget diam. Fusce quis nisi congue, convallis nunc eu, ornare tortor. Donec eleifend, ipsum eu dictum dictum, dui dui tincidunt massa, non ullamcorper tortor sem eget diam. Duis vel metus a quam feugiat sodales.</p>
+        </div>
+      </div>
+
+      <div class="container valign-wrapper">
         <div class="row">
           <div class="col s12 m4">
             <div class="card">
               <div class="card-image">
-                <img src="image1.jpg">
+                <img src="https://cdn.domestika.org/c_fill,dpr_auto,f_auto,pg_1,t_base_params/v1661254588/course-covers/000/002/844/2844-original.jpg?1661254588">
                 <span class="card-title">Tile 1</span>
               </div>
               <div class="card-content">
