@@ -1,52 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Peacock BLOG</title>
-        <link rel="icon" href="PeacockFavicon.png" />
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    </head>
-    <style>
-        .footer {
-          position: fixed;
-          left: 0px;
-          bottom: 15px;
-          width: 100%;
-          background-color: rgb(69, 6, 82);
-          color: rgb(235, 234, 234);
-          text-align: center;
-        }
 
-        .background {
-            background-color: seagreen;
-        }
-        </style>
-        
-        <div class="footer">
-          <p>No Way! This is the bottom of the page</p>
-        </div>
-    <body>
-        <!-- Page Content -->
-        <h1 <div class="p-3 mb-2 bg-success text-white"></div>Welcome to the Peacock Blog!!!</h1>
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    </body>
-    <body>
-        <nav class="navbar navbar-expand-sm bg-light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peacock BLOG</title>
+  <link rel="icon" href="PeacockFavicon.png" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
 
-            <!-- Links -->
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">First Entry</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Last Entry</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Random Entry</a>
-              </li>
-            </ul>
-    </body>
+<style>
+
+  .footer {
+    position: fixed;
+    left: 0px;
+    bottom: 15px;
+    width: 100%;
+    background-color: rgb(69, 6, 82);
+    color: rgb(235, 234, 234);
+    text-align: center;
+  }
+
+  .background {
+    background-color: seagreen;
+  }
+
+  .blog-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    color: aliceblue
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30px;
+    background-color: rgb(4, 4, 97);
+    color:bisque
+  }
+
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100px;
+    height: 100vh;
+    background-color: rgb(6, 75, 21);
+    color:bisque
+  }
+</style>
+
+
+<body>
+  <!-- Page Content -->
+  <div>
+    <h1 class="p-3 mb-2 bg-success text-white">
+      Welcome to the Peacock Blog!!!
+    </h1>
+  </div>
+ 
+  <div class="navbar">
+    
+    <a href="default.asp">Home</a>
+    <a href="news.asp">News</a>
+    <a href="contact.asp">Contact</a>
+    <a href="about.asp">About</a>
+    
+  </div>
+
+  <div class="sidenav" position="absolute">
+    
+    <a href="default.asp">Date</a>
+    <a href="news.asp">Time</a>
+    <a href="contact.asp">Content</a>
+    <a href="about.asp">Author</a>
+  
+  </div>
+
+
+  <div class="blog-contents" position="absolute">
+    <div style="background-color:rgb(21, 116, 116)">One</div>
+    <div style="background-color:rgb(16, 116, 58)">Two</div>
+    <div style="background-color:rgb(112, 28, 17)">Three</div>
+    <div style="background-color:rgb(67, 9, 94)">Four</div>
+    <div style="background-color:rgb(21, 116, 116)">Five</div>
+    <div style="background-color:rgb(16, 116, 58)">Six</div>
+    <div style="background-color:rgb(112, 28, 17)">Seven</div>
+    <div style="background-color:rgb(67, 9, 94)">Eight</div>
+  </div>
+    
+  <div class="footer">
+    <p>No Way! This is the bottom of the page</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+  crossorigin="anonymous">
+  </script>
+
+  </body>
+
 </html>
