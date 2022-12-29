@@ -1,103 +1,64 @@
-* {
-    box-sizing: border-box;
-}
-  
+
 body {
     font-family: Arial;
     padding: 20px;
-    background: #f1f1f1;
+    background-image: linear-gradient(rgb(70, 95, 70), gray);
+    margin: 20px;
 }
   
 
 .header {
     padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    background: white;
+    font-size: 20px;
+    text-align: right;
+    background:  rgb(76, 76, 76);
 }
 
 
-nav {
-    background-color: rgb(76, 76, 76);
-    height: 80px;
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    padding: 20px;
-}
 
-nav a {
-    color: black;
-    padding: 20px
-}
-
-nav a:hover {
-    color: #f1f1f1;
-    }
 
 .sidenav {
-    background-color: rgb(76, 76, 76);
-    height: 100%;
-    width: 10%;
-    position: fixed;
-    right: 0;
-    margin: 20px;
-    
-}
-
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+      
+      /* The navigation menu links */
 .sidenav a {
-    color: black;
-    padding: 8px 8px 8px 32px;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
     display: block;
-
-}
-
+  }
+      
+      /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
     color: #f1f1f1;
-    }
-  
-  
+  }
+      
+      
 
-
-
-.leftcolumn {
-    float: left;
-    width: 25%;
-}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding-left: 150px;
+  }
   
-  
-.rightcolumn {
-    float: left;
-    width: 25%;
-    padding-left: 20px;
-}
 
 .card {
-    background-color: white;
+    background-color: rgb(112, 109, 106);
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-  
-section {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    display: inline-flex;
-    align-items: center;
-}
-
-article {
-    background-image: url(easy_pass.jpg);
-    padding: 20px;
-    margin-top: 20px;
-}
 
 footer {
     background-color: rgb(76, 76, 76);
@@ -120,11 +81,4 @@ footer a:hover {
     }
 
 
-
-@media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {
-      width: 100%;
-      padding: 0;
-    }
-  }
 
