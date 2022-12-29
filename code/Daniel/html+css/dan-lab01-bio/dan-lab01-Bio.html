@@ -1,0 +1,98 @@
+<!-- ----------------------------
+ PDX Code Guild: HB3
+ Lab01: Bio
+ Author: Daniel Smith
+ Date: 2022.12.20
+---------------------------------
+
+Lab 1: Bio
+Write up a short bio webpage for someone or something.
+It can be about a celebrity, a fictionary character, a place, a species, etc.
+
+Part 1
+A written introduction
+A link to a Wikipedia article
+A picture of them
+A list of places where they've lived
+A quote from them
+
+Part 2
+Center the entire content of the body
+Modify the padding and margins on your paragraphs to look better
+Use a custom font
+Add a background image
+
+Part 3
+Pick a color scheme and modify the background, body text, and link text color.
+Change the typeface of the quote.
+Add a rounded border to the picture.
+Change the bullet points on the list of place -->
+
+<!DOCTYPE html>
+<!-- root element -->
+<html lang="en">
+<!-- the head contains metadata about the document  -->
+<head>
+  <!-- meta tags store general metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- page title, the text that appears on a browser -->
+  <title>Demo Page</title>
+  <!-- import external css -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<style>
+  h1 {
+    color: rgb(20, 20, 20);
+    font-family: sans-serif
+  }
+  body {
+    background-image: url('vermeer-view-of-delft.jpeg');
+    background-size: 1470px 1221px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: lightgrey;
+    color: black;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    border-radius: 0px 10px 0px 10px;
+  }
+  li {
+    list-style-type: square;
+  }
+  div { 
+    max-width: 770px;
+    text-align: center;
+  }
+</style>
+<!-- the body contains the actual document that will be shown to the user -->
+<body>
+  <!-- page element -->
+  <img src="vermeer-self-potrait.jpeg" alt="vermeer self portrait" width="205" height="250" />
+  <h1>Jan Vermeer</h1>
+  <div>
+      Dutch artist who created paintings that are among the most beloved and revered images in the history of art.
+      Although only about 36 of his paintings survive, these rare works are among the greatest treasures in the world’s
+      finest museums.
+      Vermeer began his career in the early 1650s by painting large-scale biblical and mythological scenes, but most of
+      his later paintings—the ones for which he is most famous—depict scenes of daily life in interior settings. These works are
+      remarkable for their purity of light and form, qualities that convey a serene, timeless sense of dignity.
+      Vermeer also painted cityscapes and allegorical scenes.</p>
+  </div>
+  <p><i>Lived his best life in:</i>
+  <ul>
+    <li>Delft, Netherlands</li>
+  </ul>
+  <p><q><i>Give respect to take respect.</i></q> - Vermeer</p>
+  <p><q><i>Ball hard.</i></q> - Vermeer</p>
+  <br />
+  <a href="https://en.wikipedia.org/wiki/Johannes_Vermeer">Wikipedia entry<a />
+    <!-- import external javascript  -->
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

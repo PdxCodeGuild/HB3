@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import requests
 
 
@@ -61,3 +63,4 @@ if index >= 19:
     
 
 
+>>>>>>> 8735dd1a338782c9a7e4afb818e1fcc0f26ff8aa

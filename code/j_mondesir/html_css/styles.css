@@ -1,0 +1,33 @@
+
+h1 {
+    color: brown;
+}
+
+body{
+    background-size: cover;
+    background: radial-gradient(crimson, skyblue, yellow);
+    text-align: center;
+    font-family: fantasy;
+    padding: 2em;
+    margin: 10px;
+}
+
+.picture{
+    border-radius: 70px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    margin-right: 70px; 
+}
+
+#quotation{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+}
