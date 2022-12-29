@@ -1,0 +1,190 @@
+ @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Prosto+One&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Oswald sans-serif;
+}
+body {
+    background-image: url(https://c.tenor.com/AJBv6U1rfkQAAAAC/background-image-galaxy.gif);
+    font-family: var(--bs-font-sans-none);
+    font-size: 1.5rem;
+} 
+/* -----------Nasa Logo----------------  */
+ .logo img{
+    height: 120px;
+    cursor: pointer;
+   
+ }
+
+.collapse {
+    margin-left: 0px;
+   
+}
+
+.navbar{
+    background: rgba(16, 15, 15, 0.9);
+}
+
+.navbar-brand {
+    display: inline-block;
+     
+}
+
+.navbar-brand:hover{
+    background-color: #a9a9a9;
+    padding: 0px;
+    border-radius: 5px;
+    height: 4vh;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+  
+.navbar-brand:not(:last-child):after {
+    content: "|";
+    padding-left: 10px;
+    
+    
+}
+
+.navbar-1{
+    background-color: #708090;
+    max-width: 1180px;
+    text-align: center;
+    margin-left: 380px;
+    padding-right: 0px;
+
+}
+
+.nav-link:hover{
+    background-color: #0000ff;
+    border-radius: 10px;
+   
+}
+
+.content-area{
+    margin-top: 20px;
+}
+
+ul{
+    margin-bottom: 0px;
+    padding-left: 0px;
+    
+}
+.textover{
+    position: relative;
+}
+
+.textover figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    border-radius: 5px;
+    background: rgba(59, 99, 230, 0.8);
+    padding: 6px 12px;
+    cursor: pointer;
+}
+figure {
+    margin: 0px;
+}
+
+.container-1 {
+    padding: 4px;
+    border-radius: 6px;
+    background-color: rgba(67, 66, 66, 0.9);
+    
+}
+
+.search{
+    width: 100vw;
+    max-width: 300px;
+    height: 5vh;
+    margin: 0px;
+    border: 0px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    padding: 0px;
+    border-radius: 5px;
+    background-color: #848482;
+}
+
+.search input{
+    background-color: #848482;
+    flex: 1;
+    border: 0px;
+    outline: none;
+    ;
+}
+    
+.btn img{
+    height: 4vh;
+    margin: 0px;
+    align-items: flex-start;
+    padding: 0px;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.share{
+    height: 5vh;
+    margin: 0px;
+    align-items: flex-start;
+    padding: 0px;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.search ::placeholder{
+    color: #91a3b0;
+    font-size: 20px;
+
+}
+
+.images{
+    width: 100%;
+    cursor: pointer;
+   
+   
+}
+.image{
+    cursor: pointer;
+}
+.image-3{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid .row {
+    background: black;   
+}
+.page {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background: white;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .col-md-4{
+        width: unset;
+    }  
+    .collapse{
+        margin-left: 350px;
+    }
+   
+}
+
+@media screen and (min-width: 780px){
+    
+    .dropdown .dropdown-menu.show{
+        display: none !important;
+    }
+    .dropdown:hover .dropdown-menu{
+        display: block !important;
+    }
+    .dropdown:focus .dropdown-menu{
+        display: block !important;
+    }
+}
