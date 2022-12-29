@@ -3,7 +3,7 @@
       Project: Lab 1 - Bio webpage
       Author: Scott Lefgren
       Email: scojlefg@gmail.com
-      Date: December 21, 2022
+      Date: December 28, 2022
 ___________________          _-_
 \==============_=_/ ____.---'---`---.____
             \_ \    \----._________.----/
@@ -28,6 +28,7 @@ body{
     color: blue;     
     
 }
+
 a {
  color: coral;
 }
@@ -38,24 +39,25 @@ section {
     font-weight: 200;
     font-size: 25px;
     text-align: center;
-   
     padding: 50px;
     /* border: 1px solid black; */
     /* padding: 1%; */
     /* background-color: blanchedalmond; */
-
-   
 }
+
 p {
     text-align: center;
 }
+
 blockquote {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 div {
     /* border: 1px solid black; */
     /* padding: 1%; */
 }
+
 img {
     border-radius: 25%;
 }
@@ -113,11 +115,7 @@ img {
 
 }
 .wrapper {
-    /* display: grid; */
     border:15px black solid;
-    
-
-
 }
 
 .place_list{
@@ -130,18 +128,5 @@ img {
 ul {
 list-style-type: circle;
 }
-
-/* .hero-image {
-  background: url('https://www.thisiscolossal.com/wp-content/uploads/2015/12/shackleton-11-1024x755.jpg'); 
-  background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-} */
-
-
-/* <div style="color:blue;background-color:DarkOliveGreen">This is some ugly text</div> */
 
 
