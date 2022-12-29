@@ -210,3 +210,11 @@ header{
     }
     
 }
+
+#exampleFormControlTextarea1{
+    color: aliceblue;
+}
+/* ::placeholder{
+    color: aqua;
+    opacity: 10;
+} */
