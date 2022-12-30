@@ -2,12 +2,12 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background-image: linear-gradient(rgb(70, 95, 70), gray);
-    margin: 20px;
+    background-image: linear-gradient(rgb(76, 112, 76), rgb(101, 98, 98));
 }
-  
+ 
 
 .header {
+    margin-left: 130px;
     padding: 30px;
     font-size: 20px;
     text-align: right;
@@ -15,7 +15,20 @@ body {
 }
 
 
+.navbar {
+    margin: 20px;
+    margin-left: 150px;
+    background-color: #818181;
+}
 
+
+.navbar a {
+    color:rgb(23, 23, 23)
+}
+
+.navbar a:hover {
+    color: #f1f1f1;
+  }
 
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -24,12 +37,12 @@ body {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black */
+    background-color: rgb(25, 32, 25); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
       
-      /* The navigation menu links */
+
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -38,19 +51,13 @@ body {
     display: block;
   }
       
-      /* When you mouse over the navigation links, change their color */
+ 
 .sidenav a:hover {
     color: #f1f1f1;
   }
-      
-      
 
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    padding-left: 150px;
-  }
-  
+
+
 
 .card {
     background-color: rgb(112, 109, 106);
@@ -64,16 +71,16 @@ footer {
     background-color: rgb(76, 76, 76);
     height: 80px;
     display: flex;
-    align-items: center;
-    margin: 20px;
+    margin-left: 150px;
     padding: 20px;
+    text-align: right;
+    
 }
   
 footer a {
     color: black;
     padding: 8px 8px 8px 32px;
     display: block;
-
 }
 
 footer a:hover {
