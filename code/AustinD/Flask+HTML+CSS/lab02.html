@@ -4,13 +4,28 @@
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      var instance = M.Carousel.init({
-      fullWidth: true,
-      indicators: true
-    });
-    </script>
+    <style>
+      body { 
+        min-height:100vh; 
+        margin:0; 
+        position:relative;
+      }
+
+      body::after {
+        content: '';
+        display: block;
+      }
+      
+      .carousel {
+        height: 100vh;
+      }      
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -25,31 +40,25 @@
         </div>
       </nav>
 
-    <!-- Main Content/Carousel -->
-    <main>
-      <div class="carousel carousel-slider center">
-        <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2">button</a>
-        </div>
-        <div class="carousel-item red white-text" href="#one!">
-          <h2>First Panel</h2>
-          <p class="white-text">This is your first panel</p>
-        </div>
-        <div class="carousel-item amber white-text" href="#two!">
-          <h2>Second Panel</h2>
-          <p class="white-text">This is your second panel</p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <h2>Third Panel</h2>
-          <p class="white-text">This is your third panel</p>
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <h2>Fourth Panel</h2>
-          <p class="white-text">This is your fourth panel</p>
-        </div>
+    <!-- Carousel -->
+    <div class="carousel carousel-slider center">
+      <div class="carousel-fixed-item center">
+        <a class="btn waves-effect white grey-text darken-text-2">button</a>
       </div>
-    </main>
-    
+      <div class="carousel-item red white-text" href="#one!">
+        <h2>First Panel</h2>
+        <p class="white-text">This is your first panel</p>
+      </div>
+      <div class="carousel-item amber white-text" href="#two!">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+      </div>
+      <div class="carousel-item green white-text" href="#three!">
+        <h2>Third Panel</h2>
+        <p class="white-text">This is your third panel</p>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="page-footer">
       <div class="container">
@@ -73,5 +82,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="file.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
