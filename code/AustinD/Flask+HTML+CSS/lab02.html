@@ -3,12 +3,17 @@
   <head>
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Materialize JavaScript -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <style>
       body { 
-        min-height:100vh; 
         margin:0; 
-        position:relative;
+        position: relative;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+
+      main {
+          flex: 1 0 auto;
       }
 
       body::after {
@@ -17,72 +22,108 @@
       }
       
       .carousel {
-        height: 100vh;
+        height: 88vh;
       }      
 
       footer {
-        position: absolute;
+        position: fixed;
+        left: 0;
         bottom: 0;
         width: 100%;
         }
+      
+      .button-wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .item1text {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      transform: translate(-5%, -5%);
+      font-size: 5vw;
+      }
+
+      .item2text {
+      position: fixed;
+      bottom: 40%;
+      left: 16%;
+      transform: translate(-40%, -16%);
+      font-size: 5vw;
+      font
+      }      
+      
+      .item3text {
+      position: fixed;
+      top: 10%;
+      right: 5%;
+      transform: translate(-10%, -5%);
+      font-size: 5vw;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-
+    <nav class="dark brown">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Wood Just Works</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     <!-- Carousel -->
-    <div class="carousel carousel-slider center">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    <main>
+      <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item">
+            <a class="btn-large waves-effect forest-green white-text button-wrapper" href="#" target="_blank">Get A Quote</a>
+          </div>
+        <div class="carousel-item" href="#one!">
+          <img src="https://img.freepik.com/free-photo/carpenter-cutting-mdf-board-inside-workshop_23-2149451051.jpg"></a>
+          <div class="item1text">Quality Craftsmen</div>
+        </div>
+        <div class="carousel-item" href="#two!">
+          <img src="https://img.freepik.com/free-photo/pile-wood-planks_23-2148748803.jpg"></a>
+          <div class="item2text">Quality Materials</div>
+        </div>
+        <div class="carousel-item" href="#three!">
+          <img src="https://img.freepik.com/free-photo/circular-saw-blade_1098-14234.jpg"></a>
+          <div class="item3text">Quality Tools</div>
+        </div>
       </div>
-      <div class="carousel-item red white-text" href="#one!">
-        <h2>First Panel</h2>
-        <p class="white-text">This is your first panel</p>
-      </div>
-      <div class="carousel-item amber white-text" href="#two!">
-        <h2>Second Panel</h2>
-        <p class="white-text">This is your second panel</p>
-      </div>
-      <div class="carousel-item green white-text" href="#three!">
-        <h2>Third Panel</h2>
-        <p class="white-text">This is your third panel</p>
-      </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="page-footer">
+    <footer class="page-footer dark brown">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5>Footer Content</h5>
-            <p>You can use rows and columns here to organize your footer content.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5>Links</h5>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
+        <div class="col s12">
           © 2021 Copyright Text
           <a class="grey-text text-lighten-4 right" href="#">More Links</a>
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="file.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      // CAROUSEL
+      $(document).ready(function(){
+        $('.carousel').carousel(
+        {
+          dist: 0,
+          padding: 0,
+          shift: 0,
+          fullWidth: true,
+          indicators: true,
+          duration: 100,
+        }
+        );
+      });
+      </script>
   </body>
 </html>
