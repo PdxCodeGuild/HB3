@@ -4,28 +4,47 @@ body{
 
 .wrapper {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row | column;
     font-weight: bold;
     text-align: center;
 }
 
-.header {
+.header-side-nav {
+    flex-flow:  column;
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-start;
+    
+    list-style: none;
+    margin: 0; 
     background: tomato;
 }
 
 .main {
     text-align: left;
     background: deepskyblue;
+    flex-flow:  column;
 }
 
 .aside-1 {
     background: gold;
+    flex-direction: column;
 }
 
 .aside-2 {
     background: hotpink;
+    flex-direction: column;
 }
 
 .footer {
    background: lightgreen; 
 }
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    
+    list-style: none;
+    margin: 3; 
+    background: deepskyblue;
+  }
