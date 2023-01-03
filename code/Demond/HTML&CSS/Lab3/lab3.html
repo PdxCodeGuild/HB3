@@ -2,20 +2,24 @@
 <title>Demonds Blog Page</title>
 
 <head>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
-        /*.div {   border: 1px #ccc solid;}*/
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
         body {
-            background-image: url("https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg")
+            background-image: url("https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg");
+            font-family: 'Anton', sans-serif;
         }
 
         .container-1 {
 
             display: flex;
+
             text-align: center;
 
-            border: 1px #ccc solid;
+            border: 1px solid;
 
             padding: 1px;
 
@@ -25,41 +29,72 @@
 
             display: flex;
 
-            justify-content: space-between;
+            /*flex-flow: row wrap;*/
+            /*justify-content: space-between;*/
+            /*align-items: flex-start;*/
+            border: 1px #ccc solid;
 
+            padding: 10px;
+
+            text-align: center;
+
+            border: 3px solid;
+        }
+
+        .box-2-1 {
+            flex: 3;
+        }
+
+        .box-2-2 {
+            flex: 1;
+            border: 3px solid;
+            /*background-color: ;*/
+        }
+
+        .box-2-3 {
+            flex: 2;
+            /*flex-wrap: no-wrap;*/
+            border: 2px solid;
+
+            background-image: url(https://tse2.mm.bing.net/th?id=OIP.m0b68M4HsdOoMEKF96MyFQHaFj&pid=Api&P=0);
+            background-size: 24;
+
+            /*background-size: contain;*/
+            /*width: 170px;*/
+            /*height: 180px;*/
+            /*border: 2px solid;*/
+            /*color: pink;*/
+            /*resize: both;*/
+            /*overflow: scroll;*/
         }
 
         }
 
         .container-3 {
-
-            display: flex;
-
-        }
-
-        .container-4 {
-
-            display: flex;
-
             border: 1px #ccc solid;
 
             padding: 10px;
 
-            background-color: ;
+            text-align: center;
+
+            border: 3px solid;
+
+            display: flex;
+        }
+
+        .container-1 {
+
+            display: flex;
+
+            border: 3px solid;
+
+            padding: 10px;
 
             text-align: center;
 
         }
-        .container-2 div,
 
-        .container-3 {
-
-            border: 1px #ccc solid;
-
-            padding: 10px;
-        }
-
-        .box4-1 {
+        .box1-1 {
 
             flex: 1;
 
@@ -67,16 +102,15 @@
 
         }
 
+        /*.container-2 div,*/
 
         .container-7 {
 
             flex: 1;
 
-            border: 1px #ccc solid;
+            border: 3 px solid;
 
             padding: 10px;
-
-            background-color: bl;
 
             text-align: center;
 
@@ -85,39 +119,36 @@
             display: flex;
             flex-direction: column;
 
+            color: white;
         }
 
 
         .box-7-1 {
             /*flex: 1;*/
-            border: 1px solid;
+            border: 2px solid;
             align-items: flex-start;
             order: 1;
         }
 
         .box-7-2 {
             border: 1px solid;
+            order: 2;
         }
     </style>
 </head>
 
-<aside>
+<header>
+    <aside>
 
-    <div class="container-4">
+        <div class="container-1">
 
-        <div class="box4-1">
+            <div class="box1-1">
 
-            <Header>
+                <h1>Welcome to Demonds Blog</h1>
 
-                <h1>Welcome to Demonds Blog box 1 in 4</h1>
+                <p>This is my very first blog that I developed during PDX Code Guild.. Behold.</p>
+            </div>
 
-                <p>some info on my blog</p>
-
-            </Header>
-
-        </div>
-
-        <aside>
 
             <class="container-6">
 
@@ -132,54 +163,53 @@
                             <p> <a href="https://www.google.com/">Google</a></p>
 
                             <p> <a href="https://www.google.com/">Test</a></p>
+                        </nav>
 
                 </div>
 
-    </div>
+        </div>
 
     </aside>
+</header>
 
-    <section>
+<p></p>
+<section>
 
-        <div class="container-2">
+    <div class="container-2">
 
-            <div class="box-2-1">
+        <div class="box-2-1">
 
-                <h3>Skate Ipsm 2.1</h3>
+            <h3>Skate Ipsm</h3>
 
-                <p>Skate ipsum dolor sit amet, lipslide Saran Wrap tail betty Rune Glifberg. Handplant coping bearings stalefish. 720 shoveit finger flip salad grind Gator Mark Anthony. Freestyle Steve Olson mongo kickflip casper slide. The Faction coper g-turn hang-up camel back. Deck coping Bullet 66 smith grind nollie. Julien Stranger rock and roll bank drop in coper. Pump method air hospital flip Alien Workshop grab. Full pipe camel back kickturn boneless. Varial rip grip frontside frigid air. Pump pop shove-it launch ramp helipop. </p>
-                </p>
-                </p>
+            <p>Skate ipsum dolor sit amet, lipslide Saran Wrap tail betty Rune Glifberg. Handplant coping bearings stalefish. 720 shoveit finger flip salad grind Gator Mark Anthony. Freestyle Steve Olson mongo kickflip casper slide. The Faction coper g-turn hang-up camel back. Deck coping Bullet 66 smith grind nollie. Julien Stranger rock and roll bank drop in coper. Pump method air hospital flip Alien Workshop grab. Full pipe camel back kickturn boneless. Varial rip grip frontside frigid air. Pump pop shove-it launch ramp helipop. </p>
+        </div>
 
-            </div>
+        <div class="box-2-2">
 
-            <div class="box-2-2">
+            <h3>Lorem Ipsum</h3>
 
-                <h3>Box 2.2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        </div>
 
-                <p>this is my 2nd box in 2 </p>
+        <div class="box-2-3">
 
-            </div>
+            <p>Claim Now</p>
 
-            <div class="box-2-3">
+        </div>
 
-                <h3>Box 2.3</h3>
-
-                <p>this is my 3rd box in 2 </p>
-
-    </section>
-
+</section>
+<p>
+</p>
+<article>
     <div class="container-7">
         <div class="box-7-1">
             <div class="box-7-1-1">
-                <h2></h2>
-                <h3>Dev Ipsm 7.1</h3>
+                <h3>Dev Ipsm</h3>
                 <p>Every operating system out there is about equal… We all suck. (Microsoft senior vice president Brian Valentine describing the state of the art in OS security, 2003) The use of COBOL cripples the mind; its teaching should therefore be regarded as a criminal offense. (E.W. Dijkstra) Hardware: The parts of a computer system that can be kicked. (Jeff Pesis) Windows NT addresses 2 Gigabytes of RAM, which is more than any application will ever need. (Microsoft, on the development of Windows NT, 1992)</p>
             </div>
-
             <div class="box-7-2">
-                <h3>SAMUEL L. IPSUM 7.1
-                </h3>
+                <h3>SAMUEL L. IPSUM</h3>
+
                 <p>
                     <!-- start slipsum code -->
 
@@ -188,13 +218,9 @@
                     <!-- end slipsum code -->
                 </p>
             </div>
+</article>
 
-
-            </section>
-
-            <article>
-                <div> this is going to be my div Article (although I dont know if it helps)</div>
-            </article>
-            <div>this is proof outside the article that a div..</div>
-
-            </body>
+<footer>
+    <h4> please excuse my lack of comments in code</h4>
+</footer>
+</body>
