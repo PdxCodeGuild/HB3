@@ -23,8 +23,7 @@ navigator.geolocation.getCurrentPosition(position => {
 Once you have the latitude and longitude, you can make the call to [OpenWeatherMap](https://openweathermap.org/api/one-call-api) to get the forecast and display the information in the page.
 
 
-`https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&
-exclude=hourly,daily&appid={YOUR API KEY}`
+`https://api.openweathermap.org/data/2.5/weather?lat=33.441792&lon=-94.037689& exclude=hourly,daily&appid={YOUR API KEY}`
 
 
 The API gives back Unix Timestamps, which are the number of seconds passed since midnight of January 1st, 1970. You can convert them to JavaScript datetimes like so...
