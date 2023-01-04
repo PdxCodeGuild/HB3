@@ -1,0 +1,126 @@
+
+  body {
+    background-image: linear-gradient(rgb(102, 102, 102), rgb(30, 30, 30));
+    font-family: "Optima";
+    max-width: auto;
+    margin: auto;
+    padding: 10px;
+    align-items: center;
+    
+    
+  }
+
+  h1 {
+    font-family: "Optima";
+    font-size: 60px;
+    color: rgb(204, 204, 204);
+    margin: 40px;
+    text-align: right;
+  }
+
+  h2 {
+    color:rgb(37, 37, 37);
+    margin: 40px;
+    text-align: right;
+    font-family: "Optima";
+  }
+
+h3 {
+    color:rgb(204, 204, 204);
+    background-color:rgb(90, 90, 90);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    font-family: "Optima";
+}
+
+
+  p {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+
+  li a:hover {
+    background-color: #111;
+    color:rgb(204, 204, 204)
+  }
+
+  img {
+    float: flex;
+    margin: 20px;
+    padding: 10px;
+    border:5px solid rgb(67, 67, 67);
+    width: 100%;
+    }
+  
+  .card {
+   padding: 10px;
+   margin-top: 10px;
+   background-color: rgb(67, 67, 67);
+    }
+
+    .card a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+ 
+  .rightcolumn {
+    float: right;
+    width: 25%;
+    padding-right: 20px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #333;
+}
+
+  .footer a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+
