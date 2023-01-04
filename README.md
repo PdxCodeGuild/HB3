@@ -51,10 +51,12 @@ M-F 6:00 pm – 9:36 pm PT
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
 | 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |    15 Dec     |          29 Dec       | 
-| 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          02 Jan       |
-| 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          03 Jan       | 
-| 04  | [Burrito Order Form](https://github.com/PdxCodeGuild/HB3/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md)           |    21 Dec     |          04 Jan       | 
-| 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          10 Jan       |
+| 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          04 Jan |
+| 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          05 Jan       | 
+| 04  | [Burrito Order Form](2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md) |    21 Dec     |   06 Jan  | 
+| 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          11 Jan       |
+| 06  | [LinkedIn](2%20Flask%20+%20HTML%20+%20CSS/labs/06%20LinkedIn%20Checklist.md)       |    03 Jan     |      17 Jan       |
+| 07  | [Portfolio](2%20Flask%20+%20HTML%20+%20CSS/labs/07%20Personal%20Portfolio.md)      |    03 Jan     |      17 Jan       |
 
 ## Getting Unstuck 
 
