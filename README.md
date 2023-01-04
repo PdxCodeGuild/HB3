@@ -55,6 +55,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          05 Jan       | 
 | 04  | [Burrito Order Form](2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md) |    21 Dec     |   06 Jan  | 
 | 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          11 Jan       |
+| 06  | [LinkedIn](2%20Flask%20+%20HTML%20+%20CSS/labs/06%20LinkedIn%20Checklist.md)       |    01 Jan     |          14 Jan       |
 
 ## Getting Unstuck 
 
