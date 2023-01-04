@@ -14,7 +14,7 @@ Let's build a searchable pokedex! First we'll load the data from a `json` file i
 - [Part 9: More Pokemon (optional)](#part-9-more-pokemon-optional)
 
 
-![pokedex diagram](pokedex.png)
+
 
 
 ## Part 1: Create Your Model
