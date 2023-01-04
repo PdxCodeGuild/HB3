@@ -2,7 +2,7 @@
 
 # Vue Redo
 
-Let's redo one of the following Python labs in [Vue](../docs/Vue.md)!
+Let's redo one of the following Python labs in [Vue](https://github.com/PdxCodeGuild/HB3/blob/main/4%20JavaScript/docs/13%20-%20Vue.md)!
 
 - [Rock, Paper, Scissors](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/Rock%20Paper%20Scissors.md)
   - Have the user choose rock, paper, or scissors, and show the user who won.
