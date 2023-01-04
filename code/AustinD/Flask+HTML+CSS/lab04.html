@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Burrito Order Form</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-400 font-sans text-gray-700">
+  <div class="container max-w-2xl mx-auto p-4 bg-white rounded-lg shadow-lg">
+    <h1 class="text-center text-red-500 mb-4">Big Baja Burritos</h1>
+    <img src="Image url" alt="Burrito" class="mx-auto mb-4">
+    <form action="https://webhook.site/your-url-here" method="post" class="flex flex-col">
+      <div class="mb-4">
+        <label for="name" class="block font-bold mb-2 text-sm">Name:</label>
+        <input type="text" id="name" name="name" class="border p-2 rounded w-full">
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block font-bold mb-2 text-sm">Password:</label>
+        <input type="password" id="password" name="password" class="border p-2 rounded w-full">
+      </div>
+      <div class="mb-4">
+        <label class="block font-bold mb-2 text-sm">Tortilla:</label>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="tortilla-white" name="tortilla" value="white" class="mr-2">
+          <label for="tortilla-white" class="text-sm">White Flour</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="tortilla-wheat" name="tortilla" value="wheat" class="mr-2">
+          <label for="tortilla-wheat" class="text-sm">Wheat Flour</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="tortilla-spinach" name="tortilla" value="spinach" class="mr-2">
+          <label for="tortilla-spinach" class="text-sm">Spinach</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="tortilla-corn" name="tortilla" value="corn" class="mr-2">
+          <label for="tortilla-corn" class="text-sm">Corn</label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block font-bold mb-2 text-sm">Rice:</label>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="rice-white" name="rice" value="white" class="mr-2">
+          <label for="rice-white" class="text-sm">White Rice</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="radio" id="rice-brown" name="rice" value="brown" class="mr-2">
+          <label for="rice-brown" class="text-sm">Brown Rice</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="radio" id="rice-none" name="rice" value="none" class="mr-2">
+          <label for="rice-none" class="text-sm">No Rice</label>
+          </div>
+          </div>
+          <div class="mb-4">
+          <label class="block font-bold mb-2 text-sm">Beans:</label>
+          <div class="flex items-center mb-2">
+          <input type="radio" id="beans-pinto" name="beans" value="pinto" class="mr-2">
+          <label for="beans-pinto" class="text-sm">Pinto</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="radio" id="beans-black" name="beans" value="black" class="mr-2">
+          <label for="beans-black" class="text-sm">Black</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="radio" id="beans-none" name="beans" value="none" class="mr-2">
+          <label for="beans-none" class="text-sm">No Beans</label>
+          </div>
+          </div>
+          <div class="mb-4">
+          <label class="block font-bold mb-2 text-sm">Add Ons:</label>
+          <div class="flex items-center mb-2">
+          <input type="checkbox" id="add-ons-salsa" name="add-ons" value="salsa" class="mr-2">
+          <label for="add-ons-salsa" class="text-sm">Salsa</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="checkbox" id="add-ons-guacamole" name="add-ons" value="guacamole" class="mr-2">
+          <label for="add-ons-guacamole" class="text-sm">Guacamole</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="checkbox" id="add-ons-sour-cream" name="add-ons" value="sour-cream" class="mr-2">
+          <label for="add-ons-sour-cream" class="text-sm">Sour Cream</label>
+          </div>
+          <div class="flex items-center mb-2">
+          <input type="checkbox" id="add-ons-cheese" name="add-ons" value="cheese" class="mr-2">
+          <label for="add-ons-cheese" class="text-sm">Cheese</label></div>
+        </div>
+        <div class="mb-4">
+          <label for="notes" class="block font-bold mb-2 text-sm">Delivery Notes:</label>
+          <textarea id="notes" name="notes" class="border p-2 rounded w-full"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Place Order</button>
+      </form>
+    </div>
+  </body>
+  </html>
