@@ -1,15 +1,44 @@
+
 body {
-    background-color: rgb(167, 50, 0);
     text-align: center;
+    background: url("brachi-burritos-final.jpg");
+    background-size: 100%;
+    font-family: "Marker felt";
+    font-size:larger;
 }
 
+h1 {
+    font-size: 50px;
+    margin: 20px;
+    border: solid;
+    border-width: 5px;
+    background-color: rgb(59, 131, 59);
+}
 
+h5 {
+    font-size:30px;
+}
 .container {
     display: flex;
     flex-flow: column wrap;
+    width: 50%;
+    align-content: space-evenly;
 }
 
+
 .card {
-    
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 60%;
+    background-color: blanchedalmond;
 }
+
+textarea {
+    width: 100%;
+    height: 100%;
+}
+
 
