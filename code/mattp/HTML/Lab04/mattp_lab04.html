@@ -1,16 +1,312 @@
-<!doctype html>
+<html>
+
 <html lang="en">
+
     <head>
+
         <meta charset="utf-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Burrito Bandito</title>
-        <link rel='icon' href='Sombrero.png' type='image/x-icon' sizes="16x16" />
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+        <title>Neato Burrito</title>
+        <link rel="icon" type="image/x-icon" href="NeatoBurrito.webp">
+
+        <style type="text/css">
+
+            header {
+
+                background:rgb(21, 108, 72);
+
+                text-align: right;
+
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+                font-size: 50px;
+
+                border-radius: 30px;
+
+                border-style: groove;
+
+            }
+
+ 
+
+            .login {
+
+                background: red;
+
+                font-size: large;
+
+                font-weight: 200;
+
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+                border-radius: 30px;
+
+                border-style: groove;
+
+                margin-top: auto;
+
+                margin-bottom: auto;
+
+                display: flex;
+
+                flex-direction: column;
+
+                flex-wrap: wrap;
+
+                justify-content: space-between;
+
+                align-items: center;
+
+                align-content: center;
+                
+               
+            }
+
+           
+
+            .menu {
+
+                background: salmon;
+
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+                font-size: larger;
+
+                border-radius: 30px;
+
+                border-style: groove;
+
+                display: flex;
+
+                flex-direction: row;
+
+                flex-wrap: wrap;
+
+                justify-content: space-between;
+
+                align-items: center;
+
+                align-content: center;
+
+               
+
+            }
+
+ 
+
+            body {
+
+                background-color: aquamarine;
+
+                border-style: double;
+
+                border-width: 10px;
+
+                border-color: aliceblue;
+
+                border-radius: 10%;
+
+                margin: 3%;
+
+                padding: 30px;
+
+            }
+
+ 
+
+            .buttontime[type=button], input[type=submit], input[type=reset] {
+
+                background-color: teal;
+
+                border-style: groove;
+
+                border-radius: 30px;
+
+                color: white;
+
+                padding: 16px 32px;
+
+                font-size: large;
+
+                font-weight: 200;
+
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+                margin: 8px 2px;
+
+                cursor: pointer;
+
+              }
+
+ 
+
+        </style>
+
     </head>
+
     <body>
-        <h1>Burrito Bandito!</h1>
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+        <header>
+
+            <img src="NeatoBurrito.webp" alt="Burrito Run" style="height: 90px">
+
+            Neato Burrito&nbsp;&nbsp;&nbsp;&nbsp;</header><br><br>
+
+       
+
+        <form action="https://webhook.site/8dbe1d7a-0618-4ede-9c23-0e0094178f7c" method="post">
+
+           
+
+            <div class="login">
+
+               
+
+                    <br><label for="username">Name: </label>
+
+                    <input type="text" id="username" name="username">
+
+                   
+
+               
+
+ 
+
+               
+
+                    <label for="password">Password: </label>
+
+                    <input type="password" id="password" name="password">
+
+                   
+
+               
+
+            </div><br><br>
+
+ 
+
+            <div class="menu">  
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Tortilla</h2>
+
+                    <input type="radio" id="white" name="tortilla" value="white">
+
+                    <label for="white">White Flour</label><br>
+
+                    <input type="radio" id="wheat" name="tortilla" value="wheat">
+
+                    <label for="wheat">Wheat Flour</label><br>
+
+                    <input type="radio" id="spinach" name="tortilla" value="spinach">
+
+                    <label for="spinach">Spinach</label><br>
+
+                    <input type="radio" id="corn" name="tortilla" value="corn">
+
+                    <label for="corn">Corn</label><br>
+
+            </div><br>
+
+ 
+
+            <div class="menu">  
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Rice</h2>
+
+                    <input type="radio" id="white" name="rice" value="white">
+
+                    <label for="white">White Rice</label><br>
+
+                    <input type="radio" id="brown" name="rice" value="brown">
+
+                    <label for="brown">Brown Rice</label><br>
+
+            </div><br>  
+
+ 
+
+            <div class="menu">
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Beans</h2>
+
+                    <input type="radio" id="black" name="beans" value="black">
+
+                    <label for="black">Black Beans</label><br>
+
+                    <input type="radio" id="pinto" name="beans" value="pinto">
+
+                    <label for="pinto">Pinto Beans</label><br>
+
+            </div><br>        
+
+                   
+
+            <div class="menu">        
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Protein</h2>
+
+                    <input type="radio" id="carnitas" name="protein" value="carnitas">
+
+                    <label for="carnitas">Carnitas</label><br>
+
+                    <input type="radio" id="chicken" name="protein" value="chicken">
+
+                    <label for="chicken">Chicken</label><br>
+
+                    <input type="radio" id="sofritas" name="protein" value="sofritas">
+
+                    <label for="sofritas">Sofritas</label><br>
+
+                    <input type="radio" id="None" name="protein" value="None">
+
+                    <label for="None">None</label><br>
+
+            </div><br>
+
+ 
+
+            <div class="menu">
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Additional Ingredients</h2>
+
+                    <input type="checkbox" id="cheese" name="add_ingred" value="cheese">
+
+                    <label for="cheese">Cheese</label><br>
+
+                    <input type="checkbox" id="sour" name="add_ingred" value="sour">
+
+                    <label for="sour">Sour Cream</label><br><br><br>
+
+            </div><br>
+
+ 
+
+            <div class="menu">
+
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;Delivery Instructions</h2>
+
+                    <label for="delivery"></label>
+
+                    <textarea id="delivery" name="delivery" rows="4" cols="60">Input Address and/or Delivery Instructions</textarea>&nbsp;&nbsp;
+
+            </div>
+
+ 
+
+            <div>
+
+                <br><input type="submit" value="Submit" align="center">
+
+            </div>
+
+        </form>      
+
+ 
+
     </body>
+
 </html>
+    
