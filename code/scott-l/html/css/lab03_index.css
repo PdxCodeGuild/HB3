@@ -1,0 +1,93 @@
+body{
+    padding: 2em;
+    background-image: url('http://1.bp.blogspot.com/-balx_1x80i8/U8Ss_FY_NYI/AAAAAAAACCg/cV8Ecw9Emy4/s1600/fruits-and-vegetables.jpg')
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row | column;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-side-nav {
+    flex-flow:  column;
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0; 
+    background: tomato;
+}
+
+.main {
+    text-align: left;
+    /* background: lightgray; */
+    flex-flow:  column;
+    padding: 5px;
+    
+}
+.blogEntry_Title {
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background: gray;
+    
+}
+
+.aside-1 {
+    background: gold;
+    flex-direction: column;
+}
+
+.aside-2 {
+    background: hotpink;
+    flex-direction: column;
+}
+
+.footer {
+   background: white; 
+}
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    
+    list-style: none;
+    margin: 3; 
+    background: deepskyblue;
+  }
+
+  .flex-title {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    font-weight: bolder;
+  }
+
+  p {
+    background: whitesmoke;
+    font-size:large;
+    font-style:normal;
+    font-weight: 100;
+  }
+
+  header {
+    font-style: italic;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .daily_pic_box {
+    display:flex;
+    align-items: center;
+    justify-content:center;  
+    padding: 5px;
+    
+  }
+
+  .container {
+    background-color: aliceblue
+    
+  }
+  
