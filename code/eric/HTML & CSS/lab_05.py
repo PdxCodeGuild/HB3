@@ -12,6 +12,6 @@ def index():
         a_z_shifted = a_z[int(shift_num):] + a_z[:int(shift_num)]
         table = str.maketrans(a_z, a_z_shifted)
         print(f'The shifted string is: {input_text.translate(table)}')
-    return render_template('index.html')
+    return render_template('index.html', variable=f"{input_text.translate(table)}", input_text=f"{input_text}", shift_num=f"{shift_num}")
 
 app.run(debug=True)
