@@ -1,0 +1,37 @@
+body {
+    background-image: url('https://apod.nasa.gov/apod/image/2301/KembleCascade_Lease_3668.jpg');
+    background-size: 100%;
+}
+
+.container {
+    margin: auto;
+    padding: 70px 0;
+}
+
+h1 {
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+    background-color: rgb(208, 177, 23);
+    text-align: center;
+    border: 3px solid rgb(255, 253, 253);
+    border-radius: 10px;
+}
+
+.card {
+    margin: auto;
+    margin-top: 40px;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid rgb(208, 177, 23);
+    border-radius: 10px;
+}
+
+textarea {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(208, 177, 23);
+}
