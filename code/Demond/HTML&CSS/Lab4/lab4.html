@@ -1,78 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <title>Demond Lab 4</title>
     <style>
 
-        .wrapper {
-            height: 400px; 
-        }
-        .box1 {
-            background-color: black;
-            width: 50%;
-            height: 40%;
-            /* height: 50%; */
+        body {
+            text-align: center;
         }
 
+        nav {
+            text-align: center;
+            background-color: grey;
+            color: white;
+        }
+
+        .header {
+            background-color: #f1f1f1;
+            padding: 2px;
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("https://wallpapercave.com/dwp2x/wp1924257.jpg");
+        }
+
+        .box1 {
+            background-color: w;
+            outline: 5px dotted green;
+            width: 150px;
+            height: 150px;
+        }
+
+        /*this is my first container with the two other containers "columns"*/
+
         .box2 {
-            background-color: green;
-            width: 50%;
-            /* height: 50%; */
-            float: right;
-            height: 100%;
+
+            outline: 4px solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .box22 {
+            outline: 6px solid orange;
+            width: 25%;
+            height: 225px;
+        }
+
+        .box23 {
+            outline: 6px solid orange;
+            width: 25%;
+            height: 225px;
+
         }
 
         .box3 {
-            background-color: blue;
-            width: 50%;
-            height: 40px;
-            /* height: 50%; */
+            width: 100%;
+            height: 100%;
+            /* outline: 5px dotted black; */
+            flex-direction: column;
+            justify-content: space-between;
+
         }
 
-        .box4 {
-            background-color: pink;
+        .box32 {
+            outline: 6px solid orange;
             width: 50%;
-            height: 40px;
-            float: left;
-            /* float: middle; */
-            /* height: 50%; */
+            height: 315px;
+            /* padding: 100px; */
+            float: right;
+            /* flex: wrap; */
+            order: 3;
+        }
+
+        .box31 {
+            outline: 6px solid orange;
+            width: 40%;
+            height: 150px;
+            /* padding: 100px; */
+            /* flex: 1; */
+            order: 1;
+            /* flex-direction: column; */
+        }
+
+        .box33 {
+            outline: 6px solid orange;
+            width: 40%;
+            height: 150px;
+            /* padding: 100px; */
+            /* flex-direction: column; */
+            order: 2;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
-    <header> this is my header</header>
+    <form action="https://webhook.site/c909a38d-c143-43e4-8ab7-921d2ef7553b" method="post">
+    <nav> Hello</nav>
+    <div class="header" style="background-color: black">
+        <h1>Taco Barista</h1>
+    </div>
+    <p> </p>
 
-    <nav> this is my nav bar</nav>
-    <main class="wrapper">
-        
-        <aside class="box2">
-            this is 2
+    <div>
 
-        </aside>
-
-        <div class="box1">
-            this is 1
-
+        <div class="box2">
+            <aside>
+                <h2> Welcome to Taco Barista! </h2>
+                <p> </p>
+                <div> We understand the craft of taco, it takes true talent to create our tacos and we take pride in it. Welcome.</div>
+            </aside>
+            <div class="box22" style="background-color:#bbb;">
+                <h3>Your Ad Here</h3>
+            </div>
+            <div class="box23" style="background-color:#bbb;">
+                <h3>Your Ad Here</h3>
+            </div>
         </div>
 
+    </div>
+    <p> </p>
+
+    <main class="wrapper">
 
         <div class="box3">
-            this is 3
+            <aside class="box32" style="background-color:#bbb;">
+                <h3>Your Burrito</h3> Tortilla: <input name="tortilla" value="white flour" type="radio">white flour<input type="radio" name="tortilla" value="wheat flour">wheat flour<input type="radio" name="tortilla" value="spinach">Spinach<input type="radio" name="tortilla" value="Corn">corn<br> Rice: <input type="radio" name="Rice" value="white">white<input type="radio" name="Rice" value="brown">brown<br> Beans: <input type="radio" name="beans" value="Black">black<input type="radio" name="beans" value="pinto">pinto<br> Protein: <input type="radio" name="protein" value="carnitas">carnitas<input type="radio" name="protein" value="chicken">chicken<input type="radio" name="protein" value="steak">steak<input type="radio" name="protein" value="none">none<br>
+                <p>Additional Ingredients:<input type="checkbox" name="cheese">cheese<input type="checkbox" name="sour cream">sour cream
+                    <span class="checkmark"></span></p>
+                    <!-- <button> submit </button> -->
+            </aside>
 
-
+            <div class="box31" style="background-color:#bbb;">Enter Your Username
+                <p></p><input type="text" name="username" placeholder="Username"/>
+                <p> Enter Your Password
+                    <p></p><input type="text" name="pass" placeholder="password" /></div</p> 
+            </div>
+            <p></p>
+            <div class="box33" style="background-color:#bbb;">Delivery Instructions 
+                <p> <textarea name="text area"> </textarea></p>
+                please submit when all areas are completed
+                <p><p><button> submit your order</button></p> </p>
+            </div>
         </div>
-        <div class="box4">
-            this is 4
-
-        </div>
-
-
     </main>
+    
+    <p> </p>
+    <footer>
+        <div class="footer" style="background-color:#bbb;">this is column TL 31 </div>
+        
+    </footer>
+</form>
 </body>
+
 
 </html>
