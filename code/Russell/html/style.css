@@ -1,8 +1,32 @@
-nav {
+h1 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: burlywood;
+  justify-content: center;
+  text-align: center;
+}
+
+img {
+  width: 400px;
+  height: auto;
+  border: 5px;
+  border-color: darkred;
+  padding: 20px;
+}
+
+.bg-img {
+  width: 600px;
+  background-image: url("images/burritos.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  text-align: right;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-top: 10px;
 }
 
 ul {
@@ -11,81 +35,10 @@ ul {
 }
 
 li {
-  list-style: none;
+  list-style-type: none;
   padding-right: 10px;
 }
 
-.sidenav {
-  flex-direction: column;
-  text-align: right;
-}
-
-.sidenav>li {
-  padding-bottom: 10px;
-}
-
-.banner {
-  width: 100%;
-  height: 120px;
-  border: 5px solid black;
-  text-align: center;
-  font-size: xx-large;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  background-color: darkgoldenrod
-}
-
-.parentleft {
-  width: 70%;
-  border: 5px solid orangered;
-  float: left;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.childleft {
-  width: 90%;
-  padding: 20%;
-  border: 4px solid moccasin;
-  margin: .5em auto;
-  text-align: center;
-}
-
-.twins {
-  width: 50%;
-  padding: 1em;
-  border: 4px solid peachpuff;
-  float: left;
-  text-align: center;
-}
-
-.parentright {
-  width: 30%;
-  border: 5px solid orangered;
-  float: right;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.childright {
-  width: 90%;
-  padding: 20%;
-  border: 4px solid moccasin;
-  margin: .5em auto;
-  text-align: center;
-}
-
 body {
-  font-family: sans-serif;
-  font-size: 1.1em;
-}
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
+  background-color: orangered;
 }
