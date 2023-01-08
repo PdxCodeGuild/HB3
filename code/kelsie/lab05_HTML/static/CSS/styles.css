@@ -1,3 +1,5 @@
+
+
 body {
     background-image: url('https://apod.nasa.gov/apod/image/2301/KembleCascade_Lease_3668.jpg');
     background-size: 100%;
@@ -21,7 +23,7 @@ h1 {
 .card {
     margin: auto;
     margin-top: 40px;
-    width: 30%;
+    width: 75%;
     height: 100%;
     text-align: center;
     padding: 20px;
@@ -29,9 +31,13 @@ h1 {
     border-radius: 10px;
 }
 
-textarea {
+input {
     margin: auto;
     height: 100%;
     width: 100%;
     background-color: rgb(208, 177, 23);
+}
+
+button {
+    margin-top: 20px;
 }
