@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
- <form class="bg-white shadow-md rounded-md px-1/4 py-1/4 h-full w-full max-w-xs max-w-md" action="/convert" method="post">
-    <div class="mb-4 w-full center">
+ <form class="bg-white shadow-md rounded-md h-3/4 w-full max-w-xs max-w-md flex flex-col justify-center items-center" action="/convert" method="post">
+    <div class="mb-4 w-1/2">
         <label class="block text-center text-gray-700 text-md font-bold" for="from">Convert From:</label>
-        <select class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="from" name="from">
+        <select class="block shadow-md text-center border rounded w-full py-2 px-3 text-gray-700" id="from" name="from">
             <option value="ft" selected>Feet</option>
             <option value="mi">Miles</option>
             <option value="m">Meters</option>
@@ -12,9 +12,9 @@
             <option value="in">Inches</option>
         </select>
     </div>
-    <div class="mb-4 w-full center">
+    <div class="mb-4 w-1/2">
         <label class="block text-center text-gray-700 text-md font-bold" for="to">Convert To:</label>
-        <select class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" name="to">
+        <select class="block shadow-md text-center border rounded w-full py-2 px-3 text-gray-700e" id="to" name="to">
             <option value="ft" selected>Feet</option>
             <option value="mi">Miles</option>
             <option value="m" selected>Meters</option>
@@ -23,16 +23,13 @@
             <option value="in">Inches</option>
         </select>
     </div>
-    <div class="mb-4 w-full center">
+    <div class="mb-4 w-1/2">
         <label class="block text-center text-gray-700 text-md font-bold" for="value">Value:</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="value" name="value">
+        <input class="block text-center shadow-md border rounded w-full py-2 px-3 text-gray-700" type="number" id="value" name="value">
     </div>
-    <div class="flex items-center justify-between w-full">
-        <button class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Convert</button>
+    <div class="mb-4 w-5/16">
+        <button class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Convert</button>
     </div>
     <div id="result" class="text-center text-gray-700 text-xl">{{ result }}</div>
 </form>
-</body>
-</html>
-
 {% endblock %}
