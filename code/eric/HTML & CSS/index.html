@@ -1,0 +1,15 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <title>Flask Cipher</title>
+</head>
+
+<form action="" method="post">
+    <input type="text" name="input_text" placeholder='Enter a string (a-z)' />
+    <input type="int" name="shift_num" placeholder='Enter the shift (1-26)' />
+    <button type="submit">submit</button>
+</form>
+
+<p>The input text is: {{ input_text }}</p>
+<p>The shift is: {{ shift_num }}</p>
+<p>The shifted string is: {{ variable }}</p>
