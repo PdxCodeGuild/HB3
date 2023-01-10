@@ -18,7 +18,7 @@ M-F 6:00 pm – 9:36 pm PT
 
 ### Misc. Days Off
 
-- December 30th 2022
+- ~~December 30th 2022~~
 
 ### Staff
 
