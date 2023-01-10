@@ -43,15 +43,17 @@ def result():
     ans = []
     if request.method=="POST":
         text = request.form['input_text']
+        rotation = request.form['rotation']
+        num = int(rotation)
         for char in text:
             if char == " ":
                 ans.append(" ")
             for key, value in letters.items():
                 if char == value:
-                    if key <=13:
-                        ans.append(letters[key + 13])
+                    if key <=(26 - num):
+                        ans.append(letters[key + num])
                     else:
-                        ans.append(letters[key - 13])
+                        ans.append(letters[key - num])
     new_text = ''.join(ans)
     return render_template('result.html', new_text=new_text)
 

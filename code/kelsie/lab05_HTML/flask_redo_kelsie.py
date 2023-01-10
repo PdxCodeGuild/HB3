@@ -9,18 +9,51 @@ def index():
  
 
 
+letters = {
+1 :'a',
+2 :'b', 
+3 :'c',
+4 :'d', 
+5 :'e', 
+6 :'f', 
+7 :'g', 
+8 :'h', 
+9 :'i', 
+10 :'j', 
+11 :'k', 
+12 :'l', 
+13 :'m', 
+14 :'n', 
+15 :'o', 
+16 :'p', 
+17 :'q', 
+18 :'r', 
+19 :'s', 
+20 :'t', 
+21 :'u', 
+22 :'v',
+23 :'w', 
+24 :'x', 
+25 :'y', 
+26 :'z',
+}
+
+
 @app.route('/result/', methods=["POST", "GET"])
 def result():
-    n = 13
-    new_text = ""
+    ans = []
     if request.method=="POST":
         text = request.form['input_text']
-        for i in range(len(text)):
-            char = text[i]
-            if char==" ":
-                new_text += " "
-            else:
-                new_text += chr((ord(char) + n-97) % 26 + 97)
+        for char in text:
+            if char == " ":
+                ans.append(" ")
+            for key, value in letters.items():
+                if char == value:
+                    if key <=13:
+                        ans.append(letters[key + 13])
+                    else:
+                        ans.append(letters[key - 13])
+    new_text = ''.join(ans)
     return render_template('result.html', new_text=new_text)
 
 

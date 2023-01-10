@@ -11,12 +11,14 @@
     <body>
         <!-- Page Content -->
         <div class="container">
-            <h1 id="title">Welcome to the ROT+13 Cipher</h1>
+            <h1 id="title">Welcome to the ROT+ Cipher</h1>
             <div class="card">
                 <div class="card-body">
                     <form action="/result/" method="post" id="input_text">
+                        <label for="input_text">Input Text Here:</label><br>
                         <input type="text" class="text-input text-input mb-3" id="input_text" name="input_text"/>
                         <br>
+                        <label for="rotation">Rotation Number:</label><br>
                         <input type="text" class="rotation" id="rotation" name="rotation"/>
                         <br>
                         <button type="submit">Submit</button>

@@ -3,15 +3,18 @@
 body {
     background-image: url('https://apod.nasa.gov/apod/image/2301/KembleCascade_Lease_3668.jpg');
     background-size: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .container {
+    width: 75%;
     margin: auto;
     padding: 70px 0;
 }
 
 h1 {
     margin: auto;
+    color:rgb(249, 211, 255);
     padding: 20px;
     width: 50%;
     background-image: linear-gradient(rgb(69, 0, 69), rgb(93, 208, 234));
@@ -21,6 +24,7 @@ h1 {
 }
 
 .card {
+    color:rgb(249, 211, 255);
     margin: auto;
     margin-top: 40px;
     width: 75%;
@@ -39,10 +43,24 @@ input {
     background-color: rgb(255, 253, 253);
 }
 
+.rotation {
+    width: 50%
+}
+
 button {
     margin-top: 20px;
 }
 
 p {
-    color:azure
+    color:azure;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="container"] {
+        width: 100%;
+      }
+    [class*="rotation"] {
+        width: 100%
+    }
 }
