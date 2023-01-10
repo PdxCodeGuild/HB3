@@ -1,0 +1,44 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+img {
+  width: 400px;
+  height: auto;
+  border: 5px;
+  border-color: darkred;
+  padding: 20px;
+}
+
+.bg-img {
+  width: 600px;
+  background-image: url("images/burritos.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  text-align: right;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-top: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style-type: none;
+  padding-right: 10px;
+}
+
+body {
+  background-color: orangered;
+}
