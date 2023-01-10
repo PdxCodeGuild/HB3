@@ -14,7 +14,7 @@ M-F 6:00 pm – 9:36 pm PT
 - ~~December 25th 2022 (Christmas Day)~~
 - ~~Christmas will be observed December 26th 2022~~
 - ~~January 1st 2023 (New Year's Day)~~
-- New Years will be observed January 2nd 2022
+- ~~New Years will be observed January 2nd 2022~~
 
 ### Misc. Days Off
 
@@ -57,6 +57,11 @@ M-F 6:00 pm – 9:36 pm PT
 | 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          11 Jan       |
 | 06  | [LinkedIn](2%20Flask%20+%20HTML%20+%20CSS/labs/06%20LinkedIn%20Checklist.md)       |    03 Jan     |      17 Jan       |
 | 07  | [Portfolio](2%20Flask%20+%20HTML%20+%20CSS/labs/07%20Personal%20Portfolio.md)      |    03 Jan     |      17 Jan       |
+
+## Javascript
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01  | Python Redo            |    9 Jan     |          23 Jan       |
 
 ## Getting Unstuck 
 
