@@ -1,7 +1,12 @@
 ###### Version 4 ######
 
 units = {
-    "feet": .3048
+    "feet": .3048,
+    "miles": 1609.34,
+    "meters": 1,
+    "kilometers": 1000,
+    "yards": 0.9144,
+    "inches": 0.0254
 }
 
 #distance = int(distance)
