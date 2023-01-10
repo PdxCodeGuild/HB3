@@ -61,7 +61,7 @@ M-F 6:00 pm – 9:36 pm PT
 ## Javascript
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
-| 01  | Python Redo            |    9 Jan     |          23 Jan       |
+| 01  | [Pick 3](4%20JavaScript/labs/Pick3.md)           |    9 Jan     |          23 Jan       |
 
 ## Getting Unstuck 
 
