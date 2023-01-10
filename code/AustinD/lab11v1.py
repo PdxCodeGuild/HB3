@@ -1,7 +1,7 @@
 jackalopes = [0,0]
 years = 0
 
-while len(jacalaopes) < 1000:
+while len(jackalopes) < 1000:
     for index in range(len(jackalopes)):
         jackalopes[index] += 1
 

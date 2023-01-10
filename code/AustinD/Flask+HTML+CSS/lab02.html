@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <style>
+      body { 
+        margin:0; 
+        position: relative;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+
+      main {
+          flex: 1 0 auto;
+      }
+
+      body::after {
+        content: '';
+        display: block;
+      }
+      
+      .carousel {
+        height: 88vh;
+      }      
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        }
+      
+      .button-wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .item1text {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      transform: translate(-5%, -5%);
+      font-size: 5vw;
+      }
+
+      .item2text {
+      position: fixed;
+      bottom: 40%;
+      left: 16%;
+      transform: translate(-40%, -16%);
+      font-size: 5vw;
+      font
+      }      
+      
+      .item3text {
+      position: fixed;
+      top: 10%;
+      right: 5%;
+      transform: translate(-10%, -5%);
+      font-size: 5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="dark brown">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Wood Just Works</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Carousel -->
+    <main>
+      <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item">
+            <a class="btn-large waves-effect forest-green white-text button-wrapper" href="#" target="_blank">Get A Quote</a>
+          </div>
+        <div class="carousel-item" href="#one!">
+          <img src="https://img.freepik.com/free-photo/carpenter-cutting-mdf-board-inside-workshop_23-2149451051.jpg"></a>
+          <div class="item1text">Quality Craftsmen</div>
+        </div>
+        <div class="carousel-item" href="#two!">
+          <img src="https://img.freepik.com/free-photo/pile-wood-planks_23-2148748803.jpg"></a>
+          <div class="item2text">Quality Materials</div>
+        </div>
+        <div class="carousel-item" href="#three!">
+          <img src="https://img.freepik.com/free-photo/circular-saw-blade_1098-14234.jpg"></a>
+          <div class="item3text">Quality Tools</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer dark brown">
+      <div class="container">
+        <div class="row">
+        <div class="col s12">
+          © 2021 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#">More Links</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      // CAROUSEL
+      $(document).ready(function(){
+        $('.carousel').carousel(
+        {
+          dist: 0,
+          padding: 0,
+          shift: 0,
+          fullWidth: true,
+          indicators: true,
+          duration: 100,
+        }
+        );
+      });
+      </script>
+  </body>
+</html>

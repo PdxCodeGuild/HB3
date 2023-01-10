@@ -1,0 +1,133 @@
+<!-- '''
+    *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+         Project: Lab 2 - Company
+         Author: Scott Lefgren
+         Email: scojlefg@gmail.com
+         Date: December 28, 2022
+   ___________________          _-_
+   \==============_=_/ ____.---'---`---.____
+               \_ \    \----._________.----/
+                 \ \   /  /    `-_-'
+             __,--`.`-'..'-_
+            /____          ||
+                 `--.____,-'
+   
+    *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+   ''' -->
+
+<!-- Lab 2: Company Home
+
+Pick an industry and create the landing page for a 
+hypothetical company, filling in as much detail as 
+possible. Use Bootstrap (w3schools) or Materialize 
+and make sure it's responsive. Browse the internet 
+for existing company pages and imitate as much as you can. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Page Lab02</title>
+    <!-- import external css -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/lab02_index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav class="navbar nabvar-expand-lg bg-body-tertiary p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 ">
+        <div class="container-fluid">
+            <a id="logo-container" class="brand-logo navbar-brand" href="#">
+                <img src="https://image.freepik.com/free-vector/guitar-logo_10250-2275.jpg" class="img-fluid img-thumbnail" width="100px">    
+            </a>
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link disabled" href="#">Our Stores</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container bg-light">
+            <h2 class="text-center text-dark"> Guitar Company</h2>
+            <p class="text-dark">
+                The Guitar store has been known for offering a wide selection of fine guitars for 26 years.  In recent years 
+                we have enlarged the selection to inclued guitars from the four corners of the globe.  All the guitars we carry 
+                have been chosen with care, wither reasonably priced student models or excellent concert instruments.  All guitars
+                are available for shipping with a three day-approval period.  So if you find something that interest you here 
+                select the guitars in images below. 
+            </p>
+            <h2 class="text-center text-dark">Trademark Guitar Products</h2>
+            <div class="d-flex flex-row flex-wrap">
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://www.photos-public-domain.com/wp-content/uploads/2011/06/classical-guitar.jpg" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Flex Hammer</h3>
+                    <p class="card-subtitle mx-2">$1,050</p>
+                    <p class="card-text mx-2">Item Description:  The Flex Hammer is top of the line acoustic guitar product made from the finest materials imported from around 
+                        the world and custom made for those that want a unique sound.  Electric hookups installed in the body for additional amp hookups.
+                    </p>
+                </div>
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://pngimg.com/uploads/electric_guitar/electric_guitar_PNG24176.png" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Rockin Stone</h3>
+                    <p class="card-subtitle mx-2">$788</p>
+                    <p class="card-text mx-2">Item Description: Slick custom wood electric guitar made from the finest wood materials from the black forest of Germany.
+                        Made by unique craftsman utilizing 200 year old guitar tradecraft techniques.  
+                    </p>
+                </div>
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://guitar.com/wp-content/uploads/2021/01/new-taylor-guitars-2021@1400x1050.jpg" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Dual Twin Party Jam</h3>
+                    <p class="card-subtitle mx-2">Sale Price $850</p>
+                    <p class="card-text mx-2">Item Description: Dual guitar package both crafted from the same tree, pairing a unique acoustic vibrato 
+                        frequency only unique to the pair.  Perfect for concert music entertainment in dualing music play.
+                    </p>
+                </div>
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://pngimg.com/uploads/electric_guitar/electric_guitar_PNG32.png" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Rockin Red</h3>
+                    <p class="card-subtitle mx-2">$467 Used</p>
+                    <p class="card-text mx-2">Item Description: Used electric guitar, a great addition to any guitar collection, working and no issues, testing
+                        in the concert lab for specification design. Ready out of the box. 
+                    </p>
+                </div>
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://urguitars.com/wp-content/uploads/2016/04/GD51CE-NAT.jpeg" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Classical Beginner</h3>
+                    <p class="card-subtitle mx-2">$140</p>
+                    <p class="card-text mx-2">Item Description: Perfect guitar for a beginner to start plucking and strumming the strings. Reasonably priced 
+                        for those who want to get their foot in the door and begin learning a guitar. 
+                    </p>
+                </div>
+                <div class="card m-2" style="width: 20rem">
+                    <img src="https://arbutusmusic.com/wp-content/uploads/2019/06/RS502_SPB.jpg" class="card-item-top img-fluid img-thumbnail" >
+                    <h3 class="card-title mx-2">Black Rock</h3>
+                    <p class="card-subtitle mx-2">$567 Used</p>
+                    <p class="card-text mx-2">Item Description: This guitar is used but comes from a long line of reliable guitar brands that have 
+                            consistently perform even with wear and tear.  The guitar has passed all sound checks and is guaranteed to be in 
+                            new condition and sound quality or your money back.  
+                    
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

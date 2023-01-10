@@ -1,0 +1,88 @@
+.sidebar{
+    float:left;
+    min-height: 500px;
+    width: 12%;
+    background-color: rgba(73, 100, 85, 0.619);
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Bogista', sans-serif;
+    text-align: center;
+}
+
+
+.header{
+    font-size: 60px;
+    font-family: 'Gigantic FS', sans-serif;
+                                                
+}
+
+
+.topnav {
+    background-color: rgba(73, 100, 85, 0.931);
+    overflow: hidden;
+  }
+  
+
+  .topnav a {
+    float:right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #b4dbcd91;
+    color: white;
+  }
+
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat (3, 1fr);
+    grid-template-rows: 50% 50%;
+    min-height: 500px;        
+}
+
+
+.item-1{
+    background-color: rgba(210, 202, 182, 0.665); 
+    margin-left: 5px;   
+    min-height: 60%;
+    font-family: 'Gigantic FS', sans-serif;
+    
+    
+
+}
+
+.item-2{
+    background-color:rgba(73, 100, 85, 0.619);    
+    margin-left: 5px;
+    margin-top: 10px;
+    min-height: 40%;
+    width: 60%;  
+    font-family: 'Gigantic FS', sans-serif;
+    
+   
+    
+}
+
+.item-3{
+    background-color: black;
+    max-height: 40 px;
+    width: 20%;
+}
+
+article.a {
+    list-style-type: square;
+  }

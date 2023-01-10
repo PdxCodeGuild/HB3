@@ -14,7 +14,7 @@ Let's build a searchable pokedex! First we'll load the data from a `json` file i
 - [Part 9: More Pokemon (optional)](#part-9-more-pokemon-optional)
 
 
-![pokedex diagram](pokedex.png)
+
 
 
 ## Part 1: Create Your Model
@@ -33,7 +33,7 @@ Create a project `pokeproj` and app `pokeapp`. In the app, create a model `Pokem
 
 ## Part 2: Load Data into DB
 
-Write a [custom management command](../../3%20Django/docs/01%20Django%20Overview.md#custom-management-commands) `load_pokemon.py` to load the data from [pokemon.json](./pokemon.json) into your database. You can do this by saving the file next to your `.py` file and using [open](../../1%20Python/docs/File%20IO.md). In the first line of your management command, you may want to delete all the records in the table so each time you run it you start with a clean slate. To verify that the data was loaded, log into your admin panel and check that the pokemon are there.
+Write a [custom management command](https://github.com/PdxCodeGuild/PythonFullStack/blob/main/3%20Django/docs/01%20Django%20Overview.md) `load_pokemon.py` to load the data from [pokemon.json](https://github.com/PdxCodeGuild/PythonFullStack/blob/main/4%20JavaScript/labs/data/pokemon.json) into your database. You can do this by saving the file next to your `.py` file and using [open](https://github.com/PdxCodeGuild/PythonFullStack/blob/main/1%20Python/docs/File%20IO.md). In the first line of your management command, you may want to delete all the records in the table so each time you run it you start with a clean slate. To verify that the data was loaded, log into your admin panel and check that the pokemon are there.
 
 The data was taken from the [PokeAPI](https://pokeapi.co/docs/v2#pokemon), `height` is in decimeters (divide by 10 to get meters) and `weight` is in hectograms (divide by 10 to get kilograms). You may want to convert these values before saving them.
 
@@ -67,5 +67,5 @@ Use pagination to only show 20 pokemon at a time, allow the user to switch betwe
 
 ## Part 9: More Pokemon (optional)
 
-Check out the [script](./pokedex.py) that creates the json file, you can use it to load even more pokemon into your database!
+Check out the [script](https://github.com/PdxCodeGuild/PythonFullStack/blob/main/4%20JavaScript/labs/data/pokedex.py) that creates the json file, you can use it to load even more pokemon into your database!
 
