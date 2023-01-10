@@ -14,7 +14,7 @@ h1 {
     margin: auto;
     padding: 20px;
     width: 50%;
-    background-color: rgb(208, 177, 23);
+    background-image: linear-gradient(rgb(69, 0, 69), rgb(93, 208, 234));
     text-align: center;
     border: 3px solid rgb(255, 253, 253);
     border-radius: 10px;
@@ -27,17 +27,22 @@ h1 {
     height: 100%;
     text-align: center;
     padding: 20px;
-    border: 3px solid rgb(208, 177, 23);
+    border: 3px solid rgb(255, 253, 253);
     border-radius: 10px;
+    background-image: linear-gradient(rgb(69, 0, 69), rgb(93, 208, 234));
 }
 
 input {
     margin: auto;
     height: 100%;
     width: 100%;
-    background-color: rgb(208, 177, 23);
+    background-color: rgb(255, 253, 253);
 }
 
 button {
     margin-top: 20px;
+}
+
+p {
+    color:azure
 }
