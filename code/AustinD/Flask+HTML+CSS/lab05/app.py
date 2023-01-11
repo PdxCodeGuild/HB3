@@ -24,7 +24,7 @@ def convert():
         return "Check your from & to values."
     if from_unit in conversion and to_unit in conversion:
         output = value * (conversion[from_unit] / conversion[to_unit])
-        result = f'{value}{from_unit} is {output} meters.'
+        result = f'{value}{from_unit} is {output}{to_unit}.'
     else:
         return "Invalid unit(s) selected."
     
