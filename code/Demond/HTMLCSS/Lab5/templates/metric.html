@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5</title>
+</head>
+
+
+<body>
+    <form action="/goodbye" method="post">
+        How far?: <input type="text" name="distance" placeholder="enter number " />
+        <p></p>
+        You may pick ft, mi, or km<input type="text" name="units" placeholder="Input Unit" />
+        <p></p>
+        You may pick ft, mi, or km<input type="text" name="ounits" placeholder="Output Unit" />
+        <p>
+
+        </p><button type="submit">submit</button>
+    </form>
+    
+    <p>{{units}}</p>
+    <p>{{ounits}}</p>
+    <p>{{distance}}</p>
+    <p>{{answer}}</p>
+
+</body>
+
+</html>
