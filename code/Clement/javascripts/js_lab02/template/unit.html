@@ -1,133 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unit Convertor</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/style.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+  </head>
 
-
-<body>
+  <body>
     <div class="container">
-        <h1>Unit Convertor</h1>
-        <div class="unitConv">
-            <h6>Select A Unit To Convert</h6>
-            <select id="inputType">
-                <option value="feet" selected>feet</option>
-                <option value="mile">mile</option>
-                <option value="meter">meter</option>
-                <option value="kilometer">kilometer</option>
-            </select>
-            <input class="form-control mt-4" id="inPut" type="text" placeholder="Enter your the distance here"
-                required />
-            <br>
-            <h6>Select A Unit To Get The Result</h6>
-            <select id="resultType">
-                <option value="feet" selected>feet</option>
-                <option value="mile">mile</option>
-                <option value="meter">meter</option>
-                <option value="kilometer">kilometer</option>
-            </select><br>
-            <input class="form-control mt-4" id="reSult" type="text" placeholder="Result" />
-        </div>
+      <h1>Unit Convertor</h1>
+      <div class="unitConv">
+        <h5 class="mt-4">Please Select A Unit To Convert</h5>
+        <select id="inputType">
+          <option value="feet" selected>feet</option>
+          <option value="mile">mile</option>
+          <option value="meter">meter</option>
+          <option value="kilometer">kilometer</option>
+        </select>
+        <input
+          class="form-control mt-4"
+          id="inPut"
+          type="text"
+          placeholder="Enter your the distance here"
+          required
+        />
+        <br /> 
+        <h5><i>Select A Unit To Get The Result</i></h5>
+        <select id="resultType">
+          <option value="feet" selected>feet</option>
+          <option value="mile">mile</option>
+          <option value="meter">meter</option>
+          <option value="kilometer">kilometer</option></select
+        ><br />
+        <input
+          class="form-control mt-4"
+          id="reSult"
+          type="text"
+          placeholder="Result"
+        />
+      </div>
     </div>
 
-    <script>
-        let inPut = document.getElementById('inPut')
-        let reSult = document.getElementById('reSult')
-        let inputType = document.getElementById('inputType')
-        let resultType = document.getElementById('resultType')
-        var inputTypeValue, resultTypeValue;
+    <script src="../static/unit.js"></script>
 
-        inPut.addEventListener("keyup", myOutcome);
-        inputType.addEventListener("change", myOutcome);
-        resultType.addEventListener("change", myOutcome);
-
-        inputTypeValue = inputType.value;
-        resultTypeValue = resultType.value;
-
-        function myOutcome() {
-
-            inputTypeValue = inputType.value;
-            resultTypeValue = resultType.value;
-            
-
-
-            if (inputTypeValue === "kilometer" && resultTypeValue === "meter") {
-                reSult.value = Number(inPut.value) * 1000
-
-            } else if (inputTypeValue === "meter" && resultTypeValue === "kilometer") {
-                reSult.value = Number(inPut.value) * 0.001
-
-            } else if (inputTypeValue === "meter" && resultTypeValue === "meter") {
-                reSult.value = inPut.value
-
-            } else if (inputTypeValue === "kilometer" && resultTypeValue === "kilometer") {
-                reSult.value = inPut.value
-
-            } else if (inputTypeValue === "kilometer" && resultTypeValue === "feet") {
-                reSult.value = Number(inPut.value) * 3280.84
-
-            } else if (inputTypeValue === "feet" && resultTypeValue === "kilometer") {
-                reSult.value = Number(inPut.value) * 0.0003048
-
-            }
-
-            if (inputTypeValue === "meter" && resultTypeValue === "mile") {
-                reSult.value = Number(inPut.value) * 0.0006214
-
-            } else if (inputTypeValue === "mile" && resultTypeValue === "meter") {
-                reSult.value = Number(inPut.value) * 1609.34
-
-            } else if (inputTypeValue === "mile" && resultTypeValue === "mile") {
-                reSult.value = inPut.value
-
-            } else if (inputTypeValue === "mile" && resultTypeValue === "kilometer") {
-                reSult.value = Number(inPut.value) * 1.60934
-
-            } else if (inputTypeValue === "kilometer" && resultTypeValue === "mile") {
-                reSult.value = Number(inPut.value) * 0.621371
-            }
-
-
-            if (inputTypeValue === "mile" && resultTypeValue === "feet") {
-                reSult.value = Number(inPut.value) * 5280
-
-            } else if (inputTypeValue === "feet" && resultTypeValue === "feet") {
-                reSult.value = inPut.value
-
-            } else if (inputTypeValue === "feet" && resultTypeValue === "mile") {
-                reSult.value = Number(inPut.value) * 0.000189394
-
-            } else if (inputTypeValue === "feet" && resultTypeValue === "meter") {
-                reSult.value = Number(inPut.value) * 0.3048
-
-            } else if (inputTypeValue === "meter" && resultTypeValue === "feet") {
-                reSult.value = Number(inPut.value) * 3.28084
-            }
-        }
-
-
-
-
-    </script>
-
-
-
-
-
-
-    <script src="unit.js"></script>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
