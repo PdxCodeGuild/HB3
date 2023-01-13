@@ -139,10 +139,42 @@ html{
     height: auto;
    }
 
+   .left {
+    background-color: pink;
+    width:25px;
+    height:100px;
+    float: left;
+   }
+   .right {
+    background-color: pink;
+    width:25px;
+    height:100px;
+    float: right;
+   }
+   .center{
+    width:100px;
+    height: 100px;
+    background-color: aqua;
+    overflow:hidden;
+   }
+
    .fakeimg {
+    
     height: 100px;
     width: 100px;
     background:burlywood;
+    
+   }
+
+   .box {
+    display:flex;
+    
+    justify-content: center;
+    background-color: bisque;
+    width:150px;
+    height: 150px;
+    
+    
    }
 
 /* -------------BEGIN NAV BAR STYLE----------------- */
