@@ -63,6 +63,7 @@ M-F 6:00 pm – 9:36 pm PT
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
 | 01  | [Pick 3](4%20JavaScript/labs/Pick3.md)           |    9 Jan     |          23 Jan       |
 | 01  | [Weather API](4%20JavaScript/labs/Weather%20API.md)           |    10 Jan     |          24 Jan       |
+| 01  | [Quotes API](4%20JavaScript/labs/random_quote.md)           |    12 Jan     |          26 Jan       |
 
 
 ## Getting Unstuck 
