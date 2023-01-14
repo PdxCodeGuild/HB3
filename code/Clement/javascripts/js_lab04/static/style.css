@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:wght@300&family=Roboto+Condensed:wght@300&display=swap&effect=shadow-multiple|3d-float|3d");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-size: 48px;
+  font-family: "Tangerine", serif;
+  text-shadow: 4px 4px 4px #aaa;
+  background: lightskyblue;
+}
+
+.all,
+.threeinone {
+  display: flex;
+  font-size: 30px;
+  margin-right: 25px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px #191b19, 5px 5px 10px #595959;
+ 
+}
+.contdv {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.mtc {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+}
+.reload {
+  border: 0;
+  width: 60px;
+  height: 60px;
+  display: block;
+  font-size: 30px;
+  transition: 0.3s;
+  color: #9c9c9d;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 10px 4px 18px #252525, 5px 5px 18px;
+}
+.reload:hover {
+  box-shadow: inset 10px 4px 18px #252525, 5px 5px 18px;
+}
