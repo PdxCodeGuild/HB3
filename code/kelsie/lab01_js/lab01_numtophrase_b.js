@@ -1,8 +1,11 @@
 
 
 function num_to_phrase() {
-    let choice = document.getElementById("user_input").submit();
+    let choice = document.getElementById("user_input").value;
     alert(choice)
+
+    let tens_digit = Math.floor(choice/10)
+    let ones_digit = choice%10
 
     tens_list = {
         0: "", 
@@ -45,4 +48,9 @@ function num_to_phrase() {
         alert(ones_list[choice])
     }
 
+    else if (choice >= 20) {
+        alert(tens_list[tens_digit] + '-' + (ones_list[ones_digit]))
+    }
+
+}
 

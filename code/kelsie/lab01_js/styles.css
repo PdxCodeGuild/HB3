@@ -11,3 +11,11 @@ h1 {
     font-size: 80px;
     background-color: rgba(255, 228, 196, 0.528);
 }
+
+.card {
+    background-color: antiquewhite;
+    width: 40%;
+    padding: 20px;
+    float: centg
+}
+
