@@ -100,7 +100,7 @@ html{
 
   @media only screen and (orientation: landscape) {
     body{
-        backgroun-color: lightblue
+        background-color: lightblue
     }
   }
 
@@ -173,9 +173,52 @@ html{
     background-color: bisque;
     width:150px;
     height: 150px;
-    
+        
+   }
+
+   .cards {
+    display:flex; 
+    /* flex-direction:column;  */
+    justify-content:center; 
+    background-color:purple;
+    flex-wrap:wrap;
+    /* justify-content:space-between; */
+   }
+
+   .card {
+    flex: 0 0 150px;
+    /* flex-basis: 100px 100px; */
+    justify-content:center;
+    margin: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+    /* white-space:nowrap; */
+    /* overflow:hidden;
+    text-overflow: ellipsis; */
     
    }
+
+   .card img {
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    border: 1px dashed #077cb9;
+    display: block;
+    margin: 0 auto;
+   }
+
+   .card .text {
+    padding: 0 1px 1px;
+    text-align:center;
+    font-size: small;
+   }
+
+
+   
+  
+    
+    
 
 /* -------------BEGIN NAV BAR STYLE----------------- */
 /* Add a background color to the top navigation */
