@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+}
+
+body {
+  background-image: radial-gradient(gray, black, red);
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 35px;
+  background: linear-gradient(#434445 50%, #4d4f4e 50%);
+}
+
+.form-container {
+  display: flex;
+  padding: 50px 35px;
+  background: #e6e8fa;
+  flex-direction: column;
+  width: 440px;
+  border-radius: 15px 0px 15px 0px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 38px;
+  color: #708090;
+}
+
+.result {
+    margin: 5px;
+    color: black;
+    font-size: 25px bold;
+}
+
+#form input {
+  background: none;
+  border: none;
+  outline: 4px solid #fffafa;
+  font-size: 20px;
+  height: 50px;
+}
+
+button {
+  position: relative;
+  background: #27282c;
+  color: #ffff;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  padding: 10px 30px;
+  transition: 0.9s;
+  border: 5px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  background: var(--clr);
+  box-shadow: 0 0 45px var(--clr);
+}
+
+button::before {
+  inset: 2px;
+  content: "";
+  position: absolute;
+  background: #27282c;
+}
+button span {
+  position: relative;
+  z-index: 1;
+}
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: -12.5px;
+  left: 90%;
+  border: 4px solid var(--clr);
+  background: #27282c;
+  transition: 0.9s;
+  transform: translateX(-50%);
+}
+
+button:hover i::before {
+  width: 30px;
+  left: 10%;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  bottom: -12.5px;
+  left: 10%;
+  border: 4px solid var(--clr);
+  background: #27282c;
+  transition: 0.9s;
+  transform: translateX(-50%);
+}
+
+button:hover i::after {
+  width: 30px;
+  left: 90%;
+}
+
+#form1 {
+  background: #e6e8fa;
+  height: 15vh;
+  padding: 25px 40px 30px;
+  width: 440px;
+  margin-top: 50px;
+  font-size: x-large;
+  border-radius: 0px 15px 0px 15px;
+}
+
+#phraseResult {
+  font-size: x-large;
+  margin-left: 10px;
+  color: #414a4c;
+  margin-left: 20px;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width:400px){
+    .form-container, #form1{
+        width: 380px;
+        margin-left:  20px;
+        margin-right: 20px;
+
+    }
+
+   
+    
+}
