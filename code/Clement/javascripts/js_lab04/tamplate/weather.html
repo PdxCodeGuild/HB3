@@ -22,26 +22,31 @@
     <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
-    <div class="font-effect-shadow-multiple">Making the World Beautiful!</div>
+    <div class="font-effect-shadow-multiple">
+      Make The World A Beautiful Place!
+    </div>
     <div class="container font-effect-3d-float">
       <div>
-        <i class="fa-solid fa-location-pin"></i
+        <i class="fa-solid fa-location-pin text-primary size"></i
         ><span class="font-effect-3d" id="location"></span>
       </div>
-      <div id="time"></div>
       <div class="threeinone">
         <div class="ms-2" id="temp-icon">
-          <img src="http://openweathermap.org/img/wn/04d.png" />
+          <img
+            src="https://assets.msn.com/weathermapdata/1/static/svg/72/v6/card/ModerateRainV2.svg"
+          />
         </div>
         <div class="m-2" id="temp"></div>
         <div class="contdv">
           <div class="m-2" id="climate"></div>
-          <div class="mtc">Feels Like <span id="feels_like"></span></div>
+          <div class="space">
+            Feels Like <span id="feels_like" class="deg"></span>
+          </div>
         </div>
       </div>
       <div class="all">
         <div class="m-2">
-          Wind
+          Wind Speed
           <p id="wind"></p>
         </div>
         <div class="m-2">
@@ -63,7 +68,9 @@
       <div>
         <p>Longitude: <span id="Longitude"></span></p>
       </div>
-      <button onclick="window.location.reload();" class="reload"><i class="fa-solid fa-rotate"></i></button>
+      <button onclick="window.location.reload();" class="reload">
+        <i class="fa-solid fa-rotate text-primary"></i>
+      </button>
     </div>
 
     <script src="../static/secrets.js"></script>

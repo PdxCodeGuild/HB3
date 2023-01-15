@@ -23,7 +23,6 @@ window.addEventListener("load", () => {
       axios.get(url)
       .then((response) => {
         document.getElementById('location').innerText = response.data.name;
-        document.getElementById('time').innerHTML = response.data.timezone;
         document.getElementById('visibility').innerHTML = "<p>" + response.data.visibility + "<span>%</span></p>";
         document.getElementById('wind').innerHTML = "<p>" + response.data.wind.speed+ "<span>mph</span></p>";
         document.getElementById('pressure').innerHTML = "<p>" + response.data.main.pressure + "<span>in</span></p>";

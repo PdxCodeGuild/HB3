@@ -7,9 +7,25 @@
 }
 body {
   font-size: 48px;
+  background-size: cover;
   font-family: "Tangerine", serif;
   text-shadow: 4px 4px 4px #aaa;
-  background: lightskyblue;
+  background: linear-gradient(rgb(36, 84, 148) 0%, rgb(28, 68, 132) 100%);
+
+}
+img{
+  width: 60px;
+}
+
+.size{
+  font-size: smaller;
+  margin-right: 10px;
+}
+
+#location{
+  color: #0038a8;
+  font-size: larger;
+  letter-spacing: 0.5px;
 }
 
 .all,
@@ -17,6 +33,7 @@ body {
   display: flex;
   font-size: 30px;
   margin-right: 25px;
+  font-weight: bolder;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -26,18 +43,23 @@ body {
   align-items: center;
   border-radius: 50px;
   flex-direction: column;
+  background-size: cover;
+  background-image: url("https://i.gifer.com/1KL8.gif");
   box-shadow: 5px 5px 10px #191b19, 5px 5px 10px #595959;
- 
 }
+
 .contdv {
   margin: 0px;
   display: flex;
   flex-direction: column;
 }
-.mtc {
+.space {
   margin: 0px;
   display: flex;
   flex-direction: row;
+}
+.deg {
+  margin-left: 10px;
 }
 .reload {
   border: 0;
