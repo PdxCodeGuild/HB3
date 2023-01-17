@@ -3,7 +3,7 @@
 
 # Lab 14: Form Validation
 
-Let's make a form for validating user input using regular expressions. Note that there are looser or stricter ways of writing regular expressions for validating these. The more strict, the better.
+Let's make a form for validating user input. The more strict, the better.
 
 - Username: at least 6 characters long
 - Password: at least 6 characters long
