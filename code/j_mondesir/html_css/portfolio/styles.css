@@ -1,0 +1,11 @@
+#project {
+    color: white;
+}
+
+.navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+}
+
+#space-top {
+    margin-top: 10px;
+}
