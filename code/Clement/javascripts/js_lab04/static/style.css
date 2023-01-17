@@ -14,6 +14,7 @@ body {
 }
 img {
   width: 60px;
+  margin-right: 10px;
 }
 
 .size {
@@ -25,13 +26,15 @@ img {
   color: #0038a8;
   font-size: larger;
   letter-spacing: 0.5px;
+  font-family: "Tangerine", serif;
+  text-shadow: 4px 4px 4px #aaa;
 }
 
 .all,
 .threeinone {
   display: flex;
   font-size: 40px;
-  margin-right: 25px;
+  /* margin-right: 10px; */
   /* font-weight: bold; */
   flex-direction: row;
   justify-content: space-between;
@@ -44,7 +47,7 @@ img {
   flex-direction: column;
   background-size: cover;
   background-image: url("https://i.gifer.com/1KL8.gif");
-  box-shadow: 5px 5px 10px #191b19, 5px 5px 10px #595959;
+  box-shadow: 5px 5px 15px #191b19, 5px 5px 15px #3d2b1f;
 }
 
 .contdv {
@@ -60,8 +63,8 @@ img {
 .deg {
   margin-left: 10px;
 }
-.ms-2{
-  margin-left: 2rem!important;
+.ms-2 {
+  margin-left: 2rem !important;
 }
 
 .reload {
@@ -81,22 +84,88 @@ img {
   box-shadow: inset 10px 4px 18px #252525, 5px 5px 18px;
 }
 
+@media only screen and (max-width: 1280px) {
+  .container {
+    width: 30%;
+  }
+  .all,
+  .threeinone {
+    font-size: 2rem;
+    margin: 15px;
+  }
+}
+
+
 @media only screen and (max-width: 1024px) {
   .container {
-    width: 65%;
+    width: 40%;
   }
   .all,
   .threeinone {
     font-size: 25px;
     margin: 15px;
-    
   }
 }
 
-/* @media only screen and (min-width: 280px) {
+@media only screen and (max-width: 540px) {
   .container {
-   width: 60%; 
+    width: 65%;
   }
-  
+}
+
+@media only screen and (max-width: 414px) {
+  .container {
+    width: 90%;
+  }
+  .all,
+  .threeinone {
+    font-size: 2rem;
+    margin: 10px;
+    color: black;
+  }
+  #location {
+    font-size: smaller bold;
+   
+  }
+}
+
+
+ @media only screen and (max-width: 400px) {
+  .container {
+    width: 90%;
+  }
+  .all,
+  .threeinone {
+    font-size: 20px;
+    margin: 10px;
+  }
+  .ms-2 {
+    margin-left: 0rem !important;
+  }
 } 
-*/
+
+
+@media only screen and (max-width: 280px) {
+  .container {
+    width: 95%;
+  }
+  .all,
+  .threeinone {
+    font-size: 20px;
+    margin: 10px;
+  }
+  .ms-2 {
+    margin-left: 0rem !important;
+  }
+  #location {
+    font-size: smaller;
+   
+  }
+}
+
+
+
+
+
+
+
