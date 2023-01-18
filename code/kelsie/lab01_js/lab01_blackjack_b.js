@@ -1,6 +1,4 @@
-let text_field = document.getElementById('user_input')
-let text = text_field.value
-alert(text)
+
 
 let blackjack_dict = {
     "A" : 1,
@@ -19,47 +17,44 @@ let blackjack_dict = {
 }
 
 
+function Score() {
+    card_a = document.getElementById('card_a').value;
+    card_b = document.getElementById('card_b').value;
+    card_c = document.getElementById('card_c').value;
+    total = (blackjack_dict[card_a] + blackjack_dict[card_c] + blackjack_dict[card_b]);
 
-
-
-
-
-
-function BlackjackTotal() {
-    let total = (blackjack_dict[card_1] + blackjack_dict[card_2] + blackjack_dict[card_3])
-    if (card_1 = "A") {
-        if (total + 10 <= 21) {
-            total = total + 10
-        }
-    }  
-    else if (card_2 = "A") {
-        if (total + 10 <= 21) {
-            total = total + 10
-        }
-    } 
-    else if (card_3 = "A") {
-        if (total + 10 <= 21) {
-            total = total + 10
-        }
-    } 
-    else {
-        total = total
+    if (card_a === "A" && total<=11) {
+        total = total + 9
     }
-    
-    
-    
+
+    if (card_b === "A" && total<=11) {
+        total = total + 9
+    }
+
+    if (card_c === "A" && total<=11) {
+        total = total + 9
+    }
+
+    if (total === 21) {
+        result = ("Your total is " + total + ", You Win!")
+    }
+
+    if (total > 21) {
+        result = ("Your total is " + total + ", Bust!")
+    }
+
+    if (total < 21 && total >=17) {
+        result = ("Your total is " + total + ", Stay!")
+    }
+
     if (total < 17) {
-        alert(total + " Hit") 
-    }  
-    else if (total == 21) {
-        alert(total + " Blackjack!")
-        }
-    else if (total < 21) {
-        if (total >= 17) {
-            alert(total + " Stay")
-        }
+        result = ("Your total is " + total + ", Hit!")
     }
-    else {
-        alert(total + " Hit")
-    }
+
+
+    document.getElementById("result").innerHTML = result
+
 }
+
+
+
