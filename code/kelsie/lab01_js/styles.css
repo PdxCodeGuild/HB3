@@ -16,6 +16,8 @@ h1 {
     background-color: antiquewhite;
     width: 40%;
     padding: 20px;
-    float: centg
+    margin: auto;
+    margin-bottom: 30px;
+    border: solid rgb(61, 7, 131) 5px;
 }
 

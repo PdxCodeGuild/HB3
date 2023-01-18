@@ -10,14 +10,14 @@ function num_to_phrase() {
     tens_list = {
         0: "", 
         1: "teen", 
-        2: "twenty", 
-        3: "thirty", 
-        4: "forty", 
-        5: "fifty", 
-        6: "sixty", 
-        7: "seventy", 
-        8: "eighty", 
-        9: "ninety"
+        2: "Twenty", 
+        3: "Thirty", 
+        4: "Forty", 
+        5: "Fifty", 
+        6: "Sixty", 
+        7: "Seventy", 
+        8: "Eighty", 
+        9: "Ninety"
     }
 
     ones_list = [
@@ -45,12 +45,14 @@ function num_to_phrase() {
     
 
     if (choice < 20) {
-        alert(ones_list[choice])
+        result = ones_list[choice]
     }
 
     else if (choice >= 20) {
-        alert(tens_list[tens_digit] + '-' + (ones_list[ones_digit]))
+        result = tens_list[tens_digit] + '-' + ones_list[ones_digit]
     }
+
+    document.getElementById("result").innerHTML = result;
 
 }
 
