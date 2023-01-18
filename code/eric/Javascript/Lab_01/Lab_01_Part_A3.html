@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <script>
+        // Lab 01: Password Generator - user can pick the number of characters 
+
+            function password(n) {
+                var length = n,
+                    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\] ^_`{|}~",
+                    returnvalue = "";
+                for (var i = 0, n = charset.length; i < length; ++i) {
+                    returnvalue += charset.charAt(Math.floor(Math.random() * n));
+                }
+                return returnvalue;
+            }
+
+            let enter_num = prompt('Enter the number of characters (i.e. 8): ');
+            alert('Your password is: ' + password(enter_num))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
