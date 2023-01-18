@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <script>
+        // Lab 01: Blackjack Advice - three cards given with advice to the user
+            alert("Welcome to Blackjack! You will get 3 cards, a score, and advice!")
+            // create a deck of cards
+            var cards = [
+                "A",
+                "K",
+                "Q",
+                "J",
+                "10",
+                "9",
+                "8",
+                "7",
+                "6",
+                "5",
+                "4",
+                "3",
+                "2",
+            ];
+
+            // create a function to get a random card
+            function random_card(cards) {
+                return cards[Math.floor(Math.random() * cards.length)];
+            }
+
+            let card_1 = random_card(cards)
+            let card_2 = random_card(cards)
+            let card_3 = random_card(cards)
+
+            // log three cards 
+            alert("What is your first card? " + card_1);
+            alert("What is your second card? " + card_2);
+            alert("What is your third card? " + card_3);
+
+            if (card_1 == "K" || card_1 == "Q" || card_1 == "J") {
+                card_1 = 10;
+            }
+            if (card_2 == "K" || card_2 == "Q" || card_2 == "J") {
+                card_2 = 10;
+            }
+            if (card_3 == "K" || card_3 == "Q" || card_3 == "J") {
+                card_3 = 10;
+            }
+
+            if (card_1 == "A") {
+                card_1 = 11;
+            }
+            if (card_2 == "A") {
+                card_2 = 11;
+            }
+            if (card_3 == "A") {
+                card_3 = 11;
+            }
+
+            const score = (parseFloat(card_1) + parseFloat(card_2) + parseFloat(card_3))
+            alert('Your score is: ' + score)
+
+            if (score >= 17 && score < 21) {
+                alert("Stay!");
+            }
+            else if (score < 17) {
+                alert("Hit!");
+            }
+            else if (score == 21) {
+                alert("Blackjack!");
+            }
+            else {
+                alert("Busted!");
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
