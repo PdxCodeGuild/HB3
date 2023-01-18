@@ -1,29 +1,222 @@
-h1{
-    text-align: center;
+.body{
+    padding-left: 40%;
+    
 }
-/* Add a black background color to the top navigation */
-.topnav {
-    float: right;
-    background-color: rgb(255, 255, 255);
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 10px 80px;
-    margin-right: 80px;    
-    margin-top: 20px;
+
+
+
+
+.header{
+    text-align: right;
+}
+
+.header h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+   font-size: 20px;
+   padding-bottom: 10px;
+    
+}
+
+
+.navbar {
+width: 100%;
+display: flex;
+height: 3rem;
+
+}
+
+
+
+.navbar li{
+    display: inline-block;
+    background-color: rgb(190, 210, 210);
     text-decoration: solid;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
- 
+    font-size: 20px;
+    width: 70px;    
+    padding-top: 10px;    
+    padding-right: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    
+}
+
+.navbar li:hover{
+    background-color: rgb(172, 205, 206);
+    
+}
+
+.About-me{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-left: 10%;
+    gap: 4rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+.About-img img{
+    border-radius: 5px;
+    max-width: fit-content;
+    padding-left: 80%;
+    margin-top: 10%;
+}
+
+.Background-img{
+    float: right;
+    float: inline-end;
+    margin-right: 15%;
+    max-height: 40%;
+    align-content: center;
+    align-items: center;
+}
+
+
+.About-text{
+    padding-left: 5%;
+}
+
+.About-text h2{
+    font-size: 60px;
+}
+
+.About-text h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Web_dev{
+   
+    color: green;
+    font-weight: 300;
+
+}
+
+.About-text p{
+    line-height: 1.5;
+}
+
+.color_box_about{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(167, 189, 165);
+    
+}
+
+.color_box_heart{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding-bottom: 30px;
+    background-color: rgb(167, 189, 165);
+    
+}
+
+.color_box_contact{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin-top: 10%;
+    background-color: rgb(167, 189, 165);
+    align-items: center;
+
+}
+
+
+.container{
+    position:relative;
+    max-width: 100rem;
+    margin-inline: auto;    
+}
+
+.render_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 50px;
+}
+
+
+.card:hover{
+    cursor: pointer;
+    transform: rotateY(180deg)
+}
+
+.card{
+    height: 80%;
+    width: 80%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+
+/*Make images easier to work with IF you're using aspect ratio*/
+img,
+picture{
+    max-width: 100%;
+    min-height: 100%;
+    display: block;
+}
+
+.card__img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    /*You can also optimize img a little by using object-fit:cover*/
+}
+
+.card,
+.card_content {
+    box-shadow: 0 0 3px 2px rgb(167, 189, 165);
+    backface-visibility: hidden;
+   margin-left: 10%;
+   
+
+}
+
+
+.card_content{ 
+    text-align: center;   
+    align-items: center;
+    position: relative;
+    background-color: rgb(167, 189, 165);
+    transform: rotateY(180deg);
+    
+}
+
+
+.contact_box{
+    width: 400px;
+    height: 300px;
+    background-color: rgb(184, 171, 149);
+    box-shadow: 0 0 5px 0 rgb(169, 160, 137);
+    left:50%;
+    margin-top: 5%;
+    margin-left: 35%;
+}
+
+.form{
+    margin:20px
+}
+ .input-field{
+    width: 300px;
+    height: 30px;
+    gap: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid green;
+
+ }
+
+/*
+font-size: rem
+width: % in combination with a max-width, ch
+height: question urself "do i rly need to set height" if yes -> use a min-height
+padding/margin: rem or em, kevin often uses em for padding of buttons
+media queries: em
+
+px only for little things like shadows, borders etc.*\
