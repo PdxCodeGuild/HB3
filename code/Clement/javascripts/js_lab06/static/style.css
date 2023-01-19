@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,700&display|3d-float');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background: url('https://www.fs.usda.gov/Internet/FSE_MEDIA/fseprd1018004.jpg');
+
+}
+
+.container{
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+    margin: 0px 20px;
+    letter-spacing: 2px;
+    border-radius: 15px;
+    box-shadow: inset -4px 4px 4px #ffff;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+.form-title{
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #ffff;
+    border-bottom: 2px solid #ffff;
+    text-shadow: 4px 4px 4px #03c03c;
+}
+
+.personal-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.input-control:nth-child(2n){
+    justify-content: end;
+}
+
+.input-control{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+
+}
+.input-control:focus{
+    outline: none;
+}
+
+.input-control.success input{
+    border-color: #03c03c;
+}
+
+.input-control.error input{
+    border-color: #ff0800;
+}
+.setError{
+    color: #ffff;
+}
+
+.input-control label{
+    width: 95%;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.input-control input{
+    height: 40px;
+    width: 95%;
+    border-radius: 8px;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid grey;
+}
+.form-submit-btn{
+    cursor: pointer;
+    /* margin: 40px; */
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 20px;
+    color: rgba(209, 209, 209);
+    background: rgba(63, 114, 76, 0.8);
+
+
+}
+.form-submit-btn:hover{
+    letter-spacing: 4px;
+    transition: 0.9s;
+    color: rgba(255, 255, 255);
+    background: rgba(56, 204, 93, 0.8);
+   
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        min-width: 280px;
+    }
+    .input-control{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+    .input-control:nth-child(2n){
+        justify-content: space-between;
+    }
+    .personal-info{
+        max-width: 380px;
+        overflow: auto;  
+    }
+    .personal-info::-webkit-scrollbar{
+        width: 0;
+    }
+}
