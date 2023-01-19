@@ -38,7 +38,24 @@
 
 
 function myFunction() {
-    document.getElementById("input_ft").innerHTML = "Hello Dolly!";
+
+    let feet_input = document.querySelector('#feet_input');
+    let feet_value = feet_input.value;
+    console.log(feet_value);
+
+    let ft_unit_convert = 0.3048;  // Unit conversion (1 ft = 0.3048)
+    let a = feet_value;
+    let b = ft_unit_convert;
+    //define simple multiply function
+    function multiplyFunction(a,b) {
+         return a * b;
+     }
+     console.log(multiplyFunction(a,b));
+    //end function multiply
+
+    document.getElementById("output_meters").innerHTML = multiplyFunction(a,b) + " meters";
+
+
 }
 
 
