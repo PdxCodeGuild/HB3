@@ -53,8 +53,63 @@ function myFunction() {
      console.log(multiplyFunction(a,b));
     //end function multiply
 
-    document.getElementById("output_meters").innerHTML = multiplyFunction(a,b) + " meters";
+    document.getElementById('output_meters').innerHTML= 
+    feet_value + " ft is " + multiplyFunction(a,b) + " meters";
+}
 
+function myFunction2() {
+
+    //  Create a dictionary of playing cards
+    // playing cards (A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, or K)
+    let playing_cards = {  // playing card name: points
+        A: 1,   // Ace
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
+        10: 10,
+        J: 10,   // Jack
+        Q: 10,   // Queen
+        K: 10    // King
+    }
+    
+    // figure out the point value of each card individually
+    let first_card = document.querySelector('#first_card');
+    let first_card_val = playing_cards[first_card.value];
+    console.log("First Card Points: " + first_card_val);
+    let second_card = document.querySelector('#second_card');
+    let second_card_val = playing_cards[second_card.value];
+    console.log("Second Card Points: " + second_card_val);
+    let third_card = document.querySelector('#third_card');
+    let third_card_val = playing_cards[third_card.value];
+    console.log("Third Card Points: " + third_card_val);
+
+    let card_sum = first_card_val + second_card_val + third_card_val;
+    
+    //  Less than 17, advise to "Hit"
+    //  Greater than or equal to 17, but less than 21, advise to "Stay"
+    //  Exactly 21, advise "Blackjack!"
+    //  Over 21, advise "Already Busted"
+    if (card_sum < 17) {
+    console.log("Advise: " + card_sum + " Hit");
+    document.getElementById('blackjack_output').innerHTML="Advise: " + card_sum + " Hit";
+    } else if (card_sum > 17 && card_sum < 21) {
+    console.log("Advise: " + card_sum + " Stay");
+    document.getElementById('blackjack_output').innerHTML="Advise: " + card_sum + " Stay";
+    } else if (card_sum == 21){
+        console.log("Advise: "+ card_sum + " BlackJack!");
+        document.getElementById('blackjack_output').innerHTML="Advise: "+ card_sum + " BlackJack!";
+    } else {
+        console.log("Advise: "+ card_sum + " Already Busted");
+        document.getElementById('blackjack_output').innerHTML="Advise: "+ card_sum + " Already Busted";
+    }
+    // end if
+   
+     
 
 }
 
