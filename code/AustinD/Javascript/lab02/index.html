@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Forecast</title>
+    <script src="secret.js"></script>
+  </head>
+  <body>
+    <div id="weather-forecast">
+      <p id="location"></p>
+      <p id="temperature"></p>
+      <p id="description"></p>
+      <p id="icon"></p>
+    </div>
+<script>
+  navigator.geolocation.getCurrentPosition(position => {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    // Make call to OpenWeatherMap API
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily&appid=${apiKey}`;
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // Extract data from API response
+        let location = data.name;
+        let temperature = data.main.temp;
+        let description = data.weather[0].description;
+        let icon = data.weather[0].icon;
+
+        // Convert Unix timestamp to JavaScript date
+        let unixTimestamp = data.dt;
+        let dateTime = new Date(unixTimestamp * 1000);
+        console.log(dateTime);
+
+        // Get icon from OpenWeatherMap
+        let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
+
+        // Update elements in HTML
+        document.getElementById("location").innerHTML = location;
+        document.getElementById("temperature").innerHTML = temperature+'F'
+        document.getElementById("description").innerHTML = description;
+        let iconImg = document.createElement("img");
+        iconImg.src = iconUrl;
+        document.getElementById("icon").appendChild(iconImg);
+      });
+  });
+</script>
+
+  </body>
+</html>
