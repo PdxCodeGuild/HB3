@@ -205,8 +205,8 @@ form.addEventListener('submit', function (e) {
         isConfirmPasswordValid = checkConfirmPassword(),
         isEmailValid = checkEmail(),
         isNameValid = checkName(),
-        isPhoneValid = checkPhone()
-        isDobValid = checkDob()
+        isPhoneValid = checkPhone(),
+        isDobValid = checkDob(),
         isSSNValid = checkSSN();
 
     let isFormValid = isUsernameValid &&
