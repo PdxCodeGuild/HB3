@@ -109,9 +109,24 @@ function myFunction2() {
     }
     // end if
    
-     
-
 }
 
+
+function myFunction3() {
+        
+    axios({
+     method: 'get',
+     url: 'https://icanhazdadjoke.com/',
+     headers: {'accept':'application/json'}
+
+    }).then((response) => {
+     let dad = response.data
+     console.log(dad)
+     document.getElementById('dadjoke_output').innerText = dad.joke
+    })
+
+    
+
+ }
 
 // -------------------------------------------------------
