@@ -1,0 +1,58 @@
+<html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unit Converter</title>
+
+        ...
+        <script>
+            alert("Unit Converter Lab in Javascript")
+ 
+            let unit_in = {
+                "feet": .3048,
+                "miles": 1609.34,
+                "meters": 1,
+                "kilometers": 1000,
+                "yards": 0.9144,
+                "inches": 0.0254
+            }
+
+            let unit_out = {
+                "feet": 1/.3048,
+                "miles": 1/1609.34,
+                "meters": 1,
+                "kilometers": 1/1000,
+                "yards": 1/.9144,
+                "inches": 1/.0254
+            }
+
+            let distance = prompt("What is the distance:")
+ 
+            let new_distance = (distance)
+ 
+            let input_unit = prompt("What are the input units (feet, miles, meters, kilometers, yards, inches): ")
+ 
+            let output_unit = prompt("What are the output units (feet, miles, meters, kilometers, yards, inches): ")
+ 
+            let input_switch = unit_in[input_unit]
+ 
+            let output_switch = unit_out[output_unit]
+ 
+            let input_conversion = new_distance * input_switch
+ 
+            let final_conversion = input_conversion * output_switch
+ 
+            alert(distance + " " + input_unit + " is equal to " + final_conversion + " " + output_unit)
+        </script>
+ 
+      
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

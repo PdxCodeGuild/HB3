@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Advice Part B</title>
+</head>
+<body>
+
+    <p>This is a card game. You can select the value of card: A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q or K.</p>
+    <form>
+        <label for="card_1">What is your 1st card:</label>
+        <input type="text" id="card_1" name="card_1"><br>
+        
+        <label for="card_2">What is your 2nd card:</label>
+        <input type="text" id="card_2" name="card_2"><br>
+        
+        <label for="card_3">What is your 3rd card:</label>
+        <input type="text" id="card_3" name="card_3"><br>
+
+        <input type="button" value="Advise" onclick="Adviser()">
+      </form>
+
+      <div id="alert"></div>
+
+    <script>
+        
+        function Adviser() {
+
+            let card_values = {
+                'A': 1,
+                '2': 2,
+                '3': 3,
+                '4': 4,
+                '5': 5,
+                '6': 6,
+                '7': 7,
+                '8': 8,
+                '9': 9,
+                '10': 10,
+                'J': 10,
+                'Q': 10,
+                'K': 10,
+            }   
+                
+            let card_1_input = document.getElementById('card_1').value;
+            let card_2_input = document.getElementById('card_2').value;
+            let card_3_input = document.getElementById('card_3').value;
+            
+            let card_1 = card_values[card_1_input]
+            let card_2 = card_values[card_2_input]
+            let card_3 = card_values[card_3_input]
+            
+            
+            let card_count = card_1 + card_2 + card_3
+
+            
+            
+            if (card_count < 17) {
+                document.getElementById("alert").innerHTML = `${card_count} that is low: Hit!`;
+            } else if (17 <= card_count && card_count < 21) {
+                document.getElementById("alert").innerHTML = `${card_count} is good enough: Stay!`;
+            } else if (card_count == 21) {
+                document.getElementById("alert").innerHTML = `${card_count} Blackjack!`;
+            }else {
+                document.getElementById("alert").innerHTML = `${card_count} Already Busted...bummer`;}
+        }
+
+    </script>
+</body>
+</html>
