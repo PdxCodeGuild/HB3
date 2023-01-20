@@ -3,49 +3,67 @@
   <head>
     <title>Weather Forecast</title>
     <script src="secret.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="weather-forecast">
-      <p id="location"></p>
-      <p id="temperature"></p>
-      <p id="description"></p>
-      <p id="icon"></p>
-    </div>
-<script>
-  navigator.geolocation.getCurrentPosition(position => {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-
-    // Make call to OpenWeatherMap API
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily&appid=${apiKey}`;
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        // Extract data from API response
-        let location = data.name;
-        let temperature = data.main.temp;
-        let description = data.weather[0].description;
-        let icon = data.weather[0].icon;
-
-        // Convert Unix timestamp to JavaScript date
-        let unixTimestamp = data.dt;
-        let dateTime = new Date(unixTimestamp * 1000);
-        console.log(dateTime);
-
-        // Get icon from OpenWeatherMap
-        let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
-
-        // Update elements in HTML
-        document.getElementById("location").innerHTML = location;
-        document.getElementById("temperature").innerHTML = temperature+'F'
-        document.getElementById("description").innerHTML = description;
-        let iconImg = document.createElement("img");
-        iconImg.src = iconUrl;
-        document.getElementById("icon").appendChild(iconImg);
-      });
-  });
+    <div id="weather-forecast" class="flex flex-row"></div>
+    <script>
+        async function getWeatherData() {
+            let position = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${apiKey}`;
+            let data = await fetch(apiUrl)
+                .then(response => response.json());
+            return data;
+        }
+        async function updateForecast() {
+            let data = await getWeatherData();
+            let forecastList = data.list;
+            let forecastCount = 0;
+            for (let i = 0; i < forecastList.length; i++) {
+                let forecast = forecastList[i];
+                let date = forecast.dt_txt;
+                let location = data.city.name;
+                let dateTime = new Date(date);
+                let displayDate = dateTime.toDateString();
+                if (dateTime.getHours() === 15 && forecastCount < 5) {
+                    let temperature = forecast.main.temp.toFixed(1);
+                    let humidity = forecast.main.humidity;
+                    let windSpeed = forecast.wind.speed;
+                    let description = forecast.weather[0].description;
+                    let icon = forecast.weather[0].icon;
+                    let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
+                    let forecastDiv = document.createElement("div");
+                    let forecastTemperature = document.createElement("p");
+                    let forecastHumidity = document.createElement("p");
+                    let forecastWindSpeed = document.createElement("p");
+                    let forecastDescription = document.createElement("p");
+                    let forecastIcon = document.createElement("img");
+                    let forecastDate = document.createElement("p");
+                    let forecastLocation = document.createElement("p");
+                    forecastTemperature.innerHTML = temperature + 'F';
+                    forecastHumidity.innerHTML = humidity + '%';
+                    forecastWindSpeed.innerHTML = windSpeed + 'mph';
+                    forecastDescription.innerHTML = description;
+                    forecastLocation.innerHTML = location;
+                    forecastIcon.src = iconUrl;
+                    forecastDate.innerHTML = displayDate;
+                    forecastDiv.appendChild(forecastDate);
+                    forecastDiv.appendChild(forecastHumidity);
+                    forecastDiv.appendChild(forecastTemperature);
+                    forecastDiv.appendChild(forecastWindSpeed);
+                    forecastDiv.appendChild(forecastLocation);
+                    forecastDiv.appendChild(forecastDescription);
+                    forecastDiv.appendChild(forecastIcon);
+                    document.getElementById("weather-forecast").appendChild(forecastDiv);
+                    forecastCount++;
+}
+}
+}
+updateForecast();
 </script>
-
   </body>
 </html>
