@@ -125,7 +125,6 @@ function myFunction3() {
      document.getElementById('dadjoke_output').innerText = dad.joke
     })
 
-    
 
  }
 
