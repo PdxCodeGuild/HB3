@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="weather-forecast" class="flex flex-row"></div>
+    <div id="weather-forecast" class="p-6 flex flex-row flex-wrap"></div>
     <script>
         async function getWeatherData() {
             let position = await new Promise((resolve, reject) => {
@@ -37,16 +37,24 @@
                     let icon = forecast.weather[0].icon;
                     let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
                     let forecastDiv = document.createElement("div");
+                    forecastDiv.setAttribute("class", "bg-purple-600 rounded-md shadow-lg mr-2 mb-2 w-full max-w-sm");
                     let forecastTemperature = document.createElement("p");
+                    forecastTemperature.setAttribute("class", "p-4");
                     let forecastHumidity = document.createElement("p");
+                    forecastHumidity.setAttribute("class", "p-4");
                     let forecastWindSpeed = document.createElement("p");
+                    forecastWindSpeed.setAttribute("class", "p-4");
                     let forecastDescription = document.createElement("p");
+                    forecastDescription.setAttribute("class", "p-4");
                     let forecastIcon = document.createElement("img");
+                    forecastIcon.setAttribute("class", "justify-between ml-auto float-right w-1/3");
                     let forecastDate = document.createElement("p");
+                    forecastDate.setAttribute("class", "p-4");
                     let forecastLocation = document.createElement("p");
+                    forecastLocation.setAttribute("class", "p-4");
                     forecastTemperature.innerHTML = temperature + 'F';
-                    forecastHumidity.innerHTML = humidity + '%';
-                    forecastWindSpeed.innerHTML = windSpeed + 'mph';
+                    forecastHumidity.innerHTML = 'Humidity ' + humidity + '%';
+                    forecastWindSpeed.innerHTML = windSpeed + 'mph Wind';
                     forecastDescription.innerHTML = description;
                     forecastLocation.innerHTML = location;
                     forecastIcon.src = iconUrl;
