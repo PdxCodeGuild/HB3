@@ -1,12 +1,15 @@
 const form = document.getElementById("form");
+const lastName = document.getElementById("lastName");
 const userName = document.getElementById("userName");
 const passWord = document.getElementById("passWord");
 const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const emailAddress = document.getElementById("emailAddress");
-const phoneNumber = document.getElementById("phoneNumber");
-const socialSecurity = document.getElementById("socialSecurity");
 const dateofBirth = document.getElementById("dateofBirth");
+const phoneNumber = document.getElementById("phoneNumber");
+const emailAddress = document.getElementById("emailAddress");
+const socialSecurity = document.getElementById("socialSecurity");
+const togglePassword = document.getElementById("togglePassword");
+const passwordToggle = document.getElementById("passwordToggle");
+
 
 function formatPhoneNumber(value) {
   if (value === false) return value;
@@ -17,10 +20,9 @@ function formatPhoneNumber(value) {
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
   }
   return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
-    3,
-    6
-  )}-${phoneNumber.slice(6, 9)}`;
+    3, 6)}-${phoneNumber.slice(6, 9)}`;
 }
+
 
 function formatSocialsecurity(value) {
   if (!value) return value;
@@ -31,9 +33,7 @@ function formatSocialsecurity(value) {
     return `(${socialSecurity.slice(0, 3)}) ${socialSecurity.slice(3)}`;
   }
   return `(${socialSecurity.slice(0, 3)}) ${socialSecurity.slice(
-    2,
-    4
-  )}-${socialSecurity.slice(4, 7)}`;
+    2, 4)}-${socialSecurity.slice(4, 7)}`;
 }
 
 function phoneNumberFormatter() {
@@ -55,26 +55,21 @@ form.addEventListener("submit", (e) => {
 });
 
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordToggle = document.getElementById("passwordToggle");
-
 passwordToggle.addEventListener("click", function () {
   this.classList.toggle("fa-eye-slash");
   const type =
     socialSecurity.getAttribute("type") === "password" ? "type" : "password";
-
   socialSecurity.setAttribute("type", type);
 });
-
 
 
 togglePassword.addEventListener("click", function () {
   this.classList.toggle("fa-eye-slash");
   const type =
     passWord.getAttribute("type") === "password" ? "type" : "password";
-
   passWord.setAttribute("type", type);
 });
+
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -84,6 +79,7 @@ const setError = (element, message) => {
   inputControl.classList.remove("success");
 };
 
+
 const setSuccess = (element) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
@@ -91,6 +87,7 @@ const setSuccess = (element) => {
   inputControl.classList.add("success");
   inputControl.classList.remove("error");
 };
+
 
 const validateInputs = () => {
   const usernameValue = userName.value.trim();
@@ -102,6 +99,9 @@ const validateInputs = () => {
   const socialSecurityvalue = socialSecurity.value.trim();
   const dateofBirthvalue = dateofBirth.value.trim();
 
+
+
+  // Conditional statements to check for Username validations
   if (usernameValue === "") {
     setError(userName, "Field is required");
   } else if (usernameValue.length < 6) {
@@ -110,6 +110,7 @@ const validateInputs = () => {
     setSuccess(userName);
   }
 
+  // Conditional statements to check for Password validations
   if (passWordvalue === "") {
     setError(passWord, "Field is required");
   } else if (passWordvalue.length < 6) {
@@ -117,6 +118,9 @@ const validateInputs = () => {
   } else {
     setSuccess(passWord);
   }
+
+
+  // Conditional statements to check errors field input validations
   if (firstNamevalue === "") {
     setError(firstName, "Field is required");
   } else {
@@ -127,6 +131,8 @@ const validateInputs = () => {
   } else {
     setSuccess(lastName);
   }
+
+
   if (emailAddressvalue === "") {
     setError(emailAddress, "Field is required");
   } else {
@@ -137,6 +143,8 @@ const validateInputs = () => {
   } else {
     setSuccess(phoneNumber);
   }
+
+
   if (socialSecurityvalue === "") {
     setError(socialSecurity, "Field is required");
   } else {
