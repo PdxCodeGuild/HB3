@@ -1,4 +1,4 @@
-numeral = parseInt(prompt("Enter number to be converted to text "))
+let numeral = prompt("Enter number to be converted to text ")
 
 
 let ones_digit = numeral % 10
@@ -15,32 +15,42 @@ let alpha_ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
 
 let alpha_teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
 
-if (numeral > 99)
+if (numeral > 99) {
     if (numeral % 100 >= 10 && numeral % 100 <= 19)
         alert(alpha_hundreds[hundreds_digit] + alpha_teens[(numeral % 100)%10])
     
-    else
-        if(ones_digit == 0)
+    else {
+        if(ones_digit == 0) {
            alert(alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit])
+        }
         
-        else if(tens_digit == 0)
+        else if(tens_digit == 0) {
             alert(alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit] + alpha_ones[ones_digit])
+        }
 
-        else
+        else{
             alert(alpha_hundreds[hundreds_digit] + alpha_tens[tens_digit] + '-' + alpha_ones[ones_digit])
-    
-else
+        }
+    }
+}
+else {
 
-    if (numeral >= 10 && numeral <= 19)
+    if (numeral >= 10 && numeral <= 19) {
         alert(alpha_teens[(numeral % 100)%10])
+    }
 
-    else
+    else {
 
-        if (ones_digit == 0 && numeral > 0)
+        if (ones_digit == 0 && numeral > 0) {
            alert(alpha_tens[tens_digit])
+}
         
-        else if (tens_digit == 0)
+        else if (tens_digit == 0) {
             alert(alpha_tens[tens_digit] + alpha_ones[ones_digit])
+        }
 
-        else 
+        else {
             alert(alpha_tens[tens_digit] + '-' + alpha_ones[ones_digit])
+        }
+    }
+}
