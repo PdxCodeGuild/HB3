@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.9.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      .form-control {
+        border: 1px solid #ced4da;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="validation-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" class="form-control" required minlength="6" placeholder="At least 6 characters">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control" required minlength="6" placeholder="At least 6 characters">
+      </div>
+      <div class="form-group">
+        <label for="name">First+Last Name:</label>
+        <input type="text" id="name" class="form-control" pattern="[a-zA-Z]+ [a-zA-Z]+" required placeholder="First Name[space]Last Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" class="form-control" required placeholder="email@provider.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" class="form-control" pattern="\d{3}-\d{3}-\d{4}" required placeholder="e.g. 293-213-5555">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" class="form-control" pattern="\d{1,2}\/\d{1,2}\/\d{4}" required placeholder="e.g. 2/13/2627">
+      </div>
+      <div class="form-group">
+        <label for="ssn">Social Security Number:</label>
+        <input type="text" id="ssn" class="form-control" pattern="\d{3}-\d{2}-\d{4}" required placeholder="e.g. 415-25-2627">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
+</html>
