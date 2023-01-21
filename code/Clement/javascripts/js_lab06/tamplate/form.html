@@ -11,6 +11,10 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/377c794673.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
@@ -36,6 +40,7 @@
               id="passWord"
               placeholder="Enter your password"
             />
+            <i class="fa-solid fa-eye" id="togglePassword"></i>
             <div class="error"></div>
           </div>
           <div class="input-control">
@@ -64,38 +69,37 @@
               type="email"
               name="email"
               id="emailAddress"
-              placeholder="enter.yours@gmail.com"
+              placeholder="enter.youremail@gmail.com"
             />
             <div class="error"></div>
           </div>
           <div class="input-control">
             <label for="phoneNumber">Phone Number</label>
             <input
+              onkeydown="phoneNumberFormatter()"
               type="phonenumber"
               name="phoneNumber"
               id="phoneNumber"
-              placeholder="110-456-3697"
+              placeholder="(123) 456-7890"
             />
             <div class="error"></div>
           </div>
           <div class="input-control">
             <label for="socialSecurity">Social Security Number</label>
             <input
+              onkeydown="socialSecurityFormatter()"
               type="password"
               name="socialsecurity"
               id="socialSecurity"
               placeholder="XXX-XX-0258"
             />
+            <i class="fa-solid fa-eye" id="passwordToggle"></i>
+            
             <div class="error"></div>
           </div>
           <div class="input-control">
             <label for="dateofBirth">Date of Birth</label>
-            <input
-              type="text"
-              name="dateofBirth"
-              id="dateofBirth"
-              placeholder="02/13/2627"
-            />
+            <input type="date" name="dateofBirth" id="dateofBirth" />
             <div class="error"></div>
           </div>
           <button class="form-submit-btn">Submit</button>

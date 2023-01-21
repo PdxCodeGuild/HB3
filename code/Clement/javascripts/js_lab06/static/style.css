@@ -68,8 +68,8 @@ body{
 .input-control.error input{
     border-color: #ff0800;
 }
-.setError{
-    color: #ffff;
+.error{
+    color: #ff0800;
 }
 
 .input-control label{
@@ -129,3 +129,15 @@ body{
         width: 0;
     }
 }
+
+#togglePassword, #passwordToggle{
+
+    margin-left: -25px;
+    padding-top: 12px;
+    cursor: pointer;
+  
+}
+/* #togglePassword, #passwordToggle:hover{
+
+} */
+
