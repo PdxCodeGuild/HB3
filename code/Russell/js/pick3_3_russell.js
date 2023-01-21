@@ -21,10 +21,17 @@ function ccNumChecker(cardNumber) {
         }
     }
     console.log(reverseNum)
+
+    const sum = reverseNum.reduce((partialSum, a) => partialSum + a, 0);
+    console.log(sum)
+
+    if (sum % 10 === checkDigit) {
+        console.log('Valid!')
+    }
    
     // console.log(ccNum)
     // let check_digit = cardNumber.pop()
     // console.log(check_digit)
 }
 
-ccNumChecker(1234567898765432)
+ccNumChecker(4556737586899855)
