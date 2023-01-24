@@ -36,33 +36,44 @@
 
 // Third Lab
 
-// const cc = [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
-// let newcc = cc.slice(0,-1)
-// newcc.reverse()
-// console.log(newcc)
+let cc = [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
 
-// function cardvalidation(){
-//     num = []
-//     let user_input = prompt("Enter a card number ") 
-//     console.log(user_input)
-//     for (numbers in user_input){
-//         console.log(num.append())
-//     }
-// }
+function cardvalidation(){
+    num = []
+    let user_input = prompt("Enter a card number ") 
+    console.log(user_input)
+    let newcc = cc.slice(0,-1)
+    newcc.reverse()
+    console.log(newcc)
+    for (numbers in user_input){
+        num.push(user_input[numbers])
+    }
+    num.reverse()
+    // console.log(num)
+    for (let x = 0; x < cc.length; ++x){
+        if (cc[x]%2 == 0){
+            continue
+        }
+        if (cc[x] > 9){
+            cc[x] - 9 
+        } 
+    console.log(cc[x]*2)}
 
-// cardvalidation()
-
-
-let jackaloopes = [0, 0]
-let yrs = 0
-
-while (yrs < 1000){
-    for (index in jackaloopes.length){ (
-    jackaloopes[index] += 1)}
+    let total = 0
+    for (num in cc){
+        total += num}
+        console.log(total)
+        let remainder = total % 10
+    {
+        console.log(remainder)
+    } 
     
-    if (jackaloopes[index] >= 4 && jackaloopes[index] <= 8){
-        jackaloopes.append(0)}
-    
-    let (jackaloopes ==  10, jackaloopes)}
-yrs += 1 
-console.log(yrs)
+        if (newcc == remainder){
+            return true
+        } else  {
+            return false
+        }       
+   
+}
+
+cardvalidation()
