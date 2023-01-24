@@ -4,7 +4,7 @@ function getWeather(){
     navigator.geolocation.getCurrentPosition(position => {
         console.log(position.coords.latitude)
         console.log(position.coords.longitude)
-        let url = 'https://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=imperial& exclude=hourly,daily&appid=a6f0df8a96cd8ffba804f42ffdf0f855';
+        let url = 'https://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=imperial& exclude=hourly,daily&appid='+key
         
         fetch(url, {
         method: 'GET', 
