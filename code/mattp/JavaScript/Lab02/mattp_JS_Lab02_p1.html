@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather API</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
     <script src="secrets.js"> 
         <!-- This is the end of Part 1 --> 
         </script> 
@@ -15,11 +16,38 @@
         body {
             background-color: bisque;
 
+
         }
+        .weather {
+            background-color: rgb(47, 94, 79);
+            color: aliceblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 25px;
+            padding: 30px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
     
+    <div class="weather">
+        <div id="weather"></div>
+        <div id="temp"></div>
+        <div id="visibility"></div>
+        <div id="wind"></div>
+        <div id="clouds"></div>
+        <div id="humidity"></div>
+        <div id="feels_like"></div>
+        <div id="sunrise"></div>
+        <div id="datetime"></div>
+        <div id="icon"></div>
+        <div id="icon_image"></div>
+
+
+    </div>
     
     
 </body>
