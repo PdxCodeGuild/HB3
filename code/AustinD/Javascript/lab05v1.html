@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>TO DONE!</h1>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="todo_item"
+            placeholder="What's next?"
+            @keyup.enter="add_item()"
+          /><button class="btn btn-success" @click="add_item()">add</button>
+        </div>
+        <ul class="list-group">
+          <li v-for="item in todos" :key="item.id" class="list-group-item">
+            <input
+              type="checkbox"
+              name="checkbox"
+              id=""
+              @click="item_complete()"
+            />
+            {{ item.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          todos: [],
+        },
+        methods: {
+          add_item: function () {
+            const value = document.querySelector("#todo_item").value;
+            if (!value) {
+              return;
+            }
+            this.todos.push({
+              id: Date.now(),
+              title: value,
+              complete: false,
+            });
+            document.querySelector("#todo_item").value = "";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
