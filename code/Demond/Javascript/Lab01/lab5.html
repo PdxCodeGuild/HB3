@@ -6,26 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+    <link rel="stylesheet" href="Lab5.css">
 
-
-    </style>
 </head>
 
 <body>
-    <h1>test</h1>
-    <div class="granparent"> 
+    <div class="granparent">
+        <!-- You may use the src option below to plug in the three labs -->
+        <script src="Lab5.3.js">
 
-    <button id="bt">TEST</button>
-    <script src="Lab5.js.1">
+            let bt = document.querySelector('#bt');
+            bt.onclick = function () {
+                alert('hello world!');
+            }
 
-        let bt = document.querySelector('#bt');
-        bt.onclick = function () {
-        alert('hello world!');
-        }
-    </script>
+            function refresh() {
+                window.location.reload();
+            }
+        </script>
     </div>
-
+    <!-- the below code was slightly altered from https://codepen.io/diyorbek0309/pen/mdwbEve and I used as I want to liven up my Lab a little and experiment with the css-->
+    <div class="wrapper">
+        <div> <h1>Lab 5</h1></div>
+        <p></p>
+        <h1> <button id="bt" type="button" onClick="window.location.reload();"><h2> Reset Lab 5 🐟</h2></button>
+    </h1>
+    <p></p>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
 </body>
 
 </html>

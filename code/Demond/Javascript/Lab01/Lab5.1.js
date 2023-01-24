@@ -1,13 +1,10 @@
-console.log('hello world');
+console.log('Unit Converter 1');
 
 let dictionary = {'meters': 3048}
-let numberToConvert = prompt("please enter number to convert") 
+let numberToConvert = prompt("how many ft?") 
 // prompt is similar to using "input" from python
 let base = dictionary.meters
 let x = `${numberToConvert} ft is ${numberToConvert * dictionary.meters} meters`; 
 console.log(x);
 alert(x)
-// use the `` backtics as "fstrings in Java"
-
-
-// this is my second lab
+// Note To Self: use the `` backtics as "fstrings in Java" similar to fstrings in python

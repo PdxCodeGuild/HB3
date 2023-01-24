@@ -1,7 +1,7 @@
 import random #I have imported the modules I will be using for this lab
 import re
 
-def pick6(): #I have created my defintion to create a list of 6 random digits
+def pick6(): #I have created my class to create a list of 6 random digits
     results = []
     for x in range(6):
         results.append(random.randint(1,99))
@@ -10,7 +10,7 @@ def pick6(): #I have created my defintion to create a list of 6 random digits
 Winning_Numbers = [1,2,3,4,5,6,]
 Ticket = [1,2,3,4,6,6]
 
-def num_matches(Winning_Numbers, Ticket): #I have created another defintion that will tell how many matching numbers there are between two list
+def num_matches(Winning_Numbers, Ticket): #I have created another class that will tell how many matching numbers there are between two list
     matches = 0
     if Winning_Numbers[0] == Ticket[0]:
         matches += 1

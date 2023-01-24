@@ -1,9 +1,21 @@
-console.log('hello world');
+console.log('Unit Converter 2');
 
-let dictionary = {'meters': 3048}
-let numberToConvert = prompt("please enter number to convert") 
-// prompt is similar to using "input" from python
-let base = dictionary.meters
-let x = `${numberToConvert} ft is ${numberToConvert * dictionary.meters} meters`; 
-console.log(x);
-alert(x)
+//This is my prompt and will store the values for the unit converter
+let distanceToConvert = prompt("What Is The Distance? Enter a Whole Number Below ⬇️"); 
+let unitsToConvert = prompt("What Are The Units? Enter Ft or Mi or Km ⬇️");
+
+//I have used the if and else statments for the actual conversion 
+if (unitsToConvert == 'ft' || 'FT') {
+    let units = 0.3048
+    let tester = `${distanceToConvert} ${unitsToConvert} is ${distanceToConvert * units} meters`;
+   alert(`${distanceToConvert} ${unitsToConvert} is ${distanceToConvert * units} meters`);
+ } else 
+ if (unitsToConvert == 'mi' || 'MI') {
+    let units = 1609.34
+   alert(`${distanceToConvert} ${unitsToConvert} is ${distanceToConvert * units} meters`);;
+}
+ else 
+ if (unitsToConvert == 'km' || 'KM') {
+    let units = 1000
+    alert(`${distanceToConvert} ${unitsToConvert} is ${distanceToConvert * units} meters`);;
+};
