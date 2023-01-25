@@ -1,0 +1,27 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background: url("https://i.pinimg.com/originals/8f/21/47/8f214765fceff1ac2098420dec1b8851.gif");
+}
+
+.list-group {
+  list-style: none;
+}
+
+.container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
