@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="Lab_03.css" />
+</head>
+<body>
+    <div class="container"> <!-- Quote Container -->
+        <h1> <!-- Quote -->
+            <i class="fas fa-quote-left"></i>
+            <span class="quote" id="quote"></span>
+            <i class="fas fa-quote-right"></i>
+        </h1> <!-- Author -->
+        <p class="author" id="author"></p>
+        <hr/>
+        <div class="buttons">
+            <!--Button to tweet the quote -->
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+            <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+            <button class="next" onclick="getNewQuote()">Next quote</button>
+        </div>
+    </div>
+<script src=Lab_03.js></script>
+    
+</body>
+</html>
