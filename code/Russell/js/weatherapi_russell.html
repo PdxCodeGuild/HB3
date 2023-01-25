@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="secrets.js"></script>
+    <link rel="stylesheet" href="weather_api_style.css" />
     <title>Document</title>
   </head>
   <body>
-    IT'S GON' RAIN!
+    <div class="container">
+      <div class="current-info">
+        <div class="date-container">
+          <div class="time" id="time"><span id="am-pm"></span></div>
+          <div class="date" id="date"></div>
+          <div class="others" id="current-weather-items"></div>
+        </div>
+
+        <div class="place-container">
+          <div class="location" id="location"></div>
+          <div class="country" id="country"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-info">
+      <div class="today" id="current-temp"></div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"
+      integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="weather_api_script.js"></script>
+    <script src="secrets.js"></script>
   </body>
 </html>
