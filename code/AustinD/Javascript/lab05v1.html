@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <style>
+      li {
+        list-style:none;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
@@ -20,28 +26,34 @@
             @keyup.enter="add_item()"
           /><button class="btn btn-success" @click="add_item()">add</button>
         </div>
+        <h2>To Do</h2>
         <ul class="list-group">
-          <li v-for="item in todos" :key="item.id" class="list-group-item">
-            <input
-              type="checkbox"
-              name="checkbox"
-              id=""
-              @click="item_complete()"
-            />
+          <li v-for="item in todos" :key="item.id" class="list-group-item text-danger" v-if="!item.complete">
+            <input type="checkbox" name="complete" v-model="item.complete">
             {{ item.title }}
           </li>
         </ul>
+        <h2>Completed Items</h2>
+        <ul class="list-group">
+        <li v-for="item in todos" :key="item.id" class="list-group-item text-success" v-if="item.complete">
+          <input type="checkbox" name="complete" v-model="item.complete">
+          {{ item.title }}
+          </li>
+          </ul>
       </div>
     </div>
     <script>
       let app = new Vue({
         el: "#app",
         data: {
-          todos: [],
+          todos: [
+            {id: 1, title: "Groceries", complete: false}
+          ],
         },
         methods: {
           add_item: function () {
             const value = document.querySelector("#todo_item").value;
+            console.log(value)
             if (!value) {
               return;
             }
@@ -53,6 +65,11 @@
             document.querySelector("#todo_item").value = "";
           },
         },
+        api_call: function(){
+          axios({
+            methods: "push"
+          })
+        }
       });
     </script>
   </body>

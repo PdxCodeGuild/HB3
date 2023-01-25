@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body class="flex h-screen w-screen justify-center items-center">
+    <div id="app" class="container w-1/4 bg-gray-500 shadow-2xl rounded">
+        <h1 class="text-center">TO DONE!</h1>
+        <div class="input-group flex justify-center">
+          <input
+            type="text"
+            class="form-control rounded"
+            id="todo_item"
+            placeholder="What's next?"
+            @keyup.enter="add_item()"
+          /><button class="btn btn-success px-4 bg-cyan-600 rounded" @click="add_item()">add</button>
+        </div>
+        <h2 class="text-center">To Do</h2>
+        <ul class="list-group flex flex-col justify-center items-center">
+          <li v-for="item in todos" :key="item.id" class="list-group-item text-red-300" v-if="!item.complete">
+            <input type="checkbox" name="complete" v-model="item.complete">
+            {{ item.title }}
+          </li>
+        </ul>
+        <h2 class="text-center">Completed Items</h2>
+        <ul class="list-group flex flex-col justify-center items-center">
+        <li v-for="item in todos" :key="item.id" class="list-group-item text-emerald-300" v-if="item.complete">
+          <input type="checkbox" name="complete" v-model="item.complete">
+          {{ item.title }}
+          </li>
+          </ul>
+    </div>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          todos: [],
+        },
+        methods: {
+          add_item: function () {
+            const value = document.querySelector("#todo_item").value;
+            console.log(value)
+            if (!value) {
+              return;
+            }
+            this.todos.push({
+              id: Date.now(),
+              title: value,
+              complete: false,
+            });
+            document.querySelector("#todo_item").value = "";
+          },
+        },
+        api_call: function(){
+          axios({
+            methods: "push"
+          })
+        }
+      });
+    </script>
+  </body>
+</html>
