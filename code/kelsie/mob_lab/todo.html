@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Re To Do App</title>
+    <style>
+        body {
+            background-image:url('rosie-the-riveter.jpg');
+            background-size: 100%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            background-color: rgba(113, 103, 10, 0.918);
+            padding: 5px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: large;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>TO DONE!</h1>
+            <div class="input-group">
+                <input type="text" id="todo_item" class="form-control" placeholder="What's Next?"
+                    @keyup.enter="add_item()">
+                <button class="btn btn-primary" @click="add_item()">add</button>
+            </div>
+            <h2>To Do</h2>
+            <ul class="list-group">
+                <li v-for="item in todos" :key="item.id" class="list-group-item text-danger" 
+                v-if="!item.complete"> 
+                <input type="checkbox" name="complete" v-model="item.complete">
+                    {{ item.title }}</li>
+            </ul>
+
+            <h2>Completed Items</h2>
+            <ul class="list-group">
+                <li v-for="item in todos" :key="item.id" v-if="item.complete" class="list-group-item text-success">
+                    <input type="checkbox" name="complete" v-model="item.complete">
+                    {{ item.title }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                todos: [
+                    { id: 1, title: 'Groceries', complete: false },
+                    { id: 2, title: 'Laundry', complete: true },
+                    { id: 3, title: 'Feed Chickens', complete: false },
+                ]
+            },
+            methods: {
+                add_item: function () {
+                    const value = document.querySelector("#todo_item").value
+                    if (!value) {
+                        return;
+                    }
+                    this.todos.push({
+                        id: Date.now(),
+                        title: value,
+                        complete: false
+                    })
+                    document.querySelector("#todo_item").value = ""
+                }
+            },
+
+        })
+    </script>
+</body>
