@@ -37,7 +37,7 @@
                     <a class="nav-link" href="#">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Reports</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">FAQs</a>
@@ -50,10 +50,9 @@
         </header>
     </div>
 
-    <div>
+    <!-- <div>
         <button type="button" onclick="myFunction()">Test</button>
-        <!-- <button id="bt" type="button" onclick="alert('Hello World!')">Test</button> -->
-    </div>
+    </div> -->
 
     <div>
         <p>Click the button to get your coordinates and identify your location</p>
@@ -63,23 +62,25 @@
         <p id="lat_id"></p>
         <h3>Longitude</h3>
         <p id="long_id"></p>
+        
+
+    </div>
+
+    <div>
+        <p>Click the Weather Button to get your location and weather update</p>
+        <button onclick="functionAPI_call()">Weather Button</button>
+        
         <h3>Location</h3>
         <p id="location"></p>
+        <h3>Date</h3>
+        <p id="date_posting"></p>
 
     </div>
 
     <div>
-        <button onclick="functionAPI_call()">Weather Button</button>
-        <p id="weather_output"></p>
-
-    </div>
-    
-
-   
-
-    <div>
-        <img id="imgTEST" src="#" alt="">
-
+        <h3>Weather Description</h3>
+        <img id="weather_img" src="#" alt="">
+        <p id="weather_description"></p>
     </div>
     
 
