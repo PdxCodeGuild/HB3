@@ -17,7 +17,7 @@
   <body>
     <div id="app">
       <div class="container">
-        <h1>Todo List</h1>
+        <h1 class="text-light text-center m-2">Todo Lists Tracker</h1>
         <div class="input-group">
           <input
             type="text"
@@ -28,13 +28,13 @@
           <button @click="addTodo" class="btn btn-success">Add</button>
         </div>
         <div class="completed-section">
-            <h2>Pending Todos:</h2>
+            <h2 class="text-light m-2">Pending Todos:</h2>
           <ol class="list-group">
             <li
               v-for="todo in todos"
               :key="todo.id"
               v-if="!todo.complete"
-              class="text-danger"
+              class="text-danger font"
             >
               <input
                 type="checkbox"
@@ -48,20 +48,20 @@
           </ol>
         </div>
         <div class="completed-section">
-          <h2>Completed Todos:</h2>
+          <h2 class="text-light m-2">Completed Todos:</h2>
           <ol class="list-group">
             <li
               v-for="todo in todos"
               :key="todo.id"
               v-if="todo.complete"
-              class="list-group text-success"
+              class="list-group text-success font"
             >
             <div >
-              <input type="checkbox" name="complete" v-model="todo.complete" />
+              <input type="checkbox" name="complete" v-model="todo.complete" class="font" />
                   {{ todo.text }}
                   <button
                   @click="removeTodo(todo)"
-                  class="remove-button text-danger"
+                  class="button text-danger mb-3"
                   >
                   x
                 </button>
