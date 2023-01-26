@@ -4,10 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-    <script src="Java_add.js"></script>
+    <title>FORM VALIDATION</title>
 </head>
 <body>
-    
+    <p>USERNAME:</p>
+    <input type="username" id="username" />
+    <button onclick="checkUsername()">Submit</button>
+    <script type="text/javascript">
+      function checkUsername() {
+        let username = document.getElementById('username').value;
+        if (username.length < 6) {
+          alert('Username must be at least 6 characters long');
+        }
+        else {
+          alert('dang homie thats a successful username');  
+        }
+    }
+    </script>
+ 
+    <p>PASSWORD:</p>
+    <input type="password" id="password" />
+    <button onclick="checkPassword()">Submit</button>
+    <script type="text/javascript">
+    function checkPassword() {
+        let password = document.getElementById('password').value;
+        if (password.length < 8) {
+            alert('Password must be at least 8 characters long');
+        }
+        else {
+            alert('dang homie thats a successful password');  
+        }
+        
+    }
+    </script>
+ 
+    <p>FIRST & LAST NAME</p>
+    <input type="text" id="name" />
+    <button onclick="checkName()">Submit</button>
+    <script type="text/javascript">
+    function checkName() {
+        let name = document.getElementById('name').value;
+        let pattern = /^[a-zA-Z]+\s[a-zA-Z]+$/;
+        if (!name.match(pattern)) {
+            alert('Name must be in the format: First Last');
+        }
+        else {
+            alert('dang homie thats a successful name');  
+        }
+    }
+    </script>
+ 
+    <p>PHONE NUMBER:</p>
+    <input type="text" id="phone" />
+    <button onclick="checkPhone()">Submit</button>
+    <script type="text/javascript">
+    function checkPhone() {
+        let phone = document.getElementById('phone').value;
+        let pattern2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+        if (!phone.match(pattern2)) {
+          alert('Phone number must be in the format: 000-000-0000');
+        }
+        else {
+            alert('dang homie thats a successful phone number');  
+        }
+    }
+    </script>
+ 
+    <p>EMAIL ADDRESS:</p>
+    <input type="text" id="email" />
+    <button onclick="checkEmail()">Submit</button>
+    <script type="text/javascript">
+    function checkEmail() {
+        let email = document.getElementById('email').value;
+        let pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+        if (!email.match(pattern)) {
+            alert('Email must be in the format: username@mail.com');
+        }
+        else {
+            alert('dang homie thats a successful email address');  
+          }
+    }
+    </script>
+ 
 </body>
 </html>
