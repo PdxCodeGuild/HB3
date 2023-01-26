@@ -65,7 +65,8 @@ M-F 6:00 pm – 9:36 pm PT
 | 02  | [Weather API](4%20JavaScript/labs/Weather%20API.md)           |    10 Jan     |          24 Jan       |
 | 03  | (optional)[Quotes API](4%20JavaScript/labs/random_quote.md)           |    12 Jan     |          26 Jan       |
 | 04  | [Form Validation](4%20JavaScript/labs/form_validation.md)           |    16 Jan     |          30 Jan       |
-| 04  | [Mob Vue ToDo](4%20JavaScript/labs/03%20Vue%20Todo.md)           |    20 Jan     |          3 Feb       |
+| 05  | [Mob Vue ToDo](4%20JavaScript/labs/03%20Vue%20Todo.md)           |    20 Jan     |          3 Feb       |
+| 06  | [Vue Re Do](4%20JavaScript/labs/02%20Vue%20Redo.md)           |    25 Jan     |          8 Feb       |
 
 ## Getting Unstuck 
 
