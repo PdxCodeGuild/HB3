@@ -76,3 +76,14 @@ button_el.addEventListener("click", () => {
 
 // This is using innerhtml and also specifing a DIV
 
+
+let username = window.prompt('whats your name?')
+
+document.getElementById("mybutton").onclick = function(){
+console.log(username)
+}
+
+
+{/* <label>Enter your name:</label>
+<input type = "text" id= "mytext"
+<button class= "mybutton"></button> */}

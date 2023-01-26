@@ -1,8 +1,8 @@
-// input--> take input and muliply by 0.3048 
-// let distance = (prompt("what is the distance in feet?" ))
-// let meters = 0.3048*distance
-// alert(meters)
-// console.log(meters)
+
+let distance = (prompt("what is the distance in feet?" ))
+let meters = 0.3048*distance
+alert(meters)
+
 
 //Second lab
 // let cards ={ "A": 1, "2": 2,

@@ -11,15 +11,11 @@ run_bt.onclick = function() {
 
 
 
-let Converter = document.querySelector('#convert');
-let run_convert = document.querySelector('#run_convert');
-let output_convert = document.querySelector('#output_convert');
+let converter = document.querySelector('#converter');
+let run_bt = document.querySelector('#run_convert');
+let output_div = document.querySelector('#output_convert');
 run_bt.onclick = function() {
-  let name = name_input.value;
-  total;
-  output_div.innerText = 'Heres ' + name + '!';
-  
+  let name = converter.value;
+  alert(name);
+  output_div.innerText = 'You converted' + name + '!';
 }
-
-
-
