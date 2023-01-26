@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.4/axios.min.js'></script>
-
+    
 
 
 
@@ -17,15 +17,20 @@
 
     <div> 
         <h1>Current Weather</h1>
-        <input type="text" class="input">
-        <button id="btn" onclick="getLocation()">Retrieve</button>
-    </div>
-    
-        
+        <button id="btn" class="btn01" onclick="getLocation()">retrieve</button>
         <p id="weather"></p>
-        
     </div>
 
-<script src="secrets.js"></script>    
+    <div>    
+        <div class="weathericons">
+            <div class="day">Wednesday</div>
+            <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="icon" id="weathericon">
+            
+        </div>
+    
+    </div>
+
+
+<script src="weather.js"></script>    
 </body>
 </html>
