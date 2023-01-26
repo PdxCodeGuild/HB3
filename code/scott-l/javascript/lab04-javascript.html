@@ -21,9 +21,9 @@ ___________________          _-_
     Password: at least 6 characters long
     X First+Last Name: one or more letters, space, one or more letters
     X Email Address: one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters
-    Phone Number: e.g. 293-213-5555
-    Date of Birth: e.g. 2/13/2627
-    Social Security Number: e.g. 415-25-2627 -->
+    X Phone Number: e.g. 293-213-5555
+    X Date of Birth: e.g. 2/13/2627
+    X Social Security Number: e.g. 415-25-2627 -->
 
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ ___________________          _-_
         </form>
     </div>
 
-    <form>
+    <form action="" method="post">
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="first_name">First Name</label>
@@ -87,18 +87,23 @@ ___________________          _-_
                 <label for="birth_date">Date of Birth</label>
                 <input type="text" class="form-control" id="birth_date" placeholder="Birth Date MM/DD/YYYY">
             </div>
+            <div class="form-group col-md-4">
+                <label for="social_security">Date of Birth</label>
+                <input type="text" class="form-control" id="social_security" placeholder="SSN XXX-XX-XXXX">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="password" class="form-control" id="username" placeholder="Username">
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
             <input type="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
 
-
-
-
-
-
-
+        <div>
+            <button type="submit">submit</button>
+        </div>    
 
     </form>
 
