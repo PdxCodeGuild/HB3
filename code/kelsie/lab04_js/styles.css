@@ -1,0 +1,35 @@
+body {
+    background-image: url("books.jpg");
+    background-size: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    background-color:rgb(146, 129, 59, 0.882);
+    margin-bottom: 20px;
+    margin-top: 20px;;
+}
+
+form {
+    background-color: rgba(146, 129, 59, 0.882);
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    border-radius: 4px;
+    background-color: bisque;
+    margin-top: 10px;
+}

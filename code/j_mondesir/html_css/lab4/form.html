@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My burrito form</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+
+<body>
+    <section id="formheader">
+        <h1> Jean's Burrito Order form</h1>
+    </section>
+    <section id="maincontent">
+        <div id="sideleft">
+            <div>
+                <img src="burrito1.jpg" alt="">
+            </div>
+            <div>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </div>
+
+                <div>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="password" minlength="8" required>
+                </div>
+
+                <input type="submit" value="Sign in">
+
+            </div>
+        </div>
+        <div id="centercontent">
+            <div>
+                <div>
+                    <h2>Customize your Burrito</h2>
+                </div>
+                <form action="https://webhook.site/84c70734-6b0e-4bc1-8eff-c2b993fac559" method="post">
+                    <fieldset>
+                        <legend>Choose your Tortillas</legend>
+                        <div>
+                            <input type="radio" id="Choice1" name="tortillas" value="whiteflour" />
+                            <label for="Choice1">White Flour</label>
+
+                            <input type="radio" id="Choice2" name="tortillas" value="wheatflour" />
+                            <label for="Choice2">Wheat Flour</label>
+
+                            <input type="radio" id="Choice3" name="tortillas" value="spinach" />
+                            <label for="Choice3">Spinach</label>
+                            <input type="radio" id="Choice4" name="tortillas" value="corn" />
+                            <label for="Choice4">Corn</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Choose your Rice</legend>
+                        <div>
+                            <input type="radio" id="Choice5" name="rice" value="white" />
+                            <label for="Choice4">White</label>
+                            <input type="radio" id="Choice5" name="rice" value="brown" />
+                            <label for="Choice5">Brown</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Choose your Beans</legend>
+                        <div>
+                            <input type="radio" id="Choice6" name="beans" value="blackbeans" />
+                            <label for="Choice6">Black Beans</label>
+                            <input type="radio" id="Choice7" name="beans" value="Pintobeans" />
+                            <label for="Choice7">Pinto Beans</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Choose your meat</legend>
+                        <div>
+                            <input type="radio" id="Choice8" name="proteine" value="carnitas" />
+                            <label for="Choice8">Carnitas</label>
+                            <input type="radio" id="Choice9" name="proteine" value="chicken" />
+                            <label for="Choice9">Chicken</label>
+                            <input type="radio" id="Choice10" name="proteine" value="sofritas" />
+                            <label for="Choice10">Sofritas</label>
+                            <input type="radio" id="Choice11" name="proteine" value="none" />
+                            <label for="Choice11">None</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Additional Ingredients</legend>
+                        <div>
+                            <input type="checkbox" id="Choice12" name="addingr" value="cheese" />
+                            <label for="Choice12">Cheese</label>
+                            <input type="checkbox" id="Choice13" name="addingr" value="Sourcream" />
+                            <label for="Choice13">Sour Cream</label>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <button class="favorite styled" type="submit">
+                            Create Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="delivery">
+            <div>
+                <h2>Delivery Instructions</h2>
+            </div>
+            <div><input type="text"></div>
+        </div>
+    </section>
+
+</body>
+
+</html>

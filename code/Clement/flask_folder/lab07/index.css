@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Xanh+Mono&display=swap');
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+body {
+    margin: 0;
+    background-color: #91a3b0;
+    height: 100vh;
+    font-family: var(--bs-body-font-none);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    text-align: var(--bs-body-text-align);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+ 
+.navbar {
+    background-color: #414a4c;
+    height: 40px;
+}
+
+.navbar-brand img {
+    width: 40px;
+    border-radius: 50%; 
+} 
+
+.about-img {
+    width: 60%;
+    border-radius: 25%;
+    border: solid#c4c3d0 8px;
+    margin-left: 45px;
+    margin-top: 35px;
+}
+
+.work-exp {
+    align-items: center;
+    color: rgba(1, 11, 20, 0.725);
+    font-size: 30px;
+    font-family: 'Raleway' sans-serif;
+}
+
+.text {
+    font-family: 'Xanh Mono' sans-serif;
+    
+}
+
+.card-title{
+    border-radius: 5px;
+    align-items: center;
+}
+.text span {
+    font-family: 'Xanh Mono' sans-serif;
+    color: red;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: red;
+}
+.phone-num {
+    margin-left: 20px;
+    font-size: larger;
+
+}
+.color {
+    font-size: 20px;
+    font-family: 'oswald' sans-serif;
+    color: red;
+}
+.reached{
+    color: red;
+    font-size: 30px;
+    margin-right: 2px; 
+    font-family: 'Xanh Mono' sans-serif;
+}
+.reachout {
+    font-size: 30px;
+}
+
+.form-label{
+    color: rgb(255, 255, 240);
+    font-size: 20px;
+    font-family: 'Raleway' sans-serif;
+}
+/* ----------Footer Section------------------ */
+.footer {
+    height: 40px;
+    background-color: #414a4c;
+    margin-top: 25px;
+    align-items: center;
+    display: flex;
+}
+.footer img {
+    height: 6vh;
+    border-radius: 50%;
+    margin: 0px;
+    padding: 0px;
+}
+.create span {
+    color: red;
+   
+}
+
+.footer a {
+    color: aliceblue;
+    text-decoration: none;
+    
+}
+
+/* ----------Card Section------------------ */
+
+.card-body .card-text {
+    font-size: 15.5px;
+}
+
+/* --------------ICONS-------------- */
+
+.portfolio-icon {
+    font-size: 4rem;
+}
+
+.card {
+    background: #bcd4e6;
+     
+}
+
+.card:hover:before, .card:hover:after {
+    opacity: 0;
+}
+
+.card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #00ffff, #ffff31 43%, #0000ff);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+}
+  
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 10);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #00ffff, #3c67e3 43%, #3f00ff);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+  
+.btn-block {
+    padding: 2px 50px 2px 50px;
+   
+}
+p .display-5{
+    font-size: 30px;
+}
+.education{
+    font-size: 15px;
+    margin-bottom: 2px;
+
+}

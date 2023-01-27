@@ -1,0 +1,47 @@
+body{
+    /* background-image: url("zona_fresca_always_fresh.jpg") */
+    /* background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fburritos-square-grunge-stamp-vector-id1021159086%3Fk%3D6%26m%3D1021159086%26s%3D612x612%26w%3D0%26h%3DcIBlcS0WpQf4bCYhQIgmeX3qrohna0QnPGcigPC0HeI%3D&f=1&nofb=1&ipt=b6bad462939570e9160c97b96b1c24575ae5306551af7e9eabcd3e3f5da813d2&ipo=images") */
+    /* background-image: linear-gradient(
+        to bottom,
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 0, 255, 0.5)
+        ), url("./css/zona_fresca_always_fresh.jpg");   */
+ 
+    
+}
+
+.section_container {
+    background-color: black;
+}
+.category_container {
+    display:flex;
+    flex-direction:column; 
+    color:rgb(241, 241, 248);
+    /* border:1px solid black; */
+}
+
+.item_container {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    /* border:1px solid black; */
+    text-align:center;
+    padding:5px;
+    /* background-color:cadetblue; */
+}
+.item_container_orderBox {
+    /* background-color:rgb(46, 46, 38);  */
+    background-color:rgb(31, 177, 145); 
+    padding:10px; 
+    margin:5px;
+}
+.image-tortilla-wheat{
+    height: 150px;
+    width: 150px;
+    background: burlywood;
+    src: ./css/tortilla-wheat.png;
+}
+
+.category_title_container {
+    background-color: bisque;
+}

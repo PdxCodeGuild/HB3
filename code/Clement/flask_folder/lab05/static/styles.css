@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Anybody:wght@300&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Anybody", cursive sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+}
+.Cipher {
+  padding-top: 35px;
+}
+.container-fluid {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  overflow: hidden;
+  background: #1c1c1c;
+  border-radius: 10px;
+}
+
+.box {
+  position: relative;
+  width: 650px;
+  height: 480px;
+  overflow: hidden;
+  background: #1c1c1c;
+  border-radius: 10px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 650px;
+  height: 480px;
+  animation: animate 6s linear infinite;
+  background: linear-gradient(0deg, transparent, #00ffff, #45f3ff);
+  transform-origin: bottom right;
+}
+
+.container-fluid::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 750px;
+  height: 500px;
+  animation: animate 6s linear infinite;
+  background: linear-gradient(0deg, transparent, #00ffff, #45f3ff);
+  transform-origin: bottom right;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 650px;
+    height: 480px;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+    background: linear-gradient(0deg, transparent, #00ffff, #45f3ff);
+  }
+  
+  .container-fluid::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+    background: linear-gradient(0deg, transparent, #00ffff, #45f3ff);
+  }
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+
+    }
+}
+
+
+.rotc{
+    position: relative;
+    z-index: 10;
+    inset: 2px;
+    border-radius: 25px;
+    background: #28292d;
+    width: 100vw;
+    height: 475px;
+    margin: 0px 2px 0px 2px;
+      
+}
+
+.rott{
+
+    position: relative;
+    z-index: 10;
+    inset: 2px;
+    border-radius: 25px;
+    background: #28292d;
+    /* width: 742px; */
+    height: 100vh; 
+    margin-left: 2px;
+
+}
+
+
+@media only screen and (min-width: 780px) {
+    .container-fluid::after {
+        width: 750px;
+        height: 500px;
+    }    
+    .rotc{
+
+        width: 640px;
+        height: 475px;
+       
+    }
+
+    .rott{
+
+        width: 742px;
+        height: 495px; 
+    
+    }
+    
+}

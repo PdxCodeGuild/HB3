@@ -1,0 +1,87 @@
+#header{
+    min-height: 50px;
+    height: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: large;
+    background-color: rgb(255, 186, 84);
+}
+
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+#main-div{
+    width: 100%;
+    min-height: 700px;
+}
+
+
+
+#main-div .box1{
+    width:20%;
+    min-height:700px;
+    float:left;
+    
+}
+
+
+#main-div .box2{
+    width:60%;
+    min-height:700px;
+    float:left;
+    text-align: center;
+    
+}
+
+
+#main-div .box3{
+    width:20%;
+    min-height:700px;
+    float:left;
+    background-color: rgb(255, 186, 49);
+}
+
+#h1{
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+#h2{
+    font-size: 30px;
+    text-align: center;
+    background-color: orangered;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: underline;
+
+}
+
+#Menu{
+    padding: 10px;
+    margin-top: 30px;
+    background-image: url();
+    background-size: contain;  
+    
+       
+}
+
+#Order{
+    text-align: center;
+    margin-bottom: 300px;
+    text-decoration: underline;
+}
+
+#Delivery{
+    text-align: center;
+    text-decoration: underline;
+
+}
+

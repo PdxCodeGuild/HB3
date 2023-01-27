@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello World!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="lab04_kelsie.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Little Library of Literature Card Request</h1>
+    <div class="container">
+        <form name="myForm" id="myForm" onsubmit="verify()">
+            <div class="form_field">
+                <lable for="username">Username: </lable>
+                <input type="text" name="username" placeholder="BelleBibliophile">
+            </div>
+            <div class="form_field">
+                <lable for="password">Password: </lable>
+                <input type="text" name="password" placeholder="BookThemedPassword178">
+            </div>
+            <div class="form_field">
+                <lable for="firstlast">First and Last Name: </lable>
+                <input type="text" name="firstlast" placeholder="Belle Dubois">
+            </div>
+            <div class="form_field">
+                <lable for="email">Email: </lable>
+                <input type="text" name="email" placeholder="belle@email.com">
+            </div>
+            <div class="form_field">
+                <lable for="tel1">Phone Number: </lable>
+                <input type="text" name="phone" placeholder="###-###-####" size="10" />
+            </div>
+            <div class="form_field">
+                <lable for="dob">Date of Birth: </lable>
+                <input type="text" name="dob" placeholder="##-##-####">
+            </div>
+            <div class="form_field">
+                <lable for="ssn">Social Security Number: </lable>
+                <input type="text" name="ssn" placeholder="###-##-####" size="10">
+            </div>
+            <input type="submit" value="Get My Library Card" onsubmit="verify()">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

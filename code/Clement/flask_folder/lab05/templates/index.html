@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flask Redo Labs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+      <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="row rotc">
+        <h1 class="Cipher text-center text-light">Rot Cipher</h1>
+        <div class="col-12 col-md-6 offset-md-3">
+          <form action="{{ url_for('rot_cipher') }}" method="POST">
+            <div class="mb-3">
+              <label for="user-input" class="form-label text-light"
+                >Enter Your Text:</label
+              >
+              <input
+                type="text"
+                name="user-input"
+                class="form-control"
+                id="user-input"
+                placeholder="Type a string, you want to encodes"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="rotation" class="form-label text-light"
+                >Amount of rotation:</label
+              >
+              <input
+                type="number"
+                name="rotation"
+                class="form-control"
+                id="rotation"
+                value="1"
+              />
+              <div class="form-text text-light">
+                Enter a number of rotations for your string
+              </div>
+            </div>
+            <button type="Submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

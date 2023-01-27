@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    background-image: linear-gradient(rgb(76, 112, 76), rgb(101, 98, 98));
+}
+
+
+
+.header {
+    font-size: 40px;
+    margin-left: 130px;
+    padding: 30px;
+    text-align: right;
+    background:  rgb(76, 76, 76);
+    width: 90%;
+}
+
+
+.navbar {
+    margin: 20px;
+    margin-left: 150px;
+    background-color: #818181;
+    width: 85%;
+}
+
+
+.navbar a {
+    color:rgb(23, 23, 23);
+    font-size: 30px;
+}
+
+
+.navbar a:hover {
+    color: #f1f1f1;
+  }
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 100px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(25, 32, 25); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+      
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+      
+ 
+.sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 120px;
+}
+
+
+.card {
+    background-color: rgb(112, 109, 106);
+    padding: 20px;
+    margin: 20px;
+}
+
+
+footer {
+    background-color: rgb(76, 76, 76);
+    height: 80px;
+    display: flex;
+    margin-left: 150px;
+    padding: 20px;
+    text-align: right;
+    
+}
+  
+footer a {
+    color: black;
+    padding: 8px 8px 8px 32px;
+    display: block;
+}
+
+
+footer a:hover {
+    color: #f1f1f1;
+    }
+
+
+

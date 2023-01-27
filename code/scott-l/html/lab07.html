@@ -1,0 +1,345 @@
+<!-- '''
+    *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+         Project: Lab 7 - Personal Portfolio
+         Author: Scott Lefgren
+         Email: scojlefg@gmail.com
+         Date: January 9, 2023
+   ___________________          _-_
+   \==============_=_/ ____.---'---`---.____
+               \_ \    \----._________.----/
+                 \ \   /  /    `-_-'
+             __,--`.`-'..'-_
+            /____          ||
+                 `--.____,-'
+   
+    *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+   ''' -->
+
+<!-- Lab 7: Personal Portfolio -->
+<!-- A personal portfolio website helps market yourself to 
+   prospective employers and can demonstrate your skills 
+   as a front-end developer. GitHub lets you host a static 
+   website for free, and since we're hosting our code there 
+   already, it's a great place for a personal portfolio site. 
+   Follow this tutorial to create your own site. Here's a 
+   thorough guide for developing a portfolio site. You can
+    also get a custom domain from a number of domain registrars 
+    3(Google, Hover, etc) and then follow this tutorial for 
+    setting it up with GitHub Pages. -->
+<!-- 
+    Info to Include
+
+    Name
+    Profile image
+    Short bio
+    Skills
+    Work history -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 07 Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/lab07_index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="./js/lab07.js"></script>
+</head>
+
+<body style="background-color:azure;">
+
+    <div style="display:flexbox; text-align: center;" class="header">
+        <img src="./figs/Lab07_background1.JPG" alt="HTML5">
+        <h1><b>Scott Lefgren</b> </h1>
+    </div>
+
+    <nav class="topnav" id="myTopnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <!-- #site-nav -->
+
+    <section id="about">
+        <div style="text-align:center;">
+            <h2> <u>ABOUT</u> </h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_FullStack.PNG" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Beginner Full Stack Developer</b> </h3>
+                    <p>Training to become a full stack developer skills with python, HTML, CSS and Javascript.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_EE.PNG" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Electrical Engineer</b> </h3>
+                    <p>Bachelors and Masters degrees in Electrical Engineering with 15 
+                        years work experience in Department of Defense airplane avionics and spaceborne 
+                        payload sensor projects
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_learner.jpg" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Motivated Learner</b> </h3>
+                    <p>Demonstrated ability to assimilate to new ideas, concepts,
+                        methods, and technologies</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_FTE.jpg" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Flight Test Engineer</b> </h3>
+                    <p>Experience, knowledge, skills, and abilities in the field
+                        of flight testing, certified test conductor.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_Military.JPG" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Military Veteran</b> </h3>
+                    <p>Air Force veteran with over 15 years of proven military
+                        experience as research and developmental engineer.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_PM.png" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Project Manager</b> </h3>
+                    <p>Eight years experience of systems engineering/architecture
+                        developmental and technical project management in support of Department of Defense programs.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_team.png" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Team Builder</b> </h3>
+                    <p>Adept at leading teams in a dynamic, fast-paced environment</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_RF.png" alt="HTML5" height="100px" width="100px">
+                <div class="text">
+                    <h3> <b>Radio Frequency Engineering</b> </h3>
+                    <p> Experience with radar systems,
+                        radar signal processing,modeling and simulation, software defined radios, radio frequency
+                        payload systems design and testing
+                        design.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_DSP.PNG" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Digital Signal Processing Engineer</b> </h3>
+                    <p>Experience developing algorithms for signal processing applications in the field of radio
+                        frequency systems.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                <img src="./figs/lab07_Ehobby.PNG" alt="HTML5" width="100px" height="100px">
+                <div class="text">
+                    <h3> <b>Electronic Hobbyist</b> </h3>
+                    <p>Description</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="skills">
+        <div style="display:flex; justify-content:center; flex-direction:column; background-color: azure;">
+            <div class="row">
+
+                <div style="display:flex; justify-content:center; ">
+                    <!-- <img src="https://dummyimage.com/250x250/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                    <img src="./figs/HeadShot.JPG" alt="HTML5" width="250px" height="250px">
+
+                </div>
+                <div style="display:flex; justify-content:center; flex-direction:column">
+                    <div>
+                        <h4 style="text-align:center;">Who is this Guy?</h4>
+                    </div>
+                    <div>
+                        <p style="text-align:center">I'm an Electrical Engineer Senior Design Specialist
+                        in Beavercreek OH.  I have serious passions for computers, electronics, software define
+                        radios, programming Matlab, and python to create dynamic effects pertitent 
+                    for understanding engineering data analytics regarding radio systems.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="text-align:center;">
+                <div style="text-align:center;">
+                    <h2> <u>SKILLS</u> </h2>
+                </div>
+                <div class="col-12 col-s-12 menu">
+                    <ul>
+                        <li>Software Defined Radios</li>
+                        <li>Digital Signal Processing</li>
+                        <li>MatLab</li>
+                        <li>Python</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>InkScape</li>
+                    </ul>
+                </div>
+
+                <!-- <div class="col-6 col-s-9">
+                    <div class="container_skills">
+                        <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5" class="image_skills">
+                        <div class="text_skills">
+                            Hello World
+                        </div>
+                    </div> 
+
+                  
+                    <div class="container">
+                        <img src="https://dummyimage.com/400x70/faa8fa/b2b7ff.png&text=BLANK" alt="Avatar"
+                            class="image_slide">
+                        <div class="overlay">
+                            <div class="text_slide">Hello World</div>
+                        </div>
+                    </div>
+
+                    <div class="overlay">
+                        <h1>The Skills Description</h1>
+                        <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in
+                            two
+                            parts,
+                            the old town and the modern city.</p>
+                    </div> 
+                </div> -->
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div style="display:flex; justify-content:center; flex-direction:column; background-color: bisque;">
+            <div>
+                <h1 style="text-align:center">Portfolio</h1>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                    <img src="./figs/lab07_project_LED-cube.PNG" alt="HTML5" width="100px" height="100px">
+                    <div class="text">
+                        <h3> <b>LED Cube 8x8x8</b> </h3>
+                        <p>Built from  scratch a 8x8x8 3-D Light Emitting Diode (LED) project soldering
+                            over 150+ LEDs and integrating with Integrated Circuit switch board with 
+                            programmable arduino microcontroller.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                    <img src="./figs/Lab07_project_kraken.PNG" alt="HTML5" width="100px" height="100px">
+                    <div class="text">
+                        <h3> <b>5 Channel Coherent SDR reciever</b> </h3>
+                        <p>Programmed and setup 5 channel software define radio reciever for detection
+                            of locating unknown radio noise interference transmiters for use within
+                            HAM radio direction finding experiments.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5"> -->
+                    <img src="./figs/Lab07_RasPi_SDR-server.PNG" alt="HTML5" width="100px" height="100px">
+                    <div class="text">
+                        <h3> <b>Raspberry Pi SDR remote server</b> </h3>
+                        <p>Setup and installed a remote wireless Raspberry Pi Software Defined Radio
+                            remote server designed to connect remotely positioned RTL-SDR reciever 
+                            over a network connection LAN allowing improved remote antenna location setup.</p>
+                    </div>
+                </div>
+                <!-- <div class="card">
+                    <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5">
+                    <div class="text">
+                        <h3> <b>Project</b> </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing
+                            elit, urna consequat felis vehicula class ultricies mollis
+                            dictumst, aenean non a in donec nulla.</p>
+                    </div>
+                </div> -->
+                <!-- <div class="card">
+                    <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5">
+                    <div class="text">
+                        <h3> <b>Project</b> </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing
+                            elit, urna consequat felis vehicula class ultricies mollis
+                            dictumst, aenean non a in donec nulla.</p>
+                    </div>
+                </div> -->
+                <!-- <div class="card">
+                    <img src="https://dummyimage.com/100x100/faa8fa/b2b7ff.png&text=BLANK" alt="HTML5">
+                    <div class="text">
+                        <h3> <b>Project</b> </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing
+                            elit, urna consequat felis vehicula class ultricies mollis
+                            dictumst, aenean non a in donec nulla.</p>
+                    </div>
+                </div> -->
+            </div>
+
+
+
+    </section>
+
+    <section id="resume">
+        <div class="row" style>
+            <div style="display:flex; justify-content:center; flex-direction:column; background-color:wheat;">
+                <div>
+                    <h4 style="text-align:center;"> <b>RESUME</b></h4>
+                </div>
+                <!-- <div>
+                    <p style="text-align:center">Description (Smaller Words)</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <div class="footer">
+        <section id="contact">
+            <div class="row" style="background-color:black;color:white;">
+
+                <div style="display:flex; justify-content:center; flex-direction:column">
+                    <div>
+                        <h4 id="resume" style="text-align:center;"> <b><u>CONTACT</u></b> </h4>
+                    </div>
+                    <!-- <div>
+                        <p style="text-align:center">Description (Smaller Words different color)</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- <p>Resize the browser window to see how the content respond to the resizing.</p> -->
+    </div>
+</body>
+
+</html>

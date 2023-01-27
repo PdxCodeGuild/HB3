@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rock, Paper, Scissors</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.9.3/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <container class="flex h-screen w-screen justify-center items-center">
+        <div id="app" class="container w-1/4 bg-gray-500 shadow-2xl rounded-full">
+            <div class="flex justify-center font-mono">
+                <button class="bg-black text-white p-2 rounded-lg m-2" v-on:click="play('rock')">Rock</button>
+                <button class="bg-black text-white p-2 rounded-lg m-2" v-on:click="play('paper')">Paper</button>
+                <button class="bg-black text-white p-2 rounded-lg m-2" v-on:click="play('scissors')">Scissors</button>
+            </div>
+            <div class="text-center mt-4 font-mono">
+                <p>{{result}}</p>
+                <p>You chose: {{playerChoice}}</p>
+                <p>Computer chose: {{computerChoice.name}}</p>
+            </div>
+        </div>
+    </container>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    playerChoice: '',
+                    computerChoice: {},
+                    result: '',
+                    choices: [
+                        {name: 'rock', win: 'scissors'},
+                        {name: 'paper', win: 'rock'},
+                        {name: 'scissors', win: 'paper'}
+                    ]
+                },
+                methods: {
+                    play: function(choice) {
+                        this.playerChoice = choice;
+                        this.computerChoice = this.choices[Math.floor(Math.random() * this.choices.length)];
+                        if (this.playerChoice === this.computerChoice.name) {
+                            this.result = "It's a draw!";
+                        } else if (this.computerChoice.win === this.playerChoice) {
+                            this.result = "You lose!";
+                        } else {
+                            this.result = "You win!";
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

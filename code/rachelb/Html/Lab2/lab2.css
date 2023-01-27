@@ -1,0 +1,42 @@
+.bg-image {
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    }
+
+    /*In order for the page color to fully cover set a width and height*/
+.color-overlay {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,.4);
+}
+
+a.navbar-brand{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-weight: 700; font-size: 50px;
+    color:red
+}
+
+.navbar-nav{
+    text-align: right;
+}
+
+.landing-text{
+    color:white
+}
+
+.padding{
+    margin: 100px 0;
+    padding: 100px 0;
+    color:white;    
+}
+
+.padding img{
+    width: 100%;
+}
+
+.padding{
+    background-color: black;
+}
+

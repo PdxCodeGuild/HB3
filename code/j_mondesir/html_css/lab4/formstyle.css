@@ -1,0 +1,117 @@
+#formheader {
+    background-color: rgb(9, 9, 10);
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    display: block;
+    ;
+
+
+}
+
+#formheader h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    height: 70px;
+    color: orangered;
+    border-bottom: solid;
+    border-color: white;
+
+
+}
+
+#maincontent {
+    background-color: aqua;
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+
+}
+
+#sideleft {
+    width: 20%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+#sideleft img {
+    width: 95%;
+    height: 300px;
+    display: flex;
+    padding: 10px;
+}
+
+
+#sideleft label {
+    width: 35%;
+    display: block;
+    font: 0.9rem 'Fira Sans', sans-serif;
+    margin-left: 30px;
+    padding-left: 10px;
+}
+
+#sideleft input {
+    margin-left: 30px;
+    padding-left: 10px;
+}
+
+input[type='submit'],
+label {
+    margin-top: 1rem;
+}
+
+#centercontent {
+    width: 50%;
+    height: 600px;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+
+}
+
+#centercontent div {
+    width: 90%;
+}
+
+#centercontent h2 {
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#delivery {
+    width: 30%;
+    height: 600px;
+    padding: 20px;
+}
+
+#delivery input {
+    width: 90%;
+    height: 300px;
+}
+
+#delivery h2 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: red;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+}
