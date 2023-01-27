@@ -59,10 +59,12 @@ text-decoration: none;
     margin-left: 2%;
     color: #b1aebb;
     text-align: left;
+    z-index: 1;
 }
 
 h1 {
     margin-top: 30px;
+    background-color: black;
 }
 
 .big-text {
@@ -81,6 +83,7 @@ h1 {
     margin-bottom: 5%;
     color: #b1aebb;
     text-align: left;
+    z-index: 1;
 }
 
 .subheader {
@@ -92,4 +95,27 @@ h1 {
     line-height: 140%;
     font-weight: 400;
     letter-spacing: -1px;
+}
+
+.third {
+    position: relative;
+    width: 600px;
+    height: 100px;
+    background-color: #5f43b2;
+    z-index: 2;
+    margin-left: 50vw;
+    border-radius: 25px;
+    padding-left: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-weight: 300;
+}
+
+span {
+    float: right;
+    padding-right: 20px;
+    margin-left: 10px;
+    background-color: transparent;
+    font-size: medium;
+    font-weight: 100;
 }
