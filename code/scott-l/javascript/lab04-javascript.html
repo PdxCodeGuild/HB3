@@ -45,7 +45,9 @@ ___________________          _-_
 
 <body>
 
-    <div>
+    <h1>Form</h1>
+    <h3>Enter Information and the form will verify if you entered the information correctly</h3>
+    <!-- <div>
         <p>Click the button</p>
         <button onclick="myFunction()"> Button</button>
 
@@ -59,46 +61,56 @@ ___________________          _-_
             <input type="text" name="input_text" placeholder="enter some text" />
             <button type="submit">submit</button>
         </form>
-    </div>
+    </div> -->
 
-    <form action="" method="post">
+    <form action="" id="info_form" method="post" name="inputFormParams">
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+                <p id="first_name_check" style="color:red"><b></b></p>
             </div>
             <div class="form-group col-md-6">
                 <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+                <p id="last_name_check" style="color:red"><b></b></p>
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="inputEmail">
+            <p id="email_check" style="color:red"><b></b></p>
         </div>
 
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="phone_number">Phone Number</label>
-                <input type="text" class="form-control" id="phone_number" placeholder="Phone Number XXX-XXX-XXXX">
+                <input type="tel" class="form-control" id="phone_number" placeholder="Phone Number XXX-XXX-XXXX" name="phone_number">
+                <p id="phone_number_check" style="color:red"><b></b></p>
             </div>
             <div class="form-group col-md-4">
                 <label for="birth_date">Date of Birth</label>
-                <input type="text" class="form-control" id="birth_date" placeholder="Birth Date MM/DD/YYYY">
+                <input type="text" class="form-control" id="birth_date" placeholder="Birth Date MM/DD/YYYY" name="birth_date">
+                <p id="birth_date_check" style="color:red"><b></b></p>
             </div>
             <div class="form-group col-md-4">
-                <label for="social_security">Date of Birth</label>
-                <input type="text" class="form-control" id="social_security" placeholder="SSN XXX-XX-XXXX">
+                <label for="social_security">Social Security</label>
+                <input type="text" class="form-control" id="social_security" placeholder="SSN XXX-XX-XXXX" name="social_security">
+                <p id="social_security_check" style="color:red"><b></b></p>
             </div>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="password" class="form-control" id="username" placeholder="Username">
+            <input type="username" class="form-control" id="username" placeholder="Username" name="username">
+            <label for="username">Username must be at least 6 characters long</label>
+            <p id="username_check" style="color:red"><b></b></p>
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword">
+            <label for="inputPassword">Password must be at least 6 characters long</label>
+            <p id="password_check" style="color:red"><b></b></p>
         </div>
 
         <div>
