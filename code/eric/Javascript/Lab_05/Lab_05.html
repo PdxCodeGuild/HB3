@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Mob To Do List</title>
+</head>
+
+<style>
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+/* TITLE */
+h1 { 
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 100px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.true {
+    text-decoration: line-through;
+    color: red;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background on mouse hover */
+ul li:hover {
+    background: #ddd;
+}
+
+
+</style>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>TO DO!</h1>
+            <div class="input-group">
+                <input type="text" class="form-control" id="todo_item" placeholder="What's next?"
+                    @keyup.enter="add_item()" /><button class="btn btn-success" @click="add_item()">add</button>
+            </div>
+            <ul class="list-group">
+                <li v-for="item in todos" :key="item.id" class="list-group-item">
+                    <input type="checkbox" name="checkbox" id="" @click="item_complete(item.title)" />
+                    <div :class="item.complete">
+                    {{ item.title }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                todos: [],
+                class_toggle: "",
+            },
+            methods: {
+                add_item: function () {
+                    const value = document.querySelector("#todo_item").value;
+                    if (!value) {
+                        return;
+                    }
+                    this.todos.push({
+                        id: Date.now(),
+                        title: value,
+                        complete: false,
+                    });
+                    document.querySelector("#todo_item").value = "";
+                },
+                // toggle strike-through
+                item_complete: function (title) {
+                    for (todo of this.todos) {
+                        if (todo.title == title) {
+                         if (todo.complete == "true") {
+                            todo.complete = false 
+                         } 
+                         else {todo.complete = "true"}
+                        }
+                    }
+                },
+            }
+        });
+    </script>
+</body>
+</html>
