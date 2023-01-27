@@ -10,6 +10,7 @@
 var x = document.getElementById("weather");
 
 
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -32,26 +33,25 @@ function showPosition(position) {
         appid: 'bb6f4f2dcd78f1a75094e8c20c2a2b10',
     
     }
-    }).then((response) => {
-      console.log(response)
+    }).then(response => {
+        document.getElementById("weathericon").src=`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      console.log(response.data)
     })
 
    
-
     let unix_timestamp = 1674704816
     let datetime = new Date(unix_timestamp*10)
     console.log(datetime)
+    
 }
+// console.log(data)
+
 
 // const displaytempature = temperature =>{
-// setInnerText('weather', temperature.weather[0].main)
+// setInnerText('weathericon', data.weather[0].icon)
 // console.log(temperature)
 
 // }
-
-// const url = `http://openweathermap.org/img/wn/${temperature.weather[0].icon}@2x.png`
-// const icon = document.getElementById("weathericon")
-// icon.setAttribute('src',url)
 
 
 
