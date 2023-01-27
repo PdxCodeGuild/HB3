@@ -36,12 +36,16 @@ let validateFormFunction = function(event)  {
 
 
     let phoneNumber = document.inputFormParams.phone_number.value
+    const pattern = /^\d{3}?[- ]?\d{3}[- ]?\d{4}$/;
+    // const pattern = /[0-9]e/;
     console.log(document.inputFormParams.phone_number.value)
-    if (phoneNumber.length < 12) {
+    if (pattern.test(phoneNumber)) {
         // alert("Must provide a valid Phone number")
-        document.getElementById('phone_number_check').innerHTML="Must provide a valid Phone Number"
+        document.getElementById('phone_number_check').innerHTML="Working Fine"
     } else {
-        document.getElementById('phone_number_check').innerHTML=""
+        document.getElementById('phone_number_check').innerHTML="Must provide a valid Phone Number"
+        //NOTE: how do I clear the form for this ?
+        
     }
 
     let birthDate=document.inputFormParams.birth_date.value
