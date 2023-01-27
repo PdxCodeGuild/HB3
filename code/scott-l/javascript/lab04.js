@@ -9,16 +9,20 @@ let validateFormFunction = function(event)  {
 
     let firstName=document.inputFormParams.first_name.value
     console.log(document.inputFormParams.first_name.value)
-    if (firstName.length < 2) {
+    if (firstName.length == "") {
         // alert("First Name must be entered")
-        document.getElementById('first_name_check').innerHTML="First Name must be entered"
+        document.getElementById('first_name_check').innerHTML="First Name must be filled out"
+    } else {
+        document.getElementById('first_name_check').innerHTML=""
     }
 
     let lastName=document.inputFormParams.last_name.value
     console.log(document.inputFormParams.last_name.value)
-    if (lastName.length < 2) {
+    if (lastName.length == "") {
         // alert("Last Name must be entered")
-        document.getElementById('last_name_check').innerHTML="Last Name must be entered"
+        document.getElementById('last_name_check').innerHTML="Last Name must be filled out"
+    } else {
+        document.getElementById('last_name_check').innerHTML=""
     }
     
     let inputEmail=document.inputFormParams.inputEmail.value
@@ -26,6 +30,8 @@ let validateFormFunction = function(event)  {
     if (inputEmail.length < 2) {
         // alert("Must provide a valid email with @")
         document.getElementById('email_check').innerHTML="Must provide a valid email with @"
+    } else {
+        document.getElementById('email_check').innerHTML=""
     }
 
 
@@ -34,20 +40,26 @@ let validateFormFunction = function(event)  {
     if (phoneNumber.length < 12) {
         // alert("Must provide a valid Phone number")
         document.getElementById('phone_number_check').innerHTML="Must provide a valid Phone Number"
+    } else {
+        document.getElementById('phone_number_check').innerHTML=""
     }
 
     let birthDate=document.inputFormParams.birth_date.value
     console.log(document.inputFormParams.birth_date.value)
-    if (birthDate.length < 9) {
+    if (birthDate.length < 10) {
         // alert("Must provide a valid birth date")
         document.getElementById('birth_date_check').innerHTML="Birthdate not entered in correct format"
+    } else {
+        document.getElementById('birth_date_check').innerHTML=""
     }
 
     let socialSecurity=document.inputFormParams.social_security.value
     console.log(document.inputFormParams.social_security.value)
-    if (socialSecurity.length < 11) {
+    if (socialSecurity.length < 12) {
         // alert("Must provide a valid social security")
         document.getElementById('social_security_check').innerHTML="Social Security number not entered in correct format"
+    } else {
+        document.getElementById('social_security_check').innerHTML=""
     }
 
     let userName=document.inputFormParams.username.value
@@ -55,6 +67,8 @@ let validateFormFunction = function(event)  {
     if (userName.length < 6) {
         // alert("Must provide a valid username")
         document.getElementById('username_check').innerHTML="Username must be at least 6 characters long"
+    } else {
+        document.getElementById('username_check').innerHTML=""
     }
 
     let inputPassword=document.inputFormParams.inputPassword.value
@@ -62,6 +76,8 @@ let validateFormFunction = function(event)  {
     if (inputPassword.length < 6) {
         // alert("Must provide a valid password")
         document.getElementById('password_check').innerHTML="Password must be at least 6 characters long"
+    } else {
+        document.getElementById('password_check').innerHTML=""
     }
 
     let test = 'Hello World'

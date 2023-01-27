@@ -86,29 +86,41 @@ ___________________          _-_
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="phone_number">Phone Number</label>
-                <input type="tel" class="form-control" id="phone_number" placeholder="Phone Number XXX-XXX-XXXX" name="phone_number">
+                <input type="tel" 
+                class="form-control" 
+                id="phone_number" 
+                placeholder="XXX-XXX-XXXX" 
+                name="phone_number" 
+                size="12" 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                 <p id="phone_number_check" style="color:red"><b></b></p>
             </div>
             <div class="form-group col-md-4">
                 <label for="birth_date">Date of Birth</label>
-                <input type="text" class="form-control" id="birth_date" placeholder="Birth Date MM/DD/YYYY" name="birth_date">
+                <input type="date" class="form-control" id="birth_date" placeholder="MM/DD/YYYY" name="birth_date" size="10">
                 <p id="birth_date_check" style="color:red"><b></b></p>
             </div>
             <div class="form-group col-md-4">
                 <label for="social_security">Social Security</label>
-                <input type="text" class="form-control" id="social_security" placeholder="SSN XXX-XX-XXXX" name="social_security">
+                <input type="text" 
+                class="form-control" 
+                id="social_security" 
+                placeholder="XXX-XX-XXXX" 
+                name="social_security" 
+                size="12"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}">
                 <p id="social_security_check" style="color:red"><b></b></p>
             </div>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="username" class="form-control" id="username" placeholder="Username" name="username">
+            <input type="username" class="form-control" id="username" placeholder="Username" name="username" required>
             <label for="username">Username must be at least 6 characters long</label>
             <p id="username_check" style="color:red"><b></b></p>
         </div>
         <div class="form-group">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword" required>
             <label for="inputPassword">Password must be at least 6 characters long</label>
             <p id="password_check" style="color:red"><b></b></p>
         </div>
