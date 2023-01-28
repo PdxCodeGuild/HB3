@@ -1,0 +1,122 @@
+<!-- '''
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+      Project: Lab 5 - Mob Vue ToDo
+      Author: Scott Lefgren
+      Email: scojlefg@gmail.com
+      Date: January 27, 2023
+___________________          _-_
+\==============_=_/ ____.---'---`---.____
+            \_ \    \----._________.----/
+              \ \   /  /    `-_-'
+          __,--`.`-'..'-_
+         /____          ||
+              `--.____,-'
+
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+''' -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" 
+        crossorigin="anonymous"
+        />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <title>To Done!</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        h2 {
+            font-size: large;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="container">
+            <h1>To Done!</h1>
+            <div class="input-group">
+                <input type="text" 
+                class="form-control" 
+                id="todo_item" 
+                placeholder="What's next?"
+                @keyup.enter="add_item()" />
+
+                <button class="btn btn-primary" @click="add_item()">add</button>
+            </div>
+            <h2>To Do</h2>
+            <ul class="list-group">
+                <li v-for="item in todos" :key="item.id" class="list-group-item text-danger" 
+                v-if="!item.complete"> 
+                <input type="checkbox" name="complete" v-model="item.complete">
+                {{ item.title }}
+            </li>
+            </ul>
+
+            <h2>Completed Items</h2>
+            <ul class="list-group">
+                <li v-for="item in todos" :key="item.id" 
+                v-if='item.complete' class="list-group-item text-success" >
+                    <input type="checkbox" name="complete" id="" @click="item_complete()" v-model="item.complete">
+                    {{item.title}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                todos: []
+            },
+
+            methods: {
+                add_item: function () {
+                    const value = document.querySelector("#todo_item").value;
+                    console.log(value)
+                    if (!value) {
+                        return
+                    }
+                    this.todos.push({
+                        id: Date.now(),
+                        title: value,
+                        complete: false
+                    })
+                    document.querySelector("#todo_item").value = ''
+                },
+                item_complete: function () {
+                    this.todos.complete = !this.todos.complete
+                    console.log(this.todos.complete)
+                }
+            },
+        });
+    </script>
+
+</body>
+
+</html>
