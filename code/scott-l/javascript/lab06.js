@@ -1,0 +1,1 @@
+//lab06.js file
