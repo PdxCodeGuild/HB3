@@ -13,7 +13,7 @@ let validateFormFunction = function(event)  {
         // alert("First Name must be entered")
         document.getElementById('first_name_check').innerHTML="First Name must be filled out"
     } else {
-        document.getElementById('first_name_check').innerHTML=""
+        document.getElementById('first_name_check').innerHTML="Working Fine"
     }
 
     let lastName=document.inputFormParams.last_name.value
@@ -22,16 +22,17 @@ let validateFormFunction = function(event)  {
         // alert("Last Name must be entered")
         document.getElementById('last_name_check').innerHTML="Last Name must be filled out"
     } else {
-        document.getElementById('last_name_check').innerHTML=""
+        document.getElementById('last_name_check').innerHTML="Working Fine"
     }
     
     let inputEmail=document.inputFormParams.inputEmail.value
+    const emailPattern = /\S+@\S+\.\S+/;
     console.log(document.inputFormParams.inputEmail.value)
-    if (inputEmail.length < 2) {
+    if (emailPattern.test(inputEmail)) {
         // alert("Must provide a valid email with @")
-        document.getElementById('email_check').innerHTML="Must provide a valid email with @"
+        document.getElementById('email_check').innerHTML="Working Fine"
     } else {
-        document.getElementById('email_check').innerHTML=""
+        document.getElementById('email_check').innerHTML="Must provide a valid email"
     }
 
 
@@ -49,21 +50,23 @@ let validateFormFunction = function(event)  {
     }
 
     let birthDate=document.inputFormParams.birth_date.value
+    const birthdayPattern = /^\d{2}?[/]?\d{2}[/]?\d{4}$/;
     console.log(document.inputFormParams.birth_date.value)
-    if (birthDate.length < 10) {
+    if (birthdayPattern.test(birthDate)) {
         // alert("Must provide a valid birth date")
-        document.getElementById('birth_date_check').innerHTML="Birthdate not entered in correct format"
+        document.getElementById('birth_date_check').innerHTML="Working Fine"
     } else {
-        document.getElementById('birth_date_check').innerHTML=""
+        document.getElementById('birth_date_check').innerHTML="Birthdate not entered in correct format"
     }
 
     let socialSecurity=document.inputFormParams.social_security.value
+    const socialSecurityPattern = /^\d{3}?[- ]?\d{2}[- ]?\d{4}$/;
     console.log(document.inputFormParams.social_security.value)
-    if (socialSecurity.length < 12) {
+    if (socialSecurityPattern.test(socialSecurity)) {
         // alert("Must provide a valid social security")
-        document.getElementById('social_security_check').innerHTML="Social Security number not entered in correct format"
+        document.getElementById('social_security_check').innerHTML="Working Fine"
     } else {
-        document.getElementById('social_security_check').innerHTML=""
+        document.getElementById('social_security_check').innerHTML="Social Security number not entered correctly"
     }
 
     let userName=document.inputFormParams.username.value
@@ -72,7 +75,7 @@ let validateFormFunction = function(event)  {
         // alert("Must provide a valid username")
         document.getElementById('username_check').innerHTML="Username must be at least 6 characters long"
     } else {
-        document.getElementById('username_check').innerHTML=""
+        document.getElementById('username_check').innerHTML="Working Fine"
     }
 
     let inputPassword=document.inputFormParams.inputPassword.value
@@ -81,7 +84,7 @@ let validateFormFunction = function(event)  {
         // alert("Must provide a valid password")
         document.getElementById('password_check').innerHTML="Password must be at least 6 characters long"
     } else {
-        document.getElementById('password_check').innerHTML=""
+        document.getElementById('password_check').innerHTML="Working Fine"
     }
 
     let test = 'Hello World'
