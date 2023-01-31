@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab03.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="" id="form">
+            <h1>Form Validation</h1>
+            <div class="input">
+                <label for="username">Username</label>
+                <input id="username" placeholder="username" type="text" required>
+                <div class="error"></div>
+            </div>
+            <br>
+            <div class="input">
+                <label for="password">Password</label>
+                <input id="password" placeholder="password" type="password" required>
+                <div class="error"></div>
+            </div>
+            <br>
+            <div class="input">
+                <label for="email">Email</label>
+                <input id="email" placeholder="email" type="text">
+                <div class="error"></div>
+            </div>
+            <br>
+            <div class="input">
+                <label for="DOB">DOB</label>
+                <input id="DOB" placeholder="mm/dd/yyyy" type="text">
+                <div class="error"></div>
+            </div>
+
+            <button type="submit" id="Submit">Submit</button>
+        </form>
+
+    </div>
+    
+
+    <script src="lab03.js"></script>
+</body>
+</html>
