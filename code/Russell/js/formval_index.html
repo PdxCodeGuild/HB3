@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration</title>
+    <title>FormVal_Lab</title>
   </head>
   <body>
-    <form
-      name="registration"
-      action=""
-      method="post"
-      onsubmit="return validateForm()"
-    >
-      <input type="text" placeholder="username" name="username" />
-      <input type="submit" value="Submit" />
+    <form name="registration" onsubmit="return formVal()" method="post">
+      <p>Username: <input type="text" name="username" /></p>
+      <br />
+      <p>Password: <input type="text" name="password" /></p>
+      <br />
+      <p>First Name + Last Name: <input type="text" name="flname" /></p>
+      <br />
+      <p>Email Address: <input type="text" name="email" /></p>
+      <br />
+      <p>Phone Number: <input type="text" name="phnum" /></p>
+      <br />
+      <p>DoB: <input type="text" name="dob" /></p>
+      <br />
+      <p>SS Number: <input type="text" name="ssnum" /></p>
+      <br />
+      <input type="submit" value="send" name="Submit" />
     </form>
-    <script>
-      src = "validation.js";
-    </script>
+    <script
+      type="text/javascript"
+      src="/code/Russell/js/validation.js"
+    ></script>
   </body>
 </html>
