@@ -1,71 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VUE REDO</title>
-</head>
-<body>
-    <form>
-        <label for="distance">Input the distance you are converting:</label>
-        <input type="text" id="distance" name="distance"><br>
-        
-        <label for="unit_input">What are the input units (feet, miles, meters, kilometers, yards, inches):</label>
-        <input type="text" id="unit_input" name="unit_input"><br>
-        
-        <label for="unit_output">What are the output units (feet, miles, meters, kilometers, yards, inches):</label>
-        <input type="text" id="unit_output" name="unit_output"><br>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lab 06: Vue ReDo</title>
+        <link rel="icon" type="image/x-icon" href="PeacockFavicon.png">
+    </head>
+    <body>
+        <div id="app">
+            {{ message }}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!'
+                },
+                methods: {
 
-        <input type="button" value="Convert" onclick="converter()">
-      </form>
- 
-      <div id="alert"></div>  
- 
-      <script>
-        // Unit Converter Lab in Javascript
- 
-        let unit_in = {
-            "feet": .3048,
-            "miles": 1609.34,
-            "meters": 1,
-            "kilometers": 1000,
-            "yards": 0.9144,
-            "inches": 0.0254,
-        }
- 
-        let unit_out = {
-            "feet": 1/.3048,
-            "miles": 1/1609.34,
-            "meters": 1,
-            "kilometers": 1/1000,
-            "yards": 1/.9144,
-            "inches": 1/.0254,
-        }
- 
-        
- 
-        function converter() {
- 
+                },
+                created: function() {
+
+                }
+            })
+        </script>
+
+        <form>
+            <label for="distance">Input the distance you are converting:</label>
+            <input type="text" id="distance" name="distance"><br>
             
-            let distance = document.getElementById('distance').value;
-            let units_in = document.getElementById('unit_input').value;
-            let units_out = document.getElementById('unit_output').value;
+            <label for="unit_input">What are the input units (feet, miles, meters, kilometers, yards, inches):</label>
+            <input type="text" id="unit_input" name="unit_input"><br>
             
-            
-            let input_switch = unit_in[units_in];
-            let output_switch = unit_out[units_out];
- 
-            
-            let input_conversion = distance * input_switch;
-            let final_conversion = input_conversion * output_switch;
- 
-            document.getElementById("alert").innerHTML = `${distance} ${units_in} is ${final_conversion} ${units_out}`;
-            
-        }
- 
-    </script>
- 
+            <label for="unit_output">What are the output units (feet, miles, meters, kilometers, yards, inches):</label>
+            <input type="text" id="unit_output" name="unit_output"><br>
     
-</body>
+            <input type="button" value="Convert" onclick="converter()">
+          </form>
+     
+          <div id="alert"></div>  
+     
+          <script>
+            // Unit Converter Lab in Javascript
+     
+            let unit_in = {
+                "feet": .3048,
+                "miles": 1609.34,
+                "meters": 1,
+                "kilometers": 1000,
+                "yards": 0.9144,
+                "inches": 0.0254,
+            }
+     
+            let unit_out = {
+                "feet": 1/.3048,
+                "miles": 1/1609.34,
+                "meters": 1,
+                "kilometers": 1/1000,
+                "yards": 1/.9144,
+                "inches": 1/.0254,
+            }
+     
+            
+     
+            function converter() {
+     
+                
+                let distance = document.getElementById('distance').value;
+                let units_in = document.getElementById('unit_input').value;
+                let units_out = document.getElementById('unit_output').value;
+                
+                
+                let input_switch = unit_in[units_in];
+                let output_switch = unit_out[units_out];
+     
+                
+                let input_conversion = distance * input_switch;
+                let final_conversion = input_conversion * output_switch;
+     
+                document.getElementById("alert").innerHTML = `${distance} ${units_in} is ${final_conversion} ${units_out}`;
+                
+            }
+     
+        </script>
+    </body>
 </html>
