@@ -36,13 +36,40 @@ ___________________          _-_
 
 <body>
 
-
     <div id="app">
         <span>{{ message }}</span>
         <input type="text" v-model="message" />
         <button v-on:click="sayHello">click</button>
+        <img v-bind:src="image_url" />
 
-        <img v-bind:src="image_url"/>
+        <div class="container">
+            <h1> Rock Paper Scissors</h1>
+            <div class="input-group">
+                <input type="text"
+                class="form-control"
+                id="Game_input"
+                @keyup.enter="Button1()"/>
+                <button class="btn btn-primary" @click="Button1()">add</button>
+            </div>
+            <p>Round 1 - Choose one of the following:</p>
+            <input type="radio" id="firstSelect_Rock">
+            <label for="Rock">Rock</label><br>
+            <input type="radio" id="firstSelect_Paper">
+            <label for="Paper">Paper</label><br>
+            <input type="radio" id="firstSelect_Scissors">
+            <label for="Scissors">Scissors</label><br>
+            <button v-on:click="Button1">Submit</button>
+        </div>
+
+        <div class="container">
+            <input type="text">
+            <button v-on:click="Button2">click</button>
+        </div>
+
+        <div class="container">
+            <input type="text">
+            <button v-on:click="Button3">click</button>
+        </div>
 
     </div>
 
