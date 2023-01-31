@@ -30,8 +30,10 @@ let app = new Vue({
         message1: 'Rock',
         message2: 'Paper',
         message3: 'Scissors',
-        image_url: 'https://placekitten.com/200/200'
-    },
+        image_url: 'https://placekitten.com/200/200',
+        game_inputs: []
+
+        },
 
     methods: {
         sayHello: function() {
@@ -39,6 +41,18 @@ let app = new Vue({
         },
         Button1: function() {
             console.log(this.message1)
+            const user_input = document.querySelector("#game_input").value;
+            console.log(user_input)
+            if (!user_input) {
+                return
+            }
+            this.game_inputs.push({
+                id: Date.now(),
+                title: user_input,
+                complete: false
+            })
+            console.log(this.game_inputs)
+
         },
         Button2: function() {
             console.log(this.message2)
