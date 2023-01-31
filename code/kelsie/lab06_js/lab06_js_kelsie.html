@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <style>
+        body {
+            background-image: url('rockpaperscissors.jpg');
+            background-size: 100%;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgb(168, 158, 115);
+            width: fit-content;
+            margin: auto;
+            padding: 10px;
+            border: solid black 3px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Let's Play Rock, Paper, Scissors, Lizard, Spock!</h1>
+    <div class="container">
+
+
+        <div id="app">
+            <button @click="rockChosen" @click="">Rock</button>
+            <button @click="paperChosen" @click="">Paper</button>
+            <button @click="scissorsChosen" @click="">Scissors</button>
+            <button @click="lizardChosen" @click="">Lizard</button>
+            <button @click="spockChosen">Spock</button>
+            <p>The Computer chose:</p>
+            <h3> {{ comp_choice }}</h3>
+            <p>You chose:</p>
+            <h3> {{ player_choice }}</h3>
+            <h2>{{ message }}</h2>
+            <template v-if="again = again">
+                <p>Would you like to play again?</p>
+                <button @click="reSet">Yes</button><button @click="goodBye">No</button> 
+            </template>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                again: false,
+                choices: [
+                    'Rock',
+                    'Paper',
+                    'Scissors',
+                    'Lizard',
+                    'Spock',
+                ],
+
+                messages: [
+                    "It's a Tie!",
+                    "You Win!",
+                    "You Lose!"
+                ],
+
+                comp_choice: "",
+                player_choice: "",
+                message: "",
+                again: false,
+                
+            },
+
+            methods: {
+                rockChosen: function () {
+                    var choice_index = Math.floor(Math.random() * this.choices.length);
+                    console.log(choice_index);
+                    this.comp_choice = this.choices[choice_index];
+                    console.log(this.comp_choice);
+                    this.player_choice = this.choices[0];
+                    console.log(this.player_choice);
+
+                    if (this.comp_choice == "Rock") {
+                        this.message = this.messages[0];
+                        this.again = true;
+                    }
+                    else if (this.comp_choice == "Lizard" || this.comp_choice == "Scissors") {
+                        this.message = this.messages[1];
+                        this.again = true;
+                    }
+                    else {
+                        this.message = this.messages[2];
+                        this.again = true;
+                    }
+                },
+
+                paperChosen: function () {
+                    var choice_index = Math.floor(Math.random() * this.choices.length);
+                    console.log(choice_index);
+                    this.comp_choice = this.choices[choice_index];
+                    console.log(this.comp_choice);
+                    this.player_choice = this.choices[1];
+                    console.log(this.player_choice);
+
+                    if (this.comp_choice == "Paper") {
+                        this.message = this.messages[0];
+                        this.again = true;
+                    }
+                    else if (this.comp_choice == "Rock" || this.comp_choice == "Spock") {
+                        this.message = this.messages[1];
+                        this.again = true;
+                    }
+                    else {
+                        this.message = this.messages[2];
+                        this.again = true;
+                    }
+                },
+
+                scissorsChosen: function () {
+                    var choice_index = Math.floor(Math.random() * this.choices.length);
+                    console.log(choice_index);
+                    this.comp_choice = this.choices[choice_index];
+                    console.log(this.comp_choice);
+                    this.player_choice = this.choices[2];
+                    console.log(this.player_choice);
+
+                    if (this.comp_choice == "Scissors") {
+                        this.message = this.messages[0];
+                        this.again = true;
+                    }
+                    else if (this.comp_choice == "Paper" || this.comp_choice == "Lizard") {
+                        this.message = this.messages[1];
+                        this.again = true;
+                    }
+                    else {
+                        this.message = this.messages[2];
+                        this.again = true;
+                    }
+                },
+
+                lizardChosen: function () {
+                    var choice_index = Math.floor(Math.random() * this.choices.length);
+                    console.log(choice_index);
+                    this.comp_choice = this.choices[choice_index];
+                    console.log(this.comp_choice);
+                    this.player_choice = this.choices[3];
+                    console.log(this.player_choice);
+
+                    if (this.comp_choice == "Lizard") {
+                        this.message = this.messages[0];
+                        this.again = true;
+                    }
+                    else if (this.comp_choice == "Paper" || this.comp_choice == "Spock") {
+                        this.message = this.messages[1];
+                        this.again = true;
+                    }
+                    else {
+                        this.message = this.messages[2];
+                        this.again = true;
+                    }
+                },
+
+                spockChosen: function () {
+                    var choice_index = Math.floor(Math.random() * this.choices.length);
+                    console.log(choice_index);
+                    this.comp_choice = this.choices[choice_index];
+                    console.log(this.comp_choice);
+                    this.player_choice = this.choices[4];
+                    console.log(this.player_choice);
+
+                    if (this.comp_choice == "Spock") {
+                        this.message = this.messages[0];
+                        this.again = true;
+                    }
+                    else if (this.comp_choice == "Scissors" || this.comp_choice == "Rock") {
+                        this.message = this.messages[1];
+                        this.again = true;
+                    }
+                    else {
+                        this.message = this.messages[2];
+                        this.again = true;
+                    }
+                },
+
+                reSet: function () {
+                    this.comp_choice = "",
+                    this.player_choice = "",
+                    this.message = ""
+                    this.again = false
+                },
+
+                goodBye: function () {
+                    alert("Goodbye!");
+                }
+
+
+            },
+        });
+    </script>
+</body>
+
+</html>
