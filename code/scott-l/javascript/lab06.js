@@ -40,8 +40,8 @@ let app = new Vue({
             console.log(this.message)
         },
         Button1: function() {
-            console.log(this.message1)
-            const user_input = document.querySelector("#game_input").value;
+            // console.log(this.message1)
+            let user_input = document.querySelector("#game_input").value;
             console.log(user_input)
             if (!user_input) {
                 return
@@ -49,14 +49,15 @@ let app = new Vue({
             this.game_inputs.push({
                 id: Date.now(),
                 title: user_input,
-                complete: false
+                complete: true
             })
             console.log(this.game_inputs)
+            document.querySelector("#game_input").value = ""
 
         },
         games_complete: function(){
             this.game_inputs.complete = !this.game_inputs.complete
-            console.log(game_inputs.complete)
+            console.log(game_inputs.title)
         },
 
         Button2: function() {

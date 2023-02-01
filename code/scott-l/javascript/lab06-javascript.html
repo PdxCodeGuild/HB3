@@ -37,32 +37,40 @@ ___________________          _-_
 <body>
 
     <div id="app">
-        <span>{{ message }}</span>
+        <!-- <span>{{ message }}</span>
         <input type="text" v-model="message" />
         <button v-on:click="sayHello">click</button>
-        <img v-bind:src="image_url" />
+        <img v-bind:src="image_url" /> -->
 
         <div class="container">
             <h1> Rock Paper Scissors</h1>
             <div class="input-group">
-                <input type="text" class="form-control" id="game_input" placeholder="Enter Rock, Paper, or Scissor"
-                    @keyup.enter="Button1()" />
-                <button class="btn btn-primary" @click="Button1()">add</button>
+                <input type="text"
+                 class="form-control"
+                 id="game_input"
+                 placeholder="Enter Rock, Paper, or Scissor"
+                 @keyup.enter="Button1()" />
+
+
+                 
+                <button class="btn btn-primary" @click="Button1()">Play</button>
             </div>
 
             <h2>Games Played</h2>
             <ul class="list-group">
-                <li v-for="item in game_inputs" :key="item.id" v-if='item.complete'
+                <li v-for="item in game_inputs" :key="item.id" 
                     class="list-group-item text-success">
-                    <input type="checkbox" name="complete" id="" @click="games_complete()" v-model="item.complete">
-                    {{ item.title}}
+                    <!-- <input type="text" 
+                    name="Games Played" 
+                    id="" @click="games_complete()"> -->
+                    {{item.title}}
                 </li>
 
             </ul>
 
 
 
-            <p>Round 1 - Choose one of the following:</p>
+            <!-- <p>Round 1 - Choose one of the following:</p>
             <input type="radio" id="firstSelect_Rock">
             <label for="Rock">Rock</label><br>
             <input type="radio" id="firstSelect_Paper">
@@ -80,7 +88,7 @@ ___________________          _-_
         <div class="container">
             <input type="text">
             <button v-on:click="Button3">click</button>
-        </div>
+        </div> -->
 
     </div>
 
