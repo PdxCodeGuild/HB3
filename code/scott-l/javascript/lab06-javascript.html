@@ -45,26 +45,23 @@ ___________________          _-_
         <div class="container">
             <h1> Rock Paper Scissors</h1>
             <div class="input-group">
-                <input type="text"
-                class="form-control"
-                id="game_input"
-                placeholder="Enter Rock, Paper, or Scissor"
-                @keyup.enter="Button1()"/>
+                <input type="text" class="form-control" id="game_input" placeholder="Enter Rock, Paper, or Scissor"
+                    @keyup.enter="Button1()" />
                 <button class="btn btn-primary" @click="Button1()">add</button>
             </div>
 
             <h2>Games Played</h2>
             <ul class="list-group">
-                <li v-for="item in game_inputs" :key="item.id" 
-                v-if='item.complete'
-                class="list-group-item text-success">
-
+                <li v-for="item in game_inputs" :key="item.id" v-if='item.complete'
+                    class="list-group-item text-success">
+                    <input type="checkbox" name="complete" id="" @click="games_complete()" v-model="item.complete">
+                    {{ item.title}}
                 </li>
 
             </ul>
 
 
-           
+
             <p>Round 1 - Choose one of the following:</p>
             <input type="radio" id="firstSelect_Rock">
             <label for="Rock">Rock</label><br>

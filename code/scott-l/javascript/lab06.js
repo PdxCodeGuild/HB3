@@ -54,6 +54,11 @@ let app = new Vue({
             console.log(this.game_inputs)
 
         },
+        games_complete: function(){
+            this.game_inputs.complete = !this.game_inputs.complete
+            console.log(game_inputs.complete)
+        },
+
         Button2: function() {
             console.log(this.message2)
         },
