@@ -1,49 +1,51 @@
 const form = document.querySelector("form")
-const submit= document.querySelector("#btn")
-console.log(form)
-
+const username = document.getElementById("username")
+const password = document.getElementById("password")
+const email = document.getElementById("email")
+const phone = document.getElementById("phone")
+const dob = document.getElementById("dob")
+const ssn = document.getElementById("ssn")
 const email_re= /(\w+[@]\w+\.com)/
 const phone_re= /(\d{3}-\d{3}-\d{4})/
-
-
-
+const dob_re= /(\d{2}\/\d{2}\/\d{4})/
+const ssn_re = /(\d{3}-\d{2}-\d{4})/
 const errormessage = document.getElementById("errormessage")
 
-submit.addEventListener("click", function() {
+form.addEventListener("submit", e => {
+    e.preventDefault();
     const errors= [];
 
-    
-    const phone = document.form.phone.value
-    console.log(phone)
-    // const username = document.getElementById("username")
-    // const password = document.getElementById("password")
-    // const email = document.getElementById("email")
-    // console.log(email)
-    
-    // if (password.value.length < 6){
-    //     errors.push("password must be at least 6 characters long")
-    // }
+    if (password.value.length < 6){
+        errors.push("password must be at least 6 characters long")
+        console.log(password.value)
+    }
+    if (username.value.length < 6){
+        errors.push("Username must be at least 6 characters long")
+        console.log(username.value)
+        console.log(email.value)
+    }
+    if (!email.value.match(email_re)){
+        errors.push("Format name@email.com")        
+    }
 
-    // if (username.value.length < 6){
-    //     errors.push("Username must be at least 6 characters long")
-    // }
+    if (!phone.value.match(phone_re)){
+        errors.push("Invalid phonenumber")        
+    }
+
+    if (!dob.value.match(dob_re)){
+        errors.push("Format mm/dd/yyyy")        
+    }
+
+    if (!ssn.value.match(ssn_re)){
+        errors.push("Invalid SSN")        
+    }
+
     
-    // if (!email.match(email_re)){
-    //     errors.push("Format name@email.com")        
-    // }
-
-    // if (!phone.match(phone_re)){
-    //     errors.push("Invalid format")        
-    // }
-
-   
     if(errors.length > 0){
-        // e.preventDefault();
         errormessage.toggleAttribute('hidden');
         errormessage.innerHTML = errors.join(' , ');
-
     }
     
-    return false
+    console.log(errormessage)
+    
 })
-
