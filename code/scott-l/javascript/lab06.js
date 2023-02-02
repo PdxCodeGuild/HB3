@@ -20,7 +20,7 @@
 
 // NOTE: Do not use index positions during the lab to target any values
 // """
-// #-----------------------------------------------------------------------#
+// #-------------------------------------------------------------------------#
 
 
 let app = new Vue({
@@ -31,7 +31,9 @@ let app = new Vue({
         message2: 'Paper',
         message3: 'Scissors',
         image_url: 'https://placekitten.com/200/200',
-        game_inputs: []
+        game_inputs: [],
+        options: ["Rock", "Paper", "Scissors"],
+        computer_choose_options: []
 
         },
 
@@ -46,17 +48,29 @@ let app = new Vue({
             if (!user_input) {
                 return
             }
+
+            //Insert Game Logic Here
+
+            // Computer will randomly choose rock, paper, or scissors to initialize a variable
+            let numberChoice = Math.floor(Math.random()*3);
+            console.log(numberChoice)
+
+
             this.game_inputs.push({
                 id: Date.now(),
                 title: user_input,
-                complete: true
+                computer_choice: options[numberChoice],
+                winner: 1//enter here   
             })
             console.log(this.game_inputs)
             document.querySelector("#game_input").value = ""
 
+
+
+
         },
         games_complete: function(){
-            this.game_inputs.complete = !this.game_inputs.complete
+            
             console.log(game_inputs.title)
         },
 

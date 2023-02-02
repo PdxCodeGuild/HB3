@@ -45,14 +45,18 @@ ___________________          _-_
         <div class="container">
             <h1> Rock Paper Scissors</h1>
             <div class="input-group">
-                <input type="text"
+                <!-- <input type="text"
                  class="form-control"
                  id="game_input"
                  placeholder="Enter Rock, Paper, or Scissor"
-                 @keyup.enter="Button1()" />
+                 @keyup.enter="Button1()" /> -->
 
+                <select name="" id="game_input">
+                    <option value="Rock">Rock</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Scissors">Scissors</option>
+                </select>
 
-                 
                 <button class="btn btn-primary" @click="Button1()">Play</button>
             </div>
 
@@ -63,7 +67,7 @@ ___________________          _-_
                     <!-- <input type="text" 
                     name="Games Played" 
                     id="" @click="games_complete()"> -->
-                    {{item.title}}
+                    {{item.title}} {{item.computer_choice}}
                 </li>
 
             </ul>
