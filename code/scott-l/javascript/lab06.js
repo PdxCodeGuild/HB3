@@ -49,7 +49,7 @@ let app = new Vue({
                 return
             }
 
-            //Insert Game Logic Here
+            //Insert Game Logic Here -- More Here
 
             // Computer will randomly choose rock, paper, or scissors to initialize a variable
             let numberChoice = Math.floor(Math.random()*3);
