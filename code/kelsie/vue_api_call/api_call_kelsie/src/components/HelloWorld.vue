@@ -2,42 +2,46 @@
 defineProps({
   msg: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="hello">
+    Hello World
+    <button @click="fetchData">Click Me!</button>
   </div>
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
   }
+  methods: {
+    getData() {
+      let request = new XMLHttpRequest();
+      request.open("GET", "https://api.nasa.gov/planetary/apod?api_key=p8hRjmprXgS5dFGTD2HMmCEiMq1rAXcBCzCaqhLM");
+      request.send();
+      request.onload = () => {
+      if (request.status === 200) {
+        let Message = (JSON.parse(request.response));
+        this.msg = Message;
+        
+    } else {
+        return ('error')
+    }
+    }
+  }
+};
+</script>
+
+<style scoped>
+button {
+	padding: 20px 60px;
+	font-size: 18px;
 }
 </style>
+    

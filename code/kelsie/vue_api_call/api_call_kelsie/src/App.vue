@@ -1,28 +1,40 @@
-<script>
-import ToDoItem from "./components/ToDoItem.vue";
-
-
-export default {
-  name: "app",
-  components: {
-    ToDoItem,
-  },
-};
-
-
-</script>
-
 <template>
-  <div id="app">
-    <h1>To-Do List</h1>
-    <ul>
-      <li>
-        <to-do-item label=" My ToDo Item" :done="true"></to-do-item>
-        <span>{{message}}</span>
-      </li>
-    </ul>
+  <div>
+    <div v-for="post in posts" v-bind:key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      posts: [],
+    };
+  },
+
+  methods: {
+    async getData() {
+      try {
+        let response = await fetch(
+          "http://jsonplaceholder.typicode.com/posts"
+        );
+        this.posts = await response.json;;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  created() {
+    this.getData();
+  },
+};
+</script>
+
+
+
 
 <style scoped>
 header {
