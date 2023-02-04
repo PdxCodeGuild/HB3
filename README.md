@@ -68,6 +68,11 @@ M-F 6:00 pm – 9:36 pm PT
 | 05  | [Mob Vue ToDo](4%20JavaScript/labs/03%20Vue%20Todo.md)           |    20 Jan     |          3 Feb       |
 | 06  | [Vue Re Do](4%20JavaScript/labs/02%20Vue%20Redo.md)           |    25 Jan     |          8 Feb       |
 
+## Django
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| --- | [Grocery list] (3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
+
 ## Getting Unstuck 
 
 - Write pseudocode in English
