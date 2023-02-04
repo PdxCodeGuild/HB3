@@ -71,7 +71,7 @@ M-F 6:00 pm – 9:36 pm PT
 ## Django
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
-| --- | [Grocery list](3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
+| 01 | [Grocery list](3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
 
 ## Getting Unstuck 
 
