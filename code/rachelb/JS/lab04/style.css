@@ -1,6 +1,12 @@
 *{
     font-family: 'Bebas Neue', sans-serif;
-    background-color: bisque;
+}
+
+body{
+    background-image: url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
 
 li{
@@ -16,15 +22,22 @@ h1{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    width: 300px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(116, 115, 115, 0.172);
+    z-index: 10;
+    border-radius: 20px;
+    border: 2px solid rgba(171, 216, 218, 0.7);
+    backdrop-filter: blur(25px);
+    box-shadow: -15px 17px rgba(10 10 10 0 .5);
+  
 }
 
 
 
 .btn {
     color: black;
-    background-color: rgb(152, 181, 155);
+    background-color: rgb(152, 181, 177);
     border-radius: 8px;
     outline: success;
     position: relative;
@@ -34,7 +47,7 @@ h1{
 .btn:hover{
     color:aliceblue; 
     letter-spacing: 0.08em;
-    background: rgb(69, 93, 53);
+    background: rgb(53, 88, 93);
 
     
 }
@@ -44,3 +57,4 @@ h1{
     border-radius: 15px;
     margin-right: 10px;
 }
+
