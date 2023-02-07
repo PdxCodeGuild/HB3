@@ -45,6 +45,7 @@ let app = new Vue({
             // console.log(this.message1)
             let user_input = document.querySelector("#game_input").value;
             console.log(user_input)
+            
             if (!user_input) {
                 return
             }
@@ -59,7 +60,7 @@ let app = new Vue({
             this.game_inputs.push({
                 id: Date.now(),
                 title: user_input,
-                computer_choice: options[numberChoice],
+                computer_choice: this.options[numberChoice],
                 winner: 1//enter here   
             })
             console.log(this.game_inputs)
