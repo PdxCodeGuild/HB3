@@ -62,12 +62,21 @@ ___________________          _-_
 
             <h2>Games Played</h2>
             <ul class="list-group">
-                <li v-for="item in game_inputs" :key="item.id" 
+                <li v-for="results in game_inputs" :key="results.id" 
                     class="list-group-item text-success">
                     <!-- <input type="text" 
                     name="Games Played" 
                     id="" @click="games_complete()"> -->
-                    {{item.title}} {{item.computer_choice}}
+                    <div>
+                        Player = {{results.human_results}} 
+                    </div>
+                    <div>
+                        Computer = {{results.computer_choice_results}}
+                    </div>
+                    <div>
+                        Winner = {{results.winner_results}}
+                    </div>
+                    
                 </li>
 
             </ul>
