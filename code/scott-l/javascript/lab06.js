@@ -26,22 +26,16 @@
 let app = new Vue({
     el: '#app',
     data: {
-        message: 'hello world!',
         message1: 'Rock',
         message2: 'Paper',
         message3: 'Scissors',
-        image_url: 'https://placekitten.com/200/200',
         game_inputs: [],
         options: ["Rock", "Paper", "Scissors"],
         computer_choose_options: [],
-        winner: "",
-
         },
 
     methods: {
-        sayHello: function() {
-            console.log(this.message)
-        },
+        
         Button1: function() {
             // console.log(this.message1)
             let user_input = document.querySelector("#game_input").value;
@@ -50,8 +44,6 @@ let app = new Vue({
             if (!user_input) {
                 return
             }
-
-            //Insert Game Logic Here -- More Here
 
             // Computer will randomly choose rock, paper, or scissors to initialize a variable
             let numberChoice = Math.floor(Math.random()*3);
@@ -118,23 +110,8 @@ let app = new Vue({
             document.querySelector("#game_input").value = ""
             
         },
-
-        
-        games_complete: function(){
-            
-            console.log(game_inputs.title)
-        },
-
-        Button2: function() {
-            console.log(this.message2)
-        },
-        Button3: function() {
-            console.log(this.message3)
-        }
+ 
     },
     
-    created: function() {
-        console.log(this.message)
-    }
 })
 
