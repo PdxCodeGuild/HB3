@@ -6,6 +6,7 @@ from django.urls import reverse
 # Create your models here.
 class GroceryItem(models.Model):
     itemDescription = models.CharField(max_length=500)
-    createdDate = models.DateField()
-    completedDate = models.DateField()
-    completed = models.BooleanField()
+    completed = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.itemDescription
