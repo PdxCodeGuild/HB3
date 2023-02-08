@@ -3,86 +3,121 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lab 06: Vue ReDo</title>
-        <link rel="icon" type="image/x-icon" href="PeacockFavicon.png">
-    </head>
-    <body>
-        <div id="app">
-            {{ message }}
-        </div>
+        <title>VUE Lab 06: Unit Converter</title>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <style>
+        body {
+            background-color: beige;
+            background-size: cover;
+            text-align: center;
+        }
+ 
+        .box {
+            background-color: rgb(107, 167, 147);
+            width: fit-content;
+            margin: auto;
+            padding: 10%;
+            border-style: double; 
+            border-radius: 30px;  
+        }
+ 
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: wavy;
+            outline: none;
+            color: #fff;
+            background-color: #963e1b;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px rgb(126, 126, 126);
+            }
+ 
+            .button:hover {background-color: #cc1919}
+ 
+            .button:active {
+            background-color: #cc1919;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+ 
+    </style>
+</head>
+ 
+<body>
+    <h1>VUE: Unit Converter</h1>
+    <div class="box">
+ 
+        <div id="app">
+            <h3>What is the Distance</h3>
+            
+                <input type="text" v-model="distance"/>
+            <br><br>
+        
+ 
+            <h3>Select Starting Units</h3>
+            <select name="units_in" v-model="in_selected">
+                <option v-for="(value, property) in unit_in" :value="value" >{{property}}</option>
+            </select> 
+               
+            <br><br>
+ 
+            
+            <h3>Select Conversion Units</h3>
+            <select name="units_in" v-model="out_selected">
+                <option v-for="(value, property) in unit_in" :value="value" >{{property}}</option>
+            </select>    
+            <br><br><br><br>
+                
+            <button  class="button" v-on:click="converter">Convert</button>
+            <br><br><br><br>
+ 
+            {{ message_2 }}
+        </div>
+ 
+    </div>
+ 
+        
         <script>
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: 'Hello Vue!'
+                    distance: "",
+                    
+                    in_selected: "",
+                    out_selected: "",
+
+                    unit_in: {
+                        "feet": .3048,
+                        "miles": 1609.34,
+                        "meters": 1,
+                        "kilometers": 1000,
+                        "yards": 0.9144,
+                        "inches": 0.0254,
+                    },
+ 
+                    
+ 
+                    message_2: 'hello world',
+ 
                 },
                 methods: {
-
+                    converter: function() {
+                        console.log(this.in_selected)
+                        console.log(this.out_selected)
+                        console.log(this.distance)
+                        
+                        converted = (distance/in_selected) * out_selected
+                    }
+ 
                 },
                 created: function() {
-
+ 
                 }
             })
-        </script>
-
-        <form>
-            <label for="distance">Input the distance you are converting:</label>
-            <input type="text" id="distance" name="distance"><br>
-            
-            <label for="unit_input">What are the input units (feet, miles, meters, kilometers, yards, inches):</label>
-            <input type="text" id="unit_input" name="unit_input"><br>
-            
-            <label for="unit_output">What are the output units (feet, miles, meters, kilometers, yards, inches):</label>
-            <input type="text" id="unit_output" name="unit_output"><br>
-    
-            <input type="button" value="Convert" onclick="converter()">
-          </form>
-     
-          <div id="alert"></div>  
-     
-          <script>
-            // Unit Converter Lab in Javascript
-     
-            let unit_in = {
-                "feet": .3048,
-                "miles": 1609.34,
-                "meters": 1,
-                "kilometers": 1000,
-                "yards": 0.9144,
-                "inches": 0.0254,
-            }
-     
-            let unit_out = {
-                "feet": 1/.3048,
-                "miles": 1/1609.34,
-                "meters": 1,
-                "kilometers": 1/1000,
-                "yards": 1/.9144,
-                "inches": 1/.0254,
-            }
-     
-            
-     
-            function converter() {
-     
-                
-                let distance = document.getElementById('distance').value;
-                let units_in = document.getElementById('unit_input').value;
-                let units_out = document.getElementById('unit_output').value;
-                
-                
-                let input_switch = unit_in[units_in];
-                let output_switch = unit_out[units_out];
-     
-                
-                let input_conversion = distance * input_switch;
-                let final_conversion = input_conversion * output_switch;
-     
-                document.getElementById("alert").innerHTML = `${distance} ${units_in} is ${final_conversion} ${units_out}`;
-                
-            }
-     
         </script>
     </body>
 </html>
