@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +7,9 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1> {{ message }} </h1>
+    <div id='app'>
+        <h1>{{ result }}</h1>
+        <h1>{{ message }}</h1>
         <!-- <input type="text" v-model="name"/> -->
         <select v-model="choice">
             <option value="rock">Rock</option>
@@ -25,16 +25,27 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Pick Rock, Paper, or Scissors!'
+                message: 'Pick Rock, Paper, or Scissors!',
+                //note to self: these empty strings will hold the users choics and the computers choice
+                choice: '',
+                computer: ' '
             },
+        })
             methods: {
                 // this is where I need to make my function do something
                 roll: function () {
-                    alert('clicked!')
-                },
-                created: function () {
+                    let computer = math.random() * 90;
+                    if (computer > 30) { computer == "rock"; }
+                    else if (computer < 60) {computer == "paper";}
+                    else (computer == "scissors");}
+                    if (this.choice === computer) { this.result = "You Tied With the computer";}
+                    else if (this.choice === "rock") {if (computer === "scissors") {this.result = "You Beat The Computer";}
+                    else { this.result = "You Lost To The Computer";}}
                 }
-            }});
+
+
+
+                    }}
     </script>
 </body>
 
