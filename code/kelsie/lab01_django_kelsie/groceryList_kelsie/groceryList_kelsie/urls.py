@@ -19,10 +19,8 @@ from myapp import views
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'), 
-    path('add_item', views.add_item, name='add_item'),
-     path("completed_item/<item_id>", views.completed_item, name = "completed_item"),
-    path("deleted_item/<item_id>", views.deleted_item, name = "deleted_item"),
+    path('', include ('myapp.urls')), 
 ]
