@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'grocery_list.urls'
+ROOT_URLCONF = 'hello_world.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'grocery_list.wsgi.application'
+WSGI_APPLICATION = 'hello_world.wsgi.application'
 
 
 # Database
