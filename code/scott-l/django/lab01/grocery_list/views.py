@@ -15,6 +15,6 @@ def grocery_items(request):
     'completed_date':'date',
     'boolean_response': 'true/false' }
 
-    return render(request,'grocery_list.html', item_info )
+    return render(request,'grocery_list/grocery_list.html', item_info )
 
 
