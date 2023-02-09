@@ -101,7 +101,7 @@
  
                     
  
-                    message_2: 'hello world',
+                    message_2: "",
  
                 },
                 methods: {
@@ -109,8 +109,12 @@
                         console.log(this.in_selected)
                         console.log(this.out_selected)
                         console.log(this.distance)
+
+
                         
-                        converted = (distance/in_selected) * out_selected
+                        let converted = (this.distance / this.in_selected) / this.out_selected
+
+                        this.message_2 = converted
                     }
  
                 },
