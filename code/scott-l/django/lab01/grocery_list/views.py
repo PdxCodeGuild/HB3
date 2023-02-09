@@ -11,8 +11,8 @@ def say_hello(request):
 def grocery_items(request):
 
     item_info = {'text_description': 'Blank',
-    'created_date':'date',
-    'completed_date':'date',
+    'created_date':'date1234',
+    'completed_date':'date4321',
     'boolean_response': 'true/false' }
 
     return render(request,'grocery_list/grocery_list.html', item_info )
