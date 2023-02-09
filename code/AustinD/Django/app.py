@@ -84,7 +84,48 @@ def index(request):
             {% for item in completed_items %}
                 <li>{{ item.description }}</li>
             {% endfor %}
+        </ul><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body class="flex h-screen w-screen justify-center items-center">
+    <div id="app" class="container w-1/4 bg-gray-500 shadow-2xl rounded">
+        <h1 class="text-center">Grocery List</h1>
+        <div class="input-group flex justify-center">
+          <input
+            type="text"
+            class="form-control rounded"
+            id="item"
+            placeholder="Add an item"
+            @keyup.enter="add_item()"
+          /><button class="btn btn-success px-4 bg-cyan-600 rounded" @click="add_item()">add</button>
+        </div>
+        <h2 class="text-center">Items to buy</h2>
+        <ul class="list-group flex flex-col justify-center items-center">
+          <li v-for="item in items" :key="item.id" class="list-group-item text-red-300" v-if="!item.purchased">
+            <input type="checkbox" name="purchased" v-model="item.purchased">
+            {{ item.name }}
+          </li>
         </ul>
+        <h2 class="text-center">Purchased Items</h2>
+        <ul class="list-group flex flex-col justify-center items-center">
+        <li v-for="item in items" :key="item.id" class="list-group-item text-emerald-300" v-if="item.purchased">
+          <input type="checkbox" name="purchased" v-model="item.purchased">
+          {{ item.name }}
+          </li>
+          </ul>
+    </div>
+  </body>
+</html>
     """)
     return HttpResponse(template.render(Context(context)))
 
