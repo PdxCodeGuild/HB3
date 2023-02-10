@@ -9,7 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <style>
         body {
-            background-image: url(src="{% static 'myapp/groceryBG.png' %}");
+            background-image: url("/groceryList_kelsie/myapp/static/groceryBG.png");
             text-align: center;
         
         }
@@ -29,6 +29,7 @@
         
         </style>
     <body>
+        <img src="{{groceryBG.png}}"
         <div>
             <form action="{% url 'myapp:add_item' %}" method="POST">
                 <h1>Shopping List</h1>
@@ -38,12 +39,19 @@
             </form>
     
             <ul id="groceries">
-                To Get
+                
+                TO GET
                 {% for item in list %}
-                    <li>{{ item }}<a href="{% url 'myapp:completed_item' item.id %}"><input type="checkbox"></a></li>
+                    {% if item.completed == False %}
+                        <li>{{ item }} <a href="{% url 'myapp:completed_item' item.id %}"><input type="checkbox"></a> Date Created: {{ date }}</li>
+                    {% endif %}
                 {% endfor %}
                 GOTTEN
-                <li>{{ finished_item }}<a href="{% url 'myapp:deleted_item' item.id %}"><input type="checkbox"></a></li>
+                {% for item in list %}
+                    {% if item.completed == True %}
+                    <li>{{ item }} <a href="{% url 'myapp:deleted_item' item.id %}"><input type="checkbox"></a> Date Completed: {{ date }}</li>
+                    {% endif %}
+                {% endfor %}
             </ul>
             
         </div>

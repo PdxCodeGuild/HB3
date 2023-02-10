@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import GroceryForm
-from .models import GroceryItem, ItemComplete
+from .models import GroceryItem, DateUpdated
 from django.views.decorators.http import require_POST
 # Create your views here.
+
+
+
+
 
 def index(request):
     form = GroceryForm()
@@ -16,7 +20,8 @@ def index(request):
 def add_item(request):
     form = GroceryForm(request.POST)
     list = GroceryItem.objects.order_by("id")
-    context = {"list":list, "form":form}
+    date = DateUpdated()
+    context = {"list":list, "form":form, "date":date}
 
     if form.is_valid():
         new_item = GroceryItem(itemDescription = request.POST['itemDescription'])
@@ -25,19 +30,24 @@ def add_item(request):
     return render (request, "index.html", context)
  
 
-def deleted_item(request,item_id):
+def deleted_item(request, item_id):
+    form = GroceryForm(request.POST)
+    list = GroceryItem.objects.order_by("id")
     item = GroceryItem.objects.get(pk=item_id)
     item.delete()
-    return redirect('index')
+    context = {"list":list, "form":form}
+    return render (request, 'index.html', context)
 
 
 def completed_item(request, item_id):
     form = GroceryForm(request.POST)
+    date = DateUpdated()
     list = GroceryItem.objects.order_by("id")
-    finished_item = GroceryItem.objects.get(pk=item_id)
-    finished_item.complete = True
+    item = GroceryItem.objects.get(pk=item_id)
+    item.completed=True
+    item.save()
 
-    context = {"finished_item":finished_item, "list":list, "form":form}
+    context = {"list":list, "form":form, "date":date}
     return render (request, "index.html", context)
 
 
