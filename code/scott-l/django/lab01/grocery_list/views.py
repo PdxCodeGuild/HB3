@@ -10,11 +10,27 @@ def say_hello(request):
 
 def grocery_items(request):
 
-    item_info = {'text_description': 'Blank',
-    'created_date':'date1234',
-    'completed_date':'date4321',
-    'boolean_response': 'true/false' }
+    grocery_list_all_items = GroceryItem.objects.all()
+    print(grocery_list_all_items) # DEBUG
+    context = {'all_list':grocery_list_all_items}
+    return render(request,'grocery_list/grocery_list.html', context )
 
-    return render(request,'grocery_list/grocery_list.html', item_info )
+def add_grocery_item(request):
+    if request.method == "POST":
+        return HttpResponse('test')
+    
+    else:
+        return render(request,'grocery_list/grocery_list.html')
 
+
+# def index(request):
+#     imgs = myImage.objects.all()
+#     return render(request, 'index.html',{'imgs':data})
+
+# def upload_picture(request):
+#     img=request.FILES.get('picture')
+#     title = request.POST['title']
+#     new_img = myImage(title=title, img=img)
+#     new_img.save()
+#     return redirect('/')
 

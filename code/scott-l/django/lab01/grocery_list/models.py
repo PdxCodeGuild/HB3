@@ -10,5 +10,5 @@ class GroceryItem(models.Model):
     completed_date = models.CharField(max_length=200)
     booleanFlag  = models.BooleanField(default=False)
     def __str__(self):
-        return f'{self.text_description}{self.created_date}{self.completed_date}{self.booleanFlag}'
+        return f'{self.text_description} {self.created_date} {self.completed_date} {self.booleanFlag}'
 

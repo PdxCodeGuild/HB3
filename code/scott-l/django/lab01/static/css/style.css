@@ -1,3 +1,38 @@
+
+/* Include the padding and border in an elements total width and height */
+
+* {
+    box-sizing: border-box
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin:0;
+    padding:0;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: rgb(175, 255, 121);
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+/* Style the input */
+input {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+
+/* 
 li {
     list-style: none;
 }
@@ -15,4 +50,4 @@ h1 {
 h2 {
     font-size: large;
     margin-top: 15px;
-}
+} */
