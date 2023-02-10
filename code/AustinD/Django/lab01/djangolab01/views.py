@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import GroceryItemForm
 from .models import GroceryItem
+from .forms import GroceryItemForm
 
 def grocery_list(request):
     if request.method == 'POST':
@@ -10,21 +10,21 @@ def grocery_list(request):
             return redirect('grocery_list')
     else:
         form = GroceryItemForm()
-    incomplete_items = GroceryItem.objects.filter(completed=False)
-    complete_items = GroceryItem.objects.filter(completed=True)
-    return render(request, 'grocery_list/grocery_list.html', {'form': form, 'incomplete_items': incomplete_items, 'complete_items': complete_items})
+        
+    incomplete_items = GroceryItem.objects.filter(completed_flag=False)
+    complete_items = GroceryItem.objects.filter(completed_flag=True)
+    
+    context = {
+        'form': form,
+        'incomplete_items': incomplete_items,
+        'complete_items': complete_items
+    }
+    return render(request, 'grocery_list.html', context)
 
-def mark_complete(request, pk):
+def complete_item(request, pk):
     item = GroceryItem.objects.get(pk=pk)
-    item.completed = True
+    item.is_completed = True
     item.completed_date = timezone.now()
-    item.save()
-    return redirect('grocery_list')
-
-def mark_incomplete(request, pk):
-    item = GroceryItem.objects.get(pk=pk)
-    item.completed = False
-    item.completed_date = None
     item.save()
     return redirect('grocery_list')
 
