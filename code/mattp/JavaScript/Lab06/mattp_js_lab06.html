@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>VUE Lab 06: Unit Converter</title>
+        <link rel="icon" type="image/x-icon" href="PeacockFavicon.png">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <style>
+        body {
+            background-color: beige;
+            background-size: cover;
+            text-align: center;
+        }
+ 
+        .box {
+            background-color: rgb(107, 167, 147);
+            width: fit-content;
+            margin: auto;
+            padding: 10%;
+            border-style: double; 
+            border-radius: 30px;  
+        }
+ 
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: wavy;
+            outline: none;
+            color: #fff;
+            background-color: #963e1b;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px rgb(126, 126, 126);
+            }
+ 
+            .button:hover {background-color: #cc1919}
+ 
+            .button:active {
+            background-color: #cc1919;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+ 
+    </style>
+</head>
+ 
+<body>
+    <h1>VUE: Unit Converter</h1>
+    <div class="box">
+ 
+        <div id="app">
+            <h3>What is the Distance</h3>
+            
+                <input type="text" v-model="distance"/>
+            <br><br>
+        
+ 
+            <h3>Select Starting Units</h3>
+            <select name="units_in" v-model="in_selected">
+                <option v-for="(value, property) in unit_in" :value="value" >{{property}}</option>
+            </select> 
+               
+            <br><br>
+ 
+            
+            <h3>Select Conversion Units</h3>
+            <select name="units_in" v-model="out_selected">
+                <option v-for="(value, property) in unit_in" :value="value" >{{property}}</option>
+            </select>    
+            <br><br><br><br>
+                
+            <button  class="button" v-on:click="converter">Convert</button>
+            <br><br><br><br>
+ 
+            {{ message_2 }}
+        </div>
+ 
+    </div>
+ 
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    distance: "",
+                    
+                    in_selected: "",
+                    out_selected: "",
+
+                    unit_in: {
+                        "feet": .3048,
+                        "miles": 1609.34,
+                        "meters": 1,
+                        "kilometers": 1000,
+                        "yards": 0.9144,
+                        "inches": 0.0254,
+                    },
+ 
+                    
+ 
+                    message_2: "",
+ 
+                },
+                methods: {
+                    converter: function() {
+                        console.log(this.in_selected)
+                        console.log(this.out_selected)
+                        console.log(this.distance)
+
+
+                        
+                        let converted = (this.distance / this.in_selected) / this.out_selected
+
+                        this.message_2 = converted
+                    }
+ 
+                },
+                created: function() {
+ 
+                }
+            })
+        </script>
+    </body>
+</html>
