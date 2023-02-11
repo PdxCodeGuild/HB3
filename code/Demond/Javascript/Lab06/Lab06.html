@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Lab05.css">
+    <title>Lab 06</title>
+</head>
+
+<body>
+    <div id='app'>
+        <h1>{{ result }}</h1>
+        <!-- <input type="text" v-model="name"/> -->
+        <select v-model="choice">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+        <button v-on:click="roll">Ro-Sham-Bo!</button>
+        <h1>{{ message }}</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Pick Rock, Paper, or Scissors!',
+                //note to self: these empty strings will hold the users choics and the computers choice
+                choice: '',
+
+                computer: ' ',
+
+                result: ' '
+
+            },
+            methods: {
+                // this is where I need to make my function 
+                roll: function () {
+                    //Note to self: ive used the math.random which only selects between 0 and 1 however, it was smart of me to multiply it by 90 which is good to divide by 3.. i couldve just used 9 as i think of this
+                    let computer = Math.random() * 90;
+                    if (computer > 30) { computer = "rock"; }
+                    else if (computer <= 60) { computer = "paper"; }
+                    else { computer = "scissors"; }
+
+                        if (this.choice === computer) { this.result = "You Tied With the computer"; }
+                        else if (this.choice === "rock") {
+                            if (computer === "scissors") { this.result = "You Beat The Computer, Rock Wins"; }
+                            //Note to self: this else statement will essentiall act as if computer ==== paper
+                            else { this.result = "You Lost To The Computer, Paper Wins"; }
+                        }
+                        else if (this.choice === "paper") {
+                            if (computer === "rock") { this.result = "You Win, Paper Wins"; }
+                            else { this.result = "You Lost, Scissors Wins"; }
+                        }
+                        else if (this.choice === "scissors") {
+                            if (computer === "paper") { this.result = "You Win, Scissors Win"; }
+                            else { this.result = "You Lost, Rock Wins"; }
+                        }
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>
