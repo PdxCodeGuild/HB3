@@ -9,54 +9,77 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <style>
         body {
-            background-image: url("/groceryList_kelsie/myapp/static/groceryBG.png");
+            background-image: url("/static/groceryBG.png");
+            background-size: cover;
             text-align: center;
-        
+        }
+        .card {
+            display:block;
+            margin-top: 40px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            width: 60%;
+            border-radius: 10px;
+            border: 5px solid rgb(40, 102, 40);
+            background-color: rgba(245, 245, 220, 0.921);
         }
         form {
-            background-color: beige;
-            padding: 10px;
-        }
-        ul {
-            background-color: antiquewhite;
-            padding: 10px;
-        }
-        div {
             display:block;
-            margin: auto;
-            width: 50%;
+            margin-top: 40px;
+            margin-left: 20px;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+            border: 5px solid rgb(40, 102, 40);
+            background-color: rgba(245, 245, 220, 0.921);
         }
-        
+        .date{
+            font-size: small;
+        }
+        h1, h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+        }
+        #submit:hover {
+            background-color: rgba(40, 102, 40, 0.728);
+        }
         </style>
     <body>
-        <img src="{{groceryBG.png}}"
-        <div>
+
+        
             <form action="{% url 'myapp:add_item' %}" method="POST">
                 <h1>Shopping List</h1>
+                <p>Add to the list using the text input and the submit button</p>
+                <p>Move an item from "NEED" to "HAVE" by checking the box</p>
+                <p>Delete the item from "HAVE" by checking the box</p>
                 {% csrf_token %}
                 {{ form }}
-                <input type="submit" value="Submit" />
+                <input id="submit" type="submit" value="Submit" />
             </form>
-    
-            <ul id="groceries">
-                
-                TO GET
+        
+            
+        <div class="card">
+            <h3>NEED</h3>
+                <ul id="groceries">
                 {% for item in list %}
                     {% if item.completed == False %}
-                        <li>{{ item }} <a href="{% url 'myapp:completed_item' item.id %}"><input type="checkbox"></a> Date Created: {{ date }}</li>
+                        <li><a href="{% url 'myapp:completed_item' item.id %}"><input type="checkbox"></a> {{ item }}<p class="date"> Created: {{ date }}</p></li>
                     {% endif %}
                 {% endfor %}
-                GOTTEN
-                {% for item in list %}
-                    {% if item.completed == True %}
-                    <li>{{ item }} <a href="{% url 'myapp:deleted_item' item.id %}"><input type="checkbox"></a> Date Completed: {{ date }}</li>
-                    {% endif %}
-                {% endfor %}
+                </ul>
+        </div>        
+                
+        <div class="card">
+            <h3>HAVE</h3>
+            <ul id="groceries">
+            {% for item in list %}
+                {% if item.completed == True %}
+                <li><a href="{% url 'myapp:deleted_item' item.id %}"><input type="checkbox"></a> {{ item }}<p class="date"> Completed: {{ date }}</p></li>
+                {% endif %}
+            {% endfor %}
             </ul>
-            
         </div>
-        
-        
+        </div>
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </body>
