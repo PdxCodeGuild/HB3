@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Daily Weather App</title>
+    <style type="text/css">
+        body {
+            background-image: radial-gradient(rgb(0, 66, 0), black);
+            color: beige;
+            text-align: center;
+            margin: auto;
+        }
+        .container {
+            background-color: antiquewhite;
+            color:black;
+            width: 50%;
+            margin: auto;
+            border-radius: 5px;
+        }  
+    </style>
+    <script src="weather_api_kelsie.js"></script> 
+    <script src="secrets.js"></script>
+</head>
+    <body>
+        
+        <h1 id="title">How's it Look Out There Today?</h1>
+        <button onclick="getWeather()">Get Weather</button><br>
+        <div class="container"> 
+            <p>Here's my Prediction:</p>
+            <img id="icon" src="">
+            <p id="location"></p>
+            <p id="datetime"></p>
+            <p id="temp"></p>
+            <p id="weather"></p>
+            <p id="clouds"></p>
+            <p id="feels_like"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="decription"></p>
+        </div>
+        
+
+    </body>
+</html>

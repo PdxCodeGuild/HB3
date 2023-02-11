@@ -1,0 +1,19 @@
+*{
+ margin: 5%;
+}
+
+h1{
+    text-align: center;
+}
+
+.btn01{
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 10px 24px;
+  border-radius: 4px;
+}
+
+.btn01:hover{
+    background-color: rgb(84, 141, 239);
+    color:white
+}

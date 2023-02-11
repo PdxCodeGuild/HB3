@@ -9,16 +9,18 @@ M-F 6:00 pm – 9:36 pm PT
 
 ### Holidays
 
-- November 24th 2022 (Thanksgiving)
-- November 25th 2022 (Day After Thanksgiving)
+- ~~November 24th 2022 (Thanksgiving)~~
+- ~~November 25th 2022 (Day After Thanksgiving)~~
 - ~~December 25th 2022 (Christmas Day)~~
-- Christmas will be observed December 26th 2022
+- ~~Christmas will be observed December 26th 2022~~
 - ~~January 1st 2023 (New Year's Day)~~
-- New Years will be observed January 2nd 2022
+- ~~New Years will be observed January 2nd 2022~~
 
 ### Misc. Days Off
 
-- December 28th 2022
+- ~~December 30th 2022~~
+- February 24th 2023
+- March 10th 2023
 
 ### Staff
 
@@ -42,9 +44,37 @@ M-F 6:00 pm – 9:36 pm PT
 | 07  | [Dad Joke API](1%20Python/labs/07%20Dad%20Joke%20API.md)        |      2 Dec        |     16 Dec            |
 | 08  | [ATM](1%20Python/labs/08%20ATM.md)        |      2 Dec        |     16 Dec            |
 | 09  | [Contact List](1%20Python/labs/09%20Contact%20List.md)        |      5 Dec        |     19 Dec            |
-| 10  | [Quotes](https://github.com/PdxCodeGuild/HB3/blob/main/1%20Python/labs/18%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
+| 10  | [Quotes](1%20Python/labs/10%20Quotes%20API.md)        |      6 Dec        |     20 Dec            |
+| 11  | [Jackalope](1%20Python/labs/11%20Jackalope.md)        |      8 Dec        |     22 Dec            |
+|   | [Mini Capstone](1%20Python/labs/MiniCapstone.md)        |      9 Dec        |          23 Dec       |
 
+## HTML - CSS Labs Assigned:
 
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01  | [Bio](2%20Flask%20+%20HTML%20+%20CSS/labs/01%20Bio.md)             |    15 Dec     |          29 Dec       | 
+| 02  | [Company](2%20Flask%20+%20HTML%20+%20CSS/labs/02%20Company.md)     |    19 Dec     |          04 Jan |
+| 03  | [Blog](2%20Flask%20+%20HTML%20+%20CSS/labs/03%20Blog.md)           |    20 Dec     |          05 Jan       | 
+| 04  | [Burrito Order Form](2%20Flask%20%2B%20HTML%20%2B%20CSS/labs/05%20Burrito%20Order%20Form.md) |    21 Dec     |   06 Jan  | 
+| 05  | [Flask Redo](2%20Flask%20+%20HTML%20+%20CSS/labs/05%20Flask%20Redo.md)       |    27 Dec     |          11 Jan       |
+| 06  | [LinkedIn](2%20Flask%20+%20HTML%20+%20CSS/labs/06%20LinkedIn%20Checklist.md)       |    03 Jan     |      17 Jan       |
+| 07  | [Portfolio](2%20Flask%20+%20HTML%20+%20CSS/labs/07%20Personal%20Portfolio.md)      |    03 Jan     |      17 Jan       |
+
+## Javascript
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01  | [Pick 3](4%20JavaScript/labs/Pick3.md)           |    9 Jan     |          23 Jan       |
+| 02  | [Weather API](4%20JavaScript/labs/Weather%20API.md)           |    10 Jan     |          24 Jan       |
+| 03  | (optional)[Quotes API](4%20JavaScript/labs/random_quote.md)           |    12 Jan     |          26 Jan       |
+| 04  | [Form Validation](4%20JavaScript/labs/form_validation.md)           |    16 Jan     |          30 Jan       |
+| 05  | [Mob Vue ToDo](4%20JavaScript/labs/03%20Vue%20Todo.md)           |    20 Jan     |          3 Feb       |
+| 06  | [Vue Re Do](4%20JavaScript/labs/02%20Vue%20Redo.md)           |    25 Jan     |          8 Feb       |
+
+## Django
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01 | [Grocery list](3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
+| 02 | [URL Shortener](3%20Django/labs/lab02-url-shortener.md) | 9 Feb | 23 Feb |
 
 ## Getting Unstuck 
 

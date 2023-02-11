@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(images/teethpick.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background-color: #1a1a1a;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 2rem;
+    font-family: cursive;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ ul li{
+     list-style: none;
+     font-size: 16px;
+     justify-content: center;
+     align-items: center;
+ }
+
+ ul li a{
+     text-decoration: none;
+     color: #fff;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+ }
+
+ ul li a:hover{
+     color: #ff7200;
+ }
+
+ .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .title h1{
+     cursor: pointer;
+     font-family: cursive;
+     color: #fff;
+     font-size: 85px;
+ }
+
+ .container{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white
+ }

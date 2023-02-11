@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #B5F1CC;
+      }
+
+      #app {
+        display: flex;
+        justify-content: center;
+ 
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        background-color: #E5FDD1;
+      }
+
+      .do {
+        background-color: #C9F4AA;
+        color: black;
+      }
+
+      .done {
+        background-color: #FCC2FC;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>Handy-Dandy Checklist</h1>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="todo_item"
+            placeholder="What's next?"
+            @keyup.enter="add_item()"
+          /><button class="btn btn-success" @click="add_item()">add</button>
+        </div>
+        <ul class="do"><p>To-Do</p>
+          <li v-for="item in todos" :key="item.id" v-if="!item.complete" class="list-group-item">
+            <input
+              type="checkbox"
+              name="checkbox"
+              id=""
+              v-model="item.complete"
+            />
+            {{ item.title }}
+          </li>
+        </ul>
+        <ul class="done"><p>Done</p>
+          <li v-for="item in todos" :key="item.id" v-if="item.complete" class="list-group-item">
+            <input
+              type="checkbox"
+              name="checkbox"
+              id=""
+              v-model="item.complete"
+            />
+            {{ item.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          todos: [],
+        },
+        methods: {
+          add_item: function () {
+            const value = document.querySelector("#todo_item").value;
+            if (!value) {
+              return;
+            }
+            this.todos.push({
+              id: Date.now(),
+              title: value,
+              complete: false,
+            });
+            document.querySelector("#todo_item").value = "";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

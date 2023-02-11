@@ -1,0 +1,82 @@
+body{
+    background-image: url(https://c.tenor.com/AJBv6U1rfkQAAAAC/background-image-galaxy.gif);
+}
+
+.container{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 6px solid #8b8589;
+    background-color: azure;
+}
+
+header{
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.main-body{
+    font-size: 20px;
+    background-color: azure;
+    padding: 5px;
+}
+.profile{
+    float: left;
+    width: 30%;
+}
+
+.profile h3{
+    text-align: center;
+    padding: 0px;
+    background-color: black;
+    color: azure;
+    width: 250px;
+}
+.profile img{
+    margin-left: 10px;
+    border: 6px solid #91a3b0;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.biography, 
+.gate-image 
+{
+    padding: 10px;
+    float: right;
+    width: 65%;
+}
+.blockquote{
+    font-size: larger;
+    float: right;
+    width: 60%;
+    color: #00ffff;
+    border-radius: 25px;
+    padding-top: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background: #414a4c;
+}
+footer{
+    clear: both;
+    background-color: black;
+    color: azure;
+    text-align: right;
+}
+p{
+    text-indent: 40px;
+}
+
+ul{
+    list-style: none;
+    padding: 5px;
+}
+/* 
+p .gate{
+    text-indent: none;
+} */
+/* p a{
+    
+} */

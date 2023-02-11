@@ -1,0 +1,83 @@
+#container {
+    background-color: rgb(219, 211, 211);
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    /* border: 5px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#container button {
+    width: 200px;
+    height: 50px;
+    border: 1px solid rgb(58, 57, 55);
+    /* border-radius: 8px; */
+
+}
+
+#container div p {
+    width: 200;
+    height: 200;
+}
+
+#middlesection {
+    background-color: aqua;
+    width: 90%;
+    height: 900px;
+    margin: auto;
+    display: flex;
+
+
+}
+
+#sidebar {
+    background-color: rgb(136, 0, 255);
+    width: 20%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#maincontent {
+    width: 80%;
+    height: 900px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#sidebar div {
+    width: 250px;
+    height: 150px;
+    margin-left: 10%;
+    padding: 5px;
+}
+
+#maincontent div {
+    width: 700px;
+    height: 200px;
+    margin-left: 2%;
+    padding: 10px;
+}
+
+#footer {
+    background-color: rgb(13, 11, 11);
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+#mytext {
+    text-align: center;
+    font-family: fantasy;
+    padding: 2em;
+    margin: 10px;
+    color: white;
+}

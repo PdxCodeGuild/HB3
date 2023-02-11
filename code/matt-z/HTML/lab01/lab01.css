@@ -1,0 +1,37 @@
+@font-face {
+    font-family: roboto;
+    src: url(Roboto-Black.ttf)
+}
+
+body {
+    text-align: center;
+    font-family: roboto;
+    background: url(tesla-coil-g3f6a0f5a2_1920.jpg) no-repeat center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+p {
+    margin: 25px 400px;
+    padding: 5px;
+}
+
+.image {
+    border-radius: 15px;
+}
+
+#quote {
+    font-family: Garamond;
+    font-size: 20px;
+}
+
+#wiki {
+    color: white;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    margin-right: 50px; 
+}
