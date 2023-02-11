@@ -3,28 +3,35 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="vue_redo_stylesheet.css">
         <title></title>
     </head>
     <body>
         <div id="app">
             <h1>{{ message }}</h1>
-            <form name="form1" id="form1" action="/action_page.php">
-                From: <select name="from" id="from">
-                    <option value="" selected="selected"></option>
+            <h2>{{ message2 }}</h2>
+            <div id="form">
+                <input v-model="distanceIn" type="text" placeholder="distance in"><br>
+                From: <select v-model="unitIn" name="from" id="from">
+                    <option v-for="(value, key) in conversionDict" :value="value">{{key}}</option>
                   </select>
                   <br><br>
-                To: <select name="topic" id="topic">
-                    <option value="" selected="selected"></option>
+                To: <select v-model="unitOut" name="to" id="to">
+                    <option v-for="(value, key) in conversionDict" :value="value">{{key}}</option>
                   </select>
                   <br><br>
-                </form>
+                  <button @click="unitConverter()">Submit</button>
+                  {{result}}
+            </div>
+            
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script>
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: 'Unit Converter 3001!',
+                    message: 'UNIT CONVERTER 3001',
+                    message2: '(wait\'ll you see version 3002!)',
                     conversionDict : {
                         'ft' : 0.3048,
                         'mi' : 1609.34,
@@ -33,19 +40,25 @@
                         'yd' : 0.9144,
                         'in' : 0.0254
                     },
-                    units : ['ft', 'mi', 'm', 'km', 'yd', 'in'],
-                    fromSelect: document.getElementById("from"),
+                    unitIn: '',
+                    unitOut: '',
+                    result: '',
+                    distanceIn: ''
                 },
                 methods: {
-                    fromUnits: function() {
-                        for (let unit in units) {
-                            fromSelect.options[fromSeleft.options.length] = new Option(x, x);
-                        }
-                    }
-                },
-                created: function() {
+                    unitConverter: function() {
+                        this.inMeters = this.distanceIn * this.unitIn;
+                        this.result = this.inMeters / this.unitOut;
 
-                }
+                        },
+                    
+                    displayData: function() {
+                        console.log(this.unitIn);
+                        console.log(this.unitOut);
+                        console.log('pooptyscoop');
+                        return false;
+                    }
+                    }
             })
         </script>
     </body>

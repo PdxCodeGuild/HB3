@@ -1,8 +1,19 @@
-.important {
-    font-weight: bold;
-    font-style: italic;
+body {background-color: cadetblue;}
+
+h1, h2 {
+    display: flex;
+    justify-content: center;
 }
 
-ul {
-    list-style-type: none;
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+p {
+    background-color: white;
+    margin: 0 auto;
+    border: 1px black solid;
 }
