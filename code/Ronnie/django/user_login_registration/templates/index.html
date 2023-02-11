@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    register
+    <form action="{% url 'app:register' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="password" name="password">
+        <input type="submit">
+    </form>
+    login
+    <form action="{% url 'app:login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="password" placeholder="password" name="password">
+        <input type="submit">
+    </form>
+    {% if user.is_authenticated %}
+    reset password
+    <form action="{% url 'app:reset' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="password" placeholder="new password" name="new_password">
+        <input type="submit">
+    </form>
+    <a href="{% url 'app:sign_out' %}">sign out</a>
+    <a href="{% url 'app:profile' %}">profile</a>
+    {% endif %}
+</body>
+</html>
