@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from .models import GroceryItem
 
 # Create your views here.
@@ -17,7 +18,10 @@ def grocery_items(request):
 
 def add_grocery_item(request):
     if request.method == "POST":
-        return HttpResponse('test')
+        print(request.POST) # DEBUG verify recieved the form data
+
+        return HttpResponseRedirect(reverse('gl:grocery_list'))
+        
     
     else:
         return render(request,'grocery_list/grocery_list.html')
