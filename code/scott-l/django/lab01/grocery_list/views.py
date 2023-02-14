@@ -25,7 +25,7 @@ def add_grocery_item(request):
         form = GroceryForm(request.POST)
         if form.is_valid():
             # get the data out of the form
-            print(form)
+            print(form)  # DEBUG
             item_description =  form.cleaned_data['input_item']
             item_created_date = date.today()
             print("Today date is: ", date.today())  #DEBUG
@@ -40,6 +40,16 @@ def add_grocery_item(request):
     else:  # recieving a GET request
         form = GroceryForm()
     return render(request,'grocery_list/grocery_list.html') # pass the form to the template
+
+def remove_grocery_item(request,id):
+    print(id)  #DEBUG
+    grocery_remove_items = GroceryItem.objects.get(id=id)
+    grocery_remove_items.delete()
+    return HttpResponseRedirect(reverse('gl:grocery_list'))
+
+
+
+
 
 
 # def index(request):

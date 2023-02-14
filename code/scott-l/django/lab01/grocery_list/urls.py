@@ -5,5 +5,6 @@ app_name='gl'
 urlpatterns = [
     # path('hello/',views.say_hello)
     path('',views.grocery_items, name='grocery_list'),
-    path('add/',views.add_grocery_item, name='grocery_add')
+    path('add/',views.add_grocery_item, name='grocery_add'),
+    path('remove/<int:id>',views.remove_grocery_item, name='grocery_remove')
 ]
