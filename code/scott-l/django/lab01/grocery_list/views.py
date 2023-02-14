@@ -47,7 +47,12 @@ def remove_grocery_item(request,id):
     grocery_remove_items.delete()
     return HttpResponseRedirect(reverse('gl:grocery_list'))
 
-
+def complete_grocery_item(request,id):
+    complete_grocery_item = GroceryItem.objects.get(id=id)
+    complete_grocery_item.booleanFlag=True
+    complete_grocery_item.save()
+    print(complete_grocery_item)  #DEBUG
+    return HttpResponseRedirect(reverse('gl:grocery_list'))
 
 
 
@@ -62,4 +67,3 @@ def remove_grocery_item(request,id):
 #     new_img = myImage(title=title, img=img)
 #     new_img.save()
 #     return redirect('/')
-

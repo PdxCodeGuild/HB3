@@ -26,17 +26,39 @@
         </form>
 
     </div>
+
     <div>
         <ul style='list-style-type:square' id="myGroceryItems">
             {% for grocery in all_list %}
+               
+                <li><a href="{% url 'gl:grocery_complete' grocery.id %}">COMPLETE / </a>
+                    <a href="{% url 'gl:grocery_remove' grocery.id %}">DELETE </a>
+                    {{ grocery.text_description}}
+                </li>
 
-                <li><a href="{% url 'gl:grocery_remove' grocery.id %}">DELETE </a>{{ grocery.text_description}}</li>
                 
             {% endfor %}
         </ul>
         
     </div>
-    
+
+    <div>
+        <ul style='list-style-type:square' id="myGroceryItems">
+            {% for grocery in all_list %}
+                {% if grocery.booleanFlag %}
+                
+                <li>COMPLETED------ 
+                <a href="{% url 'gl:grocery_remove' grocery.id %}">DELETE </a>
+                
+                    {{ grocery.text_description}}</li>
+                
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+        
+    </div>
+   
 
 
     <!-- <h1>Upload Image</h1>
