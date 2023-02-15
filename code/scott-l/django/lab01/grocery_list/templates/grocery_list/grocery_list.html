@@ -29,20 +29,27 @@
 
 
     <div class="wrapper">
+       
         <div class="text">
+            <h1>List</h1>
             <ul style='list-style-type:square' id="myGroceryItems">
                 {% for grocery in all_list %}
+
+                {% if grocery.booleanFlag == False %}
 
                 <li><a href="{% url 'gl:grocery_complete' grocery.id %}">COMPLETE / </a>
                     <a href="{% url 'gl:grocery_remove' grocery.id %}">DELETE </a>
                     {{ grocery.text_description}}
                 </li>
 
+                {% endif %}
+
                 {% endfor %}
             </ul>
         </div>
 
         <div class="text">
+            <h1>Completed List</h1>
             <ul style='list-style-type:square' id="myGroceryItems">
                 {% for grocery in all_list %}
                 {% if grocery.booleanFlag %}
