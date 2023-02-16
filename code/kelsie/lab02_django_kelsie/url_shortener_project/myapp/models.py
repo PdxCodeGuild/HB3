@@ -9,3 +9,12 @@ class ShortURL(models.Model):
     def __str__(self):
         return f'{self.short_url} {self.long_url}'
         
+
+
+class Click(models.Model):
+    host_header = models.CharField(max_length=30, blank=True)
+    ip_address = models.CharField(max_length=30, blank=True)
+    short_url = models.ForeignKey(ShortURL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.ip_address} {self.host_header}'

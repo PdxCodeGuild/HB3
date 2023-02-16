@@ -1,26 +1,63 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
+    <title>URL Shortener</title>
     <style>
         body {
-            background-color: rgb(139, 136, 131);
+            background-image: url('/static/earth_space.jpg');
+            background-size:cover;
+            text-align: center;
+        }
+        form {
+            margin: auto;
+            margin-top: 40px;
+            padding: 30px;
+            width: 60%;
+            border-radius: 10px;
+            border: 5px solid rgb(20, 0, 32);
+            background-image: radial-gradient(rgb(183, 238, 255), rgb(31, 0, 31))
+        }
+        .card {
+            margin: auto;
+            margin-top: 100px;
+            padding: 30px;
+            width: 60%;
+            border-radius: 10px;
+            border: 5px solid rgb(20, 0, 32);
+            background-image: radial-gradient(rgb(183, 238, 255), rgb(31, 0, 31))
+        }
+        #submit {
+            font-size: 14px;
+            font-weight: 600;
+            color: black;
+            background-color: aliceblue;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+        #submit:hover {
+            background-color: rgb(231, 213, 231);
         }
     </style>
    
 </head>
     <body>
-        <!-- Page Content -->
+        <div class="card">
+            <h1>URL Shortener</h1>
+            <p>Please enter your long URL into the textbox. You will then be redirected to your site.</p>
+        </div>
+       
         <form action="{% url 'myapp:redirect' %}" method="post">
             {% csrf_token %}
             {{ form }}
             <input id="submit" type="submit" value="Submit" />
         </form>
-
-        {{ new_info }}
-       
 
     </body>
 </html>
