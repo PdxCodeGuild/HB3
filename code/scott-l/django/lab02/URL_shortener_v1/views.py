@@ -18,7 +18,7 @@ def URLsubmit(request):
     context = {'url_data':submit_url}
     return render(request,'URL_shortener_v1/index.html',context)
     # return HttpResponseRedirect('/mypath')  # Not sure how to use this??
-    # return HttpResponseRedirect(reverse('myapp:myview'))  # Not sure how to use this??
+    # return HttpResponseRedirect(reverse('myapp:myview'))  # Not sure how to use this?? Not applicable
 
 def URLredirect(request):
     redirect_url = urlShortener.objects.all()
