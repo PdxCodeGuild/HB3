@@ -53,11 +53,11 @@
             <p>Please enter your long URL into the textbox. You will then be redirected to your site.</p>
         </div>
        
-        <form action="{% url 'myapp:redirect' %}" method="post">
+        <form action="{% url 'myapp:index' %}" method="post">
             {% csrf_token %}
             {{ form }}
             <input id="submit" type="submit" value="Submit" />
         </form>
-
+        <form action="{% url 'myapp:redirect' %}">{{ new_info.short_url }}<input id="submit" type="submit" value="Submit" /></form>
     </body>
 </html>

@@ -7,13 +7,11 @@ import random, string
 
 
 def index(request):
-        form = LongURL()
-        return render(request, 'index.html', {"form":form})
-
-
-
-def redirect(request):
-        if request.method == 'POST':
+        if request.method == 'GET':
+                form = LongURL()
+                return render(request, 'index.html', {"form":form})
+        
+        else:
             form = LongURL(request.POST)
             if form.is_valid():
                 long_url = request.POST['long_url']
@@ -26,5 +24,12 @@ def redirect(request):
                 new_click = Click(host_header=host_header, ip_address=ip_address, short_url=new_info)
                 new_click.save()
 
-        return HttpResponseRedirect(new_info.long_url)
- 
+                context = {"new_info":new_info, "form":form,}
+                return render(request, 'index.html', context)
+
+
+def redirect(request):
+        if request.method =='GET':
+                list = ShortURL.objects.order_by("id")
+                item = ShortURL.objects.get(pk=id)
+                return HttpResponseRedirect(item.long_url)
