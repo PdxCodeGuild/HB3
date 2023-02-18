@@ -58,6 +58,10 @@
             {{ form }}
             <input id="submit" type="submit" value="Submit" />
         </form>
-        <form action="{% url 'myapp:redirect' %}">{{ new_info.short_url }}<input id="submit" type="submit" value="Submit" /></form>
+        {% if form.is_valid %}
+            {% for item in list %}
+            <a href="{% url 'myapp:redirect' %}">{{ item.id }}</a>
+            {% endfor %}
+        {% endif %}
     </body>
 </html>
