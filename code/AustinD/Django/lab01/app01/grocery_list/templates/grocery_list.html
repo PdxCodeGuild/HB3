@@ -13,7 +13,7 @@
 
     <div class="bg-white p-4">
         <h1 class="text-2xl font-bold">My Grocery List</h1>
-        <form action="{% url 'gl:grocery_add' %}" method="post" class="flex items-center mt-4">
+        <form action="{% url 'grocery_list:grocery_add' %}" method="post" class="flex items-center mt-4">
             {% csrf_token %}
             {{ form }}
             <button type="submit" class="ml-4 bg-green-500 text-white font-bold py-2 px-4 rounded">Add Item to List</button>
@@ -25,11 +25,12 @@
             <h1 class="text-2xl font-bold mb-4">List</h1>
             <ul class="list-disc pl-4">
                 {% for grocery in all_list %}
-                {% if not grocery.booleanFlag %}
+                {% if not grocery.is_completed %}
                 <li class="flex items-center mb-2">
-                    <a href="{% url 'gl:grocery_complete' grocery.id %}" class="mr-4 bg-blue-500 text-white font-bold py-2 px-4 rounded">Complete</a>
-                    <a href="{% url 'gl:grocery_remove' grocery.id %}" class="mr-4 bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</a>
+                    <a href="{% url 'grocery_list:grocery_complete' grocery.id %}" class="mr-4 bg-blue-500 text-white font-bold py-2 px-4 rounded">Complete</a>
+                    <a href="{% url 'grocery_list:grocery_remove' grocery.id %}" class="mr-4 bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</a>
                     <span>{{ grocery.text_description }}</span>
+                    <small class="text-gray-500 ml-2">created: {{ grocery.created_date }}</small>
                 </li>
                 {% endif %}
                 {% endfor %}
@@ -40,10 +41,12 @@
             <h1 class="text-2xl font-bold mb-4">Completed List</h1>
             <ul class="list-disc pl-4">
                 {% for grocery in all_list %}
-                {% if grocery.booleanFlag %}
+                {% if grocery.is_completed %}
                 <li class="flex items-center mb-2">
-                    <a href="{% url 'gl:grocery_remove' grocery.id %}" class="mr-4 bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</a>
+                    <a href="{% url 'grocery_list:grocery_remove' grocery.id %}" class="mr-4 bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</a>
                     <span class="line-through">{{ grocery.text_description }}</span>
+                    <small class="text-gray-500 ml-2">created: {{ grocery.created_date }}</small>
+                    <small class="text-gray-500 ml-2">completed: {{ grocery.completed_date }}</small>
                 </li>
                 {% endif %}
                 {% endfor %}
