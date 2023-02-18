@@ -1,0 +1,10 @@
+
+{% load static %}
+
+
+
+<form action="{% url 'URL_shortener_v1:URLsubmit' %}" method="post">
+    {% crsf_token %}
+    <input type="text" name="URLshortenInput"/>
+    <button type = "submit">Shorten URL</button>
+</form>

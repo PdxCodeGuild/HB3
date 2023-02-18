@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # route to admin panel
     path('admin/', admin.site.urls),
-    path('index/',include('URL_shortener_v1.urls'))
+    # all routes in 'URL_shortener_v1/urls.py' will be under localhost:8000/myurl/...
+    path('index/',include('URL_shortener_v1.urls')),
+    path('myurl/',include('URL_shortener_v1.urls'))
 
 ]
