@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# connecting the projects urls.py to the Apps urls.py
 urlpatterns = [
     # route to admin panel
     path('admin/', admin.site.urls),
     # all routes in 'URL_shortener_v1/urls.py' will be under localhost:8000/myurl/...
-    path('index/',include('URL_shortener_v1.urls')),
+    # path('index/',include('URL_shortener_v1.urls')),
     path('myurl/',include('URL_shortener_v1.urls'))
 
 ]
