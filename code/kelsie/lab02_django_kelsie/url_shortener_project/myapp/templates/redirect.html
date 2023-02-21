@@ -48,18 +48,17 @@
    
 </head>
     <body>
+
         <div class="card">
             <h1>URL Shortener</h1>
-            <p>Please enter your long URL into the textbox to recieve a shortened code. You can then submit the code to be redirected to your site.</p>
+            <p>Submit the code to be redirected to your site.</p>
         </div>
-       
-        <form action="{% url 'myapp:index' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input id="submit" type="submit" value="Submit" />
-            {{ short_url }}
-        </form>
-       
 
+        <form action="{% url 'myapp:redirect' %}" method="get">
+            {% csrf_token %}
+            <input id="short_url" name="short_url" type="text" value="{{ short_url }}" />
+            <input id="submit" type="submit" value="Submit" />
+        </form>
+        
     </body>
 </html>

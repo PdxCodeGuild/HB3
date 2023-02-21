@@ -27,9 +27,11 @@ def index(request):
                 new_click.save()
 
                 context = {"short_url":new_info.short_url}
-                return render(request, 'index.html', context)
+                return render(request, 'redirect.html', context)
 
 
-def redirect(request, short_url):
-        print(short_url)
-        return render(request, 'index.html')
+def redirect(request):
+        short_url = request.GET['short_url']
+        item = ShortURL.objects.get(short_url=short_url)
+        long_url = item.long_url
+        return HttpResponseRedirect(long_url)
