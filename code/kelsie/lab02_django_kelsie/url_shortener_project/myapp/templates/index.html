@@ -57,11 +57,10 @@
             {% csrf_token %}
             {{ form }}
             <input id="submit" type="submit" value="Submit" />
+            {{ short_url }}
         </form>
-        {% if form.is_valid %}
-            {% for item in list %}
-            <a href="{% url 'myapp:redirect' %}">{{ item.id }}</a>
-            {% endfor %}
-        {% endif %}
+
+
+
     </body>
 </html>

@@ -5,5 +5,5 @@ app_name = 'myapp'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('item_id', views.redirect, name='redirect')
+    path('long_url', views.redirect, name='redirect')
 ]
