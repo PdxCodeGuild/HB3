@@ -69,12 +69,14 @@ M-F 6:00 pm – 9:36 pm PT
 | 04  | [Form Validation](4%20JavaScript/labs/form_validation.md)           |    16 Jan     |          30 Jan       |
 | 05  | [Mob Vue ToDo](4%20JavaScript/labs/03%20Vue%20Todo.md)           |    20 Jan     |          3 Feb       |
 | 06  | [Vue Re Do](4%20JavaScript/labs/02%20Vue%20Redo.md)           |    25 Jan     |          8 Feb       |
+| 07  | [Vue Re Do](4%20JavaScript/labs/02%20Vue%20Redo.md)           |    25 Jan     |          8 Feb       |
 
 ## Django
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
 | 01 | [Grocery list](3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
 | 02 | [URL Shortener](3%20Django/labs/lab02-url-shortener.md) | 9 Feb | 23 Feb |
+| 03 | [Chirp](3%20Django/labs/lab03-chirp.md) | 21 Feb | 7 Mar |
 
 ## Getting Unstuck 
 
