@@ -10,5 +10,5 @@ urlpatterns = [
     # path('', views.index, name='index'),
     # localhost:8000/myurl/short_URL
     path('short_URL/', views.URLsubmit, name='Input_myurl'),
-    path('redirect_URL/', views.URLredirect, name='Redirect_the_url')
+    path('redirect_URL/<int:id>', views.URLredirect, name='Redirect_the_url')
 ]

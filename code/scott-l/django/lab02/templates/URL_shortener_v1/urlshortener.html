@@ -16,9 +16,10 @@
             {% for URL_Listing in url_link_list %}
 
             <li>
-                <a href="{% url 'URL_shortener_v1:Input_myurl'%}">
-                    {{ URL_Listing.url}}
+                <a href="{% url 'URL_shortener_v1:Redirect_the_url' URL_Listing.id %}">
+                    {{ URL_Listing.code}}
                 </a>
+                <div>ORIGINAL URL: {{URL_Listing.url}}</div> 
                 
             </li>
 

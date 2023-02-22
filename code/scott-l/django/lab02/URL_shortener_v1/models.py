@@ -8,11 +8,10 @@ from django import forms
 class urlShortener(models.Model):
     code = models.CharField(max_length=200)
     url = models.CharField(max_length=500)
-    # new_URL = models.CharField(max_length=500)
+    
 
     def __str__(self):
         return f'{self.code},{self.url}'
-
 
 
     

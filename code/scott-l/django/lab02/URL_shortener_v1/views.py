@@ -17,10 +17,10 @@ def index(request):
 def URLsubmit(request): # a view for recieving the URL submission
     # return HttpResponse('you are at the URLsubmit page')  #DEBUG
 
-    URL_Tag_lead = 'https://www.littleURL/'
+    URL_Tag_lead = 'littleURL/'
 
     if request.method=='POST':   # if the form has been submitted to this url
-        print(request.POST['URLshortenInput'])  #DEBUG
+        # print(request.POST['URLshortenInput'])  #DEBUG
         
         #  Generate a list of 6 random numbers, which can then be used 
         letter_string_random = ""
@@ -33,7 +33,7 @@ def URLsubmit(request): # a view for recieving the URL submission
         print(letter_string_random)
 
         URL_user_input = urlShortener(url=request.POST['URLshortenInput'],
-                                      code = letter_string_random)
+                                      code = f'{URL_Tag_lead}{letter_string_random}')
 
         URL_user_input.save()
         return HttpResponseRedirect(reverse('URL_shortener_v1:Input_myurl'))  
@@ -51,10 +51,10 @@ def URLsubmit(request): # a view for recieving the URL submission
     # return HttpResponseRedirect('/mypath')  # Not sure how to use this??
     
 
-def URLredirect(request):
-    redirect_url = urlShortener.objects.all()
+def URLredirect(request,id):
+    redirect_url = urlShortener.objects.get(id=id)
     print(redirect_url) # DEBUG
-    context = {'url_data':redirect_url}
-    return render(request,'URL_shortener_v1/index.html',context)
-    # return HttpResponseRedirect('/mypath')  # Not sure how to use this??
+    
+    # return render(request,'URL_shortener_v1/index.html',context)
+    return HttpResponseRedirect(redirect_url.url)  
     # return HttpResponseRedirect(reverse('myapp:myview'))  # Not sure how to use this??
