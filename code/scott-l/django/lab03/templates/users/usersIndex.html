@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1> users Index </h1>  
+    <h1> users Index: {{usersIndex}}</h1>  
+
+    register
+    <form action="{% url 'users:user_registration'% }" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="email" placeholder="email", name="email">
+        <input type="password" placeholder="password", name="password">
+        <input type="submit">
+    </form>
+
 </body>
 </html>
 
