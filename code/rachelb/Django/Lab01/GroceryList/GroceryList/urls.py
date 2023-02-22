@@ -1,4 +1,4 @@
-"""grocerylist URL Configuration
+"""GroceryList URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,14 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from list.views import index, index_retrieve, index_create
-
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('index/',index_retrieve),
-    path('form/', index_create)
-    # path('index/<int:id>/', index_retrieve)
+    path('', include('GroceryItem.urls'))
+    
 ]
