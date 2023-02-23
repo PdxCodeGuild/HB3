@@ -1,0 +1,30 @@
+
+{% load static %}
+
+<h3>Enter a URL and then click Create Shortened URL button to create a new URL </h3>
+<form action="{% url 'URL_shortener_v1:Input_myurl' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="URLshortenInput"/>
+    <button type = "submit">Create Shortened URL</button>
+</form>
+
+
+<div class="wrapper">
+    <div class="text">
+        <h1>URL_List</h1>
+        <ul>
+            {% for URL_Listing in url_link_list %}
+
+            <li>
+                <a href="{% url 'URL_shortener_v1:Redirect_the_url' URL_Listing.id %}">
+                    {{ URL_Listing.code}}
+                </a>
+                <div>ORIGINAL URL: {{URL_Listing.url}}</div> 
+                
+            </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
