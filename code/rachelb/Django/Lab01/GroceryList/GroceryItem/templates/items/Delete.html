@@ -1,0 +1,6 @@
+
+<p>Delete "{{ item }}" ?</p>
+<form method="POST" >
+    {% csrf_token %}
+    <input type="submit" name="delete" >
+</form>
