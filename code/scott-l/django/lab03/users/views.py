@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -63,7 +64,8 @@ def user_reset_password(request):
 
 def user_profile(request):
     if request.user.is_authenticated:
-        return HttpResponse(f'user profile is: {request.user}')
+        # return HttpResponse(f'user profile is: {request.user}')
+        return render(request, 'users/profileIndex.html')
     else: 
         return HttpResponse('you must be logged in to see this view')
 

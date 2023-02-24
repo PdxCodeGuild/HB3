@@ -1,0 +1,93 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile Index</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- Navbar goes here -->
+    <h1>NAV BAR</h1>
+    <!-- Page Layout here -->
+
+    <div class="container">
+        <div class="row g-4>
+            <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+                <!-- Grey navigation panel
+  
+                This content will be:
+            3-columns-wide on large screens,
+            4-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+                area 1
+            </div>
+            <div class="col s12 m4 l3">a</div>
+            <div class="col s12 m4 l3">b</div>
+            <div class="col s12 m4 l3">c</div>
+            <div class="col s12 m4 l3">d</div>
+            <div class="col s12 m4 l3">e</div>
+
+            <div class="col s12 m8 l9 vstack gap-4"> <!-- Note that "m8 l9" was added -->
+                <!-- Teal page content
+  
+                This content will be:
+            9-columns-wide on large screens,
+            8-columns-wide on medium screens,
+            12-columns-wide on small screens  -->
+
+                <!-- Story Start -->
+
+                <div class="d-flex gap-2 mb-n3">
+                    <div class="position-relative">
+                        <div class="card border border-2 border-dashed h-150px px-4 px-sm-5 shadow-none d-flex align-items-center justify-content-center text-center">
+                            <div>
+                                <a class="stretched-link btn btn-light rounded-circle icon-md" href="#1">
+                                    <i class="fa-solid fa-plus">
+                                        ::before
+
+                                    </i>
+                                    ::after
+                                </a>
+                                <h6 class="mt-2 mb-0 small">Post a Story</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stories -->
+                    <div id="stories" class="storiesWrapper stories-square stories user-icon carousel scroll-enable stories user-icon carousel snapgram ">
+                        <div class="story" data-id="user-1" data-last-updated="1677214564.434">
+                            <a class="item-link" href="">
+                                <span class="item-preview">
+                                    ::before
+                                    <p>This is a simple post hear me roar</p>
+                                </span>
+                                <span class="info" itemprop="author" itemscope="">
+                                    <strong class="name" itemprop="name">
+                                        Judy Nguyen
+                                    </strong>
+                                    <span class="time"></span>
+                                </span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
