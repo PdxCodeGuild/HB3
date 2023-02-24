@@ -20,12 +20,10 @@
     </head>
     <body>
         <form action="{% url 'users:register' %}" method="post">
-            <p>Login Here</p>
+            <p>Register Here</p>
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Login"/>
+            <input type="submit" value="Register"/>
         </form>
-        <p>New User? Sign Up Here</p>
-        <a href="signup.html">SignUp</a>
     </body>
 </html>
