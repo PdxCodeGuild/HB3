@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+    </head>
+    <body>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="long_url" placeholder="Add the link you would like to shorten">
+                <button>Add Mini Url</button>
+            </form>
+            <div>
+                <a target="_blank" href="http://localhost:8000/{{ link.code }}">'http://localhost:8000/{{ link.code }}'</a>
+            </div>
+        </div>
+    </body>
+</html>
