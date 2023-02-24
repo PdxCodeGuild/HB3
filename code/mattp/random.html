@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DJANGO: Grocery List Lab</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: beige;
+                background-size: cover;
+                text-align: center;
+            }
+    
+            .box {
+                background-color: rgb(107, 167, 147);
+                width: fit-content;
+                margin: auto;
+                padding: 10%;
+                border-style: double; 
+                border-radius: 30px;  
+            }
+ 
+    
+        </style>
+    </head>
+    <body>
+        <h1>DJANGO Grocery List</h1>
+        <form action="{% url 'grocery_list:grocery_add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add Item to List</button>
+        </form>
+
+        <div>
+            <h1 >List</h1>
+            <ul>
+                {% for grocery in all_list %}
+                {% if not grocery.is_completed %}
+                <li>
+                    <a href="{% url 'grocery_list:grocery_complete' grocery.id %}">Complete</a>
+                    <a href="{% url 'grocery_list:grocery_remove' grocery.id %}">Delete</a>
+                    <span>{{ grocery.text_description }}</span>
+                    <small class="text-gray-500 ml-2">created: {{ grocery.created_date }}</small>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+ 
+        <div>
+            <h1></h1>Completed List</h1>
+            <ul >
+                {% for grocery in all_list %}
+                {% if grocery.is_completed %}
+                <li>
+                    <a href="{% url 'grocery_list:grocery_remove' grocery.id %}">Delete</a>
+                    <span class="line-through">{{ grocery.text_description }}</span>
+                    <small>created: {{ grocery.created_date }}</small>
+                    <small>completed: {{ grocery.completed_date }}</small>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+ 
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    </body>
+</html>
+ 
+{% for items in list %}
+{{ items.name }}
+{% endfor %}
