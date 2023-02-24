@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="long_url" placeholder="Copy and past link here">
+            <button>Create short url</button>
+        </form>
+    </div>
+
+    <div>
+        {% if link %}
+        <a target="_blank" href="http//localhost.8000/{{ link.code }}">http//localhost.8000/{{ link.code }}</a>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
