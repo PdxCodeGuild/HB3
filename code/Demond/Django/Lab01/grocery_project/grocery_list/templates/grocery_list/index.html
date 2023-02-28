@@ -1,0 +1,42 @@
+    {% extends 'base.html' %}
+    <!-- the above code just extends the base html, not really a needed step -->
+    <!-- note to self: remember % is imporint in dango to symbolize beginning and end of template tags -->
+    {% block content %}
+    <!-- this will essentially act as a placeholder for the actual content of my grocery page -->
+    <h1>Demonds Grocery List</h1>
+    
+    <h2>Add to Grocery list</h2>
+    <form method="POST">
+        {{ form.as_p }}
+        <!-- note to self: this django key saves a ton of time -->
+        <button type="submit">Add</button>
+    </form>
+    <!-- all this is doing is submitting my data -->
+    <h2> Things to buy</h2>
+    <ul>
+        {% for item in incomplete_items %}
+        <li>
+            <span>{{ item.text }}</span>
+            <a href="{% url 'complete_item' item.id %}">(in cart)</a>
+            <a href="{% url 'delete_item' item.id %}">(Delete)</a>
+            <!-- note to self: this obviously connects to the urls.. remember the urls is like the engine of this whole project.. -->
+        </li>
+        {% empty %}
+        <li>Nothing!</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Things in cart</h2>
+    <ul>
+        {% for item in complete_items %}
+        <li>
+            <span>{{ item.text }}</span>
+            <a href="{% url 'complete_item' item.id %}">(back to things to buy)</a>
+            <a href="{% url 'delete_item' item.id %}">(Delete)</a>
+        </li>
+        {% empty %}
+        
+        {% endfor %}
+    </ul>
+    <!-- this signals that its the end of the content filler.. -->
+    {% endblock %}
