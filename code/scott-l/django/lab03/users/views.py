@@ -65,7 +65,12 @@ def user_reset_password(request):
 def user_profile(request):
     if request.user.is_authenticated:
         # return HttpResponse(f'user profile is: {request.user}')
-        return render(request, 'users/profileIndex.html')
+        #user = User.objects.get(username=request.user)
+        userModelObject = User.objects.get(username=request.user)
+        print(userModelObject) #DEBUG
+        context = {'userInfo': userModelObject}
+        return render(request, 'users/profileIndex.html',context)
+        # return render(request, 'users/profileIndex.html')
     else: 
         return HttpResponse('you must be logged in to see this view')
 
@@ -73,3 +78,4 @@ def user_signout(request):
     logout(request)
     # redirect to a success page
     return HttpResponse('user signout')
+
