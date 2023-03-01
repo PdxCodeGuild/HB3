@@ -14,41 +14,48 @@ def usersIndex(request):
 #end def userIndex
 
 def user_registration(request):
-    first_name = request.POST['first_name']
-    last_name = request.POST['last_name']
-    username = request.POST['username']
-    email = request.POST['email']
-    password = request.POST['password']
-    print(first_name) #DEBUG
-    print(last_name) #DEBUG
-    print(username)  #DEBUG
-    print(password)  #DEBUG
-    print(email)  #DEBUG
-    user = User.objects.create_user(username,
-                                    email,
-                                    password,
-                                    first_name=first_name,
-                                    last_name=last_name)
-    
-    user.save()
-
-    return HttpResponse('user registration')
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        print(first_name) #DEBUG
+        print(last_name) #DEBUG
+        print(username)  #DEBUG
+        print(password)  #DEBUG
+        print(email)  #DEBUG
+        user = User.objects.create_user(username,
+                                        email,
+                                        password,
+                                        first_name=first_name,
+                                        last_name=last_name)
+        user.save()
+        return render(request, 'users/login.html')
+    else:
+        return render(request, 'users/registration.html') 
 #end def user_registration
 
+
+
+
 def user_login(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    print(username) #DEBUG
-    print(password) #DEBUG
-    user = authenticate(request, username=username,password=password)
-    if user is not None:
-        login(request,user)
-        # Redirect to a success page
-        return HttpResponse('user login')
-    else:
-        # Return to an 'invalid login' error message
-        return HttpResponse('Login credential did not match')
-    
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username) #DEBUG
+        print(password) #DEBUG
+        user = authenticate(request, username=username,password=password)
+        if user is not None:
+            login(request,user)
+            # Redirect to a success page
+            # return HttpResponse('user login')
+            return render(request, 'users/login.html')
+        else:
+            # Return to an 'invalid login' error message
+            return HttpResponse('Login credential did not match')
+        
+    return render(request, 'users/login.html')  
 #end def user_login
 
 def user_reset_password(request):

@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postsIndex</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body class="text-center">
+    <h1>Chirp Message Page</h1>
+    <main class="form-signin w-50 m-auto">
+        <img class="mb-4" src="{% static 'css/imgs/chirp_logo.png' %}" alt="" width="72" height="57">
+        <form action="{% url 'users:user_login' %}" method="post">
+            <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
+            {% csrf_token %}
+            <div class="form-floating">
+                <input id="floatingInput" class="form-control" type="text" placeholder="username" name="username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    name="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+        </form>
+
+        <a href="{% url 'users:user_registration' %}">REGISTER</a>
+        
+
+    </main>
+
+</body>
+
+</html>
