@@ -1,0 +1,79 @@
+body {
+    background-color:  rgb(255, 244, 245);
+    padding: 20px;
+    border: 5px #FA877D solid;
+    border-radius: 4px;
+  }
+.navbar {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-image: linear-gradient(#3c644e, #8ccfaa);
+  width: 95%;
+  text-align: right;
+  border:#000000 2px solid;
+  border-radius: 4px;
+  }
+.navbar a {
+  color:rgb(23, 23, 23);
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+  }
+.navbar a:hover {
+  color: #FA877D;
+  }
+footer {
+    background-image: linear-gradient(#3c644e, #8ccfaa);
+  height: 30px;
+  display: flex;
+  margin-top: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  }
+footer a {
+  color: black;
+  padding: 8px 8px 8px 32px;
+  display: block;
+  } 
+footer a:hover {
+  color: #FA877D;
+  }
+li {
+    padding: 5px;
+    border: #000000 1px solid;
+    text-decoration: none;
+    width: 60%;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: rgb(253, 252, 252);
+}
+.chirp_submit{
+    background-color: #B1A7A6;
+    border: #000000 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+    width: 70%;
+    display: flex;
+    margin: auto;
+}
+#chirpSubmit {
+    margin-left: 5px;
+}
+#chirpText {
+    width: 80%;
+    margin: 5px;
+}
+#chirp_list {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(#FCD0CC, rgb(161, 74, 89));
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border:rgb(23, 23, 23) 2px solid
+}

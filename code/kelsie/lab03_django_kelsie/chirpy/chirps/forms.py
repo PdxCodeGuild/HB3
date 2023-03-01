@@ -1,5 +1,4 @@
 from django import forms
 
-class ChirpForm(forms.form):
-    text = forms.CharField(label="Chirp", max_length=128)
-    
+class ChirpForm(forms.Form):
+    text = forms.CharField(max_length=128)
