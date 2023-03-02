@@ -78,7 +78,7 @@ M-F 6:00 pm – 9:36 pm PT
 | 02 | [URL Shortener](3%20Django/labs/lab02-url-shortener.md) | 9 Feb | 23 Feb |
 | 03 | [Chirp](3%20Django/labs/lab03-chirp.md) | 21 Feb | 7 Mar |
 
-##Capstone
+## Capstone
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
 | 01 | [Capstone Proposal](5%20Capstone/Capstone%20Proposal.md) | 1 Mar | 3 Mar |
