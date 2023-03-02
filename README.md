@@ -81,7 +81,8 @@ M-F 6:00 pm – 9:36 pm PT
 ##Capstone
 | Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
 | --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
-| 01 | [Chirp](5%20Capstone/Capstone%20Proposal.md) | 1 Mar | 27 Mar |
+| 01 | [Capstone Proposal](5%20Capstone/Capstone%20Proposal.md) | 1 Mar | 3 Mar |
+| 01 | [Capstone](5%20Capstone/Capstone%20Proposal.md) | 6 Mar | 27 Mar |
 
 ## Getting Unstuck 
 
