@@ -3,6 +3,7 @@ body {
     padding: 20px;
     border: 5px #FA877D solid;
     border-radius: 4px;
+  
   }
 .navbar {
   margin-bottom: 30px;
@@ -12,6 +13,7 @@ body {
   text-align: right;
   border:#000000 2px solid;
   border-radius: 4px;
+ 
   }
 .navbar a {
   color:rgb(23, 23, 23);
@@ -31,11 +33,13 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  
   }
 footer a {
   color: black;
   padding: 8px 8px 8px 32px;
   display: block;
+  text-decoration: none;
   } 
 footer a:hover {
   color: #FA877D;
@@ -56,15 +60,16 @@ li {
     border: #000000 2px solid;
     border-radius: 4px;
     padding: 10px;
-    width: 70%;
+    width: 80%;
     display: flex;
     margin: auto;
 }
 #chirpSubmit {
     margin-left: 5px;
+
 }
 #chirpText {
-    width: 80%;
+    width: 60%;
     margin: 5px;
 }
 #chirp_list {
@@ -75,5 +80,11 @@ li {
     width: 80%;
     padding-top: 20px;
     padding-bottom: 20px;
-    border:rgb(23, 23, 23) 2px solid
+    border:rgb(23, 23, 23) 2px solid;
+}
+img {
+  margin: auto;
+  display: flex;
+  border-radius: 50%;
+  border:#FCD0CC 2px solid;
 }
