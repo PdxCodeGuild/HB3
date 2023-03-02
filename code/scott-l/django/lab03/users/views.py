@@ -46,11 +46,16 @@ def user_login(request):
         print(username) #DEBUG
         print(password) #DEBUG
         user = authenticate(request, username=username,password=password)
+
         if user is not None:
             login(request,user)
+            userModelObject = User.objects.get(username=request.user)
+            print(userModelObject) #DEBUG
+            context = {'userInfo': userModelObject}
+
             # Redirect to a success page
             # return HttpResponse('user login')
-            return render(request, 'users/login.html')
+            return render(request, 'users/profileIndex.html',context)
         else:
             # Return to an 'invalid login' error message
             return HttpResponse('Login credential did not match')
@@ -80,9 +85,23 @@ def user_profile(request):
         # return render(request, 'users/profileIndex.html')
     else: 
         return HttpResponse('you must be logged in to see this view')
+    
+def user_public_profile(request):
+    if request.user.is_authenticated:
+        # return HttpResponse(f'user profile is: {request.user}')
+        #user = User.objects.get(username=request.user)
+        userModelObject = User.objects.get(username=request.user)
+        print(userModelObject) #DEBUG
+        context = {'userInfo': userModelObject}
+        return render(request, 'posts/postsIndex.html',context)
+        # return render(request, 'users/profileIndex.html')
+    else: 
+        return HttpResponse('you must be logged in to see this view')
+
 
 def user_signout(request):
     logout(request)
     # redirect to a success page
-    return HttpResponse('user signout')
+    return render(request, 'users/login.html')
+#end def user_signout  
 
