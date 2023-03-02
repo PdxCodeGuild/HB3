@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="long_url" placeholder="Copy and past link here">
+            <button>Create short url</button>
+        </form>
+    </div>
+
+    <div>
+        {% if link %}
+        <a target="_blank" href="{% url 'redirect' link.code %}">http://wwww.localhost.8000/{{ link.code }}</a>
+
+        <!-- The code above is redirecting using interal means by using a path already defined in the app -->
+        <!-- <a target="_blank" href="http://www.localhost.8000/{{ link.code }}">http://wwww.localhost.8000/{{ link.code }}</a> - This is a way to redirect using external patrties EX: Google chrome, Safari--> 
+        
+        {% endif %}
+    </div>
+    
+</body>
+</html>
