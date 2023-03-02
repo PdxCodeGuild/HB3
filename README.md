@@ -19,7 +19,7 @@ M-F 6:00 pm – 9:36 pm PT
 ### Misc. Days Off
 
 - ~~December 30th 2022~~
-- February 24th 2023
+- ~~February 24th 2023~~
 - March 10th 2023
 
 ### Staff
@@ -77,6 +77,11 @@ M-F 6:00 pm – 9:36 pm PT
 | 01 | [Grocery list](3%20Django/labs/lab01-grocery-list.md) | 3 Feb | 17 Feb |
 | 02 | [URL Shortener](3%20Django/labs/lab02-url-shortener.md) | 9 Feb | 23 Feb |
 | 03 | [Chirp](3%20Django/labs/lab03-chirp.md) | 21 Feb | 7 Mar |
+
+##Capstone
+| Lab | Name                                                               | Date Assigned | Due By Start Of Class | 
+| --- | ------------------------------------------------------------------ | ------------- | --------------------- | 
+| 01 | [Chirp](5%20Capstone/Capstone%20Proposal.md) | 1 Mar | 27 Mar |
 
 ## Getting Unstuck 
 
