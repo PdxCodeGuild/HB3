@@ -38,7 +38,7 @@
                     class="fa fa-user"> Profile Page</i>
             </a>
             
-            <img src="{% static 'css/imgs/chirp_logo.png' %}" class="w3-circle" style="height:23px;width:23px"
+            <img src="{% static 'imgs/chirp_logo.png' %}" class="w3-circle" style="height:50px;width:50px"
                 alt="PicAvatar">
             
             <a href="{% url 'users:user_signout' %}"
@@ -72,7 +72,7 @@
             <div class="w3-col m9">
                 
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                    <img src="{% static 'css/imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                    <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
                         style="width:60px">
                     <span class="w3-right w3-opacity">[DatePostTime]</span>
                     <h4>{{ blogPosts.userNamePost }}</h4><br>

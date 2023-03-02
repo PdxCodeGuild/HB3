@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http import HttpResponseRedirect
+from posts.models import BlogPost
+
 
 
 # Create your views here.
@@ -79,8 +81,11 @@ def user_profile(request):
         # return HttpResponse(f'user profile is: {request.user}')
         #user = User.objects.get(username=request.user)
         userModelObject = User.objects.get(username=request.user)
+        blogPost0bject = BlogPost.objects.filter(userNamePost=request.user)
         print(userModelObject) #DEBUG
-        context = {'userInfo': userModelObject}
+        print(blogPost0bject)  #DEBUG
+        context = {'userInfo': userModelObject,
+                   'blogPostInfo':blogPost0bject}
         return render(request, 'users/profileIndex.html',context)
         # return render(request, 'users/profileIndex.html')
     else: 
