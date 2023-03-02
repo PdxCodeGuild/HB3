@@ -1,0 +1,9 @@
+{% extends 'template.html' %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %} 
+  {{ form.as_div }}
+  <button>Sign In</button>
+</form>
+{% endblock %}
+
