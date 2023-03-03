@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
@@ -5,11 +6,13 @@ from django.http import HttpResponseRedirect
 from .models import grocerylister
 from .forms import grocery_form
 from django.shortcuts import reverse 
+
 # Create your views here.
 def index(request):
-    list = grocerylister.objects.filter(completed=False)
+    list = grocerylister.objects.all()
     
     return render(request, "index.html", {"list": list})
+
 
 def grocery_items(request):
     list_items = grocery_form.objects.all()
@@ -38,5 +41,6 @@ def completed_item(request, id):
     item.is_completed = True
     item.save()
     return HttpResponseRedirect('grocery_list:grocery_list')
+
 
 

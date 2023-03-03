@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Change</title>
+    <script>
+        function money2coins(dollar_amount) {
+                var i, num,
+                    output = [],
+                    coins = [
+                        [25, "quarter", "quarters"],
+                        [10, "dime", "dimes"],
+                        [5, "nickel", "nickels"],
+                        [1, "penny", "pennies"]
+                    ];
+                dollar_amount = dollar_amount * 100;
+                for (i = 0; i < coins.length; i++) {
+                    num = dollar_amount / coins[i][0] | 0;
+                    dollar_amount -= num * coins[i][0];
+                    if (num) {
+                        output.push(num + " " + coins[i][num > 1 ? 2 : 1]);
+                    }
+                }
+                return output.join(", ");
+            }
+            let enter_amount = prompt('Enter a dollar amount');
+            alert('The change is: ' + money2coins(enter_amount))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

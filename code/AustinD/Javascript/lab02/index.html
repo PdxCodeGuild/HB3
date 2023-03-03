@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Forecast</title>
+    <script src="secret.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="weather-forecast" class="p-6 flex flex-row flex-wrap"></div>
+    <script>
+        async function getWeatherData() {
+            let position = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${apiKey}`;
+            let data = await fetch(apiUrl)
+                .then(response => response.json());
+            return data;
+        }
+        async function updateForecast() {
+            let data = await getWeatherData();
+            let forecastList = data.list;
+            let forecastCount = 0;
+            for (let i = 0; i < forecastList.length; i++) {
+                let forecast = forecastList[i];
+                let date = forecast.dt_txt;
+                let location = data.city.name;
+                let dateTime = new Date(date);
+                let displayDate = dateTime.toDateString();
+                if (dateTime.getHours() === 15 && forecastCount < 5) {
+                    let temperature = forecast.main.temp.toFixed(1);
+                    let humidity = forecast.main.humidity;
+                    let windSpeed = forecast.wind.speed;
+                    let description = forecast.weather[0].description;
+                    let icon = forecast.weather[0].icon;
+                    let iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
+                    let forecastDiv = document.createElement("div");
+                    forecastDiv.setAttribute("class", "bg-purple-600 rounded-md shadow-lg mr-2 mb-2 w-full max-w-sm");
+                    let forecastTemperature = document.createElement("p");
+                    forecastTemperature.setAttribute("class", "p-4");
+                    let forecastHumidity = document.createElement("p");
+                    forecastHumidity.setAttribute("class", "p-4");
+                    let forecastWindSpeed = document.createElement("p");
+                    forecastWindSpeed.setAttribute("class", "p-4");
+                    let forecastDescription = document.createElement("p");
+                    forecastDescription.setAttribute("class", "p-4");
+                    let forecastIcon = document.createElement("img");
+                    forecastIcon.setAttribute("class", "justify-between ml-auto float-right w-1/3");
+                    let forecastDate = document.createElement("p");
+                    forecastDate.setAttribute("class", "p-4");
+                    let forecastLocation = document.createElement("p");
+                    forecastLocation.setAttribute("class", "p-4");
+                    forecastTemperature.innerHTML = temperature + 'F';
+                    forecastHumidity.innerHTML = 'Humidity ' + humidity + '%';
+                    forecastWindSpeed.innerHTML = windSpeed + 'mph Wind';
+                    forecastDescription.innerHTML = description;
+                    forecastLocation.innerHTML = location;
+                    forecastIcon.src = iconUrl;
+                    forecastDate.innerHTML = displayDate;
+                    forecastDiv.appendChild(forecastDate);
+                    forecastDiv.appendChild(forecastHumidity);
+                    forecastDiv.appendChild(forecastTemperature);
+                    forecastDiv.appendChild(forecastWindSpeed);
+                    forecastDiv.appendChild(forecastLocation);
+                    forecastDiv.appendChild(forecastDescription);
+                    forecastDiv.appendChild(forecastIcon);
+                    document.getElementById("weather-forecast").appendChild(forecastDiv);
+                    forecastCount++;
+}
+}
+}
+updateForecast();
+</script>
+  </body>
+</html>

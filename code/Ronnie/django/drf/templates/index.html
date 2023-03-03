@@ -1,0 +1,64 @@
+{% extends 'template.html' %}
+{% block content %}
+<div id="app">
+  <!-- pokenotes input form -->
+  <div class="form-floating container m-1">
+    <textarea v-model="pokenotes" class="form-control" id="note" placeholder="Leave notes here"
+      style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Notes</label>
+    <button @click="add_note()">submit notes</button>
+  </div>
+  <!-- load pokemon cards -->
+  <div class="container d-flex flex-row flex-wrap">
+    <div v-for="poke in pokemon" class="card m-2" style="width: 18rem;">
+      <img :src="poke.image_front" class="card-img-top" width="150px">
+      <div class="card-body">
+        <h3 class="card-title"><a href="">${ poke.name }</a></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Vue app
+  let app = new Vue({
+    el: '#app',
+    delimiters: ['${', '}'],
+    data: {
+      pokemon: [],
+      pokenotes: [],
+    },
+    methods: {
+      // add notes to pokemon
+      add_note() {
+        if (!this.pokenotes[0]) {
+          return
+        } else {
+          console.log(this.pokenotes)
+          axios({
+            method: 'post',
+            url: 'http://localhost:8000/api/notes/',
+            data: {
+              'note': this.pokenotes
+            }
+          })
+        }
+      }
+    },
+    // display all pokemon
+    created() {
+      axios({
+        url: '/api/pokemon/',
+        method: 'get',
+      }).then(res => {
+        for (let i = 0; i < res.data.length; ++i) {
+          this.pokemon.push(res.data[i])
+        }
+      })
+    }
+  })
+</script>
+{% endblock %}
+</body>
+
+</html>

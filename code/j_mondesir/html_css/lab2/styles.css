@@ -1,0 +1,20 @@
+#small {
+    height: 200px;
+}
+
+#wider {
+    height: 400px;
+    width: 730px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    color: rgb(23, 13, 2);
+}
+
+#footer {
+    font-weight: bold;
+    color: blueviolet;
+    text-shadow: 2px 2px 5px red;
+}

@@ -1,0 +1,65 @@
+header {
+    background: grey;
+    text-align: center;
+    font-size: 48px;
+}
+
+.container {
+    background: lightblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.leftcolumn {
+    background: teal;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+
+.login {
+    padding: 10px;
+    background: coral;
+    text-align: center;
+}
+
+.main {
+    background: yellow;
+    flex-grow: 2;
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.upper {
+    background: lightgreen;
+    text-align: center;
+}
+
+.lower {
+    margin: 20px;
+    padding: 0 80px;
+    text-align: left;
+}
+
+.rightcolumn {
+    background: pink;
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+
+.delivery {
+    text-align: center;
+}
+
+.instructions {
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+<h2> Grocery List </h2>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.description }}
+    <input type="submit">
+</form>
+
+{% for item in items %}
+    <div>
+        <a href="{% url 'Edit' item.id %}">Edit</a>
+        <a href="{% url 'Delete' item.id %}">Delete</a>
+        <!-- <p>{{ item }}</p> -->
+
+        {% if item.complete == True %}
+        <h4 style="text-decoration:line-through;">{{ item }}</p></h4>
+        {% else %}
+        <h4 style="font-style: italic;">{{ item }}</h4> 
+        {% endif %}
+    </div>
+{% endfor %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+        Enter the password length: <input type="number" id="user_input">
+        <button onclick="password()">Get Password</button>
+    <div id="password_div"></div>
+    <script>
+    function password() {
+    let user_input = document.getElementById('user_input').value;
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\] ^_`{|}~",
+        returnvalue = "";
+        for (var i = 0; i < user_input; ++i) {returnvalue +=charset.charAt(Math.floor(Math.random() * user_input));
+            }
+    document.getElementById("password_div").innerHTML = 'Your password is: ' + returnvalue;
+    }
+    </script>
+</body>
+</html>

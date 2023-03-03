@@ -1,0 +1,159 @@
+<!-- '''
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+      Project: Lab 1 - Bio webpage
+      Author: Scott Lefgren
+      Email: scojlefg@gmail.com
+      Date: December 28, 2022
+___________________          _-_
+\==============_=_/ ____.---'---`---.____
+            \_ \    \----._________.----/
+              \ \   /  /    `-_-'
+          __,--`.`-'..'-_
+         /____          ||
+              `--.____,-'
+
+ *'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*'|<>|'*
+''' -->
+<!-- LAB 01 BIO -->
+<!-- Write up a short bio webpage for someone or something. 
+It can be about a celebrity, a fictionary character, a 
+place, a species, etc. Check out the examples -->
+
+<!-- Part 1
+
+    x A written introduction
+    x A link to a Wikipedia article
+    x A picture of them
+    x A list of places where they've lived
+    x A quote from them -->
+
+<!-- Part 2
+
+    x Center the entire content of the body
+    x Modify the padding and margins on your paragraphs to look better
+    x Use a custom font
+    x Add a background image -->
+
+<!-- Part 3
+
+    x Pick a color scheme and modify the background, body text, and link text color.
+    x Change the typeface of the quote.
+    x Add a rounded border to the picture.
+    x Change the bullet points on the list of places. -->
+
+
+<!DOCTYPE html>
+<!-- root element -->
+<html lang="en">
+<!-- the head contains metadata about the document -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Scott Lefgren" <!-- page title, the text the appears on the browser -->
+    <title>Demo Page</title>
+    <!-- import external css -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Document</title>
+</head>
+<!-- the body contains the actual document that will be shown to the user -->
+
+<body>
+   
+    <div class="biography_header">
+        <div class="biography-section-text">
+            <h1>Biography - Ernest Shackleton</h1>
+            <h5>15 February 1874 - 5 January 1922</h5>
+        </div>
+    </div>
+
+    <section>
+        <div align="middle">
+            <ul>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ernest_Shackleton_before_1909.jpg/330px-Ernest_Shackleton_before_1909.jpg"
+                    alt="Ernest Shackleton">
+            </ul>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="introduction">
+            <h1>Introduction</h1>
+            <p> Sir Ernest Henry Shackleton was an Anglo-Irish explorer of Antartica who attempted to reach the South
+                Pole.
+                He is best known as a polar explorer who was associated with four expeditions exploring Antartica,
+                particularly
+                the Trans-Antartic (Endurance) Expedition (1914-1916) that he led, which although unsuccessful, became
+                famous
+                as a tale of remarkable perseverance and survival. He died during his fourth expedition in 1920 and is
+                buried on the island of South
+                Georgia in the South Atlantic Ocean.
+            </p>
+        </div>
+
+        <div class="wiki-article">
+            <h1>Wikipedia article</h1>
+            <a href="https://en.wikipedia.org/wiki/Ernest_Shackleton">Ernest-Henry-Shackleton Wikipedia </a>
+
+            <p></p>
+        </div>
+
+        <div class="place_list">
+            <h1>A list of places Ernest Henry Shackleton lived</h1>
+            <ul>
+                <li>Born on 15 February 1874 in Kilkea, County Kildare, Ireland</li>
+                <li>1880 Trinity College, Dublin, Ireland</li>
+                <li>1884 Sydenham, London, England</li>
+                <li>Discovery expedition 1901-1903 Antartica South Pole attempt</li>
+                <li>Shore Work 1903-1907 England</li>
+                <li>Nimrod Expedition 1907-1909 Antartica</li>
+                <li>Between Expeditions 1909-1914 England</li>
+                <li>Imperial Trans-Antartica Expedition, 1914-1917, Antartica</li>
+                <li>First World War 1917 Military service</li>
+                <li>Russian Civil War 1918-1919 Military service</li>
+                <li>Final expedition 1919-1920 Grytviken South Georgia</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h1>Pictures</h1>
+        <div class="wrapper">
+            <div class="biography_images">
+                <img src="https://cdn.quotesgram.com/img/35/72/950322860-Shakleton.jpg" />
+                <img src="http://ecx.images-amazon.com/images/I/91mA2Tt58iL.jpg" />
+                <img
+                    src="https://www.thestar.com/content/dam/thestar/news/world/2015/03/02/in-shackletons-footsteps-a-journey-to-the-antarctic/endurance-in-ice.jpg" />
+                <img
+                    src="http://ernest-shackleton.com/wp-content/uploads/2014/08/LaunchingTheJamesCaird2-grayscale-3000.jpg" />
+                <img src="http://ernest-shackleton.com/wp-content/uploads/2014/08/AllSafeAllWell.jpg" />
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="block-quote">
+        <blockquote>"By Endurance we conquer" - Ernest Shackelton</blockquote>
+        <blockquote>"Men Wanted for Dangerous Expedition: Low Wages for Long Hours of Arduous Labour under Brutal
+            Conditions; Months of Continual Darkness and Extreme Cold; Great Risk to Life and Limb from Disease,
+            Accidents and
+            Other Hazards; Small Chance of Fame in Case of Success" - Ernest Shackleton</blockquote>
+        </div>
+    </section>
+    <footer>
+        <div class="references">
+        <h4>References</h4>
+        <ol> <a
+                href="https://www.britannica.com/biography/Ernest-Henry-Shackleton">https://www.britannica.com/biography/Ernest-Henry-Shackleton</a>
+        </ol>
+        <ol> <a href="https://en.wikipedia.org/wiki/Ernest_Shackleton">https://en.wikipedia.org/wiki/Ernest_Shackleton
+            </a></ol>
+        <ol> <a
+                href="https://www.biography.com/explorer/ernest-shackleton">https://www.biography.com/explorer/ernest-shackleton</a>
+        </ol>
+        </div>
+    </footer>
+
+</body>
+
+</html>
