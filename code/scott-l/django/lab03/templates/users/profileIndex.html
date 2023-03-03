@@ -31,15 +31,17 @@
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
       <div class="w3-center">
         <h3>PROFILE PAGE</h3>
+        <h5>Only User Posts are displayed </h5>
       </div>
-      
-      <img src="{% static 'imgs/chirp_logo.png' %}" class="w3-circle" style="height:50px;width:50px"
-        alt="PicAvatar">
-      
-      <a href="{% url 'users:user_public_profile' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        title="Account Settings"><i class="fa fa-user"> Public Page</i>
-      <a href="{% url 'users:user_signout' %}"
-        class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Register">Logout</a>
+
+      <img src="{% static 'imgs/chirp_logo.png' %}" class="w3-circle" style="height:50px;width:50px" alt="PicAvatar">
+
+      <a href="{% url 'users:user_public_profile' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i
+          class="fa fa-user"> Public Page</i>
+        <a href="{% url 'users:user_signout' %}"
+          class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+          title="Register">Logout</a>
 
     </div>
   </nav>
@@ -70,7 +72,7 @@
         <!-- Accordion -->
         <div class="w3-card w3-round">
           <div class="w3-white">
-            <p>stuff here </p>
+            <p>[PLACEHOLDER] </p>
           </div>
         </div>
         <br>
@@ -87,79 +89,33 @@
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <h6 class="w3-opacity">Social Media Block</h6>
+                <h6 class="w3-opacity">Post Input here on Profile Page</h6>
                 <!-- <p contenteditable="true" class="w3-border w3-padding">Post Here</p> -->
                 <form action="{% url 'posts:user_post' %}" method="post">
                   {% csrf_token %}
                   <input class="w3-border w3-padding" type="text" placeholder="Post Here" name="user_post_char">
                   <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button>
-              </form>
+                </form>
               </div>
             </div>
           </div>
         </div>
 
-        
-            <div class="w3-col m9">
-                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                    <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                        style="width:60px">
-                    <span class="w3-right w3-opacity">[DatePostTime]</span>
-                    {% csrf_token %}
-                    <h4>{{ blogPostInfo.blogPost0bject.userNamePost[1] }}</h4><br>
-                    <hr class="w3-clear">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat.</p>
-                    <!-- <div class="w3-row-padding" style="margin:0 -16px">
-                        <div class="w3-half">
-                            <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights"
-                                class="w3-margin-bottom">
-                        </div>
-                        <div class="w3-half">
-                            <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-                        </div>
-                    </div>
-                    <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>
-                         Like</button>
-                    <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>
-                         Comment</button> -->
-                    
-                </div>
-                
-
-        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-          <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-          <span class="w3-right w3-opacity">16 min</span>
-          <h4>Jane Doe</h4><br>
-          <hr class="w3-clear">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>
-             Like</button>
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>
-             Comment</button>
+        {% for UserPostInfo in blogPostInfo reversed %}
+        <div>
+          <div class="w3-col m9">
+            <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+              <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                style="width:60px">
+              <span class="w3-right w3-opacity">[DatePostTime-Placeholder]</span>
+              {% csrf_token %}
+              <h4>{{ UserPostInfo.userNamePost }}</h4><br>
+              <hr class="w3-clear">
+              <p>{{ UserPostInfo.text }}</p>
+            </div>
+          </div>
         </div>
-
-        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-          <img src="/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-          <span class="w3-right w3-opacity">32 min</span>
-          <h4>Angie Jane</h4><br>
-          <hr class="w3-clear">
-          <p>Have you seen this?</p>
-          <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>
-             Like</button>
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>
-             Comment</button>
-        </div>
-
+        {% endfor %}
         <!-- End Middle Column -->
       </div>
 

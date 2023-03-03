@@ -16,7 +16,7 @@
 <body class="text-center">
     <h1>Chirp Message Registration Page</h1>
     <main class="form-signin w-50 m-auto">
-        <img class="mb-4" src="{% static 'css/imgs/chirp_logo.png' %}" alt="" width="72" height="57">
+        <img class="mb-4" src="{% static 'imgs/chirp_logo.png' %}" alt="" width="150" height="150">
         <form action="{% url 'users:user_registration' %}" method="post">
             <h1 class="h3 mb-3 fw-normal">Enter Information to Register</h1>
             {% csrf_token %}

@@ -30,17 +30,18 @@
     <nav class="w3-topbar ">
         <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
             <div class="w3-center">
-                <h3>PUBLIC PAGE</h3>
+                <h3>PUBLIC PAGE </h3>
+                <h5>All User Posts are Displayed</h5>
             </div>
-            
+
             <a href="{% url 'users:user_profile' %}"
                 class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i
                     class="fa fa-user"> Profile Page</i>
             </a>
-            
+
             <img src="{% static 'imgs/chirp_logo.png' %}" class="w3-circle" style="height:50px;width:50px"
                 alt="PicAvatar">
-            
+
             <a href="{% url 'users:user_signout' %}"
                 class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
                 title="Register">Logout</a>
@@ -53,66 +54,32 @@
     <div class="w3-container w3-content " style="max-width:1400px;margin-top:80px">
         <!-- The Grid -->
         <div class="w3-row">
-            <!-- Left Column -->
-            <div class="w3-col m3">
-                <!-- Profile -->
-                
-                <br>
-
-                
-                <br>
-
-                <br>
-
-
-            </div>
-
             <!-- Middle Column -->
-            {% for blogPosts in blogPostInfo %}
-            <div class="w3-col m9">
-                
-                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                    <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                        style="width:60px">
-                    <span class="w3-right w3-opacity">[DatePostTime]</span>
-                    <h4>{{ blogPosts.userNamePost }}</h4><br>
-                    <hr class="w3-clear">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex
-                        ea commodo consequat.</p>
-                    <!-- <div class="w3-row-padding" style="margin:0 -16px">
-                        <div class="w3-half">
-                            <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights"
-                                class="w3-margin-bottom">
-                        </div>
-                        <div class="w3-half">
-                            <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-                        </div>
+            {% for UsersPostInfo in blogPostObjects reversed %}
+            <div>
+                <div class="w3-col m9">
+                    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                        <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar"
+                            class="w3-left w3-circle w3-margin-right" style="width:60px">
+                        <span class="w3-right w3-opacity">[DatePostTime-Placeholder]</span>
+                        {% csrf_token %}
+                        <h4>{{ UsersPostInfo.userNamePost }}</h4><br>
+                        <hr class="w3-clear">
+                        <p>{{ UsersPostInfo.text }}</p>
                     </div>
-                    <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>
-                         Like</button>
-                    <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>
-                         Comment</button> -->
-                    
                 </div>
-                {% endfor %}
                 
-
                 <!-- End Middle Column -->
             </div>
-
+            {% endfor %}
+            <!-- End Grid -->
         </div>
-
-        <!-- End Grid -->
+        <!-- End Page Container -->
     </div>
-
-    <!-- End Page Container -->
-    </div>
-    <br>
+   
 
     <!-- Footer -->
+
     <footer class="w3-container w3-theme-d3 w3-padding-16">
         <h5>End</h5>
     </footer>
@@ -120,6 +87,7 @@
     <footer class="w3-container w3-theme-d5">
         <p>Authored: Scott L.</a></p>
     </footer>
+
 
 </body>
 

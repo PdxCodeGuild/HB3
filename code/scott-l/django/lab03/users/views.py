@@ -96,8 +96,10 @@ def user_public_profile(request):
         # return HttpResponse(f'user profile is: {request.user}')
         #user = User.objects.get(username=request.user)
         userModelObject = User.objects.get(username=request.user)
+        blogPost0bjects = BlogPost.objects.all()
         print(userModelObject) #DEBUG
-        context = {'userInfo': userModelObject}
+        context = {'userInfo': userModelObject,
+                   'blogPostObjects': blogPost0bjects}
         return render(request, 'posts/postsIndex.html',context)
         # return render(request, 'users/profileIndex.html')
     else: 
