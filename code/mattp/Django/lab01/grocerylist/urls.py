@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 app_name = "gl"
 urlpatterns = [
-    path('add/', views.item_add, name='add'),
-    path('delete/<int:id>', views.delete_item, name='delete'),
-    path('completed/<int:id>', views.complete_item, name='complete'),
+    path('', views.index, name='index'),
+    path('remove/<int:id>', views.remove_item, name='grocery_remove'),
+    path('complete/<int:id>', views.complete_item, name='grocery_complete'),
 ]

@@ -1,29 +1,46 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import grocerylister
-from datetime import date
-from django.urls import reverse
+from .forms import grocery_form
+from django.shortcuts import reverse 
+
 # Create your views here.
 def index(request):
     list = grocerylister.objects.all()
     
     return render(request, "index.html", {"list": list})
 
-def item_add(request):
-    user_input = request.POST['add_item']
-    item = grocerylister(name=user_input, completed=False)
-    item.save()
-    return redirect("/")
 
-def delete_item(request, id):
-    remove_item = grocerylister.objects.get(pk=id)
-    remove_item.delete()
-    return redirect("/")
-
-def complete_item(request, id):
+def grocery_items(request):
+    list_items = grocery_form.objects.all()
+    context = {'all_list': list_items, 'form': grocery_form()}
+    return render(request, 'index.html', context)
+ 
+def add_item(request):
+    if request.method == "POST":
+        form = grocery_form(request.POST)
+        if form.is_valid():
+            item_input = form.save(commit=False)
+            item_input.save()
+            return HttpResponseRedirect(reverse('grocery_list:grocery_list'))
+    else:
+        form = grocery_form()
+    context = {'form': form}
+    return render(request, 'index.html', context)
+ 
+def remove_item(request, id):
     item = get_object_or_404(grocerylister, id=id)
-    item.completed = True
-    item.completed_date = date.today()
+    item.delete()
+    return HttpResponseRedirect(reverse('grocery_list:grocery_list'))
+ 
+def completed_item(request, id):
+    item = get_object_or_404(grocerylister, id=id)
+    item.is_completed = True
     item.save()
-    return redirect("/")
+    return HttpResponseRedirect('grocery_list:grocery_list')
+
+
 
