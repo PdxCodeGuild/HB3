@@ -20,11 +20,10 @@ def addChirp(request):
     list = ImgModel.objects.all().order_by('-date_posted')
     if form.is_valid:
         caption = request.POST.get('text')
-        my_image = request.FILES.get('my_image')
+        my_image = request.FILES['my_image']
         author = request.user
         
         new_image = ImgModel(caption=caption, author=author, my_image=my_image)
-        
         new_image.save()
         
         context = {"list":list, "form":form}
