@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Open Sans", sans-serif
+    }
+  </style>
+</head>
+
+<body class="w3-theme-l5">
+
+  <!-- Navbar -->
+  <nav class="w3-topbar ">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
+      <div class="w3-center">
+        <h3>PROFILE PAGE</h3>
+        <h5>Only User Posts are displayed </h5>
+      </div>
+
+      <img src="{% static 'imgs/chirp_logo.png' %}" class="w3-circle" style="height:50px;width:50px" alt="PicAvatar">
+
+      <a href="{% url 'users:user_public_profile' %}"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i
+          class="fa fa-user"> Public Page</i>
+        <a href="{% url 'users:user_signout' %}"
+          class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+          title="Register">Logout</a>
+
+    </div>
+  </nav>
+
+
+  <!-- Page Container -->
+  <div class="w3-container w3-content " style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div class="w3-col m3">
+        <!-- Profile -->
+        <div class="w3-card w3-round w3-white">
+          <div class="w3-container">
+            <h4 class="w3-center">My Profile</h4>
+            {% if user.is_authenticated %}
+
+            {% csrf_token %}
+            <p><i class="fa-fw w3-margin-right w3-text-theme"></i> Username: {{ userInfo.username }}</p>
+            <p><i class="fa-fw w3-margin-right w3-text-theme"></i> First Name: {{ userInfo.first_name}}</p>
+            <p><i class="fa-fw w3-margin-right w3-text-theme"></i> Last Name: {{ userInfo.last_name}} </p>
+            <p><i class="fa-fw w3-margin-right w3-text-theme"></i> Email: {{ userInfo.email}}</p>
+            {% endif %}
+          </div>
+        </div>
+        <br>
+
+        <!-- Accordion -->
+        <div class="w3-card w3-round">
+          <div class="w3-white">
+            <p>[PLACEHOLDER] </p>
+          </div>
+        </div>
+        <br>
+
+        <br>
+
+
+      </div>
+
+      <!-- Middle Column -->
+      <div class="w3-col m9">
+
+        <div class="w3-row-padding">
+          <div class="w3-col m12">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <h6 class="w3-opacity">Post Input here on Profile Page</h6>
+                <!-- <p contenteditable="true" class="w3-border w3-padding">Post Here</p> -->
+                <form action="{% url 'posts:user_post' %}" method="post">
+                  {% csrf_token %}
+                  <input class="w3-border w3-padding" type="text" placeholder="Post Here" name="user_post_char">
+                  <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% for UserPostInfo in blogPostInfo reversed %}
+        <div>
+          <div class="w3-col m9">
+            <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+              <img src="{% static 'imgs/chirp_logo.png' %}" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                style="width:60px">
+              <span class="w3-right w3-opacity">[DatePostTime-Placeholder]</span>
+              {% csrf_token %}
+              <h4>{{ UserPostInfo.userNamePost }}</h4><br>
+              <hr class="w3-clear">
+              <p>{{ UserPostInfo.text }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- End Middle Column -->
+      </div>
+
+    </div>
+
+    <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-theme-d3 w3-padding-16">
+    <h5>End</h5>
+  </footer>
+
+  <footer class="w3-container w3-theme-d5">
+    <p>Authored: Scott L.</a></p>
+  </footer>
+
+</body>
+
+</html>
