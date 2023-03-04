@@ -3,12 +3,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-
-
 def user(request):
     return render(request, 'Homepage.html',)
 
 def user_login(request):
-    return render(request, 'Login.html',)
+    return render(request, 'Login.html')
 
 
