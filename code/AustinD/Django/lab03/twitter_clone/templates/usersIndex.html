@@ -66,18 +66,7 @@
             <button type="submit" class="btn btn-primary">Reset Password</button>
         </form>
     </div>
-
     <div>
-        <h2>Profile</h2>
-        <p>Username: {{ user.username }}</p>
-        <p>First Name: {{ user.first_name }}</p>
-        <p>Last Name: {{ user.last_name }}</p>
-        <p>Email: {{ user.email }}</p>
-        <a href="" class="btn btn-primary">Edit Profile</a>
-    </div>
-
-    <div>
-        <h2>Logout</h2>
         <form action="{% url 'users:user_signout' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">Logout</button>

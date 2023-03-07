@@ -7,7 +7,7 @@
     <!-- Include Tailwind CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
 </head>
-<body>
+<body class="h-full"> 
     <!-- Navbar -->
     <nav class="bg-gray-800 text-white py-3 px-6 flex justify-between items-center">
         <div class="flex items-center">
@@ -20,13 +20,11 @@
     </nav>
 
     <!-- Content -->
-    <div class="container mx-auto py-8 px-4">
         {% block content %}
         {% endblock %}
-    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-3 px-6">
+    <footer class="bg-gray-800 text-white flex bottom-0 w-full">
         <p>© 2023 Chirp</p>
     </footer>
 </body>
