@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 # Create your views here.
+post = [{'user_name':'rachel','text':'This time things will be organized'}]
 
-chirps=[{'username':'rachel', 'text':'Today this lab is driving me insane'}]
+def home(request):
+    context= {'posts':post}
+    return render(request,'posting/home.html',context)
 
-def post(request):
-    context = {'chirps': chirps }
-    return render(request, 'posting/Feed.html', context)
