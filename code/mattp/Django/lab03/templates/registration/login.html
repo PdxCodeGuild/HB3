@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Login!!!
+
+{% endblock %}
+
+{% block content %}
+<h2>words!!!</h2>
+<form method="post" class="form-group">
+    {% csrf_token %}
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button type="submit">login</button>
+</form>
+{% endblock %}
