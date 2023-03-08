@@ -1,9 +1,11 @@
 from django.shortcuts import render
-
+from . models import chirps
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-post = [{'user_name':'rachel','text':'This time things will be organized'}]
 
+@login_required
 def home(request):
-    context= {'posts':post}
+    context= {'chirps': chirps.objects.all}
     return render(request,'posting/home.html',context)
 
+# Django has decorator page that allows users to homepage only after signing in 
