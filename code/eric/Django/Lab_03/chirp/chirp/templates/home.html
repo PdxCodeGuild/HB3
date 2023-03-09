@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-8">
+
+    <h1>Chirp!</h1>
+<br/>
+    {% for chirp in chirps %}
+        <div class="alert alert-primary" role="alert">
+            {{ chirp.body }}<br/>
+            <small class="text-muted">
+                ({{ chirp.created_at }}) By @{{ chirp.user.username }}
+            </small>
+        </div>
+    {% endfor %}
+        </div>
+
+<div class="col-4">
+    <br/><br/><br/>
+    {% if form %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Chirp!</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
