@@ -12,6 +12,6 @@ def index(request):
         return render(request, "index.html", {"link":link})
     return render(request, "index.html")
 
-def redirectio(request, random_code):
+def redirection(request, random_code):
     link = get_object_or_404(Shortener, random_code=random_code)
     return HttpResponseRedirect(link.url_long)

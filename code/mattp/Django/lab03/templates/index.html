@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            background-color: aqua;
+            margin: 60px;
+            padding: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+
+    <form action="{% url 'posts:posts' %}" method="POST">
+        {% csrf_token %}
+        {{form_store}}
+        <button type="submit" name="submit">submit chirp</button>
+    </form>
+    {% endif %}
+
+    {% for item in list %}
+   <div>{{ item.author }}
+    {{item.chirp_text}}
+    {{item.date}}
+    </div>
+    {% endfor %}
+
+
+</body>
+</html>
