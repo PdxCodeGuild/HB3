@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if profile %}
+    <div class = "container text-center">
+        <div class="row">
+            <div class="col-8"><h1>{{ profile.user.username }}'s Profile</h1></div>
+            <br/>
+            {% if chirps %}
+                {% for chirp in chirps %}
+                    <div class="alert alert-primary" role="alert">
+                    {{ chirp.body }}<br/>
+                    <small class="text-muted">
+                        ({{ chirp.created_at }}) By @{{ chirp.user.username }}
+                    </small><br /><br />
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="col-4">
+                <br/><br/><br/>
+                <div class="card">
+                    <h5 class="card-header">Follows</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {% for following in profile.follows.all %}
+                            <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br />
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="card">
+                    <h5 class="card-header">Followed By</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {% for following in profile.followed_by.all %}
+                            <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br />
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+<form method=POST>
+{% csrf_token %}
+{% if profile in user.profile.follows.all %}
+    <br/>
+    <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit">Unfollow @{{ profile.user.username|lower }}</button>
+{% else %}
+    <br/>
+    <button class="btn btn-outline-success" name="follow" value="follow" type="submit">Follow @{{ profile.user.username|lower }}</button>
+{% endif %}
+</form>
+<br/>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}
+
