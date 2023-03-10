@@ -6,21 +6,15 @@ from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView
 from django.views.generic import TemplateView
 from django.views.generic import View
+from post.models import *
+
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
-
-# def signup(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             auth_login(request, user)
-#             return redirect('home')
-#     else:
-#         form = UserCreationForm()
-#     return render(request, 'registration/signup.html')
+    list = chirp.objects.all()
+    print(list)
+    context = {"list": list}
+    return render(request, 'home.html', context)
 
 def my_login(request):
     if request.method == 'POST':
@@ -36,12 +30,12 @@ def my_login(request):
 
 def my_logout(request):
     auth_logout(request)
-    return redirect('home')
+    return redirect('step1:home')
 
 class SignupView(View):
     form_class = UserCreationForm
     template_name = 'registration/signup.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('step1:home')
 
     def get(self, request):
         form = self.form_class()

@@ -2,4 +2,9 @@
 
 {% block content %}
   <h1>This is a test</h1>
+
+{% for post in list %}
+<div>{{post.user}} - {{post.text}}</div>
+{% endfor %}
+
 {% endblock %}

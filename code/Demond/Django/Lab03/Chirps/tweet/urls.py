@@ -22,8 +22,7 @@ from post.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls), 
-    path("U/", include("Chirp.urls")),
-    path('', HomeView.as_view(), name='home'),
+    path("", include("Chirp.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path('post/', include("post.urls")),
     # path('login/', my_login, name='login'),
