@@ -1,0 +1,12 @@
+wello horld
+
+{% for post in posts %}
+{{post.post_text}}
+{% endfor %}
+{% if user.is_authenticated %}
+<form action="{% url 'post:create' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="post_text">
+    <button>Submit</button>
+</form>
+{% endif %}
