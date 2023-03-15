@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post, Profile
 from django.contrib import messages
-from .forms import PostForm, RegisterForm
+from .forms import PostForm
 from django.contrib.auth import authenticate, login, logout
 
 def index(request):
@@ -77,18 +77,3 @@ def logout_user(request):
     messages.success(request, ("Logged Out, Come Back Soon"))
     return redirect('index')
 
-def register_user(request):
-    form = RegisterForm()
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            messages.success(request, ("Welcome, New Squawker!"))
-            return redirect('index')
-    
-    return render(request, 'register.html', {'form':form})
