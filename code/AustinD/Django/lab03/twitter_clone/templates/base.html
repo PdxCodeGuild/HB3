@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
+</head>
+<body class="h-full"> 
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white py-3 px-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold">Logo</a>
+        </div>
+        <div class="flex items-center">
+            <a href="#" class="mr-6">Link 1</a>
+            <a href="#">Link 2</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+        {% block content %}
+        {% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white flex bottom-0 w-full">
+        <p>© 2023 Chirp</p>
+    </footer>
+</body>
+</html>

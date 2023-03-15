@@ -1,0 +1,10 @@
+<h3>Register here</h3>
+<hr>
+
+<form action="{% url 'users:signup' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username_input">
+    <input type="password" name="password_input">
+
+    <button type="submit">Register</button>
+</form>

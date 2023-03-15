@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THis is my test page to post</title>
+	<style>
+		body {
+			background-color: #F2F6FC;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			color: #333333;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 20px #CCCCCC;
+			background-color: #FFFFFF;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.footer {
+			background-color: #F2F6FC;
+			padding: 20px;
+			text-align: center;
+			font-size: 14px;
+			color: #666666;
+			margin-top: 50px;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">Post a Chirp</h1>
+		<form action="{% url 'post:post' %}" method="post">
+			{% csrf_token %}
+			<label for="Chirp">Chirp content (max. 128 characters)</label>
+			<textarea id="Chirp" name="Chirp" maxlength="128" required> Whats on your mind? </textarea>
+			<button type="submit" class="btn">Chirp it!</button>
+		</form>
+	</div>
+	<div> 
+
+	</div>
+	
+	<footer class="footer">
+		<p>Demonds footer for lab 3</p>
+	</footer>
+</body>
+</html>
