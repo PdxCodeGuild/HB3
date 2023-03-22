@@ -1,0 +1,23 @@
+{% extends 'posting/base.html' %}
+
+{% block content %}
+    <br>
+    <div class="container">
+    {% for chirp in chirps %}
+        <!-- this will help direct you to user profile -->
+
+        <div class="card">
+            <div class="card-header">
+                <a href="#">{{chirp.user_name}} </a>
+            </div>
+            <div class="card-body">
+              
+                <p class="card-text"> {{chirp.text}} </p>
+            </div>
+          </div>
+
+
+    
+    {% endfor %}
+    </div>
+{% endblock content %}

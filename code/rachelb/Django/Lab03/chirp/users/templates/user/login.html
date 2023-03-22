@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body>
+    <br>
+    <br>
+
+    <div class="mx-auto" style="width: 200px;"><h2>Chirp </h2></div>
+
+    <div class = "container" style="width:250px;">
+
+        <br>
+
+        <form method = "POST">
+            {% csrf_token %}
+            
+            <fieldset class = "form-group">
+                
+                <ledgend class = "border-bottom mb-4"> <h3>Login</h3> </ledgend>
+
+                {{form}}
+            
+            </fieldset>
+
+            <div class="form-group">
+                <button class="btn btn-dark" type="submit"> Login </button>
+            </div>
+
+
+            <a href="#"><p>Register</p></a>
+
+
+        </form>
+    </div>
+
+    {% if messages %}
+
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
