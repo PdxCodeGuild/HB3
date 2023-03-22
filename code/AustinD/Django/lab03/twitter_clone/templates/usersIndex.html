@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container mx-auto px-4">
+    <h1 class="text-center text-3xl font-bold mb-4">Users Index</h1>
+    <div class="flex justify-center items-center">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-center text-xl font-bold mb-4">Register</h2>
+        <form action="{% url 'users:user_registration' %}" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="first_name" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" name="username">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 mx-6">
+        <h2 class="text-center text-xl font-bold mb-4">Login</h2>
+        <form action="{% url 'users:user_login' %}" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="login_username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="login_username" name="username">
+          </div>
+          <div class="mb-3">
+            <label for="login_password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="login_password" name="password">
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div>
+        <h2>Reset Password</h2>
+        <form action="{% url 'users:user_reset_password' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="new_password">New Password:</label>
+                <input type="password" class="form-control" id="new_password" name="new_password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Reset Password</button>
+        </form>
+    </div>
+    <div>
+        <form action="{% url 'users:user_signout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+{% endif %}
+{% endblock content %}

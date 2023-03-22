@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Change</title>
+</head>
+<body>
+    <h1>Make Change</h1>
+    Enter a dollar amount: <input type="number" step="any" id="user_input" value="0.00">
+    <button onclick="money2coins()">Make Change</button>
+<div id="alert"></div>
+<script>
+    function money2coins() {
+        let user_input = document.getElementById('user_input').value;
+        var i, num,
+            output = [],
+            coins = [
+                [25, "quarter", "quarters"],
+                [10, "dime", "dimes"],
+                [5, "nickel", "nickels"],
+                [1, "penny", "pennies"]
+            ];
+        let dollar_amount = user_input * 100;
+        for (i = 0; i < coins.length; i++) {
+            num = dollar_amount / coins[i][0] | 0;
+            dollar_amount -= num * coins[i][0];
+            if (num) {
+                output.push(num + " " + coins[i][num > 1 ? 2 : 1]);
+            }
+        }
+        document.getElementById("alert").innerHTML = 'The change is: ' + output.join(", ");
+    }
+    
+</script>
+</body>
+</html>

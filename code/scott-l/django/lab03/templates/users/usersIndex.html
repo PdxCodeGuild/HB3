@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usersIndex</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1> users Index: {{usersIndex}}</h1>  
+
+    register
+    <form action="{% url 'users:user_registration' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="first name" name="first_name">
+        <input type="text" placeholder="last name" name="last_name">
+        <input type="text" placeholder="username" name="username">
+        <input type="email" placeholder="email", name="email">
+        <input type="password" placeholder="password", name="password">
+        <button type="submit">REGISTER</button>
+    </form>
+    login
+    <form action="{% url 'users:user_login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="password" placeholder="password" name="password">
+        <button type="submit">LOGIN</button>
+    </form>
+    {% if user.is_authenticated %}
+    reset password
+    <form action="{% url 'users:user_reset_password' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username">
+        <input type="password" placeholder="new password" name="new_password">
+        <button type="submit">RESET PASSWORD</button>
+    </form>
+
+    <a href="{% url 'users:user_profile' %}">PROFILE</a>
+    <div>
+        <!-- logout -->
+        <form action="{% url 'users:user_signout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">LOGOUT</button>
+        </form>
+    </div>
+   
+    {% endif %}
+
+
+</body>
+</html>
+

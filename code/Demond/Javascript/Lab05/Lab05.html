@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demond's Todo List</title>
+    <link rel="stylesheet" href="Lab05.css">
+</head>
+
+<body>
+    <div id="app">
+        <template>
+            <div class="container">
+                <h1>Demond's Todo List</h1>
+                <!-- my input will bind with the v model, what is the benefit of this?-->
+                <input type="text" v-model="newTodo">
+                <!-- note to self: this @click is essentially On click event that you can bind too. this is useful. no need for v bind -->
+                <button @click="addTodo">Add Your Task!</button>
+                <hr>
+                <h2>Things that still need to be done:</h2>
+                <ul>
+                    <!-- this will essentially bind the todo task to the key index,   -->
+                    <li v-for="(todo, index) in todos" :key="index" v-if="!todo.completed">
+                        <!-- this will bind the text into data, the double curly bracket indicates this -->
+                        {{ todo.text }} 
+                        <input type="checkbox" @change="markTodoAsCompleted(index)">
+                    </li>
+                </ul>
+                <h2>Completed:</h2>
+                <ul>
+                    <!-- the index will be the key which will be used in the methods -->
+                    <li v-for="(todo, index) in todos" :key="index" v-if="todo.completed">
+                        {{ todo.text }}
+                        <!-- Note to self: the checked means it will actually show as checked, this change then uses the method with the index argument -->
+                        <input type="checkbox" @change="markTodoAsIncomplete(index)" checked>
+                    </li>
+                </ul>
+            </div>
+        </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            // Note to self: this el will make this vue instance to control the value of "app" witch is the id above
+            el: "#app",
+            // This is the data portion of the app, which is all the double curly bracket
+            data() {
+                return {
+                    newTodo: '',
+                    todos: []
+                };
+            },
+            methods: {
+                // Note to self: this was just extra so that if the input field was empty nothing would happen. note "Trim function"
+                addTodo() {
+                    if (this.newTodo.trim().length === 0) {
+                        return; 
+                    }
+                    // this will refer to the objext and then add it to the list as false 
+                    this.todos.push({ text: this.newTodo, completed: false });
+                    this.newTodo = '';
+                },
+                // note to self: below is a good example of when vue is useful 
+                markTodoAsCompleted(index) {
+                    this.todos[index].completed = true;
+                },
+                markTodoAsIncomplete(index) {
+                    this.todos[index].completed = false;
+                }
+            }
+        });
+    </script>
+    </div>
+</body>
+</html>

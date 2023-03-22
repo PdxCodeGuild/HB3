@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Vue Js Redo Lab</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="redo-todo" id="app">
+        <p>Your choice: {{ userChoice }}</p>
+        <p>Computer choice: {{ computerChoice }}</p>
+        <p>{{ outcome }}</p>
+        <button type="button" class="btn btn-danger" v-on:click="play('rock')">
+          Rock
+        </button>
+        <button type="button" class="btn btn-warning" v-on:click="play('scissors')">Scissors</button>
+        <button type="button" class="btn btn-success" v-on:click="play('paper')">Paper</button>
+      </div>
+
+      <script>
+        let app = new Vue({
+          el: "#app",
+          data() {
+            return {
+              userChoice: "",
+              computerChoice: "",
+              outcome: "",
+            };
+          },
+          methods: {
+            play(userChoice) {
+              this.userChoice = userChoice;
+              this.computerChoice = this.getComputerChoice();
+              this.outcome = this.getOutcome();
+            },
+            getComputerChoice() {
+              const choices = ["rock", "paper", "scissors"];
+              const randomIndex = Math.floor(Math.random() * 3);
+              return choices[randomIndex];
+            },
+            getOutcome() {
+              if (this.userChoice === this.computerChoice) {
+                return "It's a tie!";
+              } else if (
+                (this.userChoice === "rock" &&
+                  this.computerChoice === "scissors") ||
+                (this.userChoice === "paper" &&
+                  this.computerChoice === "rock") ||
+                (this.userChoice === "scissors" &&
+                  this.computerChoice === "paper")
+              ) {
+                return "You win!";
+              } else {
+                return "You lose.";
+              }
+            },
+          },
+        });
+      </script>
+    </div>
+  </body>
+</html>

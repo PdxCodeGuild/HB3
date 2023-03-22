@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<nav class="navbar">
+  <div class="container-fluid mx-3">
+    <img src="{{ '/uploaded_files/images/Sunrise_logo.png' }}" />
+    <h1>Hi {{ user.username }}!</h1>
+    <a href="{% url 'home' %}" class="navbar-brand">Home</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'profileView' %}">View Profile</a>
+  </div>
+</nav>
+<form class="chirp_submit" action="{% url 'addChirp' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="chirpText">What's Up, Trail Friend?: </label><br>
+  <input id="image" type="file" name="my_image" accept="image/*" required>
+  <input id="chirpText" type="text" name="text" />
+  <input id="chirpSubmit" type="submit" value="Submit">
+</form>
+
+
+<div id="chirp_list">
+  {% for item in list %}
+  <li>{{ item.caption }} - {{ item.author }}</li>
+  <img class="post_img" src="{{ item.my_image.url }}" />
+  {% endfor %}
+</div>
+<footer>
+  <a href="{% url 'home' %}" class="nav-link">Home</a>
+  <a href="{% url 'logout' %}">Logout</a>
+  <a href="{% url 'profileView' %}">View Profile</a>
+  <a href="#contact">Contact Us</a>
+</footer>
+
+{% else %}
+<nav class="navbar">
+  <div class="container-fluid mx-3">
+    <img src="{{ '/uploaded_files/images/Sunrise_logo.png' }}" />
+    <a href="{% url 'home' %}" class="nav-link">Home</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+  </div>
+</nav>
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'signup' %}">Sign Up</a>
+<footer>
+  <a href="{% url 'home' %}" class="nav-link">Home</a>
+  <a href="#contact">Contact Us</a>
+  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'signup' %}">Sign Up</a>
+</footer>
+{% endif %}
+{% endblock %}

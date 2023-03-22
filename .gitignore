@@ -1,7 +1,5 @@
 
 
-*~
-
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
@@ -886,3 +884,4 @@ bh_unicode_properties.cache
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
+code/rachelb/JS/Lab02/secrets.js

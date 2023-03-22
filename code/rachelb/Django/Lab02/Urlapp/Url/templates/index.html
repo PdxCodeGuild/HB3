@@ -25,9 +25,10 @@
         {% if link %}
         <a target="_blank" href="{% url 'redirect' link.code %}">http://wwww.localhost.8000/{{ link.code }}</a>
 
+
         <!-- The code above is redirecting using interal means by using a path already defined in the app -->
         <!-- <a target="_blank" href="http://www.localhost.8000/{{ link.code }}">http://wwww.localhost.8000/{{ link.code }}</a> - This is a way to redirect using external patrties EX: Google chrome, Safari--> 
-        
+
         {% endif %}
     </div>
     

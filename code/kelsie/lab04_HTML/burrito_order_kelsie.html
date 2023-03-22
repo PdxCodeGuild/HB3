@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Brachi-Burritos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+    <body>
+        <h1>Brachi-Burritos</h1>
+        <!-- input name and password-->
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Log In Here</h5>
+                     <form>
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username"><br>
+                        <label for="pwd">Password:</label><br>
+                        <input type="password" id="pwd" name="pwd"><br>
+                        <input type="submit" class="button" value="Log In"><br>
+                    </form>
+                </div>
+            </div>
+                
+            <!--choose tortilla-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Choose Tortilla</h5>
+                    <form>
+                        <input type="radio" id="flour" name="tortilla" value="Flour">
+                        <label for="flour">Flour</label><br>
+                        <input type="radio" id="wheat" name="tortilla" value="Wheat">
+                        <label for="wheat">Wheat</label><br>
+                        <input type="radio" id="spinach" name="tortilla" value="Spinach">
+                        <label for="spinach">Green Food (Spinach)</label><br>
+                        <input type="radio" id="corn" name="tortilla" value="Corn">
+                        <label for="corn">Corn</label><br>
+                      </form>
+                </div>
+            </div>
+        
+            <!--choose rice-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Choose Rice</h5>
+                    <form>
+                        <input type="radio" id="white" name="rice" value="White">
+                        <label for="white">White</label><br>
+                        <input type="radio" id="brown" name="rice" value="Brown">
+                        <label for="brown">Brown</label><br>
+                      </form>
+                </div>
+            </div>
+            
+            <!--choose beans-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Choose Beans</h5>
+                    <form>
+                        <input type="radio" id="black" name="beans" value="Black">
+                        <label for="black">Black</label><br>
+                        <input type="radio" id="pinto" name="beans" value="Pinto">
+                        <label for="pinto">Pinto</label><br>
+                      </form>
+                </div>
+            </div>
+
+            <!--choose protein-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Choose Protein</h5>
+                    <form>
+                        <input type="radio" id="chicken" name="protein" value="Chicken">
+                        <label for="chicken">Chicken</label><br>
+                        <input type="radio" id="carnitas" name="protein" value="Carnitas">
+                        <label for="carnitas">Carnitas</label><br>
+                        <input type="radio" id="sofritas" name="protein" value="Sofritas">
+                        <label for="sofritas">Sofritas</label><br>
+                        <input type="radio" id="none" name="protein" value="None">
+                        <label for="none">None</label><br>
+                      </form>
+                </div>
+            </div>
+
+            <!--choose additional ingredients-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Any Extras?</h5>
+                    <form>
+                        <input type="checkbox" id="choice1" name="cheese" value="Cheese">
+                        <label for="choice1">Cheese</label><br>
+                        <input type="checkbox" id="choice2" name="sour_cream" value="Sour Cream">
+                        <label for="choice2">Sour Cream</label><br>
+                    </form>
+                </div>
+            </div>
+
+            <!--delivery instructions-->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Special Requests/Delivery Instructions:</h5>
+                    <form>
+                        <textarea id="instructions" name="instructions" placeholder="Special Instructions here..."></textarea><br>
+                        <input type="submit" class="button" value="Submit Order"><br>
+                    </form>
+                </div>     
+        </div>
+        </body>
+        </div>
+</html>

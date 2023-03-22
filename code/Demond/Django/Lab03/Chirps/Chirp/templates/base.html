@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+      <li><a href="{% url 'step1:home' %}">Home</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'step1:logout' %}">Logout</a></li>
+        <li><a href="{% url 'post:post'%}">Chirp It</a></li>
+      {% else %}
+        <li><a href="{% url 'step1:login' %}">Login</a></li>
+        <li><a href="{% url 'step1:signup' %}">Sign up</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% block content %}
+{% endblock %}

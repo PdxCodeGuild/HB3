@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Container -->
+    <div class="container">
+        <!-- The Grid -->
+        <div class="grid grid-cols-12 gap-4">
+            <!-- Left Column -->
+            <div class="col-span-3">
+                <!-- Profile -->
+                <div class="rounded-lg bg-white p-4 mb-4">
+                    <h4 class="text-center font-bold mb-4">My Profile</h4>
+                    {% if user.is_authenticated %}
+                        {% csrf_token %}
+                        <p><i class="fa-fw mr-2"></i> Username: {{ userInfo.username }}</p>
+                        <p><i class="fa-fw mr-2"></i> First Name: {{ userInfo.first_name}}</p>
+                        <p><i class="fa-fw mr-2"></i> Last Name: {{ userInfo.last_name}} </p>
+                        <p><i class="fa-fw mr-2"></i> Email: {{ userInfo.email}}</p>
+                    {% endif %}
+                </div>
+                <!-- Accordion -->
+                <div class="rounded-lg bg-white p-4 mb-4">
+                    <p>[PLACEHOLDER] </p>
+                </div>
+            </div>
+            <!-- Middle Column -->
+            <div class="col-span-9">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-12">
+                        <div class="rounded-lg bg-white p-4 mb-4">
+                            <h6 class="opacity-50">Post Input here on Profile Page</h6>
+                            <form action="{% url 'posts:user_post' %}" method="post">
+                                {% csrf_token %}
+                                <input class="border rounded-lg py-2 px-3 w-full" type="text" placeholder="Post Here" name="user_post_char">
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"><i class="fa fa-pencil"></i> Post</button>
+                            </form>
+                        </div>
+                    </div>
+                    {% for UserPostInfo in blogPostInfo reversed %}
+                    <div class="col-span-12">
+                        <div class="rounded-lg bg-white p-4 mb-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold">{{ UserPostInfo.userNamePost }}</h4>
+                                <span class="opacity-50">[DatePostTime-Placeholder]</span>
+                            </div>
+                            <hr class="my-2">
+                            <p>{{ UserPostInfo.text }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Page Container -->
+{% endblock %}

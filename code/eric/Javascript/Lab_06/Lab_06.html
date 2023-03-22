@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rock-Paper-Scissors</title>
+</head>
+
+<style>
+    
+body {
+    background-color: black;
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+    text-align: center;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5em;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgb(255, 0, 140);
+  border-color: rgb(255, 0, 98);
+}
+
+</style>
+<body>
+    <div class="bg-white text-gray-600 text-center min-h-screen flex flex-col">
+        <header class="container mx-auto p-6">
+            <h1 class="text-4xl font-bold">Rock, Paper, Scissors</h1>
+    <container class="flex h-screen w-screen justify-center items-center">
+        <div id="app" class="container w-1/4 bg-gray-500 shadow-2xl rounded-full">
+            <div class="flex justify-center font-mono">
+                <p>
+                    How to play:<br>
+                    Rock beats Scissors<br>
+                    Scissors beats Paper<br>
+                    Paper beats Rock
+                </p>
+                <p>Please select an option:</p>
+                <button class="bg-black text-white p-2 rounded-lg m-2" @click="play('rock')">Rock</button>
+                <button class="bg-black text-white p-2 rounded-lg m-2" @click="play('paper')">Paper</button>
+                <button class="bg-black text-white p-2 rounded-lg m-2" @click="play('scissors')">Scissors</button>
+            </div>
+            <div class="text-center mt-4 font-mono">
+                <p>You chose: {{playerChoice}}</p>
+                <p>Computer chose: {{computerChoice.name}}</p>
+                <p>{{result}}</p>
+            </div>
+        </div>
+    </container>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        // create data 
+        var app = new Vue({
+            el: '#app',
+            data: {
+                playerChoice: '',
+                computerChoice: {},
+                result: '',
+                choices: [
+                    { name: 'rock', win: 'scissors' },
+                    { name: 'paper', win: 'rock' },
+                    { name: 'scissors', win: 'paper' }
+                ]
+            },
+            // Game logic
+            methods: {
+                play: function (choice) {
+                    this.playerChoice = choice;
+                    this.computerChoice = this.choices[Math.floor(Math.random() * this.choices.length)];
+                    if (this.playerChoice === this.computerChoice.name) {
+                        this.result = "It's a tie!";
+                    } else if (this.computerChoice.win === this.playerChoice) {
+                        this.result = "You lose!";
+                    } else {
+                        this.result = "You win!";
+                    }
+                }
+            }
+        })
+    </script>
+    </body>
+    
+    </html>
+</body>
+
+</html>
