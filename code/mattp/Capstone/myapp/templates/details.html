@@ -1,0 +1,54 @@
+<!-- details.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ fish.fish_name }}</h1>
+
+
+
+<div class="fish-details">
+    
+    <img class="fish-details_img" src="{{ fish.fishphoto.url }}" alt="{{ fish.fish_name }} photo">
+    
+    <div class="fish-info-container">
+      <div class="zip-habitat">
+        <ul>
+          <li><strong>Zip codes:</strong> {% for zip in fish.fish_zip.all %}{{ zip.zip_code }}{% if not forloop.last %}, {% endif %}{% endfor %}</li><br>
+          <li><strong>Habitat:</strong> {{ fish.fish_habitat }}</li>
+        </ul>
+      </div>
+      
+      <div class="nutritional-info">
+        <ul>
+          <li><strong>Calories:</strong> <span>{{ fish.fishcalories }}</span> <strong>per serving</strong></li>
+          <li><strong>Carbohydrates:</strong> <span>{{ fish.fishcarbohydrates }}</span> <strong>g</strong></li>
+          <li><strong>Cholesterol:</strong> <span>{{ fish.fishcholesterol }}</span> <strong>mg</strong></li>
+          <li><strong>Fat:</strong> <span>{{ fish.fishfat }}</span> <strong>g</strong></li>
+          <li><strong>Fiber:</strong> <span>{{ fish.fishfiber }}</span> <strong>g</strong></li>
+          <li><strong>Protein:</strong> <span>{{ fish.fishprotein }}</span> <strong>g</strong></li>
+          <li><strong>Saturated Fat:</strong> <span>{{ fish.fishSfat }}</span> <strong>g</strong></li>
+          <li><strong>Sodium:</strong> <span>{{ fish.fishsodium }}</span> <strong>mg</strong></li>
+        </ul>
+        <ul>
+          <li><strong>Taste:</strong> {{ fish.fishtaste }}</li><br>
+          <li><strong>Texture:</strong> {{ fish.fishtexture }}</li>
+        </ul>
+      </div>
+      
+      <div class="health-farming-rating">
+        <ul>
+          <li><strong>Health Benefits:</strong> {{ fish.fishhealth }}</li><br>
+          <li><strong>Farming:</strong> {{ fish.fishfarming }}</li><br>
+          <li><strong>Environmental Impact:</strong> {{ fish.fishenvironment }}</li><br>
+          <li><strong>Rating:</strong> {{ fish.fishrate }}</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+{% endblock %}

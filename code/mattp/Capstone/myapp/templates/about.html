@@ -1,0 +1,18 @@
+<!-- about.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <div class="about-container">
+        <div class="about-image">
+            <img src="{% static 'IchthyAbout.jpg' %}" alt="About image">
+        </div>
+        <div class="about-info">
+            <h1>About Me</h1>
+            <p>I am a former Sailor, who has always had a passion for the ocean.  I would love to find ways to help maintain fish species we use for seafood, as well as, make sure people continue to be able to enjoy their local favorites! <br><br> The hope for this project is to give people a place where they can figure out local sources of seafood, and to provide them with nutritional and conservation info about them. <br><br>If you would like more information about the project, or to request a certain zipcode or fish be added (sooner rather than later), please feel free to use the Contact section, to let me know! </p>
+            <h1>Thank you!</h1>
+
+{% endblock %}

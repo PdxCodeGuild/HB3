@@ -1,0 +1,25 @@
+<!-- contact.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <div class="contact-form">
+        <h1>Contact Us</h1>
+        <p>Feel free to send us a message using the form below.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    
+    <div class="contact-image">
+        <br><br><br><br>
+        <img src="{% static 'contact-image.jpg' %}" alt="Contact image">
+    </div>
+</div>
+{% endblock %}

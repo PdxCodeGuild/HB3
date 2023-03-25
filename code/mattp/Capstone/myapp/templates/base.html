@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>{% block title %}Git_Hook'd (Capstone){% endblock %}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'fishicon.jpg' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <div>
+      <img class="logo" src="\static\Fishbait.png" alt="Logo">
+    </div>
+    <div>
+      <h1 class="headline">Git_Hook'd</h1>
+    </div>
+    <div>
+      <ul>
+        <li><a href="{% url 'myapp:home' %}">Home</a></li><br>
+        <li><a href="{% url 'myapp:about' %}">About</a></li><br>
+        <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
+       
+    </ul>
+</nav>
+    </div>
+  </nav>  
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>Welcome to my app!</h1>
+<p>Here is where you can search for your zip code and see all the fish in your area! <br>You can then click on fish on that list and learn more about them. </p>
+
+<h2>Please enter your zip code below:</h2>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <input type="text" id="zip_code" name="zip_code">
+    <button  class="sbutton" type="submit">Submit</button>
+</form>
+
+{% if fishlist %}
+
+<ul>
+    {% for fish in fishlist %}
+        <li><a href="{% url 'myapp:fish_details' fish_id=fish.pk %}">{{ fish.fish_name }}</a></li>
+    {% endfor %}
+</ul>
+
+<div class="home-img-container">
+    <img src="{% static 'home-image.png' %}" alt="Home image" class="home-img">
+  </div>
+
+{% endif %}
+
+{% endblock %}
+
