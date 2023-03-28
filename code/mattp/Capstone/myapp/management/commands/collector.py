@@ -110,7 +110,7 @@ class Command(BaseCommand):
         time.sleep(5)
         # Find the input named zip
         search_box = driver.find_element('name', 'zip')
-        zip_codes = '97232'
+        zip_codes = '28078'
         # zip_codes = ['97200', '972001']
         search_box.send_keys(zip_codes)
         search_box.submit()
